@@ -1,6 +1,7 @@
 const DATA = window.KADAT_DATA;
 const state = {
   rolls: Object.fromEntries(DATA.stats.map(stat => [stat, 0])),
+  plannedAdditions: Object.fromEntries(DATA.stats.map(stat => [stat, 0])),
   transfers: [],
   pendingTransferFrom: null
 };
@@ -65,10 +66,11 @@ function mergeTalents(sources) {
 }
 
 function getAdditions() {
-  return Object.fromEntries(DATA.stats.map(stat => {
-    const input = document.querySelector(`[data-stat-input="${stat}"]`);
-    return [stat, Number(input?.value || 0)];
-  }));
+  return { ...state.plannedAdditions };
+}
+
+function resetPlannedAdditions() {
+  state.plannedAdditions = Object.fromEntries(DATA.stats.map(stat => [stat, 0]));
 }
 
 function getTransferDelta(stat) {
@@ -81,8 +83,14 @@ function getTransferDelta(stat) {
   }, 0);
 }
 
-function getRandomGenerationValue(stat) {
-  return state.rolls[stat] + getTransferDelta(stat);
+function getBaseGenerationValue(stat) {
+  return modeSelect.value === "planned"
+    ? state.plannedAdditions[stat]
+    : state.rolls[stat];
+}
+
+function getGenerationValue(stat) {
+  return getBaseGenerationValue(stat) + getTransferDelta(stat);
 }
 
 function resetTransfers() {
@@ -94,48 +102,84 @@ function allStatsRolled() {
   return Object.values(state.rolls).every(value => value > 0);
 }
 
+function plannedDistributionReady() {
+  const race = getSelected(DATA.races, raceSelect.value);
+  const values = Object.values(state.plannedAdditions);
+  return values.every(value => value >= 0 && value <= race.maxPerStat)
+    && values.reduce((sum, value) => sum + value, 0) === race.plannedPoints;
+}
+
+function generationReady() {
+  return modeSelect.value === "planned" ? plannedDistributionReady() : allStatsRolled();
+}
+
+function transfersAreValid() {
+  const race = getSelected(DATA.races, raceSelect.value);
+  const value = race.redistributionValue ?? 5;
+  const current = Object.fromEntries(DATA.stats.map(stat => [stat, getBaseGenerationValue(stat)]));
+
+  for (const transfer of state.transfers) {
+    if ((current[transfer.from] ?? 0) < value) return false;
+    current[transfer.from] -= value;
+    current[transfer.to] += value;
+  }
+  return true;
+}
+
+function sanitizeTransfers() {
+  if (!transfersAreValid()) resetTransfers();
+  const race = getSelected(DATA.races, raceSelect.value);
+  const value = race.redistributionValue ?? 5;
+  if (state.pendingTransferFrom && getGenerationValue(state.pendingTransferFrom) < value) {
+    state.pendingTransferFrom = null;
+  }
+}
+
+function generationDetails(stat) {
+  const delta = getTransferDelta(stat);
+  if (modeSelect.value === "random") {
+    return `Бросок: ${state.rolls[stat] || "—"}${delta ? `, перенос ${signed(delta)}` : ""}`;
+  }
+  return `Распределено: ${state.plannedAdditions[stat]}${delta ? `, перенос ${signed(delta)}` : ""}`;
+}
+
 function renderStats() {
   const race = getSelected(DATA.races, raceSelect.value);
   const world = getSelected(DATA.homeworlds, worldSelect.value);
   const specialty = getSelected(DATA.specialties, specialtySelect.value);
-  const mode = modeSelect.value;
-  const transferLimit = race.redistributionCount ?? 2;
   const transferValue = race.redistributionValue ?? 5;
-  const rolled = allStatsRolled();
 
   statsGrid.innerHTML = DATA.stats.map(stat => {
     const base = race.baseStats[stat] ?? 0;
     const worldMod = world.statModifiers[stat] ?? 0;
     const specialtyMod = specialty.statModifiers[stat] ?? 0;
-    const transferDelta = getTransferDelta(stat);
-    const generationValue = mode === "random" ? getRandomGenerationValue(stat) : 0;
-    const total = base + worldMod + specialtyMod + generationValue;
-    const sourceAvailable = rolled
-      && state.transfers.length < transferLimit
-      && getRandomGenerationValue(stat) >= transferValue;
-    const targetAvailable = rolled
-      && state.pendingTransferFrom !== null
-      && state.pendingTransferFrom !== stat
-      && state.transfers.length < transferLimit;
-    const randomControls = mode === "random"
-      ? `
-        <div class="stat-details">Бросок: ${state.rolls[stat] || "—"}${transferDelta ? `, перенос ${signed(transferDelta)}` : ""}</div>
-        <div class="transfer-buttons">
-          <button type="button" class="transfer-button minus ${state.pendingTransferFrom === stat ? "selected" : ""}" data-transfer-from="${stat}" ${sourceAvailable ? "" : "disabled"}>−${transferValue}</button>
-          <button type="button" class="transfer-button plus" data-transfer-to="${stat}" ${targetAvailable ? "" : "disabled"}>+${transferValue}</button>
-        </div>`
-      : `<input type="number" min="0" max="${race.maxPerStat}" value="0" data-stat-input="${stat}" aria-label="Очки в ${stat}">`;
+    const total = base + worldMod + specialtyMod + getGenerationValue(stat);
+    const generationControl = modeSelect.value === "planned"
+      ? `<input type="number" min="0" max="${race.maxPerStat}" value="${state.plannedAdditions[stat]}" data-stat-input="${stat}" aria-label="Очки в ${stat}">`
+      : "";
 
     return `
-      <article class="stat-card ${state.pendingTransferFrom === stat ? "transfer-source" : ""}">
+      <article class="stat-card ${state.pendingTransferFrom === stat ? "transfer-source" : ""}" data-stat-card="${stat}">
         <div class="stat-name">${stat}</div>
         <div class="stat-total" data-stat-total="${stat}">${total}</div>
         <div class="stat-details">База ${base}, мир ${signed(worldMod)}, спец. ${signed(specialtyMod)}</div>
-        ${randomControls}
+        ${generationControl}
+        <div class="stat-details" data-generation-details="${stat}">${generationDetails(stat)}</div>
+        <div class="transfer-buttons">
+          <button type="button" class="transfer-button minus ${state.pendingTransferFrom === stat ? "selected" : ""}" data-transfer-from="${stat}">−${transferValue}</button>
+          <button type="button" class="transfer-button plus" data-transfer-to="${stat}">+${transferValue}</button>
+        </div>
       </article>`;
   }).join("");
 
-  statsGrid.querySelectorAll("input").forEach(input => input.addEventListener("input", updatePreview));
+  statsGrid.querySelectorAll("[data-stat-input]").forEach(input => {
+    input.addEventListener("input", () => {
+      state.plannedAdditions[input.dataset.statInput] = Number(input.value || 0);
+      sanitizeTransfers();
+      updatePreview();
+      refreshTransferControls();
+    });
+  });
   statsGrid.querySelectorAll("[data-transfer-from]").forEach(button => {
     button.addEventListener("click", () => chooseTransferSource(button.dataset.transferFrom));
   });
@@ -143,30 +187,60 @@ function renderStats() {
     button.addEventListener("click", () => completeTransfer(button.dataset.transferTo));
   });
 
-  renderRedistributionPanel();
   updatePreview();
+  refreshTransferControls();
 }
 
-function renderRedistributionPanel() {
-  if (modeSelect.value !== "random") {
-    redistributionPanel.className = "redistribution-panel hidden";
-    redistributionPanel.innerHTML = "";
-    return;
-  }
-
+function refreshTransferControls() {
   const race = getSelected(DATA.races, raceSelect.value);
   const limit = race.redistributionCount ?? 2;
   const value = race.redistributionValue ?? 5;
-  const rolled = allStatsRolled();
+  const ready = generationReady();
+
+  DATA.stats.forEach(stat => {
+    const sourceButton = document.querySelector(`[data-transfer-from="${stat}"]`);
+    const targetButton = document.querySelector(`[data-transfer-to="${stat}"]`);
+    const card = document.querySelector(`[data-stat-card="${stat}"]`);
+    const sourceAvailable = ready
+      && state.transfers.length < limit
+      && getGenerationValue(stat) >= value;
+    const targetAvailable = ready
+      && state.pendingTransferFrom !== null
+      && state.pendingTransferFrom !== stat
+      && state.transfers.length < limit;
+
+    if (sourceButton) {
+      sourceButton.disabled = !sourceAvailable;
+      sourceButton.classList.toggle("selected", state.pendingTransferFrom === stat);
+    }
+    if (targetButton) targetButton.disabled = !targetAvailable;
+    if (card) card.classList.toggle("transfer-source", state.pendingTransferFrom === stat);
+  });
+
+  renderRedistributionPanel();
+}
+
+function renderRedistributionPanel() {
+  const race = getSelected(DATA.races, raceSelect.value);
+  const limit = race.redistributionCount ?? 2;
+  const value = race.redistributionValue ?? 5;
+  const ready = generationReady();
   const history = state.transfers.length
     ? state.transfers.map(transfer => `<span class="transfer-chip">${transfer.from} −${value} → ${transfer.to} +${value}</span>`).join("")
     : `<span class="muted">Переносов пока нет.</span>`;
 
-  let instruction = `После бросков можно до ${limit} раз перенести ${value} очков между характеристиками.`;
-  if (!rolled) instruction = "Сначала выполни броски 2к10.";
-  else if (state.pendingTransferFrom) instruction = `Выбрано: ${state.pendingTransferFrom} −${value}. Теперь нажми +${value} у другой характеристики.`;
-  else if (state.transfers.length >= limit) instruction = "Все доступные переносы использованы.";
-  else instruction = `Нажми −${value} у характеристики-источника, затем +${value} у характеристики-получателя.`;
+  let instruction;
+  if (!ready && modeSelect.value === "planned") {
+    instruction = `Сначала распредели ровно ${race.plannedPoints} очков. После этого станут доступны переносы.`;
+  } else if (!ready) {
+    instruction = "Сначала выполни броски 2к10.";
+  } else if (state.pendingTransferFrom) {
+    instruction = `Выбрано: ${state.pendingTransferFrom} −${value}. Теперь нажми +${value} у другой характеристики.`;
+  } else if (state.transfers.length >= limit) {
+    instruction = "Все доступные переносы использованы.";
+  } else {
+    instruction = `Нажми −${value} у характеристики-источника, затем +${value} у характеристики-получателя.`;
+  }
 
   redistributionPanel.className = "redistribution-panel";
   redistributionPanel.innerHTML = `
@@ -185,7 +259,7 @@ function renderRedistributionPanel() {
 
   $("#cancel-transfer")?.addEventListener("click", () => {
     state.pendingTransferFrom = null;
-    renderStats();
+    refreshTransferControls();
   });
   $("#undo-transfer")?.addEventListener("click", () => {
     state.transfers.pop();
@@ -198,16 +272,22 @@ function chooseTransferSource(stat) {
   const race = getSelected(DATA.races, raceSelect.value);
   const value = race.redistributionValue ?? 5;
   const limit = race.redistributionCount ?? 2;
-  if (!allStatsRolled() || state.transfers.length >= limit || getRandomGenerationValue(stat) < value) return;
+  if (!generationReady() || state.transfers.length >= limit || getGenerationValue(stat) < value) return;
   state.pendingTransferFrom = state.pendingTransferFrom === stat ? null : stat;
-  renderStats();
+  refreshTransferControls();
 }
 
 function completeTransfer(stat) {
   const race = getSelected(DATA.races, raceSelect.value);
+  const value = race.redistributionValue ?? 5;
   const limit = race.redistributionCount ?? 2;
   const from = state.pendingTransferFrom;
-  if (!from || from === stat || state.transfers.length >= limit) return;
+  if (!generationReady() || !from || from === stat || state.transfers.length >= limit) return;
+  if (getGenerationValue(from) < value) {
+    state.pendingTransferFrom = null;
+    refreshTransferControls();
+    return;
+  }
   state.transfers.push({ from, to: stat });
   state.pendingTransferFrom = null;
   renderStats();
@@ -221,22 +301,22 @@ function updatePreview() {
   const race = getSelected(DATA.races, raceSelect.value);
   const world = getSelected(DATA.homeworlds, worldSelect.value);
   const specialty = getSelected(DATA.specialties, specialtySelect.value);
-  const additions = getAdditions();
-  const mode = modeSelect.value;
 
   for (const stat of DATA.stats) {
     const total = (race.baseStats[stat] ?? 0)
       + (world.statModifiers[stat] ?? 0)
       + (specialty.statModifiers[stat] ?? 0)
-      + (mode === "planned" ? additions[stat] : getRandomGenerationValue(stat));
-    const node = document.querySelector(`[data-stat-total="${stat}"]`);
-    if (node) node.textContent = total;
+      + getGenerationValue(stat);
+    const totalNode = document.querySelector(`[data-stat-total="${stat}"]`);
+    const detailsNode = document.querySelector(`[data-generation-details="${stat}"]`);
+    if (totalNode) totalNode.textContent = total;
+    if (detailsNode) detailsNode.textContent = generationDetails(stat);
   }
 
-  if (mode === "planned") {
-    const used = Object.values(additions).reduce((sum, value) => sum + value, 0);
+  if (modeSelect.value === "planned") {
+    const used = Object.values(state.plannedAdditions).reduce((sum, value) => sum + value, 0);
     const remaining = race.plannedPoints - used;
-    pointsStatus.textContent = `Потрачено: ${used} / ${race.plannedPoints}. Осталось: ${remaining}. Максимум ${race.maxPerStat} в одну характеристику.`;
+    pointsStatus.textContent = `Потрачено: ${used} / ${race.plannedPoints}. Осталось: ${remaining}. Максимум ${race.maxPerStat} до переносов.`;
     pointsStatus.style.color = remaining < 0 ? "#ff8585" : "";
   } else {
     pointsStatus.textContent = allStatsRolled() ? "Броски выполнены." : "Нажми «Бросить 2к10».";
@@ -259,10 +339,9 @@ function randomD10() {
 function validateCharacter() {
   const race = getSelected(DATA.races, raceSelect.value);
   if (modeSelect.value === "planned") {
-    const additions = getAdditions();
-    const values = Object.values(additions);
+    const values = Object.values(state.plannedAdditions);
     if (values.some(value => value < 0 || value > race.maxPerStat)) {
-      return `В одну характеристику можно вложить от 0 до ${race.maxPerStat} очков.`;
+      return `В одну характеристику можно вложить от 0 до ${race.maxPerStat} очков до переносов.`;
     }
     const used = values.reduce((sum, value) => sum + value, 0);
     if (used !== race.plannedPoints) {
@@ -270,7 +349,12 @@ function validateCharacter() {
     }
   } else if (!allStatsRolled()) {
     return "Сначала выполни броски 2к10.";
-  } else if (state.pendingTransferFrom) {
+  }
+
+  if (!transfersAreValid()) {
+    return "Один из переносов больше нельзя выполнить с текущими значениями характеристик.";
+  }
+  if (state.pendingTransferFrom) {
     return `Перенос из ${state.pendingTransferFrom} не завершён. Выбери характеристику для +${race.redistributionValue ?? 5} или отмени выбор.`;
   }
   return "";
@@ -280,15 +364,13 @@ function buildCharacter() {
   const race = getSelected(DATA.races, raceSelect.value);
   const world = getSelected(DATA.homeworlds, worldSelect.value);
   const specialty = getSelected(DATA.specialties, specialtySelect.value);
-  const additions = getAdditions();
-  const mode = modeSelect.value;
   const stats = {};
 
   for (const stat of DATA.stats) {
     stats[stat] = (race.baseStats[stat] ?? 0)
       + (world.statModifiers[stat] ?? 0)
       + (specialty.statModifiers[stat] ?? 0)
-      + (mode === "planned" ? additions[stat] : getRandomGenerationValue(stat));
+      + getGenerationValue(stat);
   }
 
   const skills = mergeSkills([
@@ -395,18 +477,22 @@ form.addEventListener("submit", event => {
 $("#reset-button").addEventListener("click", () => {
   form.reset();
   state.rolls = Object.fromEntries(DATA.stats.map(stat => [stat, 0]));
+  resetPlannedAdditions();
   resetTransfers();
   clearError();
   result.className = "empty-state";
   result.textContent = "Заполни данные и нажми «Рассчитать персонажа».";
+  rollButton.disabled = true;
   renderStats();
 });
 
 rollButton.addEventListener("click", rollStats);
-[raceSelect, worldSelect, specialtySelect].forEach(select => select.addEventListener("change", () => {
+raceSelect.addEventListener("change", () => {
+  resetPlannedAdditions();
   resetTransfers();
   renderStats();
-}));
+});
+[worldSelect, specialtySelect].forEach(select => select.addEventListener("change", renderStats));
 modeSelect.addEventListener("change", () => {
   resetTransfers();
   rollButton.disabled = modeSelect.value !== "random";
