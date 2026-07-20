@@ -48,9 +48,13 @@ renderResult = function (character) {
     .map(name => `<span class="tag">${escapeHtml(name)}</span>`)
     .join("") || `<span class="muted">Нет талантов</span>`;
 
-  const traitTags = (character.race.traits ?? [])
+  const uniqueFeatureNames = (character.race.uniqueFeatures ?? []).map(feature => feature.name);
+  const visibleTraits = (character.race.traits ?? []).filter(trait =>
+    !uniqueFeatureNames.some(featureName => trait === featureName || trait.startsWith(`${featureName} (`))
+  );
+  const traitTags = visibleTraits
     .map(name => `<span class="tag">${escapeHtml(name)}</span>`)
-    .join("") || `<span class="muted">Нет особенностей</span>`;
+    .join("") || `<span class="muted">Нет прочих особенностей</span>`;
 
   const equipmentItems = (character.race.equipment ?? [])
     .map(item => `<li>${escapeHtml(item)}</li>`)
