@@ -1,0 +1,49 @@
+.race-description {
+  margin: 10px 0 0;
+  color: #c9ced6;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.rule-list {
+  display: grid;
+  gap: 8px;
+}
+
+.rule-card {
+  padding: 11px 12px;
+  border: 1px solid #3a404c;
+  border-radius: 10px;
+  background: #101319;
+}
+
+.rule-card h4 {
+  margin: 0 0 6px;
+  color: #efc27d;
+}
+
+.rule-card p {
+  margin: 0;
+  color: #c9ced6;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.notice {
+  padding: 10px 12px;
+  border-left: 3px solid #d3a15b;
+  border-radius: 8px;
+  background: rgba(211, 161, 91, .08);
+  color: #e4d2b5;
+  font-size: 13px;
+}
+
+.equipment-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #c9ced6;
+}
+
+.equipment-list li + li {
+  margin-top: 5px;
+}
