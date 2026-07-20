@@ -7,6 +7,8 @@ window.KADAT_DATA = {
       baseStats: { НС: 25, НР: 25, СЛ: 25, ВН: 25, ЛВ: 25, ИН: 25, СВ: 25, ВС: 25, ОЩ: 25 },
       plannedPoints: 100,
       maxPerStat: 20,
+      redistributionCount: 2,
+      redistributionValue: 5,
       woundBonus: 8,
       startingXp: 750,
       xpMultiplier: 1.25,
