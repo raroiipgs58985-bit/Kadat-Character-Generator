@@ -7,6 +7,34 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function renderUniqueFeatures(features) {
+  return (features ?? []).map(feature => {
+    const spendingItems = (feature.spending ?? []).map(option => `
+      <li>
+        <strong>${escapeHtml(option.name)}</strong>
+        <span>${escapeHtml(option.text)}</span>
+      </li>
+    `).join("");
+
+    return `
+      <article class="unique-feature-card">
+        <div class="unique-feature-heading">
+          <h4>${escapeHtml(feature.name)}</h4>
+          ${feature.rating !== undefined ? `<span class="feature-rating">Рейтинг ${feature.rating}</span>` : ""}
+        </div>
+        <p class="feature-resource"><strong>Ресурс:</strong> ${escapeHtml(feature.resourceName)}</p>
+        <p><strong>Накопление:</strong> ${escapeHtml(feature.accumulation)}</p>
+        ${spendingItems ? `
+          <div class="feature-spending">
+            <strong>Расход ресурса:</strong>
+            <ul>${spendingItems}</ul>
+          </div>
+        ` : ""}
+      </article>
+    `;
+  }).join("");
+}
+
 renderResult = function (character) {
   const statRows = DATA.stats.map(stat => `
     <tr><th>${stat}</th><td>${character.stats[stat]}</td><td>${characteristicBonus(character.stats[stat])}</td></tr>
@@ -35,6 +63,8 @@ renderResult = function (character) {
         <p>${escapeHtml(rule.text)}</p>
       </article>
     `).join("");
+
+  const uniqueFeatures = renderUniqueFeatures(character.race.uniqueFeatures);
 
   const transferValue = character.race.redistributionValue ?? 5;
   const transferTags = character.transfers.length
@@ -65,8 +95,9 @@ renderResult = function (character) {
     <div><h3>Навыки</h3><div class="tags">${skillTags}</div></div>
     <div><h3>Таланты</h3><div class="tags">${talentTags}</div></div>
     <div><h3>Особенности</h3><div class="tags">${traitTags}</div></div>
+    ${uniqueFeatures ? `<div><h3>Уникальные особенности</h3><div class="unique-feature-list">${uniqueFeatures}</div></div>` : ""}
     ${character.race.specialtyAccess ? `<div class="notice">${escapeHtml(character.race.specialtyAccess)}</div>` : ""}
-    ${specialRules ? `<div><h3>Особые правила</h3><div class="rule-list">${specialRules}</div></div>` : ""}
+    ${specialRules ? `<div><h3>Прочие особые правила</h3><div class="rule-list">${specialRules}</div></div>` : ""}
     <div><h3>Стартовое снаряжение</h3><ul class="equipment-list">${equipmentItems}</ul></div>
   `;
 };
