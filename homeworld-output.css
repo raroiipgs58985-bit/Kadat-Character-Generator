@@ -1,0 +1,16 @@
+.homeworld-section {
+  display: grid;
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.homeworld-section h3,
+.homeworld-section h4 {
+  margin: 0;
+}
+
+.homeworld-section h4 {
+  margin-bottom: 7px;
+  color: #d8dde6;
+  font-size: 14px;
+}
