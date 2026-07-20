@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <title>Генератор персонажей для Кадата</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">KADAT • К100</p>
+      <h1>Генератор персонажей</h1>
+      <p>Техническая версия 0.1 для проверки расчётов системы.</p>
+    </header>
+
+    <section class="layout">
+      <form id="character-form" class="panel" novalidate>
+        <h2>Создание персонажа</h2>
+
+        <label>
+          Имя
+          <input id="character-name" type="text" placeholder="Имя персонажа">
+        </label>
+
+        <div class="two-columns">
+          <label>
+            Раса
+            <select id="race"></select>
+          </label>
+
+          <label>
+            Метод характеристик
+            <select id="generation-mode">
+              <option value="planned">Распределить 100 очков</option>
+              <option value="random">Бросить 2к10</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="two-columns">
+          <label>
+            Родной мир
+            <select id="homeworld"></select>
+          </label>
+
+          <label>
+            Специальность
+            <select id="specialty"></select>
+          </label>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <h3>Характеристики</h3>
+            <p id="points-status" class="muted"></p>
+          </div>
+          <button id="roll-button" type="button" class="secondary">Бросить 2к10</button>
+        </div>
+
+        <div id="stats-grid" class="stats-grid"></div>
+
+        <label>
+          Дополнительные навыки для проверки дублей
+          <textarea id="manual-skills" rows="2" placeholder="Например: Бдительность; Уклонение; Бдительность"></textarea>
+        </label>
+
+        <label>
+          Дополнительные таланты для проверки дублей
+          <textarea id="manual-talents" rows="2" placeholder="Например: Выносливый; Выносливый"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Рассчитать персонажа</button>
+          <button id="reset-button" type="button" class="secondary">Сбросить</button>
+        </div>
+      </form>
+
+      <section class="panel result-panel" aria-live="polite">
+        <h2>Итоговая карточка</h2>
+        <div id="validation-message" class="message hidden"></div>
+        <div id="result" class="empty-state">
+          Заполни данные и нажми «Рассчитать персонажа».
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      В этой сборке миры и специальности являются тестовыми записями. Они нужны для проверки математики до переноса полной базы правил.
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

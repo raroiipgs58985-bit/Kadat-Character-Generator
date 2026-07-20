@@ -1,0 +1,121 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0b0d11;
+  color: #eceff4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(117, 82, 42, 0.18), transparent 34rem),
+    #0b0d11;
+}
+
+button, input, select, textarea { font: inherit; }
+
+.page {
+  width: min(1180px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+.hero {
+  padding: 20px 4px 24px;
+  border-bottom: 1px solid #30343d;
+  margin-bottom: 18px;
+}
+
+.hero h1 { margin: 5px 0 6px; font-size: clamp(28px, 6vw, 48px); }
+.hero p { margin: 0; color: #aeb5c0; }
+.eyebrow { color: #d2a25d !important; letter-spacing: .18em; font-size: 12px; font-weight: 800; }
+
+.layout { display: grid; gap: 16px; }
+
+.panel {
+  background: rgba(22, 25, 31, .96);
+  border: 1px solid #343944;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .24);
+}
+
+h2, h3 { margin-top: 0; }
+h2 { color: #efc27d; }
+h3 { margin-bottom: 4px; }
+
+label { display: grid; gap: 6px; margin-bottom: 14px; color: #c9ced6; font-size: 14px; }
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #3a404c;
+  background: #101319;
+  color: #f4f6f8;
+  border-radius: 10px;
+  padding: 11px 12px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus { border-color: #c69550; box-shadow: 0 0 0 3px rgba(198,149,80,.15); }
+textarea { resize: vertical; }
+
+.two-columns { display: grid; gap: 12px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0 12px; }
+.muted { color: #9ca4b0; margin: 0; font-size: 13px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-bottom: 16px; }
+.stat-card { border: 1px solid #353b46; border-radius: 12px; padding: 9px; background: #101319; }
+.stat-name { color: #efc27d; font-weight: 800; font-size: 13px; }
+.stat-total { font-size: 22px; font-weight: 800; margin: 6px 0; }
+.stat-card input { padding: 8px; }
+.stat-details { color: #959eaa; font-size: 11px; min-height: 30px; }
+
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  background: #d3a15b;
+  color: #171009;
+  font-weight: 800;
+  cursor: pointer;
+}
+button.secondary { background: #252a33; color: #edf0f4; border: 1px solid #3a404c; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+
+.result-panel { min-height: 420px; }
+.empty-state { color: #929aa6; border: 1px dashed #3a404c; border-radius: 12px; padding: 24px; text-align: center; }
+.message { padding: 10px 12px; border-radius: 10px; margin-bottom: 12px; }
+.message.error { background: rgba(183,62,62,.18); border: 1px solid #8d3b3b; color: #ffb5b5; }
+.hidden { display: none; }
+
+.character-card { display: grid; gap: 14px; }
+.summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.summary-item { background: #101319; border: 1px solid #343944; border-radius: 10px; padding: 10px; }
+.summary-label { display: block; color: #929aa6; font-size: 12px; }
+.summary-value { font-size: 18px; font-weight: 800; }
+.result-table { width: 100%; border-collapse: collapse; }
+.result-table th, .result-table td { border-bottom: 1px solid #303640; padding: 8px 6px; text-align: left; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { padding: 5px 8px; border-radius: 999px; background: #252b34; border: 1px solid #3b424e; font-size: 12px; }
+
+footer { color: #7f8792; text-align: center; font-size: 12px; padding: 18px 8px 0; }
+
+@media (min-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr) minmax(380px, .9fr); align-items: start; }
+  .two-columns { grid-template-columns: 1fr 1fr; }
+  .panel { padding: 20px; }
+  .result-panel { position: sticky; top: 16px; }
+}
+
+@media (max-width: 460px) {
+  .page { width: min(100% - 14px, 1180px); padding-top: 10px; }
+  .panel { padding: 12px; border-radius: 13px; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .stat-card { padding: 7px; }
+  .stat-total { font-size: 18px; }
+  .actions { grid-template-columns: 1fr; }
+}
