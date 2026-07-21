@@ -1,6 +1,6 @@
 const renderResultWithRaceAndFeatures = renderResult;
 
-function renderHomeworldSection(world) {
+function renderHomeworldSection(world, selectedChoices = []) {
   if (!world || world.id === "none") return "";
 
   const modifiers = DATA.stats
@@ -11,16 +11,28 @@ function renderHomeworldSection(world) {
     })
     .join("") || `<span class="muted">Нет модификаторов характеристик</span>`;
 
-  const worldSkills = (world.skills ?? [])
+  const chosenSkills = selectedChoices
+    .filter(choice => choice.type === "skill" && choice.value)
+    .map(choice => choice.value);
+  const chosenTalents = selectedChoices
+    .filter(choice => choice.type === "talent" && choice.value)
+    .map(choice => choice.value);
+
+  const worldSkills = [...(world.skills ?? []), ...chosenSkills]
     .map(skill => `<span class="tag">${escapeHtml(skill)}</span>`)
     .join("") || `<span class="muted">Нет навыков</span>`;
 
-  const worldTalents = (world.talents ?? [])
+  const worldTalents = [...(world.talents ?? []), ...chosenTalents]
     .map(talent => `<span class="tag">${escapeHtml(talent)}</span>`)
     .join("") || `<span class="muted">Нет талантов</span>`;
 
   const worldTraits = (world.traits ?? [])
     .map(trait => `<span class="tag">${escapeHtml(trait)}</span>`)
+    .join("");
+
+  const choiceTags = selectedChoices
+    .filter(choice => choice.value)
+    .map(choice => `<span class="tag"><strong>${escapeHtml(choice.label)}:</strong>&nbsp;${escapeHtml(choice.value)}</span>`)
     .join("");
 
   const worldRules = (world.specialRules ?? [])
@@ -41,6 +53,7 @@ function renderHomeworldSection(world) {
         </div>
       </div>
       <div><h4>Модификаторы характеристик</h4><div class="tags">${modifiers}</div></div>
+      ${choiceTags ? `<div><h4>Сделанные выборы</h4><div class="tags">${choiceTags}</div></div>` : ""}
       <div><h4>Навыки родного мира</h4><div class="tags">${worldSkills}</div></div>
       <div><h4>Таланты родного мира</h4><div class="tags">${worldTalents}</div></div>
       ${worldTraits ? `<div><h4>Особенности родного мира</h4><div class="tags">${worldTraits}</div></div>` : ""}
@@ -52,7 +65,7 @@ function renderHomeworldSection(world) {
 renderResult = function (character) {
   renderResultWithRaceAndFeatures(character);
 
-  const homeworldMarkup = renderHomeworldSection(character.world);
+  const homeworldMarkup = renderHomeworldSection(character.world, character.worldChoices ?? []);
   if (!homeworldMarkup) return;
 
   const container = document.createElement("div");
