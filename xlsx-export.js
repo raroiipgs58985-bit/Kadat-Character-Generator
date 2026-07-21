@@ -33,6 +33,7 @@
       const name = clean(entry?.name);
       const value = Number(entry?.bonus ?? 0);
       if (!name) continue;
+
       const match = name.match(/^(.+?)\s*\((.+)\)$/);
       if (!match) {
         const key = `${name.toLocaleLowerCase("ru-RU")}::${showBonus ? value : ""}`;
@@ -50,6 +51,7 @@
         grouped.set(key, record);
         records.push(record);
       }
+
       for (const option of clean(match[2]).split(/\s*[,;]\s*/).filter(Boolean)) {
         const optionKey = option.toLocaleLowerCase("ru-RU");
         if (record.keys.has(optionKey)) continue;
@@ -60,7 +62,7 @@
 
     return records.map(record => {
       const label = record.base ? `${record.base} (${record.options.join(", ")})` : record.name;
-      return showBonus ? `${label}${record.bonus >= 0 ? "+" : ""}${record.bonus}` : label;
+      return showBonus ? `${label} ${record.bonus >= 0 ? "+" : ""}${record.bonus}` : label;
     });
   }
 
@@ -90,7 +92,7 @@
     const uniqueFeatures = (character?.race?.uniqueFeatures ?? []).map(feature => {
       const name = clean(feature?.name);
       const rating = Number(feature?.rating);
-      return name && Number.isFinite(rating) ? `${name} (${rating})` : name;
+      return name && Number.isFinite(rating) ? `${name} (рейтинг ${rating})` : name;
     });
     const rules = [
       ...(character?.race?.specialRules ?? []),
@@ -98,6 +100,7 @@
       ...(character?.specialtyRules ?? []),
       ...(character?.specialty?.specialRules ?? [])
     ].map(rule => clean(rule?.name) || clean(rule?.text));
+
     return unique([
       ...uniqueFeatures,
       ...(character?.race?.traits ?? []),
@@ -116,6 +119,7 @@
 
   function exportData(character) {
     if (!character) throw new Error("Персонаж ещё не сформирован.");
+
     const skills = groupEntries(
       [...(character.skills instanceof Map ? character.skills.entries() : Object.entries(character.skills ?? {}))]
         .map(([name, value]) => ({ name, bonus: value })),
@@ -123,6 +127,7 @@
     );
     const talents = groupEntries((character.talents ?? []).map(name => ({ name })), false);
     const movement = Math.max(0, bonus(character?.stats?.ЛВ) + sizeOf(character));
+
     return {
       name: clean(character.name) || "БЕЗЫМЯННЫЙ ПЕРСОНАЖ",
       description: unique([
@@ -142,12 +147,12 @@
       wounds: numberText(character.wounds),
       insanity: "0",
       corruption: "0",
-      skills: skills.join("; ") || "Нет навыков",
-      talents: talents.join("; ") || "Нет талантов",
-      psychic: "Нет",
-      features: featuresOf(character).join("; ") || "Нет особенностей",
-      implants: "—",
-      equipment: equipmentOf(character).join("; ") || "Снаряжение не указано"
+      skills,
+      talents,
+      psychic: ["Нет"],
+      features: featuresOf(character),
+      implants: ["—"],
+      equipment: equipmentOf(character)
     };
   }
 
@@ -167,20 +172,40 @@
     return `<c r="${ref}" s="${style}"/>`;
   }
 
-  function row(number, cells) {
-    return `<row r="${number}" ht="15.75" customHeight="1">${cells.join("")}</row>`;
+  function row(number, cells, height = 15.75) {
+    return `<row r="${number}" ht="${height}" customHeight="1">${cells.join("")}</row>`;
+  }
+
+  function listText(items, fallback) {
+    const values = unique(items);
+    return values.length ? values.map(item => `• ${item}`).join("\n") : fallback;
+  }
+
+  function listHeight(items) {
+    const lines = listText(items, "—").split("\n");
+    const visualLines = lines.reduce((total, line) => {
+      return total + Math.max(1, Math.ceil(line.length / 46));
+    }, 0);
+    return Math.min(409, Math.max(28, visualLines * 13 + 8));
   }
 
   function sheetXml(data) {
     const rows = [];
-    rows.push(row(1, [textCell("A1", data.name.toLocaleUpperCase("ru-RU"), 2), blankCell("B1", 2), blankCell("C1", 2), blankCell("D1", 2)]));
-    rows.push(row(2, [textCell("A2", data.description, 3), blankCell("B2", 3), blankCell("C2", 3), blankCell("D2", 3)]));
+    rows.push(row(1, [
+      textCell("A1", data.name.toLocaleUpperCase("ru-RU"), 2),
+      blankCell("B1", 2), blankCell("C1", 2), blankCell("D1", 2)
+    ]));
+    rows.push(row(2, [
+      textCell("A2", data.description, 3),
+      blankCell("B2", 3), blankCell("C2", 3), blankCell("D2", 3)
+    ]));
 
     const labels = ["НС", "НР", "СЛ", "ВН", "ЛВ", "ИН", "СВ", "ВС", "ОЩ", "Опыт", "Движение", "ОБ", "БВ", "Раны", "Безумие", "Порча"];
     const values = [
       ...STATS.map(stat => data.stats[stat]), data.xp, data.movement, data.armor,
       data.toughness, data.wounds, data.insanity, data.corruption
     ];
+
     for (let index = 0; index < labels.length; index += 1) {
       const number = index + 3;
       const valueStyle = number >= 12 ? 7 : 6;
@@ -196,20 +221,23 @@
     }
 
     const blocks = [
-      [19, "Навыки", data.skills],
-      [20, "Таланты", data.talents],
-      [21, "Пси-силы", data.psychic],
-      [22, "Особенности", data.features],
-      [23, "Импланты", data.implants],
-      [24, "Снаряжение", data.equipment]
+      [19, "Навыки", data.skills, "Нет навыков"],
+      [20, "Таланты", data.talents, "Нет талантов"],
+      [21, "Пси-силы", data.psychic, "Нет"],
+      [22, "Особенности", data.features, "Нет особенностей"],
+      [23, "Импланты", data.implants, "—"],
+      [24, "Снаряжение", data.equipment, "Снаряжение не указано"]
     ];
-    for (const [number, label, value] of blocks) {
+
+    for (const [number, label, items, fallback] of blocks) {
+      const value = listText(items, fallback);
+      const height = [19, 20, 22, 24].includes(number) ? listHeight(items) : 22;
       rows.push(row(number, [
         textCell(`A${number}`, label, 1),
         textCell(`B${number}`, value, 5),
         blankCell(`C${number}`, 5),
         blankCell(`D${number}`, 5)
-      ]));
+      ], height));
     }
 
     return `<?xml version="1.0" encoding="utf-8"?>
@@ -223,7 +251,7 @@
 <mergeCells count="9"><mergeCell ref="A1:D1"/><mergeCell ref="A2:D2"/><mergeCell ref="C3:D18"/><mergeCell ref="B19:D19"/><mergeCell ref="B20:D20"/><mergeCell ref="B21:D21"/><mergeCell ref="B22:D22"/><mergeCell ref="B23:D23"/><mergeCell ref="B24:D24"/></mergeCells>
 <printOptions horizontalCentered="1" verticalCentered="1"/>
 <pageMargins left="0.25" right="0.25" top="0.25" bottom="0.25" header="0.1" footer="0.1"/>
-<pageSetup orientation="portrait" paperSize="9" fitToWidth="1" fitToHeight="1"/>
+<pageSetup orientation="portrait" paperSize="9" fitToWidth="1" fitToHeight="0"/>
 </worksheet>`;
   }
 
@@ -235,7 +263,7 @@
 <font><b/><sz val="11"/><color rgb="FFB99755"/><name val="Georgia"/></font>
 <font><i/><sz val="7"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
 <font><i/><sz val="8"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
-<font><sz val="6"/><color rgb="FFE5DED0"/><name val="Aptos Narrow"/></font>
+<font><sz val="7"/><color rgb="FFE5DED0"/><name val="Aptos Narrow"/></font>
 <font><b/><sz val="8"/><color rgb="FFA6C69A"/><name val="Consolas"/></font>
 <font><b/><sz val="8"/><color rgb="FFEED79A"/><name val="Consolas"/></font>
 </fonts>
@@ -262,7 +290,7 @@
 <xf numFmtId="0" fontId="2" fillId="3" borderId="2" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
 <xf numFmtId="0" fontId="3" fillId="4" borderId="3" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
 <xf numFmtId="0" fontId="4" fillId="6" borderId="4" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
-<xf numFmtId="0" fontId="5" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="5" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left" vertical="top" wrapText="1"/></xf>
 <xf numFmtId="0" fontId="6" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
 <xf numFmtId="0" fontId="7" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
 </cellXfs>
@@ -281,12 +309,14 @@
     bytes[offset] = value & 255;
     bytes[offset + 1] = (value >>> 8) & 255;
   }
+
   function u32(bytes, offset, value) {
     bytes[offset] = value & 255;
     bytes[offset + 1] = (value >>> 8) & 255;
     bytes[offset + 2] = (value >>> 16) & 255;
     bytes[offset + 3] = (value >>> 24) & 255;
   }
+
   function join(parts) {
     const output = new Uint8Array(parts.reduce((sum, part) => sum + part.length, 0));
     let offset = 0;
@@ -301,7 +331,9 @@
     const table = new Uint32Array(256);
     for (let index = 0; index < 256; index += 1) {
       let value = index;
-      for (let bit = 0; bit < 8; bit += 1) value = value & 1 ? 0xedb88320 ^ (value >>> 1) : value >>> 1;
+      for (let bit = 0; bit < 8; bit += 1) {
+        value = value & 1 ? 0xedb88320 ^ (value >>> 1) : value >>> 1;
+      }
       table[index] = value >>> 0;
     }
     return table;
@@ -317,10 +349,12 @@
     const locals = [];
     const centrals = [];
     let localOffset = 0;
+
     for (const [name, content] of Object.entries(entries)) {
       const nameBytes = enc.encode(name);
       const data = typeof content === "string" ? enc.encode(content) : content;
       const crc = crc32(data);
+
       const local = new Uint8Array(30 + nameBytes.length);
       u32(local, 0, 0x04034b50); u16(local, 4, 20); u16(local, 6, 0x0800); u16(local, 8, 0);
       u16(local, 10, 0); u16(local, 12, 0x0021); u32(local, 14, crc); u32(local, 18, data.length); u32(local, 22, data.length);
@@ -335,6 +369,7 @@
       centrals.push(central);
       localOffset += local.length + data.length;
     }
+
     const directory = join(centrals);
     const end = new Uint8Array(22);
     u32(end, 0, 0x06054b50); u16(end, 4, 0); u16(end, 6, 0); u16(end, 8, centrals.length); u16(end, 10, centrals.length);
@@ -350,7 +385,10 @@
   }
 
   function filename(value) {
-    return (clean(value) || "personazh").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, "_").slice(0, 80);
+    return (clean(value) || "personazh")
+      .replace(/[\\/:*?"<>|]+/g, "-")
+      .replace(/\s+/g, "_")
+      .slice(0, 80);
   }
 
   function download(character) {
@@ -365,11 +403,21 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  globalThis.KADAT_XLSX_EXPORT_INTERNALS = { exportData, sheetXml, buildWorkbook, zip, crc32 };
+  globalThis.KADAT_XLSX_EXPORT_INTERNALS = {
+    exportData,
+    listText,
+    listHeight,
+    sheetXml,
+    buildWorkbook,
+    zip,
+    crc32
+  };
+
   if (typeof document === "undefined") return;
 
   const toolbar = document.querySelector(".result-toolbar");
   if (!toolbar) return;
+
   let button = document.querySelector("#export-xlsx");
   if (!button) {
     button = document.createElement("button");
