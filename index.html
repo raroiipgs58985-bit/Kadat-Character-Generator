@@ -8,18 +8,19 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Генератор персонажей для Кадата</title>
-  <link rel="stylesheet" href="styles.css?v=0.8">
-  <link rel="stylesheet" href="race-output.css?v=0.8">
-  <link rel="stylesheet" href="homeworld-output.css?v=0.8">
-  <link rel="stylesheet" href="homeworld-choices.css?v=0.8">
-  <link rel="stylesheet" href="specialty.css?v=0.8">
+  <link rel="stylesheet" href="styles.css?v=0.9">
+  <link rel="stylesheet" href="race-output.css?v=0.9">
+  <link rel="stylesheet" href="homeworld-output.css?v=0.9">
+  <link rel="stylesheet" href="homeworld-choices.css?v=0.9">
+  <link rel="stylesheet" href="specialty.css?v=0.9">
+  <link rel="stylesheet" href="advancement.css?v=0.9">
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">KADAT • К100</p>
       <h1>Генератор персонажей</h1>
-      <p>Техническая версия 0.8: полная база заполненных специальностей.</p>
+      <p>Техническая версия 0.9: навыки, таланты и развитие за опыт.</p>
     </header>
 
     <section class="layout">
@@ -88,8 +89,10 @@
 
         <label>
           Дополнительные таланты для проверки дублей
-          <textarea id="manual-talents" rows="2" placeholder="Например: Выносливый; Выносливый"></textarea>
+          <textarea id="manual-talents" rows="2" placeholder="Например: Пресыщенный; Пресыщенный"></textarea>
         </label>
+
+        <section id="advancement" class="advancement-panel" aria-live="polite"></section>
 
         <div class="actions">
           <button type="submit">Рассчитать персонажа</button>
@@ -107,26 +110,34 @@
     </section>
 
     <footer>
-      В версии 0.8 добавлены заполненные специальности людей, эльдар, друкхари и Астартес. Варианты через «/» оформлены как обязательный выбор.
+      Версия 0.9 добавляет покупку характеристик, навыков и талантов. Выборы владения оружием, ремёсел, знаний, языков и управления берутся из установленных пулов.
     </footer>
   </main>
 
-  <script src="data.js?v=0.8"></script>
-  <script src="unique-features.js?v=0.8"></script>
-  <script src="homeworlds.js?v=0.8"></script>
-  <script src="specialties-core.js?v=0.8"></script>
-  <script src="specialties-soldiers.js?v=0.8"></script>
-  <script src="specialties-officers.js?v=0.8"></script>
-  <script src="specialties-auxiliary.js?v=0.8"></script>
-  <script src="specialties-sororitas.js?v=0.8"></script>
-  <script src="specialties-questoris.js?v=0.8"></script>
-  <script src="specialties-astartes.js?v=0.8"></script>
-  <script src="specialties-xenos.js?v=0.8"></script>
-  <script src="app.js?v=0.8"></script>
-  <script src="transfer-rules.js?v=0.8"></script>
-  <script src="race-output.js?v=0.8"></script>
-  <script src="homeworld-choices.js?v=0.8"></script>
-  <script src="homeworld-output.js?v=0.8"></script>
-  <script src="specialty-runtime.js?v=0.8"></script>
+  <script src="data.js?v=0.9"></script>
+  <script src="unique-features.js?v=0.9"></script>
+  <script src="homeworlds.js?v=0.9"></script>
+  <script src="specialties-core.js?v=0.9"></script>
+  <script src="specialties-soldiers.js?v=0.9"></script>
+  <script src="specialties-officers.js?v=0.9"></script>
+  <script src="specialties-auxiliary.js?v=0.9"></script>
+  <script src="specialties-sororitas.js?v=0.9"></script>
+  <script src="specialties-questoris.js?v=0.9"></script>
+  <script src="specialties-astartes.js?v=0.9"></script>
+  <script src="specialties-xenos.js?v=0.9"></script>
+  <script src="app.js?v=0.9"></script>
+  <script src="transfer-rules.js?v=0.9"></script>
+  <script src="race-output.js?v=0.9"></script>
+  <script src="homeworld-choices.js?v=0.9"></script>
+  <script src="homeworld-output.js?v=0.9"></script>
+  <script src="specialty-runtime.js?v=0.9"></script>
+  <script src="advancement-config.js?v=0.9"></script>
+  <script src="talents-compact-1.js?v=0.9"></script>
+  <script src="talents-compact-2.js?v=0.9"></script>
+  <script src="advancement-core.js?v=0.9"></script>
+  <script src="advancement-actions.js?v=0.9"></script>
+  <script src="advancement-ui-skills.js?v=0.9"></script>
+  <script src="advancement-ui-talents.js?v=0.9"></script>
+  <script src="advancement-runtime.js?v=0.9"></script>
 </body>
 </html>
