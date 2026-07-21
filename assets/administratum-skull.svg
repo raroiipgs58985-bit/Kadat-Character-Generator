@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Механизированный череп Адептус Администратум">
+  <defs>
+    <radialGradient id="bone" cx="42%" cy="30%" r="72%">
+      <stop offset="0" stop-color="#eee9d7"/><stop offset=".58" stop-color="#c8c0a7"/><stop offset="1" stop-color="#68665c"/>
+    </radialGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8d2f28"/><stop offset=".55" stop-color="#501713"/><stop offset="1" stop-color="#1c0908"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#a09b86"/><stop offset=".38" stop-color="#4d514b"/><stop offset="1" stop-color="#171b19"/>
+    </linearGradient>
+    <radialGradient id="lens"><stop offset="0" stop-color="#e8ffff"/><stop offset=".2" stop-color="#83fff4"/><stop offset=".5" stop-color="#1599a0"/><stop offset="1" stop-color="#031719"/></radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g stroke="#181713" stroke-width="5" stroke-linejoin="round">
+    <path fill="url(#red)" d="M103 7h50l5 18 23 8 14-12 35 35-12 14 8 23 18 5v50l-18 5-8 23 12 14-35 35-14-12-23 8-5 18h-50l-5-18-23-8-14 12-35-35 12-14-8-23-18-5V98l18-5 8-23-12-14 35-35 14 12 23-8z"/>
+    <circle cx="128" cy="123" r="91" fill="#080a09" stroke="#a39b7c" stroke-width="8"/>
+  </g>
+  <g fill="#a88b55" stroke="#211a10" stroke-width="3"><circle cx="128" cy="20" r="6"/><circle cx="194" cy="48" r="6"/><circle cx="225" cy="111" r="6"/><circle cx="211" cy="177" r="6"/><circle cx="164" cy="222" r="6"/><circle cx="92" cy="222" r="6"/><circle cx="45" cy="177" r="6"/><circle cx="31" cy="111" r="6"/><circle cx="62" cy="48" r="6"/></g>
+  <g fill="none" stroke-linecap="round"><path d="M45 148C18 165 25 207 63 215" stroke="#242926" stroke-width="10"/><path d="M211 148c27 17 20 59-18 67" stroke="#242926" stroke-width="10"/><path d="M53 151c-18 23-5 45 17 54M203 151c18 23 5 45-17 54" stroke="#8b8a78" stroke-width="3"/><path d="M39 159c14 5 18 12 21 29M217 159c-14 5-18 12-21 29" stroke="#0f7c75" stroke-width="3"/><path d="M48 174c10 3 17 8 22 24M208 174c-10 3-17 8-22 24" stroke="#6c2020" stroke-width="4"/></g>
+  <path fill="url(#bone)" stroke="#24231f" stroke-width="5" d="M83 67c12-25 78-29 94 3 11 23 5 72-9 87-7 8-13 9-14 25l-10 17h-32l-10-17c-1-16-7-17-14-25-14-16-21-67-5-90z"/>
+  <path fill="#3b3b36" opacity=".45" d="M128 47c38 0 54 16 55 44-11-13-22-17-38-18-20-1-38 6-57 20 2-29 13-46 40-46z"/>
+  <g fill="#131714" stroke="#393d37" stroke-width="4"><path d="M92 104c10-14 28-12 32 3 2 14-10 28-26 24-15-4-16-17-6-27z"/><path d="M164 104c-10-14-28-12-32 3-2 14 10 28 26 24 15-4 16-17 6-27z"/></g>
+  <circle cx="104" cy="113" r="15" fill="url(#lens)" stroke="#829692" stroke-width="5" filter="url(#glow)"/><circle cx="153" cy="113" r="10" fill="url(#lens)" stroke="#263d3c" stroke-width="4"/>
+  <path d="M128 116l-12 35 12 7 12-7z" fill="#191a17" stroke="#4e4b42" stroke-width="3"/><path d="M104 163l10 28h28l10-28-10 9-7-8-7 9-7-9-7 8z" fill="#777463" stroke="#292923" stroke-width="4"/>
+  <g stroke="#262721" stroke-width="3" fill="url(#steel)"><path d="M92 74l-13-19 8-9 18 17z"/><path d="M164 69l14-19 9 9-17 20z"/><path d="M111 54l-1-25 12-3 4 25z"/><path d="M142 53l4-25 12 4-2 25z"/></g>
+  <g fill="none" stroke="#8b8a76" stroke-width="3"><path d="M103 77c5-15 13-21 25-21s20 6 25 21"/><path d="M128 56V37M118 59l-7-18M138 59l7-18"/></g><circle cx="128" cy="60" r="9" fill="url(#lens)" stroke="#777a6d" stroke-width="4" filter="url(#glow)"/>
+  <g transform="translate(128 199)"><circle r="43" fill="#101513" stroke="#8d7549" stroke-width="7"/><circle r="32" fill="#02110a" stroke="#3a5144" stroke-width="3"/><path d="M0-22V22M-17-17c8-8 26-8 34 0M-17 17c8 8 26 8 34 0" fill="none" stroke="#bfffd2" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/></g>
+</svg>
