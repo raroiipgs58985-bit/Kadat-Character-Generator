@@ -1,0 +1,128 @@
+.specialty-choices {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid #3a404d;
+  border-radius: 16px;
+  background: #10141c;
+}
+
+.specialty-choices.hidden {
+  display: none;
+}
+
+.specialty-choices .choice-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.specialty-choices h3 {
+  margin: 0;
+}
+
+.specialty-choice-description {
+  margin: 0.45rem 0 0;
+  color: #b7bdc8;
+  line-height: 1.5;
+}
+
+.specialty-cost {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #9c7135;
+  border-radius: 999px;
+  color: #efc27c;
+  font-weight: 700;
+}
+
+.specialty-cost.free {
+  border-color: #465061;
+  color: #aeb6c3;
+}
+
+.specialty-choices .choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.specialty-choices .choice-field {
+  margin: 0;
+}
+
+.choice-hint {
+  display: block;
+  margin-top: 0.35rem;
+  color: #929aa8;
+  font-size: 0.82rem;
+}
+
+.specialty-section {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #343a45;
+}
+
+.specialty-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.specialty-title-row h3 {
+  margin: 0;
+}
+
+.specialty-output-cost {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #9c7135;
+  border-radius: 999px;
+  color: #efc27c;
+  font-weight: 700;
+}
+
+.specialty-resource-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.specialty-resource-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #6b5330;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(183, 126, 50, 0.12), rgba(20, 23, 30, 0.8));
+}
+
+.specialty-resource-card strong {
+  color: #efc27c;
+}
+
+.specialty-selection-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  color: #d4d8df;
+}
+
+.specialty-selection-list li + li {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 720px) {
+  .specialty-choices .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specialty-choices .choice-heading,
+  .specialty-title-row {
+    flex-direction: column;
+  }
+}
