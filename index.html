@@ -8,20 +8,20 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Генератор персонажей для Кадата</title>
-  <link rel="stylesheet" href="styles.css?v=0.9.1">
-  <link rel="stylesheet" href="race-output.css?v=0.9.1">
-  <link rel="stylesheet" href="homeworld-output.css?v=0.9.1">
-  <link rel="stylesheet" href="homeworld-choices.css?v=0.9.1">
-  <link rel="stylesheet" href="specialty.css?v=0.9.1">
-  <link rel="stylesheet" href="specialty-choice-pools.css?v=0.9.1">
-  <link rel="stylesheet" href="advancement.css?v=0.9.1">
+  <link rel="stylesheet" href="styles.css?v=0.9.2">
+  <link rel="stylesheet" href="race-output.css?v=0.9.2">
+  <link rel="stylesheet" href="homeworld-output.css?v=0.9.2">
+  <link rel="stylesheet" href="homeworld-choices.css?v=0.9.2">
+  <link rel="stylesheet" href="specialty.css?v=0.9.2">
+  <link rel="stylesheet" href="specialty-choice-pools.css?v=0.9.2">
+  <link rel="stylesheet" href="advancement.css?v=0.9.2">
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">KADAT • К100</p>
       <h1>Генератор персонажей</h1>
-      <p>Техническая версия 0.9.1: единые списки выбора для специальностей и развития.</p>
+      <p>Техническая версия 0.9.2: исправленные ячейки выбора и очищенный интерфейс.</p>
     </header>
 
     <section class="layout">
@@ -83,15 +83,8 @@
         <div id="stats-grid" class="stats-grid"></div>
         <div id="redistribution-panel" class="redistribution-panel hidden"></div>
 
-        <label>
-          Дополнительные навыки для проверки дублей
-          <textarea id="manual-skills" rows="2" placeholder="Например: Бдительность; Уклонение; Бдительность"></textarea>
-        </label>
-
-        <label>
-          Дополнительные таланты для проверки дублей
-          <textarea id="manual-talents" rows="2" placeholder="Например: Пресыщенный; Пресыщенный"></textarea>
-        </label>
+        <input id="manual-skills" type="hidden" value="">
+        <input id="manual-talents" type="hidden" value="">
 
         <section id="advancement" class="advancement-panel" aria-live="polite"></section>
 
@@ -111,42 +104,42 @@
     </section>
 
     <footer>
-      Версия 0.9.1 заменяет ручной ввод владений оружием, ремёсел и знаний в специальностях на выбор из общих пулов.
+      Версия 0.9.2 выравнивает элементы обязательного выбора и убирает служебные поля ручной проверки дублей.
     </footer>
   </main>
 
-  <script src="data.js?v=0.9.1"></script>
-  <script src="unique-features.js?v=0.9.1"></script>
-  <script src="homeworlds.js?v=0.9.1"></script>
-  <script src="specialties-core.js?v=0.9.1"></script>
-  <script src="specialties-soldiers.js?v=0.9.1"></script>
-  <script src="specialties-officers.js?v=0.9.1"></script>
-  <script src="specialties-auxiliary.js?v=0.9.1"></script>
-  <script src="specialties-sororitas.js?v=0.9.1"></script>
-  <script src="specialties-questoris.js?v=0.9.1"></script>
-  <script src="specialties-astartes.js?v=0.9.1"></script>
-  <script src="specialties-xenos.js?v=0.9.1"></script>
-  <script src="app.js?v=0.9.1"></script>
-  <script src="transfer-rules.js?v=0.9.1"></script>
-  <script src="race-output.js?v=0.9.1"></script>
-  <script src="homeworld-choices.js?v=0.9.1"></script>
-  <script src="homeworld-output.js?v=0.9.1"></script>
-  <script src="specialty-runtime.js?v=0.9.1"></script>
-  <script src="advancement-config.js?v=0.9.1"></script>
-  <script src="specialty-choice-pools.js?v=0.9.1"></script>
-  <script src="talents-compact-1.js?v=0.9.1"></script>
-  <script src="talents-compact-2.js?v=0.9.1"></script>
-  <script src="talents-source-1.js?v=0.9.1"></script>
-  <script src="talents-source-2.js?v=0.9.1"></script>
-  <script src="talents-source-3.js?v=0.9.1"></script>
-  <script src="talents-source-4a.js?v=0.9.1"></script>
-  <script src="talents-source-4b.js?v=0.9.1"></script>
-  <script src="talents-source-finalize.js?v=0.9.1"></script>
-  <script src="advancement-core.js?v=0.9.1"></script>
-  <script src="advancement-actions.js?v=0.9.1"></script>
-  <script src="advancement-ui-skills.js?v=0.9.1"></script>
-  <script src="advancement-ui-talents.js?v=0.9.1"></script>
-  <script src="advancement-repeatable-ui.js?v=0.9.1"></script>
-  <script src="advancement-runtime.js?v=0.9.1"></script>
+  <script src="data.js?v=0.9.2"></script>
+  <script src="unique-features.js?v=0.9.2"></script>
+  <script src="homeworlds.js?v=0.9.2"></script>
+  <script src="specialties-core.js?v=0.9.2"></script>
+  <script src="specialties-soldiers.js?v=0.9.2"></script>
+  <script src="specialties-officers.js?v=0.9.2"></script>
+  <script src="specialties-auxiliary.js?v=0.9.2"></script>
+  <script src="specialties-sororitas.js?v=0.9.2"></script>
+  <script src="specialties-questoris.js?v=0.9.2"></script>
+  <script src="specialties-astartes.js?v=0.9.2"></script>
+  <script src="specialties-xenos.js?v=0.9.2"></script>
+  <script src="app.js?v=0.9.2"></script>
+  <script src="transfer-rules.js?v=0.9.2"></script>
+  <script src="race-output.js?v=0.9.2"></script>
+  <script src="homeworld-choices.js?v=0.9.2"></script>
+  <script src="homeworld-output.js?v=0.9.2"></script>
+  <script src="specialty-runtime.js?v=0.9.2"></script>
+  <script src="advancement-config.js?v=0.9.2"></script>
+  <script src="specialty-choice-pools.js?v=0.9.2"></script>
+  <script src="talents-compact-1.js?v=0.9.2"></script>
+  <script src="talents-compact-2.js?v=0.9.2"></script>
+  <script src="talents-source-1.js?v=0.9.2"></script>
+  <script src="talents-source-2.js?v=0.9.2"></script>
+  <script src="talents-source-3.js?v=0.9.2"></script>
+  <script src="talents-source-4a.js?v=0.9.2"></script>
+  <script src="talents-source-4b.js?v=0.9.2"></script>
+  <script src="talents-source-finalize.js?v=0.9.2"></script>
+  <script src="advancement-core.js?v=0.9.2"></script>
+  <script src="advancement-actions.js?v=0.9.2"></script>
+  <script src="advancement-ui-skills.js?v=0.9.2"></script>
+  <script src="advancement-ui-talents.js?v=0.9.2"></script>
+  <script src="advancement-repeatable-ui.js?v=0.9.2"></script>
+  <script src="advancement-runtime.js?v=0.9.2"></script>
 </body>
 </html>
