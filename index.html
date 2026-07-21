@@ -8,20 +8,20 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Генератор персонажей для Кадата</title>
-  <link rel="stylesheet" href="styles.css?v=0.9.2">
-  <link rel="stylesheet" href="race-output.css?v=0.9.2">
-  <link rel="stylesheet" href="homeworld-output.css?v=0.9.2">
-  <link rel="stylesheet" href="homeworld-choices.css?v=0.9.2">
-  <link rel="stylesheet" href="specialty.css?v=0.9.2">
-  <link rel="stylesheet" href="specialty-choice-pools.css?v=0.9.2">
-  <link rel="stylesheet" href="advancement.css?v=0.9.2">
+  <link rel="stylesheet" href="styles.css?v=0.9.3">
+  <link rel="stylesheet" href="race-output.css?v=0.9.3">
+  <link rel="stylesheet" href="homeworld-output.css?v=0.9.3">
+  <link rel="stylesheet" href="homeworld-choices.css?v=0.9.3">
+  <link rel="stylesheet" href="specialty.css?v=0.9.3">
+  <link rel="stylesheet" href="specialty-choice-pools.css?v=0.9.3">
+  <link rel="stylesheet" href="advancement.css?v=0.9.3">
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">KADAT • К100</p>
       <h1>Генератор персонажей</h1>
-      <p>Техническая версия 0.9.2: исправленные ячейки выбора и очищенный интерфейс.</p>
+      <p>Техническая версия 0.9.3: выборы навыков расы и переход к итоговой карточке после расчёта.</p>
     </header>
 
     <section class="layout">
@@ -69,6 +69,7 @@
           <select id="specialty"></select>
         </label>
 
+        <div id="race-choices" class="homeworld-choices hidden"></div>
         <div id="homeworld-choices" class="homeworld-choices hidden"></div>
         <div id="specialty-choices" class="specialty-choices hidden"></div>
 
@@ -94,7 +95,7 @@
         </div>
       </form>
 
-      <section class="panel result-panel" aria-live="polite">
+      <section class="panel result-panel" aria-live="polite" tabindex="-1">
         <h2>Итоговая карточка</h2>
         <div id="validation-message" class="message hidden"></div>
         <div id="result" class="empty-state">
@@ -104,42 +105,45 @@
     </section>
 
     <footer>
-      Версия 0.9.2 выравнивает элементы обязательного выбора и убирает служебные поля ручной проверки дублей.
+      Версия 0.9.3 добавляет обязательные расовые выборы общих знаний и ремёсел и показывает итоговую карточку после расчёта.
     </footer>
   </main>
 
-  <script src="data.js?v=0.9.2"></script>
-  <script src="unique-features.js?v=0.9.2"></script>
-  <script src="homeworlds.js?v=0.9.2"></script>
-  <script src="specialties-core.js?v=0.9.2"></script>
-  <script src="specialties-soldiers.js?v=0.9.2"></script>
-  <script src="specialties-officers.js?v=0.9.2"></script>
-  <script src="specialties-auxiliary.js?v=0.9.2"></script>
-  <script src="specialties-sororitas.js?v=0.9.2"></script>
-  <script src="specialties-questoris.js?v=0.9.2"></script>
-  <script src="specialties-astartes.js?v=0.9.2"></script>
-  <script src="specialties-xenos.js?v=0.9.2"></script>
-  <script src="app.js?v=0.9.2"></script>
-  <script src="transfer-rules.js?v=0.9.2"></script>
-  <script src="race-output.js?v=0.9.2"></script>
-  <script src="homeworld-choices.js?v=0.9.2"></script>
-  <script src="homeworld-output.js?v=0.9.2"></script>
-  <script src="specialty-runtime.js?v=0.9.2"></script>
-  <script src="advancement-config.js?v=0.9.2"></script>
-  <script src="specialty-choice-pools.js?v=0.9.2"></script>
-  <script src="talents-compact-1.js?v=0.9.2"></script>
-  <script src="talents-compact-2.js?v=0.9.2"></script>
-  <script src="talents-source-1.js?v=0.9.2"></script>
-  <script src="talents-source-2.js?v=0.9.2"></script>
-  <script src="talents-source-3.js?v=0.9.2"></script>
-  <script src="talents-source-4a.js?v=0.9.2"></script>
-  <script src="talents-source-4b.js?v=0.9.2"></script>
-  <script src="talents-source-finalize.js?v=0.9.2"></script>
-  <script src="advancement-core.js?v=0.9.2"></script>
-  <script src="advancement-actions.js?v=0.9.2"></script>
-  <script src="advancement-ui-skills.js?v=0.9.2"></script>
-  <script src="advancement-ui-talents.js?v=0.9.2"></script>
-  <script src="advancement-repeatable-ui.js?v=0.9.2"></script>
-  <script src="advancement-runtime.js?v=0.9.2"></script>
+  <script src="data.js?v=0.9.3"></script>
+  <script src="unique-features.js?v=0.9.3"></script>
+  <script src="homeworlds.js?v=0.9.3"></script>
+  <script src="specialties-core.js?v=0.9.3"></script>
+  <script src="specialties-soldiers.js?v=0.9.3"></script>
+  <script src="specialties-officers.js?v=0.9.3"></script>
+  <script src="specialties-auxiliary.js?v=0.9.3"></script>
+  <script src="specialties-sororitas.js?v=0.9.3"></script>
+  <script src="specialties-questoris.js?v=0.9.3"></script>
+  <script src="specialties-astartes.js?v=0.9.3"></script>
+  <script src="specialties-xenos.js?v=0.9.3"></script>
+  <script src="app.js?v=0.9.3"></script>
+  <script src="transfer-rules.js?v=0.9.3"></script>
+  <script src="race-output.js?v=0.9.3"></script>
+  <script src="homeworld-choices.js?v=0.9.3"></script>
+  <script src="homeworld-output.js?v=0.9.3"></script>
+  <script src="specialty-runtime.js?v=0.9.3"></script>
+  <script src="advancement-config.js?v=0.9.3"></script>
+  <script src="specialty-choice-pools.js?v=0.9.3"></script>
+  <script src="race-choice-pools.js?v=0.9.3"></script>
+  <script src="talents-compact-1.js?v=0.9.3"></script>
+  <script src="talents-compact-2.js?v=0.9.3"></script>
+  <script src="talents-source-1.js?v=0.9.3"></script>
+  <script src="talents-source-2.js?v=0.9.3"></script>
+  <script src="talents-source-3.js?v=0.9.3"></script>
+  <script src="talents-source-4a.js?v=0.9.3"></script>
+  <script src="talents-source-4b.js?v=0.9.3"></script>
+  <script src="talents-source-finalize.js?v=0.9.3"></script>
+  <script src="advancement-core.js?v=0.9.3"></script>
+  <script src="advancement-actions.js?v=0.9.3"></script>
+  <script src="advancement-ui-skills.js?v=0.9.3"></script>
+  <script src="advancement-ui-talents.js?v=0.9.3"></script>
+  <script src="advancement-repeatable-ui.js?v=0.9.3"></script>
+  <script src="advancement-runtime.js?v=0.9.3"></script>
+  <script src="race-choice-output.js?v=0.9.3"></script>
+  <script src="result-focus.js?v=0.9.3"></script>
 </body>
 </html>
