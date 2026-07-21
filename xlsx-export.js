@@ -60,7 +60,7 @@
 
     return records.map(record => {
       const label = record.base ? `${record.base} (${record.options.join(", ")})` : record.name;
-      return showBonus ? `${label} ${record.bonus >= 0 ? "+" : ""}${record.bonus}` : label;
+      return showBonus ? `${label}${record.bonus >= 0 ? "+" : ""}${record.bonus}` : label;
     });
   }
 
@@ -90,7 +90,7 @@
     const uniqueFeatures = (character?.race?.uniqueFeatures ?? []).map(feature => {
       const name = clean(feature?.name);
       const rating = Number(feature?.rating);
-      return name && Number.isFinite(rating) ? `${name} (рейтинг ${rating})` : name;
+      return name && Number.isFinite(rating) ? `${name} (${rating})` : name;
     });
     const rules = [
       ...(character?.race?.specialRules ?? []),
@@ -124,7 +124,7 @@
     const talents = groupEntries((character.talents ?? []).map(name => ({ name })), false);
     const movement = Math.max(0, bonus(character?.stats?.ЛВ) + sizeOf(character));
     return {
-      name: clean(character.name) || "Безымянный персонаж",
+      name: clean(character.name) || "БЕЗЫМЯННЫЙ ПЕРСОНАЖ",
       description: unique([
         character?.race?.name,
         character?.world?.name,
@@ -142,12 +142,12 @@
       wounds: numberText(character.wounds),
       insanity: "0",
       corruption: "0",
-      skills: skills.join(", ") || "Нет навыков",
-      talents: talents.join(", ") || "Нет талантов",
+      skills: skills.join("; ") || "Нет навыков",
+      talents: talents.join("; ") || "Нет талантов",
       psychic: "Нет",
-      features: featuresOf(character).join(", ") || "Нет особенностей",
+      features: featuresOf(character).join("; ") || "Нет особенностей",
       implants: "—",
-      equipment: equipmentOf(character).join(", ") || "Снаряжение не указано"
+      equipment: equipmentOf(character).join("; ") || "Снаряжение не указано"
     };
   }
 
@@ -167,43 +167,44 @@
     return `<c r="${ref}" s="${style}"/>`;
   }
 
-  function row(number, height, cells) {
-    return `<row r="${number}" ht="${height}" customHeight="1">${cells.join("")}</row>`;
+  function row(number, cells) {
+    return `<row r="${number}" ht="15.75" customHeight="1">${cells.join("")}</row>`;
   }
 
   function sheetXml(data) {
     const rows = [];
-    rows.push(row(1, 28, [textCell("A1", data.name, 2), blankCell("B1", 2), blankCell("C1", 2), blankCell("D1", 2)]));
-    rows.push(row(2, 44, [textCell("A2", data.description, 3), blankCell("B2", 3), blankCell("C2", 3), blankCell("D2", 3)]));
+    rows.push(row(1, [textCell("A1", data.name.toLocaleUpperCase("ru-RU"), 2), blankCell("B1", 2), blankCell("C1", 2), blankCell("D1", 2)]));
+    rows.push(row(2, [textCell("A2", data.description, 3), blankCell("B2", 3), blankCell("C2", 3), blankCell("D2", 3)]));
 
-    const labels = ["НС", "НР", "СЛ", "ВН", "ЛВ", "ИН", "СВ", "ВС", "ОЩ", "Опыт:", "Движение", "ОБ", "БВ", "Раны", "Очки безумия:", "Очки порчи:"];
+    const labels = ["НС", "НР", "СЛ", "ВН", "ЛВ", "ИН", "СВ", "ВС", "ОЩ", "Опыт", "Движение", "ОБ", "БВ", "Раны", "Безумие", "Порча"];
     const values = [
       ...STATS.map(stat => data.stats[stat]), data.xp, data.movement, data.armor,
       data.toughness, data.wounds, data.insanity, data.corruption
     ];
     for (let index = 0; index < labels.length; index += 1) {
       const number = index + 3;
+      const valueStyle = number >= 12 ? 7 : 6;
       const image = number === 3
-        ? textCell("C3", "Изображение не прикреплено", 4)
+        ? textCell("C3", "ПОРТРЕТ\nНЕ ПРИКРЕПЛЁН", 4)
         : blankCell(`C${number}`, 4);
-      rows.push(row(number, 23, [
+      rows.push(row(number, [
         textCell(`A${number}`, labels[index], 1),
-        textCell(`B${number}`, values[index], 1),
+        textCell(`B${number}`, values[index], valueStyle),
         image,
         blankCell(`D${number}`, 4)
       ]));
     }
 
     const blocks = [
-      [19, 92, "Навыки:", data.skills],
-      [20, 82, "Таланты:", data.talents],
-      [21, 42, "Пси силы:", data.psychic],
-      [22, 62, "Особенности:", data.features],
-      [23, 52, "Импланты:", data.implants],
-      [24, 100, "Снаряжение:", data.equipment]
+      [19, "Навыки", data.skills],
+      [20, "Таланты", data.talents],
+      [21, "Пси-силы", data.psychic],
+      [22, "Особенности", data.features],
+      [23, "Импланты", data.implants],
+      [24, "Снаряжение", data.equipment]
     ];
-    for (const [number, height, label, value] of blocks) {
-      rows.push(row(number, height, [
+    for (const [number, label, value] of blocks) {
+      rows.push(row(number, [
         textCell(`A${number}`, label, 1),
         textCell(`B${number}`, value, 5),
         blankCell(`C${number}`, 5),
@@ -213,35 +214,57 @@
 
     return `<?xml version="1.0" encoding="utf-8"?>
 <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
-<sheetViews><sheetView workbookViewId="0" showGridLines="0" zoomScale="90" zoomScaleNormal="90"/></sheetViews>
-<sheetFormatPr defaultRowHeight="15"/>
-<cols><col min="1" max="1" width="18" customWidth="1"/><col min="2" max="2" width="23" customWidth="1"/><col min="3" max="4" width="21" customWidth="1"/></cols>
+<sheetPr><pageSetUpPr fitToPage="1"/></sheetPr>
+<dimension ref="A1:D24"/>
+<sheetViews><sheetView workbookViewId="0" showGridLines="0" zoomScale="100" zoomScaleNormal="100"/></sheetViews>
+<sheetFormatPr defaultRowHeight="15.75"/>
+<cols><col min="1" max="4" width="12.63" customWidth="1"/></cols>
 <sheetData>${rows.join("")}</sheetData>
 <mergeCells count="9"><mergeCell ref="A1:D1"/><mergeCell ref="A2:D2"/><mergeCell ref="C3:D18"/><mergeCell ref="B19:D19"/><mergeCell ref="B20:D20"/><mergeCell ref="B21:D21"/><mergeCell ref="B22:D22"/><mergeCell ref="B23:D23"/><mergeCell ref="B24:D24"/></mergeCells>
-<pageMargins left="0.3" right="0.3" top="0.4" bottom="0.4" header="0.2" footer="0.2"/>
-<pageSetup orientation="portrait" fitToWidth="1" fitToHeight="1"/>
+<printOptions horizontalCentered="1" verticalCentered="1"/>
+<pageMargins left="0.25" right="0.25" top="0.25" bottom="0.25" header="0.1" footer="0.1"/>
+<pageSetup orientation="portrait" paperSize="9" fitToWidth="1" fitToHeight="1"/>
 </worksheet>`;
   }
 
   const stylesXml = `<?xml version="1.0" encoding="utf-8"?>
 <styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
-<fonts count="5">
-<font><sz val="11"/><name val="Carlito"/></font>
-<font><b/><i/><sz val="10"/><color rgb="FFFFD966"/><name val="Carlito"/></font>
-<font><b/><i/><sz val="14"/><color rgb="FFFFD966"/><name val="Carlito"/></font>
-<font><b/><i/><sz val="9"/><color rgb="FFFFD966"/><name val="Carlito"/></font>
-<font><i/><sz val="11"/><color rgb="FFC9B458"/><name val="Carlito"/></font>
+<fonts count="8">
+<font><sz val="8"/><color rgb="FFE5DED0"/><name val="Aptos"/></font>
+<font><b/><sz val="7"/><color rgb="FFB99755"/><name val="Aptos Narrow"/></font>
+<font><b/><sz val="11"/><color rgb="FFB99755"/><name val="Georgia"/></font>
+<font><i/><sz val="7"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
+<font><i/><sz val="8"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
+<font><sz val="6"/><color rgb="FFE5DED0"/><name val="Aptos Narrow"/></font>
+<font><b/><sz val="8"/><color rgb="FFA6C69A"/><name val="Consolas"/></font>
+<font><b/><sz val="8"/><color rgb="FFEED79A"/><name val="Consolas"/></font>
 </fonts>
-<fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF434343"/><bgColor rgb="FF434343"/></patternFill></fill></fills>
-<borders count="2"><border/><border><left style="thick"><color rgb="FF000000"/></left><right style="thick"><color rgb="FF000000"/></right><top style="thick"><color rgb="FF000000"/></top><bottom style="thick"><color rgb="FF000000"/></bottom></border></borders>
+<fills count="7">
+<fill><patternFill patternType="none"/></fill>
+<fill><patternFill patternType="gray125"/></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF101314"/><bgColor rgb="FF101314"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF171B1D"/><bgColor rgb="FF171B1D"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF1A1F21"/><bgColor rgb="FF1A1F21"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF282216"/><bgColor rgb="FF282216"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF202629"/><bgColor rgb="FF202629"/></patternFill></fill>
+</fills>
+<borders count="5">
+<border/>
+<border><left style="thin"><color rgb="FF695533"/></left><right style="thin"><color rgb="FF695533"/></right><top/><bottom style="thin"><color rgb="FF403B31"/></bottom></border>
+<border><left style="medium"><color rgb="FFB99755"/></left><right style="medium"><color rgb="FFB99755"/></right><top style="medium"><color rgb="FFB99755"/></top><bottom style="medium"><color rgb="FFB99755"/></bottom></border>
+<border><left style="thin"><color rgb="FF695533"/></left><right style="thin"><color rgb="FF695533"/></right><top/><bottom style="thin"><color rgb="FF695533"/></bottom></border>
+<border><left style="thin"><color rgb="FFB99755"/></left><right style="thin"><color rgb="FFB99755"/></right><top style="thin"><color rgb="FFB99755"/></top><bottom style="thin"><color rgb="FFB99755"/></bottom></border>
+</borders>
 <cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>
-<cellXfs count="6">
-<xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>
-<xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
-<xf numFmtId="0" fontId="2" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
-<xf numFmtId="0" fontId="1" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
-<xf numFmtId="0" fontId="4" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
-<xf numFmtId="0" fontId="3" fillId="2" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
+<cellXfs count="8">
+<xf numFmtId="0" fontId="0" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/>
+<xf numFmtId="0" fontId="1" fillId="5" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="2" fillId="3" borderId="2" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="3" fillId="4" borderId="3" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="4" fillId="6" borderId="4" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
+<xf numFmtId="0" fontId="5" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="6" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="7" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
 </cellXfs>
 <cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>
 </styleSheet>`;
