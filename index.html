@@ -3,147 +3,272 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111318">
+  <meta name="theme-color" content="#090a0c">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Генератор персонажей для Кадата</title>
-  <link rel="stylesheet" href="styles.css?v=0.9.3">
-  <link rel="stylesheet" href="race-output.css?v=0.9.3">
-  <link rel="stylesheet" href="homeworld-output.css?v=0.9.3">
-  <link rel="stylesheet" href="homeworld-choices.css?v=0.9.3">
-  <link rel="stylesheet" href="specialty.css?v=0.9.3">
-  <link rel="stylesheet" href="specialty-choice-pools.css?v=0.9.3">
-  <link rel="stylesheet" href="advancement.css?v=0.9.3">
+  <title>Формуляр К-100 — генератор персонажей Кадата</title>
+  <link rel="stylesheet" href="styles.css?v=1.0.0">
+  <link rel="stylesheet" href="race-output.css?v=1.0.0">
+  <link rel="stylesheet" href="homeworld-output.css?v=1.0.0">
+  <link rel="stylesheet" href="homeworld-choices.css?v=1.0.0">
+  <link rel="stylesheet" href="specialty.css?v=1.0.0">
+  <link rel="stylesheet" href="specialty-choice-pools.css?v=1.0.0">
+  <link rel="stylesheet" href="advancement.css?v=1.0.0">
+  <link rel="stylesheet" href="cogitator-ui.css?v=1.0.0">
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">KADAT • К100</p>
-      <h1>Генератор персонажей</h1>
-      <p>Техническая версия 0.9.3: выборы навыков расы и переход к итоговой карточке после расчёта.</p>
+  <main class="page cogitator-page">
+    <header class="hero cogitator-masthead">
+      <div class="masthead-seal" aria-hidden="true">
+        <span class="seal-skull">☠</span>
+        <span class="seal-rays"></span>
+      </div>
+      <div class="masthead-copy">
+        <p class="eyebrow">ADEPTUS ADMINISTRATUM • FORMULARIUM K-100</p>
+        <h1>Регистрационное досье</h1>
+        <p>Когитатор создания персонажа для системы «Кадат»</p>
+      </div>
+      <div class="masthead-code" aria-label="Версия приложения">
+        <span>ДОПУСК</span>
+        <strong>SIGMA</strong>
+        <small>V 1.0.0</small>
+      </div>
     </header>
 
-    <section class="layout">
-      <form id="character-form" class="panel" novalidate>
-        <h2>Создание персонажа</h2>
+    <div class="system-strip" aria-hidden="true">
+      <span>СЕАНС: АКТИВЕН</span>
+      <span>АРХИВ: КАДАТ</span>
+      <span>ПРОТОКОЛ: ЛИЧНОЕ ДЕЛО</span>
+    </div>
 
-        <label>
-          Имя
-          <input id="character-name" type="text" placeholder="Имя персонажа">
-        </label>
+    <section id="builder-view" class="builder-view">
+      <nav class="wizard-progress" aria-label="Этапы создания персонажа">
+        <button type="button" class="wizard-step-button is-active" data-wizard-go="0">
+          <span class="wizard-roman">I</span>
+          <span class="wizard-step-copy"><strong>Происхождение</strong><small>Раса и родной мир</small></span>
+        </button>
+        <button type="button" class="wizard-step-button" data-wizard-go="1">
+          <span class="wizard-roman">II</span>
+          <span class="wizard-step-copy"><strong>Назначение</strong><small>Специальность</small></span>
+        </button>
+        <button type="button" class="wizard-step-button" data-wizard-go="2">
+          <span class="wizard-roman">III</span>
+          <span class="wizard-step-copy"><strong>Параметры</strong><small>Характеристики</small></span>
+        </button>
+        <button type="button" class="wizard-step-button" data-wizard-go="3">
+          <span class="wizard-roman">IV</span>
+          <span class="wizard-step-copy"><strong>Развитие</strong><small>Навыки и таланты</small></span>
+        </button>
+        <button type="button" class="wizard-step-button" data-wizard-go="4">
+          <span class="wizard-roman">V</span>
+          <span class="wizard-step-copy"><strong>Проверка</strong><small>Формирование дела</small></span>
+        </button>
+      </nav>
 
-        <div class="two-columns">
-          <label>
-            Раса
-            <select id="race"></select>
-          </label>
+      <form id="character-form" class="panel dossier-form" novalidate>
+        <div class="dossier-rail dossier-rail-left" aria-hidden="true"></div>
+        <div class="dossier-rail dossier-rail-right" aria-hidden="true"></div>
 
-          <label>
-            Пол
-            <select id="gender">
-              <option value="unspecified">Не указан</option>
-              <option value="male">Мужской</option>
-              <option value="female">Женский</option>
-            </select>
-          </label>
-        </div>
+        <section class="wizard-stage is-active" data-wizard-step="0" aria-labelledby="stage-origin-title">
+          <header class="stage-heading">
+            <div class="stage-index">I</div>
+            <div>
+              <p class="stage-kicker">IDENTITAS ET ORIGO</p>
+              <h2 id="stage-origin-title">Происхождение</h2>
+              <p>Укажите личность, расу и родной мир. Обязательные расовые и мировые выборы появятся ниже.</p>
+            </div>
+          </header>
 
-        <div class="two-columns">
-          <label>
-            Метод характеристик
-            <select id="generation-mode">
-              <option value="planned">Распределить 100 очков</option>
-              <option value="random">Бросить 2к10</option>
-            </select>
-          </label>
+          <div class="form-grid form-grid-two">
+            <label>
+              Имя
+              <input id="character-name" type="text" placeholder="Имя персонажа" autocomplete="off">
+            </label>
 
-          <label>
-            Родной мир
-            <select id="homeworld"></select>
-          </label>
-        </div>
+            <label>
+              Пол
+              <select id="gender">
+                <option value="unspecified">Не указан</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+              </select>
+            </label>
 
-        <label>
-          Специальность
-          <select id="specialty"></select>
-        </label>
+            <label>
+              Раса
+              <select id="race"></select>
+            </label>
 
-        <div id="race-choices" class="homeworld-choices hidden"></div>
-        <div id="homeworld-choices" class="homeworld-choices hidden"></div>
-        <div id="specialty-choices" class="specialty-choices hidden"></div>
-
-        <div class="section-heading">
-          <div>
-            <h3>Характеристики</h3>
-            <p id="points-status" class="muted"></p>
+            <label>
+              Родной мир
+              <select id="homeworld"></select>
+            </label>
           </div>
-          <button id="roll-button" type="button" class="secondary">Бросить 2к10</button>
-        </div>
 
-        <div id="stats-grid" class="stats-grid"></div>
-        <div id="redistribution-panel" class="redistribution-panel hidden"></div>
+          <div id="race-choices" class="homeworld-choices hidden"></div>
+          <div id="homeworld-choices" class="homeworld-choices hidden"></div>
+        </section>
 
-        <input id="manual-skills" type="hidden" value="">
-        <input id="manual-talents" type="hidden" value="">
+        <section class="wizard-stage" data-wizard-step="1" aria-labelledby="stage-specialty-title" hidden>
+          <header class="stage-heading">
+            <div class="stage-index">II</div>
+            <div>
+              <p class="stage-kicker">OFFICIUM ET MUNUS</p>
+              <h2 id="stage-specialty-title">Служебное назначение</h2>
+              <p>Выберите специальность и завершите все связанные с ней выборы оружия, знаний и снаряжения.</p>
+            </div>
+          </header>
 
-        <section id="advancement" class="advancement-panel" aria-live="polite"></section>
+          <label class="primary-field">
+            Специальность
+            <select id="specialty"></select>
+          </label>
 
-        <div class="actions">
-          <button type="submit">Рассчитать персонажа</button>
-          <button id="reset-button" type="button" class="secondary">Сбросить</button>
+          <div id="specialty-choices" class="specialty-choices hidden"></div>
+        </section>
+
+        <section class="wizard-stage" data-wizard-step="2" aria-labelledby="stage-stats-title" hidden>
+          <header class="stage-heading">
+            <div class="stage-index">III</div>
+            <div>
+              <p class="stage-kicker">PARAMETRA CORPORIS</p>
+              <h2 id="stage-stats-title">Характеристики</h2>
+              <p>Определите базовые параметры персонажа и при необходимости выполните переносы.</p>
+            </div>
+          </header>
+
+          <div class="section-heading generation-heading">
+            <label class="generation-field">
+              Метод определения
+              <select id="generation-mode">
+                <option value="planned">Распределить 100 очков</option>
+                <option value="random">Бросить 2к10</option>
+              </select>
+            </label>
+            <div class="generation-action">
+              <p id="points-status" class="muted"></p>
+              <button id="roll-button" type="button" class="secondary">Бросить 2к10</button>
+            </div>
+          </div>
+
+          <div id="stats-grid" class="stats-grid"></div>
+          <div id="redistribution-panel" class="redistribution-panel hidden"></div>
+        </section>
+
+        <section class="wizard-stage" data-wizard-step="3" aria-labelledby="stage-advancement-title" hidden>
+          <header class="stage-heading">
+            <div class="stage-index">IV</div>
+            <div>
+              <p class="stage-kicker">DISCIPLINA ET AUGMENTA</p>
+              <h2 id="stage-advancement-title">Развитие персонажа</h2>
+              <p>Потратьте доступный опыт на характеристики, навыки и таланты. Этот этап можно оставить без покупок.</p>
+            </div>
+          </header>
+
+          <input id="manual-skills" type="hidden" value="">
+          <input id="manual-talents" type="hidden" value="">
+          <section id="advancement" class="advancement-panel" aria-live="polite"></section>
+        </section>
+
+        <section class="wizard-stage" data-wizard-step="4" aria-labelledby="stage-review-title" hidden>
+          <header class="stage-heading">
+            <div class="stage-index">V</div>
+            <div>
+              <p class="stage-kicker">PROBATIO FINALIS</p>
+              <h2 id="stage-review-title">Проверка формуляра</h2>
+              <p>Сверьте основные сведения. Когитатор укажет на незавершённые обязательные выборы при формировании досье.</p>
+            </div>
+          </header>
+
+          <div id="review-summary" class="review-summary"></div>
+
+          <div class="final-authorization">
+            <span class="authorization-stamp" aria-hidden="true">ПРОВЕРКА</span>
+            <div>
+              <strong>Формуляр готов к обработке</strong>
+              <p>После подтверждения откроется отдельное итоговое досье персонажа.</p>
+            </div>
+          </div>
+        </section>
+
+        <div id="validation-message" class="message hidden" role="alert"></div>
+
+        <div class="wizard-controls">
+          <button id="reset-button" type="button" class="secondary danger-quiet">Сбросить</button>
+          <button id="wizard-prev" type="button" class="secondary">Назад</button>
+          <div class="wizard-status">
+            <span id="wizard-step-status">Этап 1 из 5</span>
+            <strong id="wizard-xp-status">ОО: —</strong>
+          </div>
+          <button id="wizard-next" type="button">Далее</button>
+          <button id="wizard-submit" type="submit" class="authorization-button" hidden>Сформировать досье</button>
         </div>
       </form>
+    </section>
 
-      <section class="panel result-panel" aria-live="polite" tabindex="-1">
-        <h2>Итоговая карточка</h2>
-        <div id="validation-message" class="message hidden"></div>
+    <section id="result-view" class="result-view hidden" aria-live="polite">
+      <div class="result-toolbar">
+        <button id="return-to-builder" type="button" class="secondary">Вернуться к редактированию</button>
+        <div class="result-document-code">
+          <span>ЛИЧНОЕ ДЕЛО</span>
+          <strong id="dossier-code">KDT-000000</strong>
+        </div>
+      </div>
+
+      <section class="panel result-panel" tabindex="-1">
+        <div class="result-stamp" aria-hidden="true">ДОПУЩЕН</div>
+        <div class="result-document-heading">
+          <p>ADEPTUS ADMINISTRATUM</p>
+          <h2>Итоговое досье персонажа</h2>
+          <span>Уровень допуска: SIGMA</span>
+        </div>
         <div id="result" class="empty-state">
-          Заполни данные и нажми «Рассчитать персонажа».
+          Заполните формуляр и сформируйте досье.
         </div>
       </section>
     </section>
 
-    <footer>
-      Версия 0.9.3 добавляет обязательные расовые выборы общих знаний и ремёсел и показывает итоговую карточку после расчёта.
+    <footer class="page-footer">
+      Формуляр К-100 • интерфейс когитатора версии 1.0.0
     </footer>
   </main>
 
-  <script src="data.js?v=0.9.3"></script>
-  <script src="unique-features.js?v=0.9.3"></script>
-  <script src="homeworlds.js?v=0.9.3"></script>
-  <script src="specialties-core.js?v=0.9.3"></script>
-  <script src="specialties-soldiers.js?v=0.9.3"></script>
-  <script src="specialties-officers.js?v=0.9.3"></script>
-  <script src="specialties-auxiliary.js?v=0.9.3"></script>
-  <script src="specialties-sororitas.js?v=0.9.3"></script>
-  <script src="specialties-questoris.js?v=0.9.3"></script>
-  <script src="specialties-astartes.js?v=0.9.3"></script>
-  <script src="specialties-xenos.js?v=0.9.3"></script>
-  <script src="app.js?v=0.9.3"></script>
-  <script src="transfer-rules.js?v=0.9.3"></script>
-  <script src="race-output.js?v=0.9.3"></script>
-  <script src="homeworld-choices.js?v=0.9.3"></script>
-  <script src="homeworld-output.js?v=0.9.3"></script>
-  <script src="specialty-runtime.js?v=0.9.3"></script>
-  <script src="advancement-config.js?v=0.9.3"></script>
-  <script src="specialty-choice-pools.js?v=0.9.3"></script>
-  <script src="race-choice-pools.js?v=0.9.3"></script>
-  <script src="talents-compact-1.js?v=0.9.3"></script>
-  <script src="talents-compact-2.js?v=0.9.3"></script>
-  <script src="talents-source-1.js?v=0.9.3"></script>
-  <script src="talents-source-2.js?v=0.9.3"></script>
-  <script src="talents-source-3.js?v=0.9.3"></script>
-  <script src="talents-source-4a.js?v=0.9.3"></script>
-  <script src="talents-source-4b.js?v=0.9.3"></script>
-  <script src="talents-source-finalize.js?v=0.9.3"></script>
-  <script src="advancement-core.js?v=0.9.3"></script>
-  <script src="advancement-actions.js?v=0.9.3"></script>
-  <script src="advancement-ui-skills.js?v=0.9.3"></script>
-  <script src="advancement-ui-talents.js?v=0.9.3"></script>
-  <script src="advancement-repeatable-ui.js?v=0.9.3"></script>
-  <script src="advancement-runtime.js?v=0.9.3"></script>
-  <script src="race-choice-output.js?v=0.9.3"></script>
-  <script src="result-focus.js?v=0.9.3"></script>
+  <script src="data.js?v=1.0.0"></script>
+  <script src="unique-features.js?v=1.0.0"></script>
+  <script src="homeworlds.js?v=1.0.0"></script>
+  <script src="specialties-core.js?v=1.0.0"></script>
+  <script src="specialties-soldiers.js?v=1.0.0"></script>
+  <script src="specialties-officers.js?v=1.0.0"></script>
+  <script src="specialties-auxiliary.js?v=1.0.0"></script>
+  <script src="specialties-sororitas.js?v=1.0.0"></script>
+  <script src="specialties-questoris.js?v=1.0.0"></script>
+  <script src="specialties-astartes.js?v=1.0.0"></script>
+  <script src="specialties-xenos.js?v=1.0.0"></script>
+  <script src="app.js?v=1.0.0"></script>
+  <script src="transfer-rules.js?v=1.0.0"></script>
+  <script src="race-output.js?v=1.0.0"></script>
+  <script src="homeworld-choices.js?v=1.0.0"></script>
+  <script src="homeworld-output.js?v=1.0.0"></script>
+  <script src="specialty-runtime.js?v=1.0.0"></script>
+  <script src="advancement-config.js?v=1.0.0"></script>
+  <script src="specialty-choice-pools.js?v=1.0.0"></script>
+  <script src="race-choice-pools.js?v=1.0.0"></script>
+  <script src="talents-compact-1.js?v=1.0.0"></script>
+  <script src="talents-compact-2.js?v=1.0.0"></script>
+  <script src="talents-source-1.js?v=1.0.0"></script>
+  <script src="talents-source-2.js?v=1.0.0"></script>
+  <script src="talents-source-3.js?v=1.0.0"></script>
+  <script src="talents-source-4a.js?v=1.0.0"></script>
+  <script src="talents-source-4b.js?v=1.0.0"></script>
+  <script src="talents-source-finalize.js?v=1.0.0"></script>
+  <script src="advancement-core.js?v=1.0.0"></script>
+  <script src="advancement-actions.js?v=1.0.0"></script>
+  <script src="advancement-ui-skills.js?v=1.0.0"></script>
+  <script src="advancement-ui-talents.js?v=1.0.0"></script>
+  <script src="advancement-repeatable-ui.js?v=1.0.0"></script>
+  <script src="advancement-runtime.js?v=1.0.0"></script>
+  <script src="race-choice-output.js?v=1.0.0"></script>
+  <script src="wizard-ui.js?v=1.0.0"></script>
 </body>
 </html>
