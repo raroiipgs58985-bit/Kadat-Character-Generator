@@ -1,4 +1,10 @@
 (() => {
+  const seal = document.querySelector(".seal-skull-imperial");
+  if (seal) {
+    seal.innerHTML = '<img src="assets/cogitator-skull.svg?v=1.1.2" alt="Готический череп когитатора" width="72" height="72">';
+    seal.classList.add("seal-skull-replaced");
+  }
+
   const renderBeforeRaceChoices = renderResult;
 
   function renderRaceChoiceSection(character) {
