@@ -24,7 +24,8 @@ function simpleRequirementFailures(talent) {
 
     const orderedAliases = Object.keys(statAliases).sort((a, b) => b.length - a.length);
     for (const alias of orderedAliases) {
-      const regex = new RegExp(`${alias.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}\\s*(\\d{2})\\+?`, "gi");
+      const escapedAlias = alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`${escapedAlias}\\s*(\\d{2})\\+?`, "gi");
       let match;
       while ((match = regex.exec(requirements))) {
         const stat = statAliases[alias];
@@ -72,6 +73,7 @@ function buySkill(name) {
   purchase.count += 1;
   state.advancement.skills[canonical] = purchase;
   renderAdvancement();
+  applyAdvancementPreview();
 }
 
 function undoSkill(name) {
@@ -81,6 +83,7 @@ function undoSkill(name) {
   purchase.count -= 1;
   if (purchase.count <= 0) delete state.advancement.skills[canonical];
   renderAdvancement();
+  applyAdvancementPreview();
 }
 
 function buyTalent(talentId) {
@@ -92,8 +95,8 @@ function buyTalent(talentId) {
 
   const cost = talentCost(talent.level);
   const owned = currentTalentMap();
-  if (!talent.option?.repeatable && owned.has(advKey(fullName))) return;
-  if (owned.has(advKey(fullName))) return;
+  const repeatable = Boolean(talent.repeatable || talent.option?.repeatable);
+  if (!repeatable && owned.has(advKey(fullName))) return;
   if (!isAdvancementReady() || remainingXp() < cost) return;
   if (simpleRequirementFailures(talent).length) return;
 
@@ -105,11 +108,13 @@ function buyTalent(talentId) {
     option: optionValue
   });
   renderAdvancement();
+  applyAdvancementPreview();
 }
 
 function undoTalent(id) {
   state.advancement.talents = state.advancement.talents.filter(talent => talent.id !== id);
   renderAdvancement();
+  applyAdvancementPreview();
 }
 
 function selectedSkillCatalogItem() {
@@ -129,4 +134,3 @@ function resolvedDraftSkillName() {
   }
   return specialization ? `${skill.name} (${specialization})` : "";
 }
-
