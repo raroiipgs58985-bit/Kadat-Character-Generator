@@ -218,3 +218,11 @@
     replaceRules(character);
   };
 })();
+
+(() => {
+  if (typeof document === "undefined") return;
+  const script = document.createElement("script");
+  script.src = "xlsx-export.js?v=1.1.4";
+  script.async = false;
+  document.body.appendChild(script);
+})();
