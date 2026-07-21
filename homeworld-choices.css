@@ -1,0 +1,40 @@
+.homeworld-choices {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.homeworld-choices.hidden {
+  display: none;
+}
+
+.choice-heading h3 {
+  margin: 0 0 0.25rem;
+}
+
+.choice-heading p {
+  margin: 0;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.choice-field {
+  margin: 0;
+}
+
+.choice-field select {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 720px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
