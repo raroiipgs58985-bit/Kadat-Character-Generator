@@ -8,17 +8,18 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Генератор персонажей для Кадата</title>
-  <link rel="stylesheet" href="styles.css?v=0.7.2">
-  <link rel="stylesheet" href="race-output.css?v=0.7.2">
-  <link rel="stylesheet" href="homeworld-output.css?v=0.7.2">
-  <link rel="stylesheet" href="homeworld-choices.css?v=0.7.2">
+  <link rel="stylesheet" href="styles.css?v=0.8">
+  <link rel="stylesheet" href="race-output.css?v=0.8">
+  <link rel="stylesheet" href="homeworld-output.css?v=0.8">
+  <link rel="stylesheet" href="homeworld-choices.css?v=0.8">
+  <link rel="stylesheet" href="specialty.css?v=0.8">
 </head>
 <body>
   <main class="page">
     <header class="hero">
       <p class="eyebrow">KADAT • К100</p>
       <h1>Генератор персонажей</h1>
-      <p>Техническая версия 0.7.2: исправление загрузки выборов родного мира.</p>
+      <p>Техническая версия 0.8: полная база заполненных специальностей.</p>
     </header>
 
     <section class="layout">
@@ -37,27 +38,37 @@
           </label>
 
           <label>
-            Метод характеристик
-            <select id="generation-mode">
-              <option value="planned">Распределить 100 очков</option>
-              <option value="random">Бросить 2к10</option>
+            Пол
+            <select id="gender">
+              <option value="unspecified">Не указан</option>
+              <option value="male">Мужской</option>
+              <option value="female">Женский</option>
             </select>
           </label>
         </div>
 
         <div class="two-columns">
           <label>
-            Родной мир
-            <select id="homeworld"></select>
+            Метод характеристик
+            <select id="generation-mode">
+              <option value="planned">Распределить 100 очков</option>
+              <option value="random">Бросить 2к10</option>
+            </select>
           </label>
 
           <label>
-            Специальность
-            <select id="specialty"></select>
+            Родной мир
+            <select id="homeworld"></select>
           </label>
         </div>
 
+        <label>
+          Специальность
+          <select id="specialty"></select>
+        </label>
+
         <div id="homeworld-choices" class="homeworld-choices hidden"></div>
+        <div id="specialty-choices" class="specialty-choices hidden"></div>
 
         <div class="section-heading">
           <div>
@@ -96,17 +107,26 @@
     </section>
 
     <footer>
-      В версии 0.7.2 исправлено кэширование: варианты, разделённые знаком «/», загружаются как обязательный выбор одного значения.
+      В версии 0.8 добавлены заполненные специальности людей, эльдар, друкхари и Астартес. Варианты через «/» оформлены как обязательный выбор.
     </footer>
   </main>
 
-  <script src="data.js?v=0.7.2"></script>
-  <script src="unique-features.js?v=0.7.2"></script>
-  <script src="homeworlds.js?v=0.7.2"></script>
-  <script src="app.js?v=0.7.2"></script>
-  <script src="transfer-rules.js?v=0.7.2"></script>
-  <script src="race-output.js?v=0.7.2"></script>
-  <script src="homeworld-choices.js?v=0.7.2"></script>
-  <script src="homeworld-output.js?v=0.7.2"></script>
+  <script src="data.js?v=0.8"></script>
+  <script src="unique-features.js?v=0.8"></script>
+  <script src="homeworlds.js?v=0.8"></script>
+  <script src="specialties-core.js?v=0.8"></script>
+  <script src="specialties-soldiers.js?v=0.8"></script>
+  <script src="specialties-officers.js?v=0.8"></script>
+  <script src="specialties-auxiliary.js?v=0.8"></script>
+  <script src="specialties-sororitas.js?v=0.8"></script>
+  <script src="specialties-questoris.js?v=0.8"></script>
+  <script src="specialties-astartes.js?v=0.8"></script>
+  <script src="specialties-xenos.js?v=0.8"></script>
+  <script src="app.js?v=0.8"></script>
+  <script src="transfer-rules.js?v=0.8"></script>
+  <script src="race-output.js?v=0.8"></script>
+  <script src="homeworld-choices.js?v=0.8"></script>
+  <script src="homeworld-output.js?v=0.8"></script>
+  <script src="specialty-runtime.js?v=0.8"></script>
 </body>
 </html>

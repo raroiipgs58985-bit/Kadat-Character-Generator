@@ -1,0 +1,1 @@
+window.KADAT_DATA.specialties=[{"id":"none","name":"Без специальности","category":"Общее","allowedRaces":["human","eldar","drukhari","astartes","ogryn","ratling","squat","beastman"],"description":"","statModifiers":{},"woundBonus":0,"skills":[],"talents":[],"traits":[],"specialRules":[],"uniqueFeatureModifiers":[],"equipment":[],"choices":[],"xpCost":0}];
