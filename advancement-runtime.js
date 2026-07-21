@@ -17,7 +17,10 @@ function applyAdvancementToCharacter(character) {
   character.skills = new Map(
     currentSkillProfiles().map(profile => [profile.name, profile.bonus ?? 0])
   );
-  character.talents = [...currentTalentMap().values()];
+  character.talents = [
+    ...buildBaseTalentMap().values(),
+    ...state.advancement.talents.map(item => item.name)
+  ];
   character.advancement = {
     characteristics: { ...state.advancement.characteristics },
     skills: Object.values(state.advancement.skills).map(item => ({ ...item })),
