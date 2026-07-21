@@ -1,0 +1,112 @@
+/* v1.1.2 — шапка когитатора Адептус Администратум */
+.cogitator-masthead {
+  grid-template-columns: clamp(78px, 11vw, 132px) minmax(0, 1fr) minmax(126px, 176px) !important;
+  gap: clamp(10px, 2vw, 24px) !important;
+  align-items: center !important;
+}
+
+.masthead-seal {
+  width: clamp(76px, 10vw, 126px) !important;
+  height: clamp(76px, 10vw, 126px) !important;
+  min-width: 0 !important;
+  border: 0 !important;
+  background:
+    radial-gradient(circle, rgba(32, 255, 78, .1), transparent 65%),
+    url("assets/administratum-skull.svg?v=1.1.2") center / contain no-repeat !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 7px rgba(70, 255, 89, .22)) !important;
+}
+
+.masthead-seal::before,
+.masthead-seal::after,
+.masthead-seal .seal-skull,
+.masthead-seal .seal-rays {
+  display: none !important;
+}
+
+.masthead-copy {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.masthead-copy .eyebrow {
+  margin-bottom: 5px !important;
+  font-size: clamp(9px, 1.6vw, 13px) !important;
+  letter-spacing: .15em !important;
+  white-space: normal !important;
+}
+
+.masthead-copy h1 {
+  max-width: 100% !important;
+  margin: 0 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(24px, 5.1vw, 58px) !important;
+  line-height: .96 !important;
+  letter-spacing: .025em !important;
+  overflow-wrap: anywhere !important;
+  text-wrap: balance !important;
+}
+
+.masthead-copy > p:last-child {
+  margin-top: 9px !important;
+  font-size: clamp(10px, 1.6vw, 14px) !important;
+  line-height: 1.25 !important;
+}
+
+.masthead-code {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 176px !important;
+  padding: 13px 10px 12px !important;
+  overflow: hidden !important;
+}
+
+.masthead-code span,
+.masthead-code strong,
+.masthead-code small {
+  display: block !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+.masthead-code span { font-size: clamp(8px, 1.25vw, 11px) !important; letter-spacing: .12em !important; }
+.masthead-code strong { margin: 4px 0 !important; font-size: clamp(16px, 2.8vw, 27px) !important; line-height: 1 !important; letter-spacing: .08em !important; }
+.masthead-code small { font-size: clamp(8px, 1.15vw, 10px) !important; letter-spacing: .07em !important; }
+
+.page-footer {
+  text-align: center !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 700px) {
+  .cogitator-masthead {
+    grid-template-columns: 64px minmax(0, 1fr) 112px !important;
+    gap: 7px !important;
+    padding-inline: 11px !important;
+  }
+  .masthead-seal { width: 62px !important; height: 62px !important; }
+  .masthead-copy .eyebrow { font-size: 7px !important; letter-spacing: .08em !important; }
+  .masthead-copy h1 { font-size: clamp(19px, 6vw, 27px) !important; line-height: 1.02 !important; }
+  .masthead-copy > p:last-child { display: none !important; }
+  .masthead-code { max-width: 112px !important; padding: 10px 5px 9px !important; }
+  .masthead-code span { font-size: 7px !important; letter-spacing: .08em !important; }
+  .masthead-code strong { font-size: clamp(15px, 4.6vw, 21px) !important; letter-spacing: .04em !important; }
+  .masthead-code small { font-size: 7px !important; letter-spacing: .03em !important; }
+}
+
+@media (max-width: 420px) {
+  .cogitator-masthead {
+    grid-template-columns: 54px minmax(0, 1fr) 98px !important;
+    gap: 5px !important;
+    padding-inline: 8px !important;
+  }
+  .masthead-seal { width: 52px !important; height: 52px !important; }
+  .masthead-copy h1 { font-size: clamp(17px, 5.6vw, 23px) !important; }
+  .masthead-code { max-width: 98px !important; padding-inline: 4px !important; }
+  .masthead-code strong { font-size: 16px !important; }
+}
