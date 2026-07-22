@@ -17,8 +17,9 @@
 ## Состав каталога
 
 - `regiment-data-core.js` — источник, политика переноса, общие правила создания и правила смешанных полков.
-- `packed/chunk-01.js` — `packed/chunk-07.js` — сжатый снимок нормализованного каталога.
-- `regiment-data-loader.js` — объединяет семь фрагментов, распаковывает JSON и добавляет категории в `window.KADAT_REGIMENT_DATA`.
+- `packed/chunk-01.js` и `packed/chunk-01-tail.js` — две части первого фрагмента снимка.
+- `packed/chunk-02.js` — `packed/chunk-07.js` — остальные части сжатого снимка нормализованного каталога.
+- `regiment-data-loader.js` — собирает фрагменты, распаковывает JSON и добавляет категории в `window.KADAT_REGIMENT_DATA`.
 - `validate-data.cjs` — проверяет структуру, количество записей, уникальность идентификаторов, ссылки на исходные строки и сохранение отсутствующих значений.
 
 ## Состав данных
@@ -42,6 +43,7 @@
 ```html
 <script src="regiment-data/regiment-data-core.js"></script>
 <script src="regiment-data/packed/chunk-01.js"></script>
+<script src="regiment-data/packed/chunk-01-tail.js"></script>
 <script src="regiment-data/packed/chunk-02.js"></script>
 <script src="regiment-data/packed/chunk-03.js"></script>
 <script src="regiment-data/packed/chunk-04.js"></script>
