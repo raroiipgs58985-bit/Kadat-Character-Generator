@@ -1,0 +1,183 @@
+.character-regiment-source {
+  grid-column: 1 / -1;
+  margin: 0 0 16px;
+  padding: 14px;
+  border: 1px solid rgba(114, 255, 102, .22);
+  background:
+    repeating-linear-gradient(0deg, rgba(114,255,102,.025) 0 1px, transparent 1px 4px),
+    rgba(2, 11, 5, .72);
+  box-shadow: inset 0 0 18px rgba(57, 211, 83, .06);
+}
+
+.character-regiment-source-heading,
+.character-regiment-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.character-regiment-source-heading {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(114, 255, 102, .15);
+}
+
+.character-regiment-source-heading strong {
+  display: block;
+  color: var(--crt-green, #72ff66);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.character-regiment-source-heading small,
+.character-regiment-status {
+  color: #7fa784;
+}
+
+.character-regiment-status {
+  margin-top: 10px;
+  min-height: 32px;
+  padding: 8px 10px;
+  border: 1px solid rgba(127, 167, 132, .16);
+  background: rgba(0, 0, 0, .18);
+}
+
+.character-regiment-status .is-warning {
+  color: var(--cog-amber, #d7a64f);
+}
+
+.regiment-character-choices {
+  margin-top: 16px;
+}
+
+.regiment-character-choice-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.regiment-character-choice {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(114, 255, 102, .18);
+  background: rgba(1, 8, 3, .62);
+}
+
+fieldset.regiment-character-choice {
+  display: block;
+}
+
+.regiment-character-choice legend {
+  padding: 0 6px;
+  color: #b9d7b6;
+  font-weight: 700;
+}
+
+.regiment-character-choice legend small {
+  color: var(--crt-green, #72ff66);
+  font-weight: 400;
+}
+
+.regiment-character-choice > select,
+.regiment-character-choice > input[type="text"] {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.regiment-stat-choice-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.regiment-stat-choice-list label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px;
+  border: 1px solid rgba(127, 167, 132, .22);
+  background: rgba(255, 255, 255, .025);
+  cursor: pointer;
+}
+
+.regiment-stat-choice-list input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.regiment-stat-choice-list label:has(input:checked) {
+  color: var(--crt-green, #72ff66);
+  border-color: rgba(114, 255, 102, .65);
+  background: rgba(57, 211, 83, .1);
+  box-shadow: inset 0 0 10px rgba(57, 211, 83, .08);
+}
+
+.regiment-character-result-section {
+  padding: 14px;
+  border: 1px solid rgba(154, 110, 50, .4);
+  background: rgba(154, 110, 50, .055);
+}
+
+.regiment-character-result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.regiment-character-result-grid > div {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgba(216, 210, 189, .12);
+  background: rgba(0, 0, 0, .16);
+}
+
+.regiment-character-result-grid span {
+  color: #7fa784;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.regiment-character-result-grid strong {
+  color: #d8d2bd;
+  overflow-wrap: anywhere;
+}
+
+#use-regiment-for-character {
+  margin-right: auto;
+}
+
+@media (max-width: 720px) {
+  .character-regiment-source-heading,
+  .character-regiment-status {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .character-regiment-source .form-grid,
+  .regiment-character-choice-grid,
+  .regiment-character-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .regiment-stat-choice-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #use-regiment-for-character {
+    width: 100%;
+    margin: 0 0 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .regiment-stat-choice-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
