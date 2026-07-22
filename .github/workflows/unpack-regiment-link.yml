@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - agent/multiple-drawbacks-repeatable-supply
+  pull_request:
+    branches:
+      - main
 
 jobs:
   unpack:
