@@ -20,6 +20,7 @@
 - `packed/chunk-01.js` и `packed/chunk-01-tail.js` — две части первого фрагмента снимка.
 - `packed/chunk-02.js` — `packed/chunk-07.js` — остальные части сжатого снимка нормализованного каталога.
 - `regiment-data-loader.js` — собирает фрагменты, распаковывает JSON и добавляет категории в `window.KADAT_REGIMENT_DATA`.
+- `index.js` — единая точка доступа к готовому каталогу и поиск записи по `id`.
 - `validate-data.cjs` — проверяет структуру, количество записей, уникальность идентификаторов, ссылки на исходные строки и сохранение отсутствующих значений.
 
 ## Состав данных
@@ -51,12 +52,15 @@
 <script src="regiment-data/packed/chunk-06.js"></script>
 <script src="regiment-data/packed/chunk-07.js"></script>
 <script src="regiment-data/regiment-data-loader.js"></script>
+<script src="regiment-data/index.js"></script>
 ```
 
 После загрузки используется обещание:
 
 ```js
-const regimentData = await window.KADAT_REGIMENT_DATA_READY;
+const catalog = await window.KADAT_REGIMENT_CATALOG_READY;
+const regimentData = catalog.data;
+const deathWorld = catalog.findById("homeworld-death-world");
 ```
 
 Каталог пока не подключён к основному интерфейсу генератора персонажей. Это сделано намеренно: текущая страница не должна загружать данные полков до появления отдельного мастера создания полка.
