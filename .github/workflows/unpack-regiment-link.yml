@@ -1,0 +1,20 @@
+name: Unpack regiment link
+
+on:
+  push:
+    branches:
+      - agent/multiple-drawbacks-repeatable-supply
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack bridge source
+        run: node tools/unpack-regiment-character-link.cjs
+      - name: Upload source
+        uses: actions/upload-artifact@v4
+        with:
+          name: unpacked-regiment-link
+          path: diagnostic-artifact/regiment-character-link.js
+          if-no-files-found: error
