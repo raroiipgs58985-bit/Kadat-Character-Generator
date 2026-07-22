@@ -1,0 +1,48 @@
+name: Apply regiment multiple selections
+
+on:
+  push:
+    branches:
+      - agent/multiple-drawbacks-repeatable-supply
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/multiple-drawbacks-repeatable-supply
+      - name: Assemble and apply patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat tools/patch-parts/part*.pyfrag > /tmp/apply-regiment-multiple.py
+          python /tmp/apply-regiment-multiple.py
+      - name: Validate generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check regiment-mode.js
+          node --check regiment-budget.js
+          node tests/regiment-budget-check.cjs
+          node tests/regiment-character-link-check.mjs
+      - name: Commit generated implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add regiment-mode.js regiment-budget.js index.html \
+            regiment-character-link-packed/chunk-01.js \
+            regiment-character-link-packed/chunk-02.js \
+            regiment-character-link-packed/chunk-03.js \
+            tests/regiment-character-link-check.mjs \
+            tests/regiment-budget-check.cjs
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Разрешить несколько недостатков и повторные закупки"
+          git push origin HEAD:agent/multiple-drawbacks-repeatable-supply
