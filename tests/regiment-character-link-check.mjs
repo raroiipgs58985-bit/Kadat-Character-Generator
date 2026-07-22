@@ -47,8 +47,22 @@ const catalog = {
   }],
   trainingDoctrines: [],
   equipmentDoctrines: [],
-  drawbacks: [],
-  extraEquipment: [],
+  drawbacks: [{
+    id: "drawback-a",
+    name: "Недостаток А",
+    bonusPoints: 2,
+    talentText: "Стальные нервы"
+  }, {
+    id: "drawback-b",
+    name: "Недостаток Б",
+    bonusPoints: 3,
+    skillText: "Выживание"
+  }],
+  extraEquipment: [{
+    id: "quality-upgrade",
+    name: "Улучшить качество одного предмета",
+    cost: 5
+  }],
   standardKit: { universalItems: [] }
 };
 
@@ -69,8 +83,9 @@ const snapshot = {
   regimentTypeId: "type-artillery",
   trainingIds: [],
   equipmentDoctrineIds: [],
-  drawbackId: "",
-  extraEquipment: []
+  drawbackIds: ["drawback-a", "drawback-b"],
+  drawbackId: "drawback-a",
+  extraEquipment: [{ id: "quality-upgrade", quantity: 3 }]
 };
 
 const mechanics = api.buildMechanics(aliasedCatalog, snapshot);
@@ -85,6 +100,13 @@ assert.equal(mechanics.skills.filter(skill => skill === "Язык (Низкий 
 assert.equal(mechanics.skills.filter(skill => skill === "Язык (Высокий готик)").length, 3);
 assert.ok(mechanics.talents.includes("Сопротивляемость (Страх)"));
 assert.ok(mechanics.talents.includes("Бомбардир"));
+assert.ok(mechanics.talents.includes("Стальные нервы"));
+assert.ok(mechanics.skills.includes("Выживание"));
+assert.ok(mechanics.equipment.includes("Улучшить качество одного предмета ×3"));
+assert.deepEqual(mechanics.selected.drawbacks.map(entry => entry.id), ["drawback-a", "drawback-b"]);
+
+const legacyMechanics = api.buildMechanics(aliasedCatalog, { ...snapshot, drawbackIds: undefined, drawbackId: "drawback-a" });
+assert.deepEqual(legacyMechanics.selected.drawbacks.map(entry => entry.id), ["drawback-a"]);
 
 const selections = {};
 for (const choice of mechanics.choices) {
