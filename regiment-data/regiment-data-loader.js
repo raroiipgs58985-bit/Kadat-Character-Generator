@@ -1,14 +1,20 @@
-// Загружает нормализованный снимок данных полков из семи gzip/base64-фрагментов.
+// Загружает нормализованный снимок данных полков из gzip/base64-фрагментов.
 (() => {
   "use strict";
 
   async function decodeCatalog() {
     const chunks = window.KADAT_REGIMENT_PACKED_CHUNKS ?? [];
-    if (chunks.length !== 7 || chunks.some(chunk => typeof chunk !== "string" || !chunk)) {
+    const firstChunkTail = window.KADAT_REGIMENT_PACKED_CHUNK_1_TAIL;
+    if (
+      chunks.length !== 7 ||
+      chunks.some(chunk => typeof chunk !== "string" || !chunk) ||
+      typeof firstChunkTail !== "string" ||
+      !firstChunkTail
+    ) {
       throw new Error("Неполный набор данных генератора полков.");
     }
 
-    const encoded = chunks.join("");
+    const encoded = chunks[0] + firstChunkTail + chunks.slice(1).join("");
     const binary = typeof atob === "function"
       ? atob(encoded)
       : Buffer.from(encoded, "base64").toString("binary");
