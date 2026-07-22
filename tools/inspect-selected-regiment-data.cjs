@@ -1,5 +1,6 @@
 "use strict";
 
+const fs = require("node:fs");
 const path = require("node:path");
 const base = path.join(process.cwd(), "regiment-data");
 global.window = global;
@@ -17,7 +18,9 @@ require(path.join(base, "regiment-data-loader.js"));
   for (const category of ["homeworlds", "origins", "commanders", "regimentTypes"]) {
     result[category] = data[category].filter(entry => wanted.includes(entry.name));
   }
-  console.log("SELECTED_REGIMENT_DATA=" + JSON.stringify(result));
+  fs.mkdirSync("diagnostic-artifact", { recursive: true });
+  fs.writeFileSync("diagnostic-artifact/selected-regiment-data.json", JSON.stringify(result, null, 2));
+  console.log("Selected regiment data written.");
 })().catch(error => {
   console.error(error);
   process.exitCode = 1;
