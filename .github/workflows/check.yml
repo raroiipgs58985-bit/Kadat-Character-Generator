@@ -36,6 +36,9 @@ jobs:
       - name: Check regiment-character link
         run: node tests/regiment-character-link-check.mjs
 
+      - name: Inspect selected regiment data
+        run: node tools/inspect-selected-regiment-data.cjs
+
       - name: Check referenced local assets
         shell: python
         run: |
