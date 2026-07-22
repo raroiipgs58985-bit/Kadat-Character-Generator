@@ -1,0 +1,25 @@
+(ROOT / "tests" / "regiment-budget-check.cjs").write_text('''"use strict";\n\nconst assert = require("node:assert/strict");\nconst budget = require("../regiment-budget.js");\n\nconst result = budget.calculate({\n  regimentEntries: [{ cost: 4 }, { cost: 5 }],\n  drawbacks: [{ bonusPoints: 2 }, { bonusPoints: 3 }],\n  extraEquipment: [\n    { entry: { cost: 5 }, quantity: 3 },\n    { entry: { cost: 2 }, quantity: 2 }\n  ]\n});\n\nassert.equal(result.spent, 9);\nassert.equal(result.drawbackBonus, 5);\nassert.equal(result.remaining, 8);\nassert.equal(result.equipmentPool, 46);\nassert.equal(result.equipmentSpent, 19);\nassert.equal(result.equipmentRemaining, 27);\nassert.equal(result.unresolvedDrawbacks.length, 0);\n\nconst unresolved = budget.calculate({ drawbacks: [{ bonusPoints: null }] });\nassert.equal(unresolved.drawbackBonus, 0);\nassert.equal(unresolved.unresolvedDrawbacks.length, 1);\n\nconsole.log("Regiment budget OK");\n''', encoding="utf-8")
+
+# 5. Load new files and bust the browser cache.
+index_path = ROOT / "index.html"
+index = index_path.read_text(encoding="utf-8")
+for old, new in [
+    ("regiment-mode.css?v=1.2.0", "regiment-mode.css?v=1.3.3"),
+    ("regiment-character-link.css?v=1.3.2", "regiment-character-link.css?v=1.3.3"),
+    ("COGITATOR V 1.3.2", "COGITATOR V 1.3.3"),
+    ("final-dossier-cleanup.js?v=1.3.2", "final-dossier-cleanup.js?v=1.3.3"),
+    ("regiment-data-field-aliases.js?v=1.3.2", "regiment-data-field-aliases.js?v=1.3.3"),
+    ("regiment-mode.js?v=1.3.2", "regiment-mode.js?v=1.3.3"),
+    ("regiment-character-link-packed/chunk-01.js?v=1.3.2", "regiment-character-link-packed/chunk-01.js?v=1.3.3"),
+    ("regiment-character-link-packed/chunk-02.js?v=1.3.2", "regiment-character-link-packed/chunk-02.js?v=1.3.3"),
+    ("regiment-character-link-packed/chunk-03.js?v=1.3.2", "regiment-character-link-packed/chunk-03.js?v=1.3.3"),
+    ("regiment-character-link-loader.js?v=1.3.2", "regiment-character-link-loader.js?v=1.3.3")
+]:
+    index = index.replace(old, new)
+marker = '  <script src="regiment-data-field-aliases.js?v=1.3.3"></script>\n'
+loader = '  <script src="regiment-budget.js?v=1.3.3"></script>\n'
+if loader not in index:
+    index = index.replace(marker, marker + loader)
+index_path.write_text(index, encoding="utf-8")
+
+print("Multiple drawbacks and repeatable supply patch applied.")
