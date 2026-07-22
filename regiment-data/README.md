@@ -60,7 +60,7 @@
 ```js
 const catalog = await window.KADAT_REGIMENT_CATALOG_READY;
 const regimentData = catalog.data;
-const deathWorld = catalog.findById("homeworld-death-world");
+const firstHomeworld = catalog.findById(regimentData.homeworlds[0].id);
 ```
 
 Каталог пока не подключён к основному интерфейсу генератора персонажей. Это сделано намеренно: текущая страница не должна загружать данные полков до появления отдельного мастера создания полка.
