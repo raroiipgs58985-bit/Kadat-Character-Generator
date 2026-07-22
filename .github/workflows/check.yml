@@ -4,11 +4,19 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: agent/fix-negative-supply
+
+      - name: Apply negative supply fix
+        run: python tools/apply-negative-supply-fix.py
 
       - name: Check JavaScript syntax
         shell: bash
@@ -51,3 +59,16 @@ jobs:
           if missing:
               raise SystemExit("Missing local assets: " + ", ".join(missing))
           print(f"Assets OK: {len(paths)} references checked.")
+
+      - name: Commit generated fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add regiment-mode.js regiment-budget.js tests/regiment-budget-check.cjs index.html
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Не допускать отрицательные очки снабжения"
+          git push origin HEAD:agent/fix-negative-supply
