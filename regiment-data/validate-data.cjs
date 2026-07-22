@@ -9,6 +9,7 @@ require(path.join(base, "regiment-data-core.js"));
 for (let index = 1; index <= 7; index += 1) {
   require(path.join(base, "packed", `chunk-${String(index).padStart(2, "0")}.js`));
 }
+require(path.join(base, "packed", "chunk-01-tail.js"));
 require(path.join(base, "regiment-data-loader.js"));
 
 (async () => {
