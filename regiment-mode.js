@@ -14,7 +14,7 @@
     regimentTypeId: "",
     trainingIds: new Set(),
     equipmentDoctrineIds: new Set(),
-    drawbackId: "",
+    drawbackIds: new Set(),
     extraEquipment: new Map(),
     equipmentSearch: ""
   };
@@ -197,7 +197,7 @@
     state.regimentTypeId = "";
     state.trainingIds.clear();
     state.equipmentDoctrineIds.clear();
-    state.drawbackId = "";
+    state.drawbackIds.clear();
     state.extraEquipment.clear();
     state.equipmentSearch = "";
     refs.resultView.classList.add("hidden");
@@ -215,7 +215,7 @@
       regimentType: byId(catalog.regimentTypes, state.regimentTypeId),
       training: [...state.trainingIds].map(id => byId(catalog.trainingDoctrines, id)).filter(Boolean),
       equipmentDoctrines: [...state.equipmentDoctrineIds].map(id => byId(catalog.equipmentDoctrines, id)).filter(Boolean),
-      drawback: byId(catalog.drawbacks, state.drawbackId),
+      drawbacks: [...state.drawbackIds].map(id => byId(catalog.drawbacks, id)).filter(Boolean),
       extraEquipment: [...state.extraEquipment.entries()].map(([id, quantity]) => ({
         entry: byId(catalog.extraEquipment, id), quantity
       })).filter(item => item.entry && item.quantity > 0)
@@ -232,29 +232,12 @@
       ...selected.training,
       ...selected.equipmentDoctrines
     ].filter(Boolean);
-    const unresolvedRegiment = regimentEntries.filter(entry => asNumber(entry.cost) === null);
-    const spent = regimentEntries.reduce((sum, entry) => sum + (asNumber(entry.cost) ?? 0), 0);
-    const drawbackBonus = asNumber(selected.drawback?.bonusPoints) ?? 0;
-    const unresolvedDrawback = selected.drawback && asNumber(selected.drawback.bonusPoints) === null;
-    const remaining = 12 + drawbackBonus - spent;
-    const equipmentPool = 30 + Math.max(0, remaining) * 2;
-    const unresolvedEquipment = selected.extraEquipment.filter(item => asNumber(item.entry.cost) === null);
-    const equipmentSpent = selected.extraEquipment.reduce(
-      (sum, item) => sum + (asNumber(item.entry.cost) ?? 0) * item.quantity,
-      0
-    );
-    return {
-      selected,
-      spent,
-      drawbackBonus,
-      remaining,
-      equipmentPool,
-      equipmentSpent,
-      equipmentRemaining: equipmentPool - equipmentSpent,
-      unresolvedRegiment,
-      unresolvedDrawback,
-      unresolvedEquipment
-    };
+    const budget = window.KADAT_REGIMENT_BUDGET.calculate({
+      regimentEntries,
+      drawbacks: selected.drawbacks,
+      extraEquipment: selected.extraEquipment
+    });
+    return { selected, ...budget };
   }
 
   function priceLabel(entry, kind = "cost") {
@@ -410,21 +393,17 @@
     }));
   }
 
-  function equipmentCard(entry, quantity) {
-    const max = asNumber(entry.maxSelections) ?? 1;
-    const controls = max > 1 ? `
-      <span class="regiment-quantity-control">
-        <button type="button" data-equipment-minus="${escapeHtml(entry.id)}" aria-label="Уменьшить">−</button>
-        <strong>${quantity}</strong>
-        <button type="button" data-equipment-plus="${escapeHtml(entry.id)}" aria-label="Увеличить">+</button>
-        <small>макс. ${max}</small>
-      </span>
-    ` : `
-      <input type="checkbox" data-extra-equipment="${escapeHtml(entry.id)}"${quantity > 0 ? " checked" : ""}>
-    `;
+  function equipmentCard(entry, quantity, calc) {
+    const cost = asNumber(entry.cost);
+    const canIncrease = cost === null || cost <= 0 || calc.equipmentRemaining >= cost;
     return `
       <article class="regiment-equipment-card${quantity > 0 ? " is-selected" : ""}">
-        ${controls}
+        <span class="regiment-quantity-control">
+          <button type="button" data-equipment-minus="${escapeHtml(entry.id)}" aria-label="Уменьшить"${quantity <= 0 ? " disabled" : ""}>−</button>
+          <strong>${quantity}</strong>
+          <button type="button" data-equipment-plus="${escapeHtml(entry.id)}" aria-label="Увеличить"${canIncrease ? "" : " disabled"}>+</button>
+          <small>можно брать повторно</small>
+        </span>
         <div>
           <header><strong>${escapeHtml(entry.name)}</strong><span>${escapeHtml(priceLabel(entry))}</span></header>
           <p>${escapeHtml(normalize(entry.description || entry.effectText || entry.restrictionsText || "Дополнительное описание в источнике отсутствует."))}</p>
@@ -440,28 +419,45 @@
       .some(value => normalize(value).toLocaleLowerCase("ru-RU").includes(query)));
     refs.stage.innerHTML = `
       <section class="wizard-stage is-active">
-        ${stageHeading(3, "DEFECTUS ET COPIAE", "Недостаток и снабжение", "Недостаток может дать дополнительные полковые очки. Неиспользованные полковые очки превращаются в очки дополнительного снаряжения по правилу источника.")}
-        <div class="form-grid form-grid-two regiment-supply-head">
-          <label>Недостаток полка<select id="regiment-drawback">
-            <option value="">Без выбранного недостатка</option>
-            ${catalog.drawbacks.map(entry => `<option value="${escapeHtml(entry.id)}"${entry.id === state.drawbackId ? " selected" : ""}>${escapeHtml(entry.name)} — ${escapeHtml(priceLabel(entry, "bonusPoints"))}</option>`).join("")}
-          </select></label>
+        ${stageHeading(3, "DEFECTUS ET COPIAE", "Недостатки и снабжение", "Можно выбрать несколько недостатков. Их полковые очки суммируются. Неиспользованные полковые очки превращаются в очки дополнительного снаряжения по правилу источника.")}
+        <div class="regiment-supply-head">
           <div class="regiment-budget-panel">
+            <span>Выбрано недостатков<strong>${calc.selected.drawbacks.length}</strong></span>
+            <span>Бонус от недостатков<strong>+${calc.drawbackBonus}</strong></span>
             <span>Полковые очки<strong>${calc.remaining}</strong></span>
             <span>Очки снабжения<strong>${calc.equipmentRemaining} / ${calc.equipmentPool}</strong></span>
           </div>
         </div>
-        ${calc.selected.drawback ? textBlocks(calc.selected.drawback) : ""}
+        <details class="regiment-catalog-group" open>
+          <summary>Недостатки полка <span>${calc.selected.drawbacks.length}</span></summary>
+          <div class="regiment-choice-list">
+            ${catalog.drawbacks.map(entry => `
+              <label class="regiment-choice-card${state.drawbackIds.has(entry.id) ? " is-selected" : ""}">
+                <input type="checkbox" data-regiment-drawback="${escapeHtml(entry.id)}"${state.drawbackIds.has(entry.id) ? " checked" : ""}>
+                <span class="regiment-choice-copy">
+                  <span class="regiment-choice-title"><strong>${escapeHtml(entry.name)}</strong><em>${escapeHtml(priceLabel(entry, "bonusPoints"))}</em></span>
+                  <small>${escapeHtml(normalize(entry.description || entry.effectText || entry.rulesText || "Дополнительное описание в источнике отсутствует."))}</small>
+                </span>
+              </label>
+            `).join("")}
+          </div>
+        </details>
+        ${calc.selected.drawbacks.length ? `<div class="regiment-preview-grid">${calc.selected.drawbacks.map(textBlocks).join("")}</div>` : ""}
         <div class="regiment-equipment-toolbar">
           <label>Поиск по дополнительному снаряжению<input id="regiment-equipment-search" type="search" value="${escapeHtml(state.equipmentSearch)}" placeholder="Название или описание"></label>
-          <span>Выбрано позиций: ${calc.selected.extraEquipment.length}</span>
+          <span>Выбрано: ${calc.selected.extraEquipment.reduce((sum, item) => sum + item.quantity, 0)} покупок в ${calc.selected.extraEquipment.length} позициях</span>
         </div>
         <div class="regiment-equipment-list">
-          ${filtered.map(entry => equipmentCard(entry, state.extraEquipment.get(entry.id) ?? 0)).join("") || `<p class="muted">Совпадений не найдено.</p>`}
+          ${filtered.map(entry => equipmentCard(entry, state.extraEquipment.get(entry.id) ?? 0, calc)).join("") || `<p class="muted">Совпадений не найдено.</p>`}
         </div>
       </section>
     `;
-    refs.stage.querySelector("#regiment-drawback").addEventListener("change", event => { state.drawbackId = event.target.value; renderStep(); });
+    refs.stage.querySelectorAll("[data-regiment-drawback]").forEach(input => input.addEventListener("change", event => {
+      const id = event.target.dataset.regimentDrawback;
+      if (event.target.checked) state.drawbackIds.add(id);
+      else state.drawbackIds.delete(id);
+      renderStep();
+    }));
     refs.stage.querySelector("#regiment-equipment-search").addEventListener("input", event => {
       state.equipmentSearch = event.target.value;
       const selectionStart = event.target.selectionStart;
@@ -470,16 +466,14 @@
       next?.focus();
       next?.setSelectionRange(selectionStart, selectionStart);
     });
-    refs.stage.querySelectorAll("[data-extra-equipment]").forEach(input => input.addEventListener("change", event => {
-      if (event.target.checked) state.extraEquipment.set(event.target.dataset.extraEquipment, 1);
-      else state.extraEquipment.delete(event.target.dataset.extraEquipment);
-      renderStep();
-    }));
     refs.stage.querySelectorAll("[data-equipment-plus]").forEach(button => button.addEventListener("click", () => {
       const entry = byId(catalog.extraEquipment, button.dataset.equipmentPlus);
-      const max = asNumber(entry?.maxSelections) ?? 1;
+      if (!entry) return;
       const current = state.extraEquipment.get(entry.id) ?? 0;
-      state.extraEquipment.set(entry.id, Math.min(max, current + 1));
+      const cost = asNumber(entry.cost);
+      const calc = calculate();
+      if (cost !== null && cost > 0 && calc.equipmentRemaining < cost) return;
+      state.extraEquipment.set(entry.id, current + 1);
       renderStep();
     }));
     refs.stage.querySelectorAll("[data-equipment-minus]").forEach(button => button.addEventListener("click", () => {
@@ -499,7 +493,7 @@
     const calc = calculate();
     const unresolved = [
       ...calc.unresolvedRegiment.map(entry => entry.name),
-      ...(calc.unresolvedDrawback ? [calc.selected.drawback.name] : []),
+      ...calc.unresolvedDrawbacks.map(entry => entry.name),
       ...calc.unresolvedEquipment.map(item => item.entry.name)
     ];
     refs.stage.innerHTML = `
@@ -513,7 +507,7 @@
           ${summaryRow("Тип полка", calc.selected.regimentType?.name, calc.selected.regimentType ? priceLabel(calc.selected.regimentType) : null)}
           ${summaryRow("Доктрины подготовки", calc.selected.training.map(entry => entry.name).join("; ") || "Не выбраны")}
           ${summaryRow("Доктрины снаряжения", calc.selected.equipmentDoctrines.map(entry => entry.name).join("; ") || "Не выбраны")}
-          ${summaryRow("Недостаток", calc.selected.drawback?.name || "Не выбран", calc.selected.drawback ? priceLabel(calc.selected.drawback, "bonusPoints") : null)}
+          ${summaryRow("Недостатки", calc.selected.drawbacks.map(entry => `${entry.name} (${priceLabel(entry, "bonusPoints")})`).join("; ") || "Не выбраны")}
           ${summaryRow("Остаток полковых очков", String(calc.remaining))}
           ${summaryRow("Дополнительное снаряжение", calc.selected.extraEquipment.map(item => `${item.entry.name}${item.quantity > 1 ? ` ×${item.quantity}` : ""}`).join("; ") || "Не выбрано")}
           ${summaryRow("Остаток очков снабжения", `${calc.equipmentRemaining} из ${calc.equipmentPool}`)}
@@ -638,7 +632,7 @@
       ${detailSection("Командование и специализация", [calc.selected.commander, calc.selected.regimentType].filter(Boolean))}
       ${detailSection("Доктрины подготовки", calc.selected.training)}
       ${detailSection("Доктрины специального снаряжения", calc.selected.equipmentDoctrines)}
-      ${detailSection("Недостаток", [calc.selected.drawback].filter(Boolean))}
+      ${detailSection("Недостатки", calc.selected.drawbacks)}
       <section class="regiment-result-section">
         <h3>Дополнительное снаряжение</h3>
         ${calc.selected.extraEquipment.length ? `<ul class="equipment-list">${calc.selected.extraEquipment.map(item => `<li>${escapeHtml(item.entry.name)}${item.quantity > 1 ? ` ×${item.quantity}` : ""} — ${escapeHtml(priceLabel(item.entry))}</li>`).join("")}</ul>` : `<p class="muted">Дополнительное снаряжение не выбрано.</p>`}
