@@ -16,7 +16,8 @@
     equipmentDoctrineIds: new Set(),
     drawbackIds: new Set(),
     extraEquipment: new Map(),
-    equipmentSearch: ""
+    equipmentSearch: "",
+    supplyNotice: ""
   };
 
   const refs = {};
@@ -200,6 +201,7 @@
     state.drawbackIds.clear();
     state.extraEquipment.clear();
     state.equipmentSearch = "";
+    state.supplyNotice = "";
     refs.resultView.classList.add("hidden");
     refs.form.classList.remove("hidden");
     refs.progress[0].parentElement.classList.remove("hidden");
@@ -238,6 +240,34 @@
       extraEquipment: selected.extraEquipment
     });
     return { selected, ...budget };
+  }
+
+  function reconcileSupply() {
+    const calc = calculate();
+    if (calc.equipmentRemaining >= 0 || !state.extraEquipment.size) return calc;
+
+    const plan = window.KADAT_REGIMENT_BUDGET.planReductions(
+      calc.selected.extraEquipment,
+      Math.abs(calc.equipmentRemaining)
+    );
+    const removed = [];
+
+    for (const reduction of plan.reductions) {
+      const current = state.extraEquipment.get(reduction.id) ?? 0;
+      const next = Math.max(0, current - reduction.quantity);
+      if (next > 0) state.extraEquipment.set(reduction.id, next);
+      else state.extraEquipment.delete(reduction.id);
+      removed.push(`${reduction.name} ×${reduction.quantity}`);
+    }
+
+    const adjusted = calculate();
+    if (removed.length) {
+      state.supplyNotice = `Лимит снабжения уменьшился. Автоматически сняты последние закупки: ${removed.join("; ")}.`;
+    }
+    if (adjusted.equipmentRemaining < 0 || plan.unresolvedOverrun > 0) {
+      state.supplyNotice = "Закупки превышают доступный лимит снабжения. Уменьшите количество позиций с указанной стоимостью.";
+    }
+    return adjusted;
   }
 
   function priceLabel(entry, kind = "cost") {
@@ -420,6 +450,7 @@
     refs.stage.innerHTML = `
       <section class="wizard-stage is-active">
         ${stageHeading(3, "DEFECTUS ET COPIAE", "Недостатки и снабжение", "Можно выбрать несколько недостатков. Их полковые очки суммируются. Неиспользованные полковые очки превращаются в очки дополнительного снаряжения по правилу источника.")}
+        ${state.supplyNotice ? `<div class="message">${escapeHtml(state.supplyNotice)}</div>` : ""}
         <div class="regiment-supply-head">
           <div class="regiment-budget-panel">
             <span>Выбрано недостатков<strong>${calc.selected.drawbacks.length}</strong></span>
@@ -454,6 +485,7 @@
     `;
     refs.stage.querySelectorAll("[data-regiment-drawback]").forEach(input => input.addEventListener("change", event => {
       const id = event.target.dataset.regimentDrawback;
+      state.supplyNotice = "";
       if (event.target.checked) state.drawbackIds.add(id);
       else state.drawbackIds.delete(id);
       renderStep();
@@ -473,12 +505,15 @@
       const cost = asNumber(entry.cost);
       const calc = calculate();
       if (cost !== null && cost > 0 && calc.equipmentRemaining < cost) return;
+      state.supplyNotice = "";
+      state.extraEquipment.delete(entry.id);
       state.extraEquipment.set(entry.id, current + 1);
       renderStep();
     }));
     refs.stage.querySelectorAll("[data-equipment-minus]").forEach(button => button.addEventListener("click", () => {
       const id = button.dataset.equipmentMinus;
       const current = state.extraEquipment.get(id) ?? 0;
+      state.supplyNotice = "";
       if (current <= 1) state.extraEquipment.delete(id);
       else state.extraEquipment.set(id, current - 1);
       renderStep();
@@ -523,6 +558,7 @@
 
   function renderStep() {
     if (!catalog || !refs.stage) return;
+    reconcileSupply();
     hideValidation();
     if (state.step === 0) renderFoundation();
     if (state.step === 1) renderCommand();
@@ -542,7 +578,10 @@
     refs.points.textContent = state.step >= 3
       ? `ПО: ${calc.remaining} · ОС: ${calc.equipmentRemaining}`
       : `ПО: ${calc.remaining}`;
-    refs.points.classList.toggle("is-error", calc.remaining < 0 || calc.equipmentRemaining < 0);
+    const invalidBudget = calc.remaining < 0 || calc.equipmentRemaining < 0;
+    refs.points.classList.toggle("is-error", invalidBudget);
+    refs.next.disabled = state.step >= 3 && invalidBudget;
+    refs.submit.disabled = state.step === STEP_COUNT - 1 && invalidBudget;
   }
 
   function goToStep(nextStep) {

@@ -24,4 +24,11 @@ const unresolved = budget.calculate({ drawbacks: [{ bonusPoints: null }] });
 assert.equal(unresolved.drawbackBonus, 0);
 assert.equal(unresolved.unresolvedDrawbacks.length, 1);
 
+const plan = budget.planReductions([
+  { entry: { id: "first", name: "Первая", cost: 5 }, quantity: 2 },
+  { entry: { id: "last", name: "Последняя", cost: 15 }, quantity: 1 }
+], 10);
+assert.deepEqual(plan.reductions, [{ id: "last", name: "Последняя", quantity: 1, cost: 15 }]);
+assert.equal(plan.unresolvedOverrun, 0);
+
 console.log("Regiment budget OK");
