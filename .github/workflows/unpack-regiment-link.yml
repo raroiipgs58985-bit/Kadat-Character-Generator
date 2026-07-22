@@ -15,9 +15,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unpack bridge source
         run: node tools/unpack-regiment-character-link.cjs
-      - name: Upload source
+      - name: Upload working sources
         uses: actions/upload-artifact@v4
         with:
-          name: unpacked-regiment-link
-          path: diagnostic-artifact/regiment-character-link.js
+          name: regiment-working-sources
+          path: |
+            diagnostic-artifact/regiment-character-link.js
+            regiment-mode.js
+            tests/regiment-character-link-check.mjs
+            index.html
           if-no-files-found: error
