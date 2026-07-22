@@ -1,0 +1,471 @@
+.registry-mode-switch {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0;
+  padding: 7px;
+  border: 7px ridge #4c4b44;
+  border-radius: 10px;
+  background: #151612;
+  box-shadow: inset 0 0 14px #000, 0 8px 24px rgba(0,0,0,.6);
+}
+
+.registry-mode-switch button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  border: 2px solid #292b25;
+  border-radius: 4px;
+  color: #85887d;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07), transparent 22%),
+    linear-gradient(#383832, #1b1c18);
+  box-shadow:
+    inset 0 0 0 1px #5d5c53,
+    inset 0 -8px 14px rgba(0,0,0,.38),
+    0 2px 4px #000;
+}
+
+.registry-mode-switch button span {
+  font-size: .68rem;
+  letter-spacing: .18em;
+  opacity: .62;
+}
+
+.registry-mode-switch button strong {
+  font-size: .9rem;
+  letter-spacing: .08em;
+}
+
+.registry-mode-switch button.is-active {
+  color: var(--crt-green, #72ff66);
+  border-color: #20542a;
+  background:
+    repeating-linear-gradient(0deg, rgba(82,255,95,.05) 0 1px, transparent 1px 4px),
+    linear-gradient(#0b2010, #061208);
+  box-shadow:
+    inset 0 0 0 1px #20542a,
+    inset 0 0 20px rgba(57,211,83,.16),
+    0 0 10px rgba(57,211,83,.14);
+  text-shadow: 0 0 8px rgba(114,255,102,.45);
+}
+
+.regiment-builder-view {
+  position: relative;
+  z-index: 2;
+}
+
+.regiment-form {
+  min-height: 540px;
+}
+
+.regiment-wide-field {
+  grid-column: 1 / -1;
+}
+
+.regiment-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.regiment-entry-preview {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #234a2a;
+  background:
+    repeating-linear-gradient(0deg, rgba(82,255,95,.025) 0 1px, transparent 1px 4px),
+    rgba(3, 15, 7, .86);
+  box-shadow: inset 0 0 16px rgba(0,0,0,.55);
+}
+
+.regiment-entry-preview > header,
+.regiment-equipment-card header,
+.regiment-result-cards article > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(114,255,102,.18);
+}
+
+.regiment-entry-preview h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.regiment-entry-preview header span,
+.regiment-equipment-card header span,
+.regiment-result-cards article > header span {
+  flex: 0 0 auto;
+  color: var(--cog-amber, #d7a64f);
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.regiment-entry-preview > div + div {
+  margin-top: 10px;
+}
+
+.regiment-entry-preview strong {
+  color: #9bc99c;
+  font-size: .74rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.regiment-entry-preview p {
+  margin: 4px 0 0;
+  color: #b9d7b6;
+  line-height: 1.45;
+}
+
+.regiment-doctrine-counter,
+.regiment-budget-panel,
+.regiment-source-warning {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border: 1px solid #27542f;
+  background: rgba(5, 25, 10, .72);
+}
+
+.regiment-doctrine-counter span {
+  color: #7fa784;
+  font-size: .78rem;
+}
+
+.regiment-doctrine-counter.is-error,
+.regiment-source-warning,
+#wizard-xp-status.is-error,
+#regiment-points-status.is-error {
+  color: #ff8b82;
+  border-color: rgba(210,60,50,.7);
+}
+
+.regiment-catalog-group {
+  margin-top: 12px;
+  border: 1px solid #293b2c;
+  background: rgba(2, 10, 5, .68);
+}
+
+.regiment-catalog-group > summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 14px;
+  color: var(--crt-green, #72ff66);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.regiment-catalog-group > summary span {
+  min-width: 26px;
+  padding: 2px 7px;
+  border: 1px solid #27542f;
+  text-align: center;
+}
+
+.regiment-choice-list,
+.regiment-equipment-list {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.regiment-choice-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid #26372a;
+  background: rgba(10, 17, 11, .88);
+  cursor: pointer;
+}
+
+.regiment-choice-card:hover,
+.regiment-choice-card.is-selected,
+.regiment-equipment-card.is-selected {
+  border-color: #3e8a48;
+  background: rgba(8, 32, 13, .9);
+  box-shadow: inset 0 0 14px rgba(57,211,83,.08);
+}
+
+.regiment-choice-card input {
+  margin-top: 4px;
+}
+
+.regiment-choice-copy,
+.regiment-choice-title {
+  min-width: 0;
+}
+
+.regiment-choice-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.regiment-choice-title strong {
+  color: #bde3ba;
+}
+
+.regiment-choice-title em {
+  flex: 0 0 auto;
+  color: var(--cog-amber, #d7a64f);
+  font-size: .74rem;
+  font-style: normal;
+}
+
+.regiment-choice-copy small {
+  display: block;
+  margin-top: 5px;
+  color: #7fa784;
+  line-height: 1.35;
+}
+
+.regiment-supply-head {
+  align-items: end;
+}
+
+.regiment-budget-panel {
+  margin: 0;
+  align-self: stretch;
+}
+
+.regiment-budget-panel span {
+  display: grid;
+  gap: 3px;
+  color: #7fa784;
+  font-size: .72rem;
+  text-transform: uppercase;
+}
+
+.regiment-budget-panel strong {
+  color: var(--crt-green, #72ff66);
+  font-size: 1.05rem;
+}
+
+.regiment-equipment-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.regiment-equipment-toolbar span {
+  padding-bottom: 10px;
+  color: #7fa784;
+  font-size: .78rem;
+}
+
+.regiment-equipment-list {
+  max-height: 650px;
+  margin-top: 10px;
+  overflow: auto;
+  border: 1px solid #26372a;
+}
+
+.regiment-equipment-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #26372a;
+  background: rgba(10, 17, 11, .88);
+}
+
+.regiment-equipment-card > input {
+  margin-top: 5px;
+}
+
+.regiment-equipment-card p {
+  margin: 0;
+  color: #7fa784;
+  line-height: 1.4;
+}
+
+.regiment-quantity-control {
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  align-items: center;
+  gap: 4px;
+}
+
+.regiment-quantity-control button {
+  min-height: 30px;
+  padding: 0;
+}
+
+.regiment-quantity-control strong {
+  text-align: center;
+}
+
+.regiment-quantity-control small {
+  grid-column: 1 / -1;
+  color: #7fa784;
+  text-align: center;
+}
+
+.regiment-review-card,
+.regiment-result-ledger {
+  display: grid;
+  border: 1px solid #27542f;
+  background: rgba(3, 15, 7, .82);
+}
+
+.regiment-summary-row {
+  display: grid;
+  grid-template-columns: minmax(130px, .6fr) minmax(0, 1.4fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(114,255,102,.12);
+}
+
+.regiment-summary-row:last-child {
+  border-bottom: 0;
+}
+
+.regiment-summary-row span {
+  color: #7fa784;
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+
+.regiment-summary-row strong {
+  overflow-wrap: anywhere;
+  color: #c4dec1;
+}
+
+.regiment-summary-row em {
+  color: var(--cog-amber, #d7a64f);
+  font-size: .75rem;
+  font-style: normal;
+}
+
+.regiment-source-warning {
+  display: block;
+  margin-top: 14px;
+}
+
+.regiment-source-warning p {
+  margin: 5px 0 0;
+}
+
+.regiment-result-identity {
+  margin-bottom: 18px;
+  padding: 18px;
+  border: 1px solid #27542f;
+  background: rgba(3,15,7,.84);
+  text-align: center;
+}
+
+.regiment-result-identity > p {
+  margin: 0;
+  color: #7fa784;
+  font-size: .72rem;
+  letter-spacing: .15em;
+}
+
+.regiment-result-identity h3 {
+  margin: 8px 0 16px;
+  color: var(--crt-green, #72ff66);
+  font-size: clamp(1.35rem, 4vw, 2.1rem);
+  text-transform: uppercase;
+}
+
+.regiment-result-section {
+  margin-top: 18px;
+}
+
+.regiment-result-section > h3 {
+  margin: 0 0 10px;
+  color: var(--crt-green, #72ff66);
+  text-transform: uppercase;
+}
+
+.regiment-result-cards {
+  display: grid;
+  gap: 10px;
+}
+
+.regiment-result-cards > article {
+  padding: 12px;
+  border: 1px solid #26372a;
+  background: rgba(5,15,7,.72);
+}
+
+.regiment-result-cards .regiment-entry-preview {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .registry-mode-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .registry-mode-switch button {
+    flex-direction: column;
+    gap: 2px;
+    min-height: 54px;
+  }
+
+  .regiment-preview-grid,
+  .regiment-supply-head,
+  .regiment-equipment-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .regiment-wide-field {
+    grid-column: auto;
+  }
+
+  .regiment-doctrine-counter,
+  .regiment-budget-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .regiment-choice-title,
+  .regiment-entry-preview > header,
+  .regiment-equipment-card header {
+    flex-direction: column;
+  }
+
+  .regiment-summary-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .regiment-equipment-list {
+    max-height: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .regiment-equipment-card {
+    grid-template-columns: 1fr;
+  }
+
+  .regiment-quantity-control {
+    justify-content: start;
+  }
+}
