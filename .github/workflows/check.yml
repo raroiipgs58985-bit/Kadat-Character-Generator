@@ -23,12 +23,18 @@ jobs:
           find regiment-data -type f \( -name '*.js' -o -name '*.cjs' \) -print0 | while IFS= read -r -d '' file; do
             node --check "$file"
           done
+          find regiment-character-link-packed -type f -name '*.js' -print0 | while IFS= read -r -d '' file; do
+            node --check "$file"
+          done
 
       - name: Check advancement catalogs
         run: node tests/catalog-check.mjs
 
       - name: Check regiment data
         run: node regiment-data/validate-data.cjs
+
+      - name: Check regiment-character link
+        run: node tests/regiment-character-link-check.mjs
 
       - name: Check referenced local assets
         shell: python
