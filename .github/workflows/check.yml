@@ -20,9 +20,15 @@ jobs:
           find tests -name '*.mjs' -print0 | while IFS= read -r -d '' file; do
             node --check "$file"
           done
+          find regiment-data -type f \( -name '*.js' -o -name '*.cjs' \) -print0 | while IFS= read -r -d '' file; do
+            node --check "$file"
+          done
 
       - name: Check advancement catalogs
         run: node tests/catalog-check.mjs
+
+      - name: Check regiment data
+        run: node regiment-data/validate-data.cjs
 
       - name: Check referenced local assets
         shell: python
