@@ -36,6 +36,16 @@ jobs:
       - name: Check regiment-character link
         run: node tests/regiment-character-link-check.mjs
 
+      - name: Unpack regiment-character bridge for diagnostics
+        run: node tools/unpack-regiment-link.cjs
+
+      - name: Upload bridge diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: regiment-character-link-source
+          path: diagnostic-artifact/regiment-character-link-source.js
+          if-no-files-found: error
+
       - name: Check referenced local assets
         shell: python
         run: |
