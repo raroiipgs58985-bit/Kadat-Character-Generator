@@ -36,16 +36,6 @@ jobs:
       - name: Check regiment-character link
         run: node tests/regiment-character-link-check.mjs
 
-      - name: Inspect selected regiment data
-        run: node tools/inspect-selected-regiment-data.cjs
-
-      - name: Upload selected regiment data
-        uses: actions/upload-artifact@v4
-        with:
-          name: selected-regiment-data
-          path: diagnostic-artifact/selected-regiment-data.json
-          if-no-files-found: error
-
       - name: Check referenced local assets
         shell: python
         run: |
