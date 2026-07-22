@@ -36,7 +36,33 @@
     };
   }
 
-  const api = { asNumber, calculate };
+  function planReductions(extraEquipment = [], overrun = 0) {
+    let remainingOverrun = Math.max(0, Number(overrun) || 0);
+    const reductions = [];
+
+    for (const item of [...extraEquipment].reverse()) {
+      if (remainingOverrun <= 0) break;
+      const cost = asNumber(item?.entry?.cost);
+      const quantity = Math.max(0, Number(item?.quantity ?? 0));
+      if (!item?.entry?.id || cost === null || cost <= 0 || quantity <= 0) continue;
+
+      const quantityToRemove = Math.min(quantity, Math.ceil(remainingOverrun / cost));
+      reductions.push({
+        id: item.entry.id,
+        name: item.entry.name || item.entry.id,
+        quantity: quantityToRemove,
+        cost
+      });
+      remainingOverrun -= quantityToRemove * cost;
+    }
+
+    return {
+      reductions,
+      unresolvedOverrun: Math.max(0, remainingOverrun)
+    };
+  }
+
+  const api = { asNumber, calculate, planReductions };
   if (typeof window !== "undefined") window.KADAT_REGIMENT_BUDGET = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })();
