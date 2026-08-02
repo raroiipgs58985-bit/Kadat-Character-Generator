@@ -1,0 +1,25 @@
+.registry-mode-switch { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.xeno-builder-view { margin-top: 1rem; }
+.xeno-roll-action, .xeno-roll-panel { display: grid; gap: .8rem; margin: 1rem 0; }
+.xeno-roll-panel { padding: 1rem; border: 1px solid rgba(94,255,120,.28); background: rgba(0,20,8,.7); }
+.xeno-roll-panel strong { color: var(--phosphor, #62ff78); font-size: 1.05rem; }
+.xeno-roll-panel p { margin: 0; color: #a9bbaa; }
+.xeno-info-card, .xeno-wounds-card { padding: 1rem; border: 1px solid rgba(94,255,120,.2); background: rgba(0,12,5,.72); }
+.xeno-info-card p { margin-bottom: 0; }
+.xeno-wounds-card { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
+.xeno-wounds-card strong { color: var(--phosphor, #62ff78); font-size: 1.5rem; }
+.xeno-check { display: flex; align-items: center; gap: .65rem; padding: 1rem; border: 1px solid rgba(94,255,120,.22); }
+.xeno-check input { width: auto; }
+.xeno-review-card { margin-top: 1.2rem; padding: 1rem; border: 1px solid rgba(94,255,120,.28); background: rgba(0,16,6,.78); }
+.xeno-review-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .65rem; margin-bottom: 1rem; }
+.xeno-review-grid span { display: grid; gap: .25rem; padding: .65rem; border: 1px solid rgba(94,255,120,.14); color: #8fa590; }
+.xeno-review-grid strong { color: #d8ead9; }
+.xeno-character-actions { display: grid; gap: .75rem; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(94,255,120,.3); }
+.xeno-character-actions p { margin: 0; color: #9fb3a0; }
+@media (max-width: 720px) {
+  .registry-mode-switch { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .registry-mode-switch button { padding-inline: .35rem; }
+  .registry-mode-switch button span { font-size: .55rem; }
+  .registry-mode-switch button strong { font-size: .9rem; }
+  .xeno-review-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
