@@ -39,6 +39,9 @@ jobs:
       - name: Check regiment-character link
         run: node tests/regiment-character-link-check.mjs
 
+      - name: Check xeno generator
+        run: node tests/xeno-engine-check.cjs
+
       - name: Check referenced local assets
         shell: python
         run: |
