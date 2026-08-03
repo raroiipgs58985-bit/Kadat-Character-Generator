@@ -30,6 +30,9 @@ jobs:
       - name: Check advancement catalogs
         run: node tests/catalog-check.mjs
 
+      - name: Check advancement choice refresh
+        run: node tests/advancement-choice-refresh-check.mjs
+
       - name: Check regiment data
         run: node regiment-data/validate-data.cjs
 
