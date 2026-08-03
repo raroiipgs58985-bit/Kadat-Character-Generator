@@ -86,6 +86,16 @@ function applyAdvancementPreview() {
   if (!error) renderResult(buildCharacter());
 }
 
+let advancementRenderScheduled = false;
+function scheduleAdvancementRender() {
+  if (advancementRenderScheduled) return;
+  advancementRenderScheduled = true;
+  setTimeout(() => {
+    advancementRenderScheduled = false;
+    renderAdvancement();
+  }, 0);
+}
+
 const advancementDependencies = [
   raceSelect,
   worldSelect,
@@ -97,15 +107,26 @@ const advancementDependencies = [
 ].filter(Boolean);
 
 advancementDependencies.forEach(control => {
-  control.addEventListener("change", () => setTimeout(renderAdvancement, 0));
-  if (control.matches("textarea,input")) control.addEventListener("input", () => setTimeout(renderAdvancement, 0));
+  control.addEventListener("change", scheduleAdvancementRender);
+  if (control.matches("textarea,input")) control.addEventListener("input", scheduleAdvancementRender);
 });
 
-document.querySelector("#stats-grid")?.addEventListener("input", () => setTimeout(renderAdvancement, 0));
-document.querySelector("#roll-button")?.addEventListener("click", () => setTimeout(renderAdvancement, 0));
+const originChoiceContainers = [
+  document.querySelector("#race-choices"),
+  document.querySelector("#homeworld-choices"),
+  document.querySelector("#specialty-choices")
+].filter(Boolean);
+
+originChoiceContainers.forEach(container => {
+  container.addEventListener("change", scheduleAdvancementRender);
+  container.addEventListener("input", scheduleAdvancementRender);
+});
+
+document.querySelector("#stats-grid")?.addEventListener("input", scheduleAdvancementRender);
+document.querySelector("#roll-button")?.addEventListener("click", scheduleAdvancementRender);
 document.querySelector("#reset-button")?.addEventListener("click", () => {
   advancementReset();
-  setTimeout(renderAdvancement, 0);
+  scheduleAdvancementRender();
 });
 
 renderAdvancement();
