@@ -45,6 +45,9 @@ jobs:
       - name: Check xeno generator
         run: node tests/xeno-engine-check.cjs
 
+      - name: Check power armor generator
+        run: node tests/power-armor-engine-check.cjs
+
       - name: Check referenced local assets
         shell: python
         run: |
