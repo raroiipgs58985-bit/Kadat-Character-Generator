@@ -1,62 +1,16 @@
-name: Validate web app
-
-on:
-  push:
-  pull_request:
-
+name: Validate Kadat
+on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check JavaScript syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          find . -maxdepth 1 -name '*.js' -print0 | while IFS= read -r -d '' file; do
-            node --check "$file"
-          done
-          find tests -type f \( -name '*.mjs' -o -name '*.cjs' \) -print0 | while IFS= read -r -d '' file; do
-            node --check "$file"
-          done
-          find regiment-data -type f \( -name '*.js' -o -name '*.cjs' \) -print0 | while IFS= read -r -d '' file; do
-            node --check "$file"
-          done
-          find regiment-character-link-packed -type f -name '*.js' -print0 | while IFS= read -r -d '' file; do
-            node --check "$file"
-          done
-
-      - name: Check advancement catalogs
-        run: node tests/catalog-check.mjs
-
-      - name: Check advancement choice refresh
-        run: node tests/advancement-choice-refresh-check.mjs
-
-      - name: Check regiment data
-        run: node regiment-data/validate-data.cjs
-
-      - name: Check regiment budget
-        run: node tests/regiment-budget-check.cjs
-
-      - name: Check regiment-character link
-        run: node tests/regiment-character-link-check.mjs
-
-      - name: Check xeno generator
-        run: node tests/xeno-engine-check.cjs
-
-      - name: Check power armor generator
-        run: node tests/power-armor-engine-check.cjs
-
-      - name: Check referenced local assets
-        shell: python
-        run: |
-          from pathlib import Path
-          import re
-
-          html = Path("index.html").read_text(encoding="utf-8")
-          paths = re.findall(r'(?:src|href)="([^"?]+)', html)
-          missing = [path for path in paths if not path.startswith(("http://", "https://")) and not Path(path).exists()]
-          if missing:
-              raise SystemExit("Missing local assets: " + ", ".join(missing))
-          print(f"Assets OK: {len(paths)} references checked.")
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm test

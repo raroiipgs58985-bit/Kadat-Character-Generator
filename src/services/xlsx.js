@@ -1,0 +1,637 @@
+(() => {
+  "use strict";
+
+  const XLSX_MIME =
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+  const STATS = ["НС", "НР", "СЛ", "ВН", "ЛВ", "ИН", "СВ", "ВС", "ОЩ"];
+  const enc = new TextEncoder();
+
+  const clean = (value) =>
+    String(value ?? "")
+      .replace(/\s+/g, " ")
+      .trim();
+  const bonus = (value) => Math.floor(Number(value ?? 0) / 10);
+  const numberText = (value) => {
+    const number = Number(value ?? 0);
+    return Number.isInteger(number)
+      ? String(number)
+      : number.toLocaleString("ru-RU", { maximumFractionDigits: 1 });
+  };
+
+  function unique(values) {
+    const seen = new Set();
+    return (values ?? []).map(clean).filter((value) => {
+      const key = value.toLocaleLowerCase("ru-RU");
+      if (!value || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function groupEntries(entries, showBonus) {
+    const records = [];
+    const grouped = new Map();
+    const plain = new Set();
+
+    for (const entry of entries ?? []) {
+      const name = clean(entry?.name);
+      const value = Number(entry?.bonus ?? 0);
+      if (!name) continue;
+
+      const match = name.match(/^(.+?)\s*\((.+)\)$/);
+      if (!match) {
+        const key = `${name.toLocaleLowerCase("ru-RU")}::${showBonus ? value : ""}`;
+        if (plain.has(key)) continue;
+        plain.add(key);
+        records.push({ name, bonus: value });
+        continue;
+      }
+
+      const base = clean(match[1]);
+      const key = `${base.toLocaleLowerCase("ru-RU")}::${showBonus ? value : ""}`;
+      let record = grouped.get(key);
+      if (!record) {
+        record = { base, bonus: value, options: [], keys: new Set() };
+        grouped.set(key, record);
+        records.push(record);
+      }
+
+      for (const option of clean(match[2])
+        .split(/\s*[,;]\s*/)
+        .filter(Boolean)) {
+        const optionKey = option.toLocaleLowerCase("ru-RU");
+        if (record.keys.has(optionKey)) continue;
+        record.keys.add(optionKey);
+        record.options.push(option);
+      }
+    }
+
+    return records.map((record) => {
+      const label = record.base
+        ? `${record.base} (${record.options.join(", ")})`
+        : record.name;
+      return showBonus
+        ? `${label} ${record.bonus >= 0 ? "+" : ""}${record.bonus}`
+        : label;
+    });
+  }
+
+  function sizeOf(character) {
+    for (const value of [
+      ...(character?.race?.traits ?? []),
+      ...(character?.world?.traits ?? []),
+      ...(character?.specialtyTraits ?? []),
+      ...(character?.specialty?.traits ?? []),
+    ]) {
+      const match = clean(value).match(/размер\s*\(\s*([+-]?\d+)\s*\)/i);
+      if (match) return Number(match[1]);
+    }
+    return 0;
+  }
+
+  function equipmentOf(character) {
+    return unique([
+      ...(character?.race?.equipment ?? []),
+      ...(character?.world?.equipment ?? []),
+      ...(character?.specialtyEquipment ?? []),
+      ...(character?.specialty?.equipment ?? []),
+    ]);
+  }
+
+  function featuresOf(character) {
+    const uniqueFeatures = (character?.race?.uniqueFeatures ?? []).map(
+      (feature) => {
+        const name = clean(feature?.name);
+        const rating = Number(feature?.rating);
+        return name && Number.isFinite(rating)
+          ? `${name} (рейтинг ${rating})`
+          : name;
+      },
+    );
+    const rules = [
+      ...(character?.race?.specialRules ?? []),
+      ...(character?.world?.specialRules ?? []),
+      ...(character?.specialtyRules ?? []),
+      ...(character?.specialty?.specialRules ?? []),
+    ].map((rule) => clean(rule?.name) || clean(rule?.text));
+
+    return unique([
+      ...uniqueFeatures,
+      ...(character?.race?.traits ?? []),
+      ...(character?.world?.traits ?? []),
+      ...(character?.specialtyTraits ?? []),
+      ...(character?.specialty?.traits ?? []),
+      ...rules,
+    ]);
+  }
+
+  function genderText(value) {
+    if (value === "male") return "мужчина";
+    if (value === "female") return "женщина";
+    return "";
+  }
+
+  function exportData(character) {
+    if (!character) throw new Error("Персонаж ещё не сформирован.");
+
+    const skills = groupEntries(
+      [
+        ...(character.skills instanceof Map
+          ? character.skills.entries()
+          : Object.entries(character.skills ?? {})),
+      ].map(([name, value]) => ({ name, bonus: value })),
+      true,
+    );
+    const talentCounts = new Map();
+    for (const name of character.talents ?? [])
+      talentCounts.set(name, (talentCounts.get(name) ?? 0) + 1);
+    const talents = [...talentCounts].map(([name, count]) =>
+      count > 1 ? `${name} ×${count}` : name,
+    );
+    const movement = Math.max(
+      0,
+      bonus(character?.stats?.ЛВ) + sizeOf(character),
+    );
+
+    return {
+      name: clean(character.name) || "БЕЗЫМЯННЫЙ ПЕРСОНАЖ",
+      description:
+        unique([
+          character?.race?.name,
+          character?.world?.name,
+          character?.specialty?.name,
+          genderText(character?.gender),
+        ]).join(" • ") || "Данные происхождения не указаны",
+      stats: Object.fromEntries(
+        STATS.map((stat) => {
+          const value = Number(character?.stats?.[stat] ?? 0);
+          return [stat, `${numberText(value)} (${bonus(value)})`];
+        }),
+      ),
+      xp: numberText(character.availableXp),
+      movement: `${movement}/${movement * 2}/${movement * 3}/${movement * 6}`,
+      armor: "—",
+      toughness: String(bonus(character?.stats?.ВН)),
+      wounds: numberText(character.wounds),
+      insanity: "0",
+      corruption: "0",
+      skills,
+      talents,
+      psychic: character.racePsychicPowers?.length
+        ? character.racePsychicPowers
+        : ["Нет"],
+      features: featuresOf(character),
+      implants: character.raceImplants?.length ? character.raceImplants : ["—"],
+      equipment: equipmentOf(character),
+    };
+  }
+
+  function xml(value) {
+    return String(value ?? "")
+      .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function textCell(ref, value, style = 1) {
+    return `<c r="${ref}" s="${style}" t="inlineStr"><is><t xml:space="preserve">${xml(value)}</t></is></c>`;
+  }
+
+  function blankCell(ref, style = 1) {
+    return `<c r="${ref}" s="${style}"/>`;
+  }
+
+  function row(number, cells, height = 15.75) {
+    return `<row r="${number}" ht="${height}" customHeight="1">${cells.join("")}</row>`;
+  }
+
+  function listText(items, fallback) {
+    const values = unique(items);
+    return values.length
+      ? values.map((item) => `• ${item}`).join("\n")
+      : fallback;
+  }
+
+  function listHeight(items) {
+    const lines = listText(items, "—").split("\n");
+    const visualLines = lines.reduce((total, line) => {
+      return total + Math.max(1, Math.ceil(line.length / 46));
+    }, 0);
+    return Math.min(409, Math.max(28, visualLines * 13 + 8));
+  }
+
+  function sheetXml(data) {
+    const rows = [];
+    rows.push(
+      row(1, [
+        textCell("A1", data.name.toLocaleUpperCase("ru-RU"), 2),
+        blankCell("B1", 2),
+        blankCell("C1", 2),
+        blankCell("D1", 2),
+      ]),
+    );
+    rows.push(
+      row(2, [
+        textCell("A2", data.description, 3),
+        blankCell("B2", 3),
+        blankCell("C2", 3),
+        blankCell("D2", 3),
+      ]),
+    );
+
+    const labels = [
+      "НС",
+      "НР",
+      "СЛ",
+      "ВН",
+      "ЛВ",
+      "ИН",
+      "СВ",
+      "ВС",
+      "ОЩ",
+      "Опыт",
+      "Движение",
+      "ОБ",
+      "БВ",
+      "Раны",
+      "Безумие",
+      "Порча",
+    ];
+    const values = [
+      ...STATS.map((stat) => data.stats[stat]),
+      data.xp,
+      data.movement,
+      data.armor,
+      data.toughness,
+      data.wounds,
+      data.insanity,
+      data.corruption,
+    ];
+
+    for (let index = 0; index < labels.length; index += 1) {
+      const number = index + 3;
+      const valueStyle = number >= 12 ? 7 : 6;
+      const image =
+        number === 3
+          ? textCell("C3", "ПОРТРЕТ\nНЕ ПРИКРЕПЛЁН", 4)
+          : blankCell(`C${number}`, 4);
+      rows.push(
+        row(number, [
+          textCell(`A${number}`, labels[index], 1),
+          textCell(`B${number}`, values[index], valueStyle),
+          image,
+          blankCell(`D${number}`, 4),
+        ]),
+      );
+    }
+
+    const blocks = [
+      [19, "Навыки", data.skills, "Нет навыков"],
+      [20, "Таланты", data.talents, "Нет талантов"],
+      [21, "Пси-силы", data.psychic, "Нет"],
+      [22, "Особенности", data.features, "Нет особенностей"],
+      [23, "Импланты", data.implants, "—"],
+      [24, "Снаряжение", data.equipment, "Снаряжение не указано"],
+    ];
+
+    for (const [number, label, items, fallback] of blocks) {
+      const value = listText(items, fallback);
+      const height = [19, 20, 22, 24].includes(number) ? listHeight(items) : 22;
+      rows.push(
+        row(
+          number,
+          [
+            textCell(`A${number}`, label, 1),
+            textCell(`B${number}`, value, 5),
+            blankCell(`C${number}`, 5),
+            blankCell(`D${number}`, 5),
+          ],
+          height,
+        ),
+      );
+    }
+
+    return `<?xml version="1.0" encoding="utf-8"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+<sheetPr><pageSetUpPr fitToPage="1"/></sheetPr>
+<dimension ref="A1:D24"/>
+<sheetViews><sheetView workbookViewId="0" showGridLines="0" zoomScale="100" zoomScaleNormal="100"/></sheetViews>
+<sheetFormatPr defaultRowHeight="15.75"/>
+<cols><col min="1" max="4" width="12.63" customWidth="1"/></cols>
+<sheetData>${rows.join("")}</sheetData>
+<mergeCells count="9"><mergeCell ref="A1:D1"/><mergeCell ref="A2:D2"/><mergeCell ref="C3:D18"/><mergeCell ref="B19:D19"/><mergeCell ref="B20:D20"/><mergeCell ref="B21:D21"/><mergeCell ref="B22:D22"/><mergeCell ref="B23:D23"/><mergeCell ref="B24:D24"/></mergeCells>
+<printOptions horizontalCentered="1" verticalCentered="1"/>
+<pageMargins left="0.25" right="0.25" top="0.25" bottom="0.25" header="0.1" footer="0.1"/>
+<pageSetup orientation="portrait" paperSize="9" fitToWidth="1" fitToHeight="0"/>
+</worksheet>`;
+  }
+
+  const stylesXml = `<?xml version="1.0" encoding="utf-8"?>
+<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+<fonts count="10">
+<font><sz val="8"/><color rgb="FFE5DED0"/><name val="Aptos"/></font>
+<font><b/><sz val="7"/><color rgb="FFB99755"/><name val="Aptos Narrow"/></font>
+<font><b/><sz val="11"/><color rgb="FFB99755"/><name val="Georgia"/></font>
+<font><i/><sz val="7"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
+<font><i/><sz val="8"/><color rgb="FFA69E8D"/><name val="Georgia"/></font>
+<font><sz val="7"/><color rgb="FFE5DED0"/><name val="Aptos Narrow"/></font>
+<font><b/><sz val="8"/><color rgb="FFA6C69A"/><name val="Consolas"/></font>
+<font><b/><sz val="8"/><color rgb="FFEED79A"/><name val="Consolas"/></font>
+<font><sz val="10"/><color rgb="FF172C2B"/><name val="Arial"/></font>
+<font><b/><sz val="10"/><color rgb="FFFFFFFF"/><name val="Arial"/></font>
+</fonts>
+<fills count="7">
+<fill><patternFill patternType="none"/></fill>
+<fill><patternFill patternType="gray125"/></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF101314"/><bgColor rgb="FF101314"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF171B1D"/><bgColor rgb="FF171B1D"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF1A1F21"/><bgColor rgb="FF1A1F21"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF282216"/><bgColor rgb="FF282216"/></patternFill></fill>
+<fill><patternFill patternType="solid"><fgColor rgb="FF202629"/><bgColor rgb="FF202629"/></patternFill></fill>
+</fills>
+<borders count="5">
+<border/>
+<border><left style="thin"><color rgb="FF695533"/></left><right style="thin"><color rgb="FF695533"/></right><top/><bottom style="thin"><color rgb="FF403B31"/></bottom></border>
+<border><left style="medium"><color rgb="FFB99755"/></left><right style="medium"><color rgb="FFB99755"/></right><top style="medium"><color rgb="FFB99755"/></top><bottom style="medium"><color rgb="FFB99755"/></bottom></border>
+<border><left style="thin"><color rgb="FF695533"/></left><right style="thin"><color rgb="FF695533"/></right><top/><bottom style="thin"><color rgb="FF695533"/></bottom></border>
+<border><left style="thin"><color rgb="FFB99755"/></left><right style="thin"><color rgb="FFB99755"/></right><top style="thin"><color rgb="FFB99755"/></top><bottom style="thin"><color rgb="FFB99755"/></bottom></border>
+</borders>
+<cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs>
+<cellXfs count="11">
+<xf numFmtId="0" fontId="0" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/>
+<xf numFmtId="0" fontId="1" fillId="5" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="2" fillId="3" borderId="2" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="3" fillId="4" borderId="3" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="4" fillId="6" borderId="4" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
+<xf numFmtId="0" fontId="5" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="left" vertical="top" wrapText="1"/></xf>
+<xf numFmtId="0" fontId="6" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="7" fillId="4" borderId="1" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment horizontal="center" vertical="center" shrinkToFit="1"/></xf>
+<xf numFmtId="0" fontId="8" fillId="0" borderId="0" xfId="0" applyFont="1" applyAlignment="1"><alignment horizontal="left" vertical="top" wrapText="1"/></xf>
+<xf numFmtId="0" fontId="8" fillId="0" borderId="0" xfId="0" applyFont="1" applyAlignment="1"><alignment horizontal="right" vertical="center"/></xf>
+<xf numFmtId="0" fontId="9" fillId="4" borderId="0" xfId="0" applyFont="1" applyFill="1" applyAlignment="1"><alignment horizontal="center" vertical="center" wrapText="1"/></xf>
+</cellXfs>
+<cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles>
+</styleSheet>`;
+
+  const staticEntries = {
+    "[Content_Types].xml": `<?xml version="1.0" encoding="utf-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`,
+    "_rels/.rels": `<?xml version="1.0" encoding="utf-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="/xl/workbook.xml" Id="rId1"/></Relationships>`,
+    "xl/workbook.xml": `<?xml version="1.0" encoding="utf-8"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Персонаж" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm.Print_Area" localSheetId="0">'Персонаж'!$A$1:$D$24</definedName></definedNames></workbook>`,
+    "xl/_rels/workbook.xml.rels": `<?xml version="1.0" encoding="utf-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="/xl/styles.xml" Id="rId2"/><Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="/xl/worksheets/sheet1.xml" Id="rId1"/></Relationships>`,
+    "xl/styles.xml": stylesXml,
+  };
+
+  function u16(bytes, offset, value) {
+    bytes[offset] = value & 255;
+    bytes[offset + 1] = (value >>> 8) & 255;
+  }
+
+  function u32(bytes, offset, value) {
+    bytes[offset] = value & 255;
+    bytes[offset + 1] = (value >>> 8) & 255;
+    bytes[offset + 2] = (value >>> 16) & 255;
+    bytes[offset + 3] = (value >>> 24) & 255;
+  }
+
+  function join(parts) {
+    const output = new Uint8Array(
+      parts.reduce((sum, part) => sum + part.length, 0),
+    );
+    let offset = 0;
+    for (const part of parts) {
+      output.set(part, offset);
+      offset += part.length;
+    }
+    return output;
+  }
+
+  const crcTable = (() => {
+    const table = new Uint32Array(256);
+    for (let index = 0; index < 256; index += 1) {
+      let value = index;
+      for (let bit = 0; bit < 8; bit += 1) {
+        value = value & 1 ? 0xedb88320 ^ (value >>> 1) : value >>> 1;
+      }
+      table[index] = value >>> 0;
+    }
+    return table;
+  })();
+
+  function crc32(bytes) {
+    let crc = 0xffffffff;
+    for (const byte of bytes) crc = crcTable[(crc ^ byte) & 255] ^ (crc >>> 8);
+    return (crc ^ 0xffffffff) >>> 0;
+  }
+
+  function zip(entries) {
+    const locals = [];
+    const centrals = [];
+    let localOffset = 0;
+
+    for (const [name, content] of Object.entries(entries)) {
+      const nameBytes = enc.encode(name);
+      const data = typeof content === "string" ? enc.encode(content) : content;
+      const crc = crc32(data);
+
+      const local = new Uint8Array(30 + nameBytes.length);
+      u32(local, 0, 0x04034b50);
+      u16(local, 4, 20);
+      u16(local, 6, 0x0800);
+      u16(local, 8, 0);
+      u16(local, 10, 0);
+      u16(local, 12, 0x0021);
+      u32(local, 14, crc);
+      u32(local, 18, data.length);
+      u32(local, 22, data.length);
+      u16(local, 26, nameBytes.length);
+      u16(local, 28, 0);
+      local.set(nameBytes, 30);
+      locals.push(local, data);
+
+      const central = new Uint8Array(46 + nameBytes.length);
+      u32(central, 0, 0x02014b50);
+      u16(central, 4, 20);
+      u16(central, 6, 20);
+      u16(central, 8, 0x0800);
+      u16(central, 10, 0);
+      u16(central, 12, 0);
+      u16(central, 14, 0x0021);
+      u32(central, 16, crc);
+      u32(central, 20, data.length);
+      u32(central, 24, data.length);
+      u16(central, 28, nameBytes.length);
+      u16(central, 30, 0);
+      u16(central, 32, 0);
+      u16(central, 34, 0);
+      u16(central, 36, 0);
+      u32(central, 38, 0);
+      u32(central, 42, localOffset);
+      central.set(nameBytes, 46);
+      centrals.push(central);
+      localOffset += local.length + data.length;
+    }
+
+    const directory = join(centrals);
+    const end = new Uint8Array(22);
+    u32(end, 0, 0x06054b50);
+    u16(end, 4, 0);
+    u16(end, 6, 0);
+    u16(end, 8, centrals.length);
+    u16(end, 10, centrals.length);
+    u32(end, 12, directory.length);
+    u32(end, 16, localOffset);
+    u16(end, 20, 0);
+    return join([...locals, directory, end]);
+  }
+
+  function numericCell(ref, value, style = 9) {
+    return Number.isFinite(value)
+      ? `<c r="${ref}" s="${style}"><v>${value}</v></c>`
+      : textCell(ref, "—", style);
+  }
+  function detailSheet(records, widths = [35, 24, 65]) {
+    const rows = records.map((record, index) => {
+      const number = index + 1;
+      const height = Math.min(
+        409,
+        Math.max(
+          23,
+          Math.max(
+            ...record.map((v, i) =>
+              Math.ceil(String(v ?? "").length / ((widths[i] ?? 35) * 0.88)),
+            ),
+          ) *
+            13 +
+            10,
+        ),
+      );
+      const cells = record.map((v, i) =>
+        typeof v === "number"
+          ? numericCell(`${String.fromCharCode(65 + i)}${number}`, v)
+          : textCell(
+              `${String.fromCharCode(65 + i)}${number}`,
+              v,
+              index === 0 ? 10 : 8,
+            ),
+      );
+      return row(number, cells, height);
+    });
+    return `<?xml version="1.0" encoding="utf-8"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0" showGridLines="0"><pane ySplit="1" topLeftCell="A2" state="frozen"/></sheetView></sheetViews><cols>${widths.map((v, i) => `<col min="${i + 1}" max="${i + 1}" width="${v}" customWidth="1"/>`).join("")}</cols><sheetData>${rows.join("")}</sheetData><pageMargins left="0.3" right="0.3" top="0.4" bottom="0.4" header="0.1" footer="0.1"/><pageSetup orientation="portrait" paperSize="9" fitToWidth="1" fitToHeight="0"/></worksheet>`;
+  }
+  function buildWorkbook(character) {
+    const data = exportData(character);
+    const numeric = [
+      ["Характеристика", "Значение", "Бонус"],
+      ...STATS.map((stat) => [
+        stat,
+        Number(character.stats[stat]),
+        bonus(character.stats[stat]),
+      ]),
+      ["Раны", Number(character.wounds), ""],
+      ["Начальный опыт", Number(character.startingXp), ""],
+      ["За повторные таланты", Number(character.bonusXp), ""],
+      ["Стоимость специальности", Number(character.specialty?.xpCost ?? 0), ""],
+      ["Развитие", Number(character.advancement?.spent ?? 0), ""],
+      ["Остаток опыта", Number(character.availableXp), ""],
+    ];
+    const inventory = [["Раздел", "Значение", "Примечание"]];
+    const skills =
+      character.skills instanceof Map
+        ? [...character.skills]
+        : Object.entries(character.skills ?? {});
+    for (const [name, value] of skills)
+      inventory.push(["Навык", Number(value), name]);
+    for (const item of data.talents) inventory.push(["Талант", "", item]);
+    for (const item of data.features) inventory.push(["Особенность", "", item]);
+    for (const item of data.equipment) inventory.push(["Снаряжение", "", item]);
+    for (const item of data.psychic) inventory.push(["Пси-сила", "", item]);
+    for (const item of data.implants) inventory.push(["Имплант", "", item]);
+    const rules = [["Источник", "Правило", "Полный текст"]];
+    const addRules = (source, values) => {
+      for (const r of values ?? []) {
+        const text = String(r.text ?? r.description ?? "");
+        // Split long source paragraphs over rows, rather than clipping a merged cell.
+        for (let i = 0; i < Math.max(1, text.length); i += 1200)
+          rules.push([source, r.name ?? "", text.slice(i, i + 1200)]);
+      }
+    };
+    addRules(character.race?.name, character.race?.specialRules);
+    addRules(character.world?.name, character.world?.specialRules);
+    addRules(
+      character.specialty?.name,
+      character.specialtyRules ?? character.specialty?.specialRules,
+    );
+    for (const f of character.race?.uniqueFeatures ?? []) {
+      addRules(character.race.name, [
+        {
+          name: `${f.name} (${f.rating})`,
+          text: [f.resourceName, f.accumulation].filter(Boolean).join(" — "),
+        },
+        ...(f.spending ?? []),
+      ]);
+    }
+    for (const [stat, count] of Object.entries(
+      character.advancement?.characteristics ?? {},
+    ))
+      if (count) rules.push(["Развитие", stat, `Куплено +${count * 5}`]);
+    for (const item of character.advancement?.skills ?? [])
+      rules.push(["Развитие", item.name, `${item.count} покупок`]);
+    for (const item of character.advancement?.talents ?? [])
+      rules.push(["Развитие", item.name, `Уровень ${item.level}`]);
+    for (const t of character.transfers ?? [])
+      rules.push([
+        "Перенос",
+        t.from,
+        `В ${t.to}: ${character.race?.redistributionValue ?? 5}`,
+      ]);
+    const sheets = [
+      ["Персонаж", sheetXml(data)],
+      ["Числовые данные", detailSheet(numeric)],
+      ["Навыки и снаряжение", detailSheet(inventory)],
+      ["Правила и развитие", detailSheet(rules)],
+    ];
+    const entries = { ...staticEntries };
+    entries["[Content_Types].xml"] =
+      `<?xml version="1.0" encoding="utf-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="xml" ContentType="application/xml"/><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((s, i) => `<Override PartName="/xl/worksheets/sheet${i + 1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join("")}</Types>`;
+    entries["xl/workbook.xml"] =
+      `<?xml version="1.0" encoding="utf-8"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>${sheets.map(([name], i) => `<sheet name="${name}" sheetId="${i + 1}" r:id="rId${i + 1}"/>`).join("")}</sheets><definedNames><definedName name="_xlnm.Print_Area" localSheetId="0">'Персонаж'!$A$1:$D$24</definedName></definedNames></workbook>`;
+    entries["xl/_rels/workbook.xml.rels"] =
+      `<?xml version="1.0" encoding="utf-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml" Id="rId5"/>${sheets.map((s, i) => `<Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i + 1}.xml" Id="rId${i + 1}"/>`).join("")}</Relationships>`;
+    for (const [i, sheet] of sheets.entries())
+      entries[`xl/worksheets/sheet${i + 1}.xml`] = sheet[1];
+    return zip(entries);
+  }
+
+  function filename(value) {
+    return (clean(value) || "personazh")
+      .replace(/[\\/:*?"<>|]+/g, "-")
+      .replace(/\s+/g, "_")
+      .slice(0, 80);
+  }
+
+  function download(character) {
+    const blob = new Blob([buildWorkbook(character)], { type: XLSX_MIME });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${filename(character?.name)}.xlsx`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  globalThis.KADAT_XLSX_EXPORT_INTERNALS = {
+    exportData,
+    listText,
+    listHeight,
+    sheetXml,
+    buildWorkbook,
+    zip,
+    crc32,
+  };
+
+  if (typeof window !== "undefined" && window.KadatExports)
+    window.KadatExports.register("xlsx", { download, buildWorkbook });
+})();
