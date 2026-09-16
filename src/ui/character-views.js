@@ -10,17 +10,8 @@
     radar,
     statBars,
   } = root.KadatUI;
-  const statNames = {
-    НС: "Навык стрельбы",
-    НР: "Навык рукопашного боя",
-    СЛ: "Сила",
-    ВН: "Выносливость",
-    ЛВ: "Ловкость",
-    ИН: "Интеллект",
-    СВ: "Сила воли",
-    ВС: "Восприятие",
-    ОЩ: "Общение",
-  };
+  const U = root.KadatUI;
+  const statNames = U.statNames;
   const steps = [
     ["Происхождение", "Личность, раса и мир"],
     ["Специальность", "Роль и обязательные выборы"],
@@ -132,7 +123,7 @@
     return `<div class="form-grid form-grid-two">${field("Специальность", `<select id="specialty" data-field="specialtyId">${options(catalog, d.specialtyId)}</select>`)}${field("Найти специальность", `<input type="search" id="specialty-search" data-ui="specialtySearch" value="${esc(ui.specialtySearch)}" placeholder="Название или категория">`)}</div>
       <div class="specialty-picker">${filtered.map((s) => `<button type="button" class="specialty-tile ${s.id === d.specialtyId ? "selected" : ""}" data-select-specialty="${esc(s.id)}" aria-pressed="${s.id === d.specialtyId}"><span class="card-eyebrow">${esc(s.category ?? "Без назначения")}</span><strong>${esc(s.name)}</strong><span>${s.xpCost ? n(s.xpCost) + " ОО" : "Без стоимости"}</span></button>`).join("") || "<p>Ничего не найдено.</p>"}</div>
       ${originCard("ВЫБРАННОЕ НАЗНАЧЕНИЕ", c.specialty, "specialty")}
-      <div class="equipment-preview"><h4>Стартовое снаряжение</h4><div class="tags">${tags(c.specialty.equipment ?? [])}</div></div>
+      <div class="equipment-preview"><h4>Стартовое снаряжение</h4>${U.equipment([["Специальность", c.specialty.equipment]])}</div>
       ${choiceFields(c.specialty.choices ?? [], d.specialtyChoices, "specialty")}`;
   }
   function stats(d, c, engine, ui, data) {
@@ -144,10 +135,10 @@
       .validate(d, { baseOnly: true })
       .some((e) => e.step === 2 && e.field !== "transfers");
     return `${fixed ? '<div class="message">Характеристики зафиксированы формуляром ксено-расы. Дополнительное распределение и бросок не требуются.</div>' : `<div class="generation-toolbar">${field("Метод определения", `<select id="generation-mode" data-field="mode"><option value="planned" ${d.mode === "planned" ? "selected" : ""}>Распределить ${c.race.plannedPoints} очков</option><option value="random" ${d.mode === "random" ? "selected" : ""}>Бросить 2к10</option></select>`)}${d.mode === "random" ? '<button type="button" id="roll-button" data-roll>Бросить 2к10 ↻</button>' : ""}</div>${d.mode === "planned" ? `<div class="allocation-ledger">${meter("Распределено", spent, c.race.plannedPoints, spent > c.race.plannedPoints ? "red" : "teal")}<p id="points-status">Осталось <strong>${n(c.race.plannedPoints - spent)}</strong> · не более ${c.race.maxPerStat} в характеристику до переносов</p></div>` : '<p class="muted">Каждая характеристика определяется отдельным броском 2к10.</p>'}`}
-    <div class="stats-grid">${data.stats
+    <p class="scale-caption">Шкала характеристик: 0–${U.statScale(c.stats)}. Это масштаб отображения, не игровой предел.</p><div class="stats-grid">${data.stats
       .map((stat) => {
         const b = c.breakdown[stat];
-        return `<article class="stat-card ${d.pendingTransferFrom === stat ? "transfer-source" : ""}"><div class="stat-title"><abbr title="${esc(statNames[stat])}">${stat}</abbr><small>бонус ${Math.floor(c.stats[stat] / 10)}</small></div><strong class="stat-total">${n(c.stats[stat])}</strong><span class="stat-fullname">${esc(statNames[stat])}</span><div class="mini-bar"><i style="width:${Math.max(0, Math.min(100, c.stats[stat]))}%"></i></div>${!fixed && d.mode === "planned" ? `<label class="stat-input-label">Вложено<input inputmode="decimal" type="number" min="0" max="${c.race.maxPerStat}" step="any" data-stat="${stat}" data-focus="stat-${stat}" value="${d.plannedAdditions[stat]}" aria-label="Очки в ${stat}"></label>` : !fixed ? `<span class="roll-value">2к10: ${d.rolls[stat] || "—"}</span>` : ""}<details data-detail="stat-${stat}"><summary>Из чего складывается</summary><dl class="breakdown"><div><dt>База расы</dt><dd>${n(b.base)}</dd></div><div><dt>Родной мир / полк</dt><dd>${signed(b.world)}</dd></div><div><dt>Специальность</dt><dd>${signed(b.specialty)}</dd></div><div><dt>Генерация и переносы</dt><dd>${signed(b.generation)}</dd></div><div><dt>Развитие</dt><dd>${signed(b.advancement)}</dd></div></dl></details>${!fixed ? `<div class="transfer-buttons"><button type="button" class="secondary" data-transfer-from="${stat}" aria-label="Перенести ${transferValue} из ${stat}" ${!generationReady || d.transfers.length >= limit ? "disabled" : ""}>−${transferValue}</button><button type="button" class="secondary" data-transfer-to="${stat}" aria-label="Перенести ${transferValue} в ${stat}" ${!generationReady || !d.pendingTransferFrom || d.pendingTransferFrom === stat || d.transfers.length >= limit ? "disabled" : ""}>+${transferValue}</button></div>` : ""}</article>`;
+        return `<article class="stat-card ${d.pendingTransferFrom === stat ? "transfer-source" : ""}"><div class="stat-title"><abbr title="${esc(statNames[stat])}">${stat}</abbr><small>бонус ${Math.floor(c.stats[stat] / 10)}</small></div><strong class="stat-total">${n(c.stats[stat])}</strong><span class="stat-fullname">${esc(statNames[stat])}</span>${U.segments(c.stats[stat], U.statScale(c.stats), statNames[stat])}${!fixed && d.mode === "planned" ? `<label class="stat-input-label">Вложено<input inputmode="decimal" type="number" min="0" max="${c.race.maxPerStat}" step="any" data-stat="${stat}" data-focus="stat-${stat}" value="${d.plannedAdditions[stat]}" aria-label="Очки в ${stat}"></label>` : !fixed ? `<span class="roll-value">2к10: ${d.rolls[stat] || "—"}</span>` : ""}<details data-detail="stat-${stat}"><summary>Из чего складывается</summary><dl class="breakdown"><div><dt>База расы</dt><dd>${n(b.base)}</dd></div><div><dt>Родной мир / полк</dt><dd>${signed(b.world)}</dd></div><div><dt>Специальность</dt><dd>${signed(b.specialty)}</dd></div><div><dt>Генерация и переносы</dt><dd>${signed(b.generation)}</dd></div><div><dt>Развитие</dt><dd>${signed(b.advancement)}</dd></div><div class="breakdown-total"><dt>Итого</dt><dd>${n(c.stats[stat])}</dd></div></dl></details>${!fixed ? `<div class="transfer-buttons"><button type="button" class="secondary" data-transfer-from="${stat}" aria-label="Перенести ${transferValue} из ${stat}" ${!generationReady || d.transfers.length >= limit ? "disabled" : ""}>−${transferValue}</button><button type="button" class="secondary" data-transfer-to="${stat}" aria-label="Перенести ${transferValue} в ${stat}" ${!generationReady || !d.pendingTransferFrom || d.pendingTransferFrom === stat || d.transfers.length >= limit ? "disabled" : ""}>+${transferValue}</button></div>` : ""}</article>`;
       })
       .join("")}</div>
       ${fixed ? "" : `<section class="transfer-panel"><div class="section-heading"><h3>Переносы <span class="badge">${d.transfers.length} / ${limit}</span></h3><div class="inline-actions"><button class="quiet" type="button" data-cancel-transfer ${!d.pendingTransferFrom ? "disabled" : ""}>Отменить выбор</button><button class="secondary" type="button" data-undo-transfer ${!d.transfers.length ? "disabled" : ""}>Отменить перенос</button></div></div><p>${d.pendingTransferFrom ? `Выбран источник ${d.pendingTransferFrom}. Нажмите +${transferValue} у получателя.` : `Сначала завершите генерацию, затем выберите −${transferValue} у источника и +${transferValue} у получателя.`}</p><div class="transfer-history">${tags(d.transfers.map((t) => `${t.from} −${transferValue} → ${t.to} +${transferValue}`))}</div></section>`}`;
@@ -171,7 +162,7 @@
   function advancement(d, c, engine, ui, data, adv) {
     const ready = !engine.validate(d, { baseOnly: true }).length,
       tab = ui.advancementTab;
-    const header = `<div class="xp-overview"><div><small>Доступно сейчас</small><strong>${n(c.availableXp)} <span>ОО</span></strong></div>${meter("Потрачено на развитие", c.advancement.spent, c.availableXp + c.advancement.spent, "gold")}</div>${!ready ? '<div class="message warning">Для покупок завершите обязательные выборы и характеристики. Каталог можно просматривать сейчас.</div>' : ""}
+    const header = `${U.xpSummary(c)}${!ready ? '<div class="message warning">Для покупок завершите обязательные выборы и характеристики. Каталог можно просматривать сейчас.</div>' : ""}
       <div class="subtabs" role="group" aria-label="Раздел развития">${[
         ["stats", "Характеристики"],
         ["skills", "Навыки"],
@@ -190,7 +181,7 @@
           .map((s) => {
             const count = d.advancement.characteristics[s],
               cost = engine.characteristicCost(count);
-            return `<article class="advance-card"><span class="card-eyebrow">${esc(statNames[s])}</span><div class="advance-values"><strong>${s} ${n(c.stats[s])}</strong><span>→ ${n(c.stats[s] + 5)}</span></div><p>Куплено: +${count * 5}</p><div class="inline-actions"><button type="button" class="quiet" data-action="undoCharacteristic" data-stat="${s}" ${!count ? "disabled" : ""}>Отменить</button><button type="button" data-action="buyCharacteristic" data-stat="${s}" ${!ready || c.availableXp < cost ? "disabled" : ""}>+5 · ${n(cost)} ОО</button></div></article>`;
+            return `<article class="advance-card"><span class="card-eyebrow">${esc(statNames[s])}</span><div class="advance-values"><strong>${s} ${n(c.stats[s])}</strong><span>→ ${n(c.stats[s] + 5)}</span></div><p>Куплено: +${count * 5}</p>${U.segments(c.stats[s], U.statScale(c.stats), statNames[s])}<p class="availability ${!ready || c.availableXp < cost ? "warning" : ""}">${!ready ? "Завершите обязательные выборы" : c.availableXp < cost ? `Не хватает ${n(cost - c.availableXp)} ОО` : "Доступно к приобретению"}</p><div class="inline-actions"><button type="button" class="quiet" data-action="undoCharacteristic" data-stat="${s}" ${!count ? "disabled" : ""}>Отменить</button><button type="button" data-action="buyCharacteristic" data-stat="${s}" ${!ready || c.availableXp < cost ? "disabled" : ""}>+5 · ${n(cost)} ОО</button></div></article>`;
           })
           .join("")}</div>`
       );
@@ -218,7 +209,7 @@
             adv.skills.map((s) => ({ id: s.name, name: s.name })),
             skill.name,
           )}</select>`,
-        )}${specializations.length ? field("Специализация", `<select id="adv-skill-specialization" data-ui="skillSpecialization"><option value="">— Выберите —</option>${options(specializations, ui.skillSpecialization)}</select>`) : ""}${custom ? field("Название специализации", `<input id="adv-skill-custom" data-ui="skillCustom" value="${esc(ui.skillCustom)}">`) : ""}</div><p class="muted">Характеристика: ${esc(skill.characteristic ?? "по ситуации")}. Ступени: +0 → +10 → +20 → +30.</p><button type="button" data-action="buySkill" data-name="${esc(name)}" ${!ready || !name || p?.nextCost == null || c.availableXp < p.nextCost ? "disabled" : ""}>${p?.nextCost == null ? "Предел навыка" : `${p?.stage ? "Улучшить" : "Изучить"} · ${n(p.nextCost)} ОО`}</button></div>
+        )}${specializations.length ? field("Специализация", `<select id="adv-skill-specialization" data-ui="skillSpecialization"><option value="">— Выберите —</option>${options(specializations, ui.skillSpecialization)}</select>`) : ""}${custom ? field("Название специализации", `<input id="adv-skill-custom" data-ui="skillCustom" value="${esc(ui.skillCustom)}">`) : ""}</div><p class="muted">Характеристика: ${esc(skill.characteristic ?? "по ситуации")}. Ступени: +0 → +10 → +20 → +30.</p><p class="availability ${!ready || !name || p?.nextCost == null || c.availableXp < p.nextCost ? "warning" : ""}">${!ready ? "Завершите обязательные выборы и характеристики." : !name ? "Выберите или впишите специализацию навыка." : p?.nextCost == null ? "Достигнут предел развития навыка." : c.availableXp < p.nextCost ? `Не хватает ${n(p.nextCost - c.availableXp)} ОО.` : "Навык доступен к приобретению."}</p><button type="button" data-action="buySkill" data-name="${esc(name)}" ${!ready || !name || p?.nextCost == null || c.availableXp < p.nextCost ? "disabled" : ""}>${!name ? "Выберите специализацию" : p?.nextCost == null ? "Предел навыка" : `${p?.stage ? "Улучшить" : "Изучить"} · ${n(p.nextCost)} ОО`}</button></div>
         ${sectionTitle("Навыки персонажа", "Заливка показывает бонус освоения; максимум +30.")}<div class="skill-profile-list">${[...c.skills].map(([name, value]) => `<article><div><strong>${esc(name)}</strong>${meter("Бонус", value, 30)}</div>${d.advancement.skills[name] ? `<button type="button" class="quiet" data-action="undoSkill" data-name="${esc(name)}">Отменить покупку</button>` : '<span class="badge">Происхождение</span>'}</article>`).join("") || '<p class="muted">Пока нет навыков.</p>'}</div>`
       );
     }
@@ -252,7 +243,19 @@
                   (!owned || repeat) &&
                   !failures.length &&
                   c.availableXp >= cost;
-              return `<details class="talent-catalog-card" data-detail="${esc(t.id)}"><summary><span><strong>${esc(t.name)}</strong><small>${esc(t.category)} · ${t.level} ур.${repeat ? " · повторяемый" : ""}</small></span><b>${n(cost)} ОО</b></summary><div class="detail-body"><p>${esc(t.description ?? "")}</p><p><strong>Требования:</strong> ${esc(t.requirements || "Нет")}</p>${talentOption(t, ui, adv)}${failures.length ? `<p class="warning-text">Не выполнено: ${failures.map(esc).join(", ")}</p>` : ""}<button type="button" data-action="buyTalent" data-catalog-id="${esc(t.id)}" ${can ? "" : "disabled"}>${owned && !repeat ? "Уже получен" : owned ? "Купить ещё" : "Купить"} · ${n(cost)} ОО</button></div></details>`;
+              const reason =
+                owned && !repeat
+                  ? "Уже получен"
+                  : !ready
+                    ? "Завершите создание"
+                    : !name
+                      ? "Выберите специализацию"
+                      : failures.length
+                        ? "Требования не выполнены"
+                        : c.availableXp < cost
+                          ? `Не хватает ${n(cost - c.availableXp)} ОО`
+                          : "Доступен";
+              return `<details data-availability="${owned && !repeat ? "owned" : can ? "available" : "locked"}" class="talent-catalog-card" data-detail="${esc(t.id)}"><summary><span><strong>${esc(t.name)}</strong><small>${esc(t.category)} · ${t.level} ур.${repeat ? " · повторяемый" : ""}</small></span><span class="talent-price"><b>${n(cost)} ОО</b>${U.status(reason, owned && !repeat ? "valid" : can ? "active" : "locked")}</span></summary><div class="detail-body"><p>${esc(t.description ?? "")}</p><p><strong>Требования:</strong> ${esc(t.requirements || "Нет")}</p>${talentOption(t, ui, adv)}<p class="availability">${esc(reason)}</p>${failures.length ? `<p class="warning-text">Не выполнено: ${failures.map(esc).join(", ")}</p>` : ""}<button type="button" data-action="buyTalent" data-catalog-id="${esc(t.id)}" ${can ? "" : "disabled"}>${owned && !repeat ? "Уже получен" : owned ? "Купить ещё" : "Купить"} · ${n(cost)} ОО</button></div></details>`;
             })
             .join("") ||
           '<div class="empty-state">Нет совпадений. Измените фильтры.</div>'
@@ -291,8 +294,12 @@
     return `<div class="review-identity"><span class="card-eyebrow">ЛИЧНОЕ ДЕЛО</span><h3>${esc(c.name)}</h3><p>${esc(c.race.name)} · ${esc(c.world.name)} · ${esc(c.specialty.name)}</p></div>${checklist(errors)}<div class="message ${errors.length ? "warning" : "success"}">${errors.length ? `До формирования досье осталось устранить ${errors.length} замечаний.` : "Персонаж готов. Сформируйте досье, чтобы получить итоговую карточку и выгрузить Excel."}</div>`;
   }
   function live(d, c, errors) {
-    const total = c.startingXp + c.bonusXp;
-    return `<div class="live-heading"><span class="card-eyebrow">ПЕРСОНАЖ В РАБОТЕ</span><span class="live-dot"></span></div><h2>${esc(d.name || "Новое личное дело")}</h2><p class="muted">${esc(c.race.name)} · ${esc(c.specialty.name)}</p>${radar(c.stats)}<div class="live-metrics"><div><span>Раны</span><strong>${n(c.wounds)}</strong></div><div><span>Остаток ОО</span><strong class="${c.availableXp < 0 ? "negative" : ""}">${n(c.availableXp)}</strong></div></div><div class="xp-ledger"><div><span>Начальный опыт</span><strong>${n(c.startingXp)}</strong></div><div><span>Повторные таланты</span><strong>+${n(c.bonusXp)}</strong></div><div><span>Специальность</span><strong>−${n(c.specialty.xpCost)}</strong></div><div><span>Развитие</span><strong>−${n(c.advancement.spent)}</strong></div></div>${meter("Использовано опыта", c.specialty.xpCost + c.advancement.spent, total, "gold")}<div class="live-status ${errors.length ? "" : "complete"}"><span>${errors.length ? "◷" : "✓"}</span><p>${errors.length ? `${errors.length} незавершённых пунктов` : "Можно сформировать досье"}</p></div><p class="small-note">Сводка обновляется при каждом выборе. Значения характеристик включают приобретённое развитие.</p>`;
+    return `<div class="live-heading"><span class="card-eyebrow">ЛИЧНОЕ ДЕЛО / PERSONNEL</span></div><h2>${esc(d.name || "Новое личное дело")}</h2><p class="muted">${esc(c.race.name)} · ${esc(c.specialty.name)}</p>${U.recordFacts(
+      [
+        ["Происхождение", c.world.name],
+        ["Раны", n(c.wounds)],
+      ],
+    )}${U.xpSummary(c, true)}${U.status(errors.length ? `Требует внимания: ${errors.length}` : "Готово к формированию", errors.length ? "warning" : "valid")}<div class="live-stat-profile">${statBars(c.stats)}</div><details class="summary-profile" data-detail="live-profile"><summary>Диаграмма характеристик</summary>${radar(c.stats)}</details><p class="small-note">Сводка учитывает текущие выборы и покупки.</p>`;
   }
   function dossier(c) {
     const equipment = unique([
@@ -316,8 +323,8 @@
     const talentCounts = new Map();
     for (const name of c.talents)
       talentCounts.set(name, (talentCounts.get(name) ?? 0) + 1);
-    return `<div class="dossier-cover"><div><span class="card-eyebrow">КАДАТ / ЛИЧНОЕ ДЕЛО</span><h1>${esc(c.name)}</h1><p>${esc(c.race.name)} · ${esc(c.world.name)}</p><strong>${esc(c.specialty.name)}</strong></div><span class="dossier-seal">K<br><small>100</small></span></div>
-      <div class="dossier-grid"><section class="dossier-profile">${radar(c.stats)}${statBars(c.stats)}</section><div><div class="summary-grid"><div><span>Раны</span><strong>${n(c.wounds)}</strong></div><div><span>Опыт доступен</span><strong>${n(c.availableXp)}</strong></div><div><span>Опыт потрачен</span><strong>${n(c.advancement.spent)}</strong></div></div>${sectionTitle("Характеристики")}<div class="table-scroll"><table class="result-table"><thead><tr><th>Характеристика</th><th>Значение</th><th>Бонус</th></tr></thead><tbody>${Object.entries(
+    return `${U.recordHeader("PERSONNEL DOSSIER", c.name, `${c.race.name} · ${c.world.name} · ${c.specialty.name}`, "Проверка пройдена")}${U.xpSummary(c)}
+      <div class="dossier-grid"><section class="dossier-profile">${radar(c.stats)}${statBars(c.stats)}</section><div><div class="summary-grid"><div><span>Раны</span><strong>${n(c.wounds)}</strong></div><div><span>Опыт доступен</span><strong>${n(c.availableXp)}</strong></div><div><span>На развитие</span><strong>${n(c.advancement.spent)}</strong></div></div>${sectionTitle("Характеристики")}<div class="table-scroll"><table class="result-table"><thead><tr><th>Характеристика</th><th>Значение</th><th>Бонус</th></tr></thead><tbody>${Object.entries(
         c.stats,
       )
         .map(
@@ -327,7 +334,13 @@
         .join("")}</tbody></table></div></div></div>
       ${c.regiment ? `<section class="dossier-section"><span class="card-eyebrow">ПОЛК</span><h3>${esc(c.regiment.name)}</h3><div class="tags">${tags([c.regiment.selectedEntries?.origin?.name, c.regiment.selectedEntries?.commander?.name, c.regiment.selectedEntries?.regimentType?.name].filter(Boolean))}</div></section>` : ""}
       <div class="dossier-columns"><section class="dossier-section"><h3>Навыки <span class="badge">${c.skills.size}</span></h3><div class="skill-result-list">${[...c.skills].map(([name, value]) => `<div><span>${esc(name)}</span><strong>+${value}</strong><i style="--skill:${(value / 30) * 100}%"></i></div>`).join("") || '<p class="muted">Нет навыков</p>'}</div></section><section class="dossier-section"><h3>Таланты <span class="badge">${c.talents.length}</span></h3><div class="tags">${tags([...talentCounts].map(([name, count]) => name + (count > 1 ? ` ×${count}` : "")))}</div><h3>Особенности</h3><div class="tags">${tags(traits)}</div>${(c.race.uniqueFeatures ?? []).map(uniqueFeature).join("")}</section></div>
-      <section class="dossier-section"><h3>Снаряжение <span class="badge">${equipment.length}</span></h3><div class="equipment-grid">${equipment.map((item, i) => `<article><span class="equipment-index">${String(i + 1).padStart(2, "0")}</span><p>${esc(item)}</p></article>`).join("") || '<p class="muted">Снаряжение не указано.</p>'}</div></section>
+      <section class="dossier-section"><h3>Снаряжение <span class="badge">${equipment.length}</span></h3>${U.equipment(
+        [
+          ["Раса", c.race.equipment],
+          [c.regiment ? "Полк" : "Родной мир", c.world.equipment],
+          ["Специальность", c.specialtyEquipment],
+        ],
+      )}</section>
       ${(c.raceImplants ?? []).length ? `<section class="dossier-section"><h3>Импланты</h3><div class="tags">${tags(c.raceImplants)}</div></section>` : ""}${(c.racePsychicPowers ?? []).length ? `<section class="dossier-section"><h3>Пси-силы</h3><div class="tags">${tags(c.racePsychicPowers)}</div></section>` : ""}
       <section class="dossier-section"><h3>Особые правила</h3>${rules.map((r, i) => `<details data-detail="rule-${i}"><summary>${esc(r.name)}</summary><p class="detail-body">${esc(r.text)}</p></details>`).join("") || '<p class="muted">Не указаны</p>'}</section>
       <details class="dossier-section" data-detail="xp-details"><summary>Развитие и переносы · ${n(c.advancement.spent)} ОО</summary><div class="detail-body"><div class="tags">${tags(

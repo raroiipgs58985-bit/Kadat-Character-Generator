@@ -51,6 +51,11 @@
     const node = $("#app-notice");
     node.textContent = message;
     node.className = `app-notice ${error ? "warning" : "success"}`;
+    U.announce(
+      message,
+      error ? "error" : "valid",
+      error ? "DATA REJECTED" : "RECORD UPDATED",
+    );
   }
   root.addEventListener("kadat:storage-error", (event) =>
     notify(event.detail, true),
@@ -79,13 +84,20 @@
       stage,
       `<header class="stage-heading"><div class="stage-index">${String(ui.step + 1).padStart(2, "0")}</div><div><p class="stage-kicker">СОЗДАНИЕ ПЕРСОНАЖА / ${ui.step + 1} ИЗ 5</p><h2 tabindex="-1" id="stage-title">${V.steps[ui.step][0]}</h2><p>${V.steps[ui.step][1]}</p></div></header>${content}`,
     );
-    live.innerHTML = V.live(d, c, errors);
+    U.preserveFocus(live, V.live(d, c, errors));
+    $("#character-mobile-summary").innerHTML =
+      `<span>ОО осталось <strong>${U.number(c.availableXp)}</strong></span><span>Раны <strong>${U.number(c.wounds)}</strong></span>${U.status(errors.length ? `Замечаний: ${errors.length}` : "Готово", errors.length ? "warning" : "valid")}`;
     $("#wizard-progress").innerHTML = V.steps
       .map(
         ([title, sub], i) =>
           `<button type="button" class="wizard-step-button ${i === ui.step ? "is-active" : ""} ${i < 4 && !errors.some((e) => e.step === i) ? "is-complete" : ""}" data-wizard-go="${i}" aria-current="${i === ui.step ? "step" : "false"}"><span class="wizard-roman">${i < 4 && !errors.some((e) => e.step === i) ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="wizard-step-copy"><strong>${title}</strong><small>${sub}</small></span></button>`,
       )
       .join("");
+    U.progress(
+      [...$("#wizard-progress").querySelectorAll("button")],
+      ui.step,
+      V.steps.map((_, i) => errors.some((e) => e.step === i)),
+    );
     $("#wizard-step-status").textContent = `Этап ${ui.step + 1} из 5`;
     $("#wizard-xp-status").textContent = `${U.number(c.availableXp)} ОО`;
     $("#wizard-prev").disabled = ui.step === 0;
@@ -125,6 +137,7 @@
   function showError(message) {
     validation.textContent = message;
     validation.hidden = false;
+    U.announce(message, "error", "DATA REJECTED");
     validation.focus({ preventScroll: true });
   }
   function advance() {
@@ -286,8 +299,19 @@
         id: a.purchaseId ?? crypto.randomUUID(),
         option: ui.talentOptions[a.catalogId] ?? "",
       });
-      if (t.ok) change(t.draft);
-      else showError(t.message);
+      if (t.ok) {
+        change(t.draft);
+        const labels = {
+          buyCharacteristic: "Характеристика повышена",
+          undoCharacteristic: "Повышение отменено",
+          buySkill: "Навык приобретён",
+          undoSkill: "Покупка навыка отменена",
+          buyTalent: "Талант приобретён",
+          undoTalent: "Покупка таланта отменена",
+          resetAdvancement: "Покупки развития отменены",
+        };
+        U.announce(labels[a.action] ?? "Развитие обновлено");
+      } else showError(t.message);
       return;
     }
     if (a.roll !== undefined) {
@@ -300,6 +324,7 @@
       d.transfers = [];
       d.pendingTransferFrom = null;
       change(d);
+      U.announce("Броски характеристик выполнены", "valid", "VALUES UPDATED");
       return;
     }
     if (a.transferFrom) {
@@ -373,6 +398,7 @@
     resultMode = true;
     root.KadatModes.open("character");
     $("#result-title").focus({ preventScroll: true });
+    U.announce("Досье сформировано", "valid", "DOSSIER COMPILED");
   });
   $("#return-to-builder").addEventListener("click", () => {
     resultMode = false;
@@ -381,7 +407,14 @@
   });
   $("#export-xlsx").addEventListener("click", () => {
     try {
-      if (lastCharacter) root.KadatExports.download("xlsx", lastCharacter);
+      if (lastCharacter) {
+        root.KadatExports.download("xlsx", lastCharacter);
+        U.announce(
+          "Excel подготовлен: карточка и три подробных листа",
+          "valid",
+          "EXPORT COMPILED",
+        );
+      }
     } catch (e) {
       notify(`Ошибка Excel: ${e.message}`, true);
     }

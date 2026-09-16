@@ -34,17 +34,23 @@
 
   const refs = {};
 
-  const escapeHtml = window.KadatUI.escape;
+  const U = window.KadatUI;
+  const escapeHtml = U.escape;
 
   const roll100 = () => ENGINE.d100(Math.random);
-  const currentForm = () => DATA.findByRoll(DATA.forms, state.formRoll);
+  const currentForm = () =>
+    state.formRoll == null ? null : DATA.findByRoll(DATA.forms, state.formRoll);
   const currentArchetype = () =>
-    DATA.findByRoll(
-      state.type === "race" ? DATA.raceArchetypes : DATA.beastArchetypes,
-      state.archetypeRoll,
-    );
+    state.archetypeRoll == null
+      ? null
+      : DATA.findByRoll(
+          state.type === "race" ? DATA.raceArchetypes : DATA.beastArchetypes,
+          state.archetypeRoll,
+        );
   const currentFeature = () =>
-    DATA.findByRoll(DATA.features, state.featureRoll);
+    state.featureRoll == null
+      ? null
+      : DATA.findByRoll(DATA.features, state.featureRoll);
 
   function buildShell() {
     const footer = document.querySelector(".page-footer");
@@ -74,7 +80,7 @@
       <form id="xeno-form" class="panel dossier-form xeno-form" novalidate>
         <div class="dossier-rail dossier-rail-left" aria-hidden="true"></div>
         <div class="dossier-rail dossier-rail-right" aria-hidden="true"></div>
-        <div id="xeno-stage"></div>
+        <div class="restricted-label">КСЕНОЛОГИЧЕСКИЙ АРХИВ // RESTRICTED ARCHIVE</div><div id="xeno-mobile-summary" class="mobile-record-strip"></div><div class="feature-layout"><div id="xeno-stage"></div><aside id="xeno-summary" class="live-summary feature-summary" aria-label="Текущий профиль ксеноса"></aside></div>
         <div id="xeno-validation" class="message hidden" role="alert"></div>
         <div class="wizard-controls xeno-controls">
           <button id="xeno-reset" type="button" class="secondary danger-quiet">Сбросить</button>
@@ -91,7 +97,7 @@
         </div>
         <section class="panel result-panel xeno-result-panel" tabindex="-1">
           <div class="result-stamp" aria-hidden="true">УЧТЁН</div>
-          <div class="result-document-heading"><p>ORDO XENOS</p><h2>Итоговый формуляр ксеноса</h2><span>Уровень допуска: SIGMA</span></div>
+          <div class="result-document-heading"><p>ORDO XENOS</p><h2>Итоговый формуляр ксеноса</h2><span>XENOS RECORD // RESTRICTED ARCHIVE</span></div>
           <div id="xeno-result"></div>
         </section>
       </section>`;
@@ -100,6 +106,7 @@
     refs.section = section;
     refs.form = section.querySelector("#xeno-form");
     refs.stage = section.querySelector("#xeno-stage");
+    refs.summary = section.querySelector("#xeno-summary");
     refs.validation = section.querySelector("#xeno-validation");
     refs.prev = section.querySelector("#xeno-prev");
     refs.next = section.querySelector("#xeno-next");
@@ -143,6 +150,7 @@
   function showValidation(message) {
     refs.validation.textContent = message;
     refs.validation.className = "message error";
+    U.announce(message, "error", "DATA REJECTED");
     return false;
   }
   function hideValidation() {
@@ -191,6 +199,7 @@
       .querySelector("#xeno-name")
       .addEventListener("input", (event) => {
         state.name = event.target.value;
+        updatePreview();
       });
     refs.stage
       .querySelector("#xeno-type")
@@ -209,7 +218,7 @@
     refs.stage.innerHTML = `<section class="wizard-stage is-active">
       ${heading(1, "PARAMETRA XENOBIOLOGICA", "Характеристики", "Все базовые характеристики и раны определяются бросками, указанными в исходной таблице.")}
       <div class="generation-action xeno-roll-action"><button id="xeno-roll-stats" type="button">${stats ? "Перебросить характеристики" : "Бросить характеристики"}</button></div>
-      ${stats ? `<div class="stats-grid">${DATA.stats.map((stat) => `<article class="stat-card"><div class="stat-name">${stat}</div><div class="stat-total">${stats[stat]}</div><div class="stat-details">${state.type === "beast" && stat === "НС" ? "Отсутствует" : "Результат броска"}</div></article>`).join("")}</div><div class="xeno-wounds-card"><span>Раны</span><strong>${state.baseWounds}</strong></div>` : `<p class="empty-state">Выполните броски характеристик.</p>`}
+      ${stats ? `<div class="stats-grid">${DATA.stats.map((stat) => `<article class="stat-card"><div class="stat-name">${stat}</div><div class="stat-total">${stats[stat]}</div><span class="stat-fullname">${escapeHtml(U.statNames[stat])}</span>${U.segments(stats[stat], U.statScale(stats), U.statNames[stat])}<div class="stat-details">${state.type === "beast" && stat === "НС" ? "Отсутствует" : "Результат броска"}</div></article>`).join("")}</div><div class="xeno-wounds-card"><span>Раны</span><strong>${state.baseWounds}</strong></div>` : `<p class="empty-state">Выполните броски характеристик.</p>`}
     </section>`;
     refs.stage
       .querySelector("#xeno-roll-stats")
@@ -406,22 +415,48 @@
     if (target > state.step && !validateStep(state.step)) return;
     state.step = target;
     renderStep();
-    refs.section.scrollIntoView({ behavior: "smooth", block: "start" });
+    U.focusStage(refs.stage);
   }
 
+  function rollRegister() {
+    return `<div class="roll-register" aria-label="Результаты бросков к100">${[
+      ["Форма", state.formRoll, currentForm()],
+      ["Архетип", state.archetypeRoll, currentArchetype()],
+      ["Особенность", state.featureRoll, currentFeature()],
+    ]
+      .map(
+        ([label, roll, entry]) =>
+          `<div><small>${label} / к100</small><strong>${roll ?? "—"}</strong><span>${escapeHtml(entry?.name ?? "Бросок не выполнен")}</span></div>`,
+      )
+      .join("")}</div>`;
+  }
   function updatePreview() {
-    refs.stage.querySelector(".xeno-profile-visual")?.remove();
-    if (!state.baseStats) return;
-    const complete = state.formRoll && state.archetypeRoll && state.featureRoll;
-    const preview = complete ? buildProfile().stats : state.baseStats;
-    refs.stage.insertAdjacentHTML(
-      "beforeend",
-      `<details class="xeno-profile-visual" data-detail="xeno-profile" open><summary>${complete ? "Итоговый профиль характеристик" : "Базовый профиль · до применения формы, архетипа и особенности"}</summary><div class="xeno-profile-grid">${window.KadatUI.radar(preview)}${window.KadatUI.statBars(preview)}</div></details>`,
-    );
+    const complete =
+      state.baseStats &&
+      state.formRoll &&
+      state.archetypeRoll &&
+      state.featureRoll;
+    const profile = complete ? buildProfile() : null;
+    const preview = profile ? profile.stats : state.baseStats;
+    const errors = Array.from({ length: 5 }, (_, i) =>
+      ENGINE.validateStep(state, DATA, i),
+    ).filter(Boolean);
+    refs.summary.innerHTML = `<div class="live-heading"><span class="card-eyebrow">XENOS / ЗАПИСЬ</span></div><h2>${escapeHtml(state.name || "Новый ксено-формуляр")}</h2>${U.recordFacts(
+      [
+        ["Тип", state.type === "race" ? "Ксено-раса" : "Ксено-зверь"],
+        ["Размер", U.signed(state.size)],
+        ["Раны", profile?.wounds ?? state.baseWounds ?? "Не определены"],
+      ],
+    )}${U.status(errors.length ? "Есть незавершённые этапы" : "Готово к формированию", errors.length ? "warning" : "valid")}${rollRegister()}${preview ? `<p class="small-note">${profile ? "Итоговый профиль с модификаторами" : "Базовые броски; модификаторы ещё не включены"}</p>${U.statBars(preview)}` : '<p class="empty-state">Выполните броски характеристик.</p>'}`;
+    refs.section.querySelector("#xeno-mobile-summary").innerHTML =
+      `<span>${state.type === "race" ? "Ксено-раса" : "Ксено-зверь"}</span><span>Размер <strong>${U.signed(state.size)}</strong></span><span>Раны <strong>${profile?.wounds ?? state.baseWounds ?? "—"}</strong></span>`;
+    const review = refs.stage.querySelector(".xeno-review-card");
+    if (review && profile) review.outerHTML = profilePreview(profile);
   }
 
   function renderStep() {
     if (!refs.stage) return;
+    const restoreFocus = U.focusSnapshot(refs.form);
     hideValidation();
     if (state.step === 0) renderType();
     if (state.step === 1) renderStats();
@@ -449,6 +484,12 @@
           : state.step === 4
             ? `к100: ${state.featureRoll ?? "—"}`
             : "к100: —";
+    U.progress(
+      refs.progress,
+      state.step,
+      Array.from({ length: 5 }, (_, i) => ENGINE.validateStep(state, DATA, i)),
+    );
+    restoreFocus();
   }
 
   function renderResult() {
@@ -458,9 +499,9 @@
     refs.resultView.classList.remove("hidden");
     refs.resultView.querySelector("#xeno-code").textContent =
       `XEN-${String(Math.floor(Math.random() * 1000000)).padStart(6, "0")}`;
-    refs.result.innerHTML = `<div class="character-card"><div><h3>${escapeHtml(profile.name)}</h3><p class="muted">${profile.type === "race" ? "Ксено-раса" : "Ксено-зверь"} • ${escapeHtml(profile.form?.name ?? "—")} • ${escapeHtml(profile.archetype?.name ?? "—")}</p></div>
+    refs.result.innerHTML = `<div class="character-card">${U.recordHeader("XENOS DOSSIER", profile.name, `${profile.type === "race" ? "Ксено-раса" : "Ксено-зверь"} · ${profile.form?.name ?? "—"} · ${profile.archetype?.name ?? "—"}`, "Проверка пройдена")}${rollRegister()}
       <div class="summary-grid"><div class="summary-item"><span class="summary-label">Раны</span><span class="summary-value">${profile.wounds}</span></div><div class="summary-item"><span class="summary-label">Размер</span><span class="summary-value">${profile.size >= 0 ? "+" : ""}${profile.size}</span></div><div class="summary-item"><span class="summary-label">Особенность</span><span class="summary-value">${escapeHtml(profile.feature?.name ?? "—")}</span></div></div>
-      ${window.KadatUI.radar(profile.stats)}<div><h3>Характеристики</h3><table class="result-table"><thead><tr><th>Хар.</th><th>Значение</th><th>Бонус</th></tr></thead><tbody>${DATA.stats.map((stat) => `<tr><th>${stat}</th><td>${profile.stats[stat]}</td><td>${Math.floor(profile.stats[stat] / 10)}</td></tr>`).join("")}</tbody></table></div>
+      ${U.radar(profile.stats)}${U.statBars(profile.stats)}<div><h3>Характеристики</h3><table class="result-table"><thead><tr><th>Хар.</th><th>База</th><th>Изменение</th><th>Итог</th><th>Бонус</th></tr></thead><tbody>${DATA.stats.map((stat) => `<tr><th>${stat}</th><td>${state.baseStats[stat]}</td><td>${U.signed(profile.stats[stat] - state.baseStats[stat])}</td><td>${profile.stats[stat]}</td><td>${Math.floor(profile.stats[stat] / 10)}</td></tr>`).join("")}</tbody></table></div>
       <div><h3>Навыки</h3><div class="tags">${profile.skills.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("") || `<span class="muted">Нет</span>`}</div></div>
       <div><h3>Таланты</h3><div class="tags">${profile.talents.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("") || `<span class="muted">Нет</span>`}</div></div>
       <div><h3>Особенности</h3><div class="tags">${profile.traits.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join("") || `<span class="muted">Нет</span>`}</div></div>
@@ -482,7 +523,14 @@
       refs.result
         .querySelector("#save-xeno-race")
         .addEventListener("click", (event) => {
-          if (save()) event.currentTarget.textContent = "Раса сохранена";
+          if (save()) {
+            event.currentTarget.textContent = "Раса сохранена";
+            U.announce(
+              "Раса добавлена в каталог персонажа",
+              "valid",
+              "RECORD STORED",
+            );
+          }
         });
       refs.result
         .querySelector("#create-xeno-character")
@@ -491,7 +539,11 @@
           document.querySelector('[data-registry-mode="character"]')?.click();
         });
     }
-    refs.resultView.scrollIntoView({ behavior: "smooth", block: "start" });
+    refs.resultView
+      .querySelector(".result-panel")
+      ?.focus({ preventScroll: true });
+    refs.resultView.scrollIntoView({ behavior: "instant", block: "start" });
+    U.announce("Ксено-формуляр сформирован", "valid", "DOSSIER COMPILED");
   }
 
   function snapshot() {
