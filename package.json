@@ -1,0 +1,15 @@
+{
+  "name": "kadat-character-generator",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Генератор Кадата: персонаж, полк, ксенос и серво-броня",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "test": "node scripts/test.cjs",
+    "check": "node scripts/check.cjs",
+    "format": "prettier --write src styles index.html scripts tests/*.cjs docs README.md",
+    "format:check": "prettier --check src styles index.html scripts tests/*.cjs docs README.md"
+  },
+  "engines": {"node": ">=20"},
+  "devDependencies": {"jsdom": "26.1.0", "prettier": "3.6.2"}
+}

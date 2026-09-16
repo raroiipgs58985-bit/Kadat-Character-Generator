@@ -1,6 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "validate": "node validate-data.cjs"
-  }
-}
