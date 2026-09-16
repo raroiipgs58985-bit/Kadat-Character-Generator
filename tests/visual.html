@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Кадат — проверка адаптивности</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #0b0e0b;
+        color: #e7e6d8;
+        font:
+          14px/1.5 system-ui,
+          sans-serif;
+      }
+      header {
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #414638;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 auto 0 0;
+      }
+      select,
+      a {
+        font: inherit;
+        color: inherit;
+        background: #191d18;
+        border: 1px solid #414638;
+        padding: 9px 12px;
+        border-radius: 2px;
+      }
+      select:focus-visible,
+      a:focus-visible {
+        outline: 2px solid #c5ad77;
+        outline-offset: 3px;
+      }
+      p {
+        margin: 0;
+        padding: 8px 20px;
+        color: #afb5a6;
+        font-size: 12px;
+      }
+      .viewport {
+        overflow: auto;
+        padding: 16px;
+      }
+      iframe {
+        display: block;
+        border: 0;
+        margin: 0 auto;
+        outline: 1px solid #414638;
+        background: #101310;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Кадат / проверка адаптивности</h1>
+      <label for="viewport-size">Размер экрана</label>
+      <select id="viewport-size">
+        <option value="1280x900">Desktop · 1280 × 900</option>
+        <option value="820x1180">Планшет · 820 × 1180</option>
+        <option value="390x844">Телефон · 390 × 844</option>
+        <option value="360x800">Телефон · 360 × 800</option>
+        <option value="320x740">Малый экран · 320 × 740</option>
+      </select>
+      <a href="../index.html">Открыть приложение</a>
+    </header>
+    <p>
+      Настоящее приложение в изменяемом окне. Использует те же сохранения
+      браузера. Размер проверяет CSS-вёрстку, но не эмулирует устройство, touch
+      или Safari.
+    </p>
+    <div class="viewport">
+      <iframe
+        id="app-viewport"
+        title="Генератор Кадата"
+        src="../index.html"
+        width="1280"
+        height="900"
+      ></iframe>
+    </div>
+    <script>
+      const size = document.querySelector("#viewport-size");
+      const frame = document.querySelector("#app-viewport");
+      size.addEventListener("change", () => {
+        const [width, height] = size.value.split("x");
+        frame.width = width;
+        frame.height = height;
+      });
+    </script>
+  </body>
+</html>

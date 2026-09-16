@@ -22,7 +22,8 @@
   };
   const refs = {};
 
-  const esc = window.KadatUI.escape;
+  const U = window.KadatUI;
+  const esc = U.escape;
   const currentClass = () => DATA.byId(DATA.classes, state.classId);
   const option = (items, selected) =>
     items
@@ -62,14 +63,15 @@
       </nav>
       <form id="power-armor-form" class="panel dossier-form" novalidate>
         <div class="dossier-rail dossier-rail-left" aria-hidden="true"></div><div class="dossier-rail dossier-rail-right" aria-hidden="true"></div>
-        <div id="power-armor-stage"></div><div id="power-armor-validation" class="message hidden" role="alert"></div>
+        <div id="armor-mobile-summary" class="mobile-record-strip"></div><div class="feature-layout armor-workspace"><div id="power-armor-stage"></div><aside id="armor-summary" class="feature-summary" aria-label="Текущая конфигурация брони"></aside></div><div id="power-armor-validation" class="message hidden" role="alert"></div>
         <div class="wizard-controls"><button id="pa-reset" type="button" class="secondary danger-quiet">Сбросить</button><button id="pa-prev" type="button" class="secondary">Назад</button><div class="wizard-status"><span id="pa-status">Этап 1 из 5</span><strong id="pa-mass">Масса: —</strong></div><button id="pa-next" type="button">Далее</button><button id="pa-submit" type="submit" class="authorization-button" hidden>Сформировать броню</button></div>
       </form>
-      <section id="power-armor-result-view" class="result-view hidden" aria-live="polite"><div class="result-toolbar"><button id="pa-return" type="button" class="secondary">Вернуться к редактированию</button><div class="result-document-code"><span>ТЕХНИЧЕСКИЙ ФОРМУЛЯР</span><strong id="pa-code">ARM-000000</strong></div></div><section class="panel result-panel" tabindex="-1"><div class="result-stamp" aria-hidden="true">УЧТЕНО</div><div class="result-document-heading"><p>DEPARTMENTO MUNITORUM</p><h2>Формуляр серво-брони</h2><span>Уровень допуска: SIGMA</span></div><div id="pa-result"></div></section></section>`;
+      <section id="power-armor-result-view" class="result-view hidden" aria-live="polite"><div class="result-toolbar"><button id="pa-return" type="button" class="secondary">Вернуться к редактированию</button><div class="result-document-code"><span>ТЕХНИЧЕСКИЙ ФОРМУЛЯР</span><strong id="pa-code">ARM-000000</strong></div></div><section class="panel result-panel" tabindex="-1"><div class="result-stamp" aria-hidden="true">УЧТЕНО</div><div class="result-document-heading"><p>ADEPTUS MECHANICUS</p><h2>Формуляр серво-брони</h2><span>TECHNICAL RECORD // MACHINE REGISTRUM</span></div><div id="pa-result"></div></section></section>`;
     footer.insertAdjacentElement("beforebegin", section);
     refs.section = section;
     refs.form = section.querySelector("#power-armor-form");
     refs.stage = section.querySelector("#power-armor-stage");
+    refs.summary = section.querySelector("#armor-summary");
     refs.validation = section.querySelector("#power-armor-validation");
     refs.prev = section.querySelector("#pa-prev");
     refs.next = section.querySelector("#pa-next");
@@ -141,6 +143,7 @@
     return `${heading(4, "ARMAMENTUM", "Компоновка вооружения", "Выберите допустимую схему размещения вооружения. Конкретные модели оружия в исходной таблице не перечислены.")}${metrics(d)}<div class="armor-grid"><label>Вооружение рук<select id="pa-arm-layout">${option(DATA.weaponLayouts.arms, state.armLayoutId)}</select></label><label>Вооружение корпуса<select id="pa-body-layout">${option(DATA.weaponLayouts.body, state.bodyLayoutId)}</select></label></div><div class="power-armor-summary"><h3>Свободные слоты после манипуляторов</h3><p>Левая рука: ${d.weaponSlots.leftFree}/${d.weaponSlots.leftTotal}. Правая рука: ${d.weaponSlots.rightFree}/${d.weaponSlots.rightTotal}. Корпус: ${d.weaponSlots.bodyFree}/${d.weaponSlots.bodyTotal}.</p><p class="power-armor-note">${esc(d.sourceNote)}</p></div>`;
   }
   function render() {
+    const restoreFocus = U.focusSnapshot(refs.form);
     const renderers = [
       renderClass,
       renderMovement,
@@ -160,11 +163,13 @@
     hideError();
     bind();
     updateMass();
+    U.progress(refs.progress, state.step);
+    restoreFocus();
   }
   function bind() {
-    refs.stage
-      .querySelector("#pa-name")
-      ?.addEventListener("input", (e) => (state.name = e.target.value));
+    refs.stage.querySelector("#pa-name")?.addEventListener("input", (e) => {
+      state.name = e.target.value;
+    });
     refs.stage.querySelector("#pa-class")?.addEventListener("change", (e) => {
       state.classId = e.target.value;
       state.groundSpeed = 5;
@@ -228,27 +233,48 @@
       ["Манипуляторы", design.manipulators.mass],
       ["Броня", design.armor.mass],
     ];
-    return `<div class="armor-visual"><div class="armor-diagram" role="img" aria-label="Компоновка: две руки и корпус"><svg viewBox="0 0 180 220" aria-hidden="true"><path d="M68 8h44l8 36-12 12H72L60 44Z M52 62l-16 58 18 28 9-34 6 36h42l6-36 9 34 18-28-16-58-25 7H77Z M68 156h20v52H60Z M92 156h20l8 52H92Z"/></svg><span>ОБ <strong>${design.armorPoints}</strong></span></div><div>${window.KadatUI.meter("Учтённая масса, кг", design.knownMass, design.armorClass.massMax, "gold")}<dl class="mass-breakdown">${parts.map(([label, v]) => `<div><dt>${label}</dt><dd>${v} кг</dd></div>`).join("")}</dl>${slots("Левая рука", design.weaponSlots.leftFree, design.weaponSlots.leftTotal)}${slots("Правая рука", design.weaponSlots.rightFree, design.weaponSlots.rightTotal)}${slots("Корпус", design.weaponSlots.bodyFree, design.weaponSlots.bodyTotal)}<p class="small-note">Слоты показаны после установки манипуляторов. Масса оружия и расход слотов схемой вооружения исходным расчётом не определены.</p></div></div>`;
+    const systems = [
+      ["01 / ШАССИ", design.armorClass.name],
+      [
+        "02 / ПРИВОД",
+        `${design.movement.groundSpeed} м · ${design.movement.alternateSystem ? movementName(design.movement.alternateType) : "Наземный"}`,
+      ],
+      ["03 / ЛЕВАЯ РУКА", design.manipulators.left.name],
+      ["04 / ПРАВАЯ РУКА", design.manipulators.right.name],
+      ["05 / БРОНЯ", design.armor.name],
+      [
+        "06 / ВООРУЖЕНИЕ",
+        `${design.armLayout?.name ?? "—"} / ${design.bodyLayout?.name ?? "—"}`,
+      ],
+    ];
+    return `<section class="technical-board"><div class="instrument-heading"><span>КОНФИГУРАЦИЯ УЗЛОВ</span><small>ARM / К100</small></div><div class="armor-visual"><div class="armor-diagram"><svg viewBox="0 0 240 280" role="img" aria-label="Схема компонентов брони; индексы соответствуют перечню узлов"><title>Шасси, привод, манипуляторы и броня</title><line x1="120" y1="8" x2="120" y2="266" stroke-dasharray="3 4"/><line x1="15" y1="145" x2="225" y2="145" stroke-dasharray="3 4"/><path d="M103 18h34l7 31-12 10h-24L96 49Z M90 67l-15 48 12 40 11-30 6 34h32l6-34 11 30 12-40-15-48-19 6h-23Z M104 166h14v70H96Z M122 166h14l8 70h-22Z"/><rect x="56" y="93" width="15" height="63" rx="2"/><rect x="169" y="93" width="15" height="63" rx="2"/><line x1="33" y1="103" x2="56" y2="103"/><line x1="184" y1="103" x2="207" y2="103"/><line x1="124" y1="78" x2="194" y2="45"/><line x1="134" y1="143" x2="201" y2="176"/><line x1="107" y1="211" x2="39" y2="234"/><text x="16" y="105">03</text><text x="209" y="105">04</text><text x="198" y="46">01</text><text x="203" y="181">05</text><text x="20" y="240">02</text><text x="120" y="268" text-anchor="middle" class="diagram-index">СХЕМА КОМПОНЕНТОВ</text></svg><span>Броня <strong>${design.armorPoints}</strong> · прочность <strong>${design.integrity}</strong></span></div><div>${U.meter("Учтённая масса, кг", design.knownMass, design.armorClass.massMax, design.remainingMass < 0 ? "red" : "gold")}<dl class="mass-breakdown">${parts.map(([label, v]) => `<div class="mass-row" style="--mass-share:${Math.min(100, (Math.abs(v) / design.armorClass.massMax) * 100)}%"><dt>${label}</dt><dd>${U.number(v)} кг</dd></div>`).join("")}</dl><p class="small-note">Запас массы: <strong>${U.number(design.remainingMass)} кг</strong>. Линии — доля от предела класса.</p>${slots("Левая рука", design.weaponSlots.leftFree, design.weaponSlots.leftTotal)}${slots("Правая рука", design.weaponSlots.rightFree, design.weaponSlots.rightTotal)}${slots("Корпус", design.weaponSlots.bodyFree, design.weaponSlots.bodyTotal)}<p class="slot-legend">Контур — свободно · заливка — занято.<br>Число справа — свободно / всего.</p></div></div><div class="component-register">${systems.map(([code, name]) => `<div><small>${code}</small><strong>${esc(name)}</strong></div>`).join("")}</div><p class="small-note">Слоты учтены после установки манипуляторов. Масса оружия и расход слотов выбранной схемой вооружения не определены в исходной таблице.</p></section>`;
+  }
+  function movementName(type) {
+    return (
+      {
+        jump: "Прыжок",
+        flight: "АВВП / полёт",
+        underwater: "Подводное передвижение",
+      }[type] ?? type
+    );
   }
   function updateMass() {
     try {
       const d = ENGINE.buildDesign(state, DATA);
       refs.mass.textContent = `Масса: ${d.knownMass}/${d.armorClass.massMax} кг`;
       refs.mass.classList.toggle("negative", d.remainingMass < 0);
-      let visual = refs.stage.querySelector(".armor-visual-holder");
-      if (!visual) {
-        visual = document.createElement("section");
-        visual.className = "armor-visual-holder";
-        refs.stage.append(visual);
-      }
-      visual.innerHTML = armorVisual(d);
+      const errors = ENGINE.validate(state, DATA);
+      refs.summary.innerHTML = `${U.status(errors.length ? "Конфигурация требует проверки" : "Конфигурация допустима", errors.length ? "warning" : "valid")}${armorVisual(d)}${errors.length ? `<ul class="configuration-errors">${errors.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>` : ""}`;
+      refs.section.querySelector("#armor-mobile-summary").innerHTML =
+        `<span>Масса <strong>${U.number(d.knownMass)} / ${U.number(d.armorClass.massMax)} кг</strong></span><span>Броня <strong>${d.armorPoints}</strong></span><span>Прочность <strong>${d.integrity}</strong></span>`;
     } catch {
       refs.mass.textContent = "Масса: —";
     }
   }
   function showError(text) {
     refs.validation.textContent = text;
-    refs.validation.classList.remove("hidden");
+    refs.validation.className = "message error";
+    U.announce(text, "error", "DATA REJECTED");
   }
   function hideError() {
     refs.validation.textContent = "";
@@ -280,7 +306,7 @@
     if (i < 0 || i > 4) return;
     state.step = i;
     render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    U.focusStage(refs.stage);
   }
   function reset() {
     Object.assign(state, {
@@ -309,8 +335,12 @@
     refs.resultView.classList.remove("hidden");
     refs.section.querySelector("#pa-code").textContent =
       `ARM-${String(Date.now()).slice(-6)}`;
-    refs.result.innerHTML = `${armorVisual(d)}<div class="power-armor-result-list"><article><h3>${esc(d.name)}</h3><p>${esc(d.armorClass.name)} · диапазон полной массы ${d.armorClass.massMin}–${d.armorClass.massMax} кг</p></article>${metrics(d)}<article><h3>Передвижение</h3><p>Наземная скорость: ${d.movement.groundSpeed} м; масса системы ${d.movement.groundMass} кг.</p><p>${d.movement.alternateSystem ? `${d.movement.alternateType}: ${d.movement.alternateSpeed} м; масса ${d.movement.alternateMass} кг.` : "Дополнительная система не установлена."}</p></article><article><h3>Манипуляторы</h3><p>Левая: ${esc(d.manipulators.left.name)} (${d.manipulators.left.mass >= 0 ? "+" : ""}${d.manipulators.left.mass} кг). Правая: ${esc(d.manipulators.right.name)} (${d.manipulators.right.mass >= 0 ? "+" : ""}${d.manipulators.right.mass} кг).</p></article><article><h3>Броня</h3><p>${esc(d.armor.name)} · броня ${d.armorPoints} · модификатор прочности ×${d.armor.integrityModifier} · масса ${d.armor.mass} кг · слоты крепления ${d.mountSlots}.</p><p>Предел структурного усиления класса: ${d.reinforcementLimit}.</p></article><article><h3>Вооружение</h3><p>Руки: ${esc(d.armLayout?.name || "—")}. ${esc(d.armLayout?.ammo || "")}</p><p>Корпус: ${esc(d.bodyLayout?.name || "—")}. ${esc(d.bodyLayout?.ammo || "")}</p></article><article><h3>Масса и слоты</h3><p>Учтённая масса: ${d.knownMass} кг; запас до верхнего предела класса: ${d.remainingMass} кг.</p><p>Свободные слоты: левая рука ${d.weaponSlots.leftFree}/${d.weaponSlots.leftTotal}, правая ${d.weaponSlots.rightFree}/${d.weaponSlots.rightTotal}, корпус ${d.weaponSlots.bodyFree}/${d.weaponSlots.bodyTotal}.</p><p class="power-armor-note">${esc(d.sourceNote)}</p></article></div>`;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    refs.result.innerHTML = `${U.recordHeader("TECHNICAL DOSSIER", d.name, `${d.armorClass.name} · ${d.armor.name}`, "Проверка пройдена")}${armorVisual(d)}<div class="power-armor-result-list"><article><h3>${esc(d.name)}</h3><p>${esc(d.armorClass.name)} · диапазон полной массы ${d.armorClass.massMin}–${d.armorClass.massMax} кг</p></article>${metrics(d)}<article><h3>Передвижение</h3><p>Наземная скорость: ${d.movement.groundSpeed} м; масса системы ${d.movement.groundMass} кг.</p><p>${d.movement.alternateSystem ? `${movementName(d.movement.alternateType)}: ${d.movement.alternateSpeed} м; масса ${d.movement.alternateMass} кг.` : "Дополнительная система не установлена."}</p></article><article><h3>Манипуляторы</h3><p>Левая: ${esc(d.manipulators.left.name)} (${d.manipulators.left.mass >= 0 ? "+" : ""}${d.manipulators.left.mass} кг). Правая: ${esc(d.manipulators.right.name)} (${d.manipulators.right.mass >= 0 ? "+" : ""}${d.manipulators.right.mass} кг).</p></article><article><h3>Броня</h3><p>${esc(d.armor.name)} · броня ${d.armorPoints} · модификатор прочности ×${d.armor.integrityModifier} · масса ${d.armor.mass} кг · слоты крепления ${d.mountSlots}.</p><p>Предел структурного усиления класса: ${d.reinforcementLimit}.</p></article><article><h3>Вооружение</h3><p>Руки: ${esc(d.armLayout?.name || "—")}. ${esc(d.armLayout?.ammo || "")}</p><p>Корпус: ${esc(d.bodyLayout?.name || "—")}. ${esc(d.bodyLayout?.ammo || "")}</p></article><article><h3>Масса и слоты</h3><p>Учтённая масса: ${d.knownMass} кг; запас до верхнего предела класса: ${d.remainingMass} кг.</p><p>Свободные слоты: левая рука ${d.weaponSlots.leftFree}/${d.weaponSlots.leftTotal}, правая ${d.weaponSlots.rightFree}/${d.weaponSlots.rightTotal}, корпус ${d.weaponSlots.bodyFree}/${d.weaponSlots.bodyTotal}.</p><p class="power-armor-note">${esc(d.sourceNote)}</p></article></div>`;
+    refs.resultView
+      .querySelector(".result-panel")
+      ?.focus({ preventScroll: true });
+    refs.resultView.scrollIntoView({ block: "start", behavior: "instant" });
+    U.announce("Технический формуляр сформирован", "valid", "DOSSIER COMPILED");
   }
 
   function snapshot() {

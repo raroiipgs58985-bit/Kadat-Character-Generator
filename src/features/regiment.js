@@ -23,7 +23,8 @@
   const refs = {};
   let catalog = null;
 
-  const escapeHtml = window.KadatUI.escape;
+  const U = window.KadatUI;
+  const escapeHtml = U.escape;
 
   const normalize = (value) =>
     String(value ?? "")
@@ -64,7 +65,7 @@
       <form id="regiment-form" class="panel dossier-form regiment-form" novalidate>
         <div class="dossier-rail dossier-rail-left" aria-hidden="true"></div>
         <div class="dossier-rail dossier-rail-right" aria-hidden="true"></div>
-        <div id="regiment-stage"></div>
+        <div id="regiment-mobile-summary" class="mobile-record-strip"></div><div class="feature-layout"><div id="regiment-stage"></div><aside id="regiment-summary" class="live-summary feature-summary" aria-label="Текущая сводка полка"></aside></div>
         <div id="regiment-validation" class="message hidden" role="alert"></div>
         <div class="wizard-controls regiment-controls">
           <button id="regiment-reset" type="button" class="secondary danger-quiet">Сбросить</button>
@@ -89,9 +90,9 @@
         <section class="panel result-panel regiment-result-panel" tabindex="-1">
           <div class="result-stamp" aria-hidden="true">УЧТЁН</div>
           <div class="result-document-heading">
-            <p>DEPARTAMENTO MUNITORUM</p>
+            <p>DEPARTMENTO MUNITORUM</p>
             <h2>Итоговый формуляр полка</h2>
-            <span>Уровень допуска: SIGMA</span>
+            <span>REGIMENTAL REGISTRY // KADAT</span>
           </div>
           <div id="regiment-result"></div>
         </section>
@@ -102,6 +103,7 @@
     refs.section = section;
     refs.form = section.querySelector("#regiment-form");
     refs.stage = section.querySelector("#regiment-stage");
+    refs.summary = section.querySelector("#regiment-summary");
     refs.validation = section.querySelector("#regiment-validation");
     refs.prev = section.querySelector("#regiment-prev");
     refs.next = section.querySelector("#regiment-next");
@@ -241,10 +243,10 @@
     return adjusted;
   }
 
-  function priceLabel(entry, kind = "cost") {
+  function priceLabel(entry, kind = "cost", unit = "ПО") {
     const value = asNumber(entry?.[kind]);
     if (value === null) return "цена не указана";
-    return kind === "bonusPoints" ? `+${value} ПО` : `${value} ПО`;
+    return kind === "bonusPoints" ? `+${value} ПО` : `${value} ${unit}`;
   }
 
   function optionMarkup(items, selectedId, placeholder) {
@@ -270,6 +272,7 @@
       effectText: "Эффект",
       rulesText: "Правила",
       specialRulesText: "Особые правила",
+      restrictionText: "Ограничения",
       restrictionsText: "Ограничения",
       standardKitText: "Стандартный набор",
       sourceText: "Текст источника",
@@ -292,7 +295,7 @@
     }
     return `
       <article class="regiment-entry-preview">
-        <header><h3>${escapeHtml(entry.name)}</h3><span>${escapeHtml(priceLabel(entry))}</span></header>
+        <header><h3>${escapeHtml(entry.name)}</h3><span>${escapeHtml(priceLabel(entry, "bonusPoints" in entry ? "bonusPoints" : "cost"))}</span></header>
         ${blocks.join("") || `<p class="muted">В исходной таблице дополнительные эффекты не указаны.</p>`}
       </article>
     `;
@@ -331,6 +334,8 @@
       .querySelector("#regiment-name")
       .addEventListener("input", (event) => {
         state.name = event.target.value;
+        const name = refs.summary.querySelector("h2");
+        if (name) name.textContent = state.name || "Новый полк";
       });
     refs.stage
       .querySelector("#regiment-homeworld")
@@ -441,14 +446,16 @@
     return `
       <article class="regiment-equipment-card${quantity > 0 ? " is-selected" : ""}">
         <span class="regiment-quantity-control">
-          <button type="button" data-equipment-minus="${escapeHtml(entry.id)}" aria-label="Уменьшить"${quantity <= 0 ? " disabled" : ""}>−</button>
+          <button type="button" data-equipment-minus="${escapeHtml(entry.id)}" aria-label="Уменьшить: ${escapeHtml(entry.name)}"${quantity <= 0 ? " disabled" : ""}>−</button>
           <strong>${quantity}</strong>
-          <button type="button" data-equipment-plus="${escapeHtml(entry.id)}" aria-label="Увеличить"${canIncrease ? "" : " disabled"}>+</button>
-          <small>можно брать повторно</small>
+          <button type="button" data-equipment-plus="${escapeHtml(entry.id)}" aria-label="Увеличить: ${escapeHtml(entry.name)}"${canIncrease ? "" : " disabled"}>+</button>
+          <small>${quantity ? "Включено в снабжение" : "Можно брать повторно"}</small>
         </span>
         <div>
-          <header><strong>${escapeHtml(entry.name)}</strong><span>${escapeHtml(priceLabel(entry))}</span></header>
-          <p>${escapeHtml(normalize(entry.description || entry.effectText || entry.restrictionsText || "Дополнительное описание в источнике отсутствует."))}</p>
+          <header><strong>${escapeHtml(entry.name)}</strong><span>${escapeHtml(priceLabel(entry, "cost", "ОС"))}</span></header>
+          ${entry.description || entry.effectText || entry.restrictionsText ? `<p>${escapeHtml(normalize(entry.description || entry.effectText || entry.restrictionsText))}</p>` : ""}
+          ${entry.restrictionText ? `<p><strong>Ограничения источника:</strong> ${escapeHtml(entry.restrictionText)}</p>` : ""}
+          ${!canIncrease ? `<p class="availability warning">Не хватает ${U.number(cost - calc.equipmentRemaining)} ОС.</p>` : ""}
         </div>
       </article>
     `;
@@ -464,6 +471,7 @@
           entry.name,
           entry.description,
           entry.effectText,
+          entry.restrictionText,
           entry.restrictionsText,
         ].some((value) =>
           normalize(value).toLocaleLowerCase("ru-RU").includes(query),
@@ -595,6 +603,7 @@
 
   function renderStep() {
     if (!catalog || !refs.stage) return;
+    const restoreFocus = U.focusSnapshot(refs.form);
     reconcileSupply();
     hideValidation();
     if (state.step === 0) renderFoundation();
@@ -631,6 +640,25 @@
     refs.points.classList.toggle("is-error", invalidBudget);
     refs.next.disabled = state.step >= 3 && invalidBudget;
     refs.submit.disabled = state.step === STEP_COUNT - 1 && invalidBudget;
+    const problems = Array.from({ length: STEP_COUNT }, (_, i) =>
+      window.KADAT_REGIMENT_BUDGET.validateStep(snapshot(), calc, i),
+    );
+    U.progress(refs.progress, state.step, problems);
+    refs.summary.innerHTML = `<div class="live-heading"><span class="card-eyebrow">MUNITORUM / СВОДКА</span></div><h2>${escapeHtml(state.name || "Новый полк")}</h2>${U.recordFacts(
+      [
+        ["Полковые очки", `${calc.remaining} осталось`],
+        ["Снабжение", `${calc.equipmentRemaining} ОС`],
+      ],
+    )}${U.meter("Расход ПО", calc.spent, calc.spent + calc.remaining, "gold")}${doctrineSlots(calc)}${U.status(problems.some(Boolean) ? "Формуляр не завершён" : "Готово к формированию", problems.some(Boolean) ? "warning" : "valid")}${U.recordFacts(
+      [
+        ["Родной мир", calc.selected.homeworld?.name],
+        ["Происхождение", calc.selected.origin?.name],
+        ["Командир", calc.selected.commander?.name],
+      ],
+    )}`;
+    refs.section.querySelector("#regiment-mobile-summary").innerHTML =
+      `<span>ПО <strong>${calc.remaining}</strong></span><span>ОС <strong>${calc.equipmentRemaining}</strong></span><span>Доктрины <strong>${(calc.selected.regimentType ? 1 : 0) + calc.selected.training.length + calc.selected.equipmentDoctrines.length}/3</strong></span>`;
+    restoreFocus();
   }
 
   function goToStep(nextStep) {
@@ -638,7 +666,7 @@
     if (target > state.step && !validateStep(state.step)) return;
     state.step = target;
     renderStep();
-    refs.section.scrollIntoView({ behavior: "smooth", block: "start" });
+    U.focusStage(refs.stage);
   }
 
   function validateStep(step) {
@@ -669,7 +697,8 @@
 
   function showValidation(message) {
     refs.validation.textContent = message;
-    refs.validation.classList.remove("hidden");
+    refs.validation.className = "message error";
+    U.announce(message, "error", "DATA REJECTED");
     return false;
   }
 
@@ -678,10 +707,31 @@
     if (refs.validation) refs.validation.textContent = "";
   }
 
+  function doctrineSlots(calc) {
+    const slots = [
+      calc.selected.regimentType,
+      ...calc.selected.training,
+      ...calc.selected.equipmentDoctrines,
+    ];
+    return `<div class="doctrine-slots" aria-label="Три ячейки доктрин">${Array.from({ length: 3 }, (_, i) => `<div class="doctrine-slot ${slots[i] ? "selected" : ""}"><small>${String(i + 1).padStart(2, "0")} ${slots[i] ? "✓" : "—"}</small><span>${escapeHtml(slots[i]?.name ?? (i === 0 ? "Тип полка" : "Свободная ячейка"))}</span></div>`).join("")}</div>`;
+  }
+  function recordMap(calc) {
+    return `<div class="regiment-record-map">${[
+      ["01 / РОДНОЙ МИР", calc.selected.homeworld],
+      ["02 / ПРОИСХОЖДЕНИЕ", calc.selected.origin],
+      ["03 / КОМАНДИР", calc.selected.commander],
+      ["04 / СПЕЦИАЛИЗАЦИЯ", calc.selected.regimentType],
+    ]
+      .map(
+        ([label, entry]) =>
+          `<div><small>${label}</small><strong>${escapeHtml(entry?.name ?? "Не выбрано")}</strong></div>`,
+      )
+      .join("")}</div>`;
+  }
   function detailSection(title, entries) {
     if (!entries.length) return "";
     return `
-      <section class="regiment-result-section">
+      <section class="regiment-result-section ${title === "Недостатки" ? "drawbacks" : ""}">
         <h3>${escapeHtml(title)}</h3>
         <div class="regiment-result-cards">
           ${entries
@@ -706,6 +756,9 @@
       .reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 7);
     refs.code.textContent = `REG-${String(codeSeed % 1000000).padStart(6, "0")}`;
     refs.result.innerHTML = `
+      ${U.recordHeader("REGIMENTAL DOSSIER", state.name, `${calc.selected.homeworld?.name} · ${calc.selected.regimentType?.name}`, "Проверка пройдена")}
+      ${recordMap(calc)}${doctrineSlots(calc)}
+      <div class="visual-budget-grid">${U.meter("Расход полковых очков", calc.spent, calc.spent + calc.remaining, "gold")}${U.meter("Расход снабжения", calc.equipmentSpent, calc.equipmentPool)}</div>
       <section class="regiment-result-identity">
         <p>НАИМЕНОВАНИЕ ПОЛКА</p>
         <h3>${escapeHtml(state.name)}</h3>
@@ -721,13 +774,14 @@
       ${detailSection("Недостатки", calc.selected.drawbacks)}
       <section class="regiment-result-section">
         <h3>Дополнительное снаряжение</h3>
-        ${calc.selected.extraEquipment.length ? `<ul class="equipment-list">${calc.selected.extraEquipment.map((item) => `<li>${escapeHtml(item.entry.name)}${item.quantity > 1 ? ` ×${item.quantity}` : ""} — ${escapeHtml(priceLabel(item.entry))}</li>`).join("")}</ul>` : `<p class="muted">Дополнительное снаряжение не выбрано.</p>`}
+        ${calc.selected.extraEquipment.length ? `<ul class="equipment-list">${calc.selected.extraEquipment.map((item) => `<li>${escapeHtml(item.entry.name)}${item.quantity > 1 ? ` ×${item.quantity}` : ""} — ${escapeHtml(priceLabel(item.entry, "cost", "ОС"))}</li>`).join("")}</ul>` : `<p class="muted">Дополнительное снаряжение не выбрано.</p>`}
       </section>
     `;
     refs.form.classList.add("hidden");
     refs.progress[0].parentElement.classList.add("hidden");
     refs.resultView.classList.remove("hidden");
     refs.resultView.querySelector(".result-panel")?.focus();
+    U.announce("Полковой формуляр сформирован", "valid", "DOSSIER COMPILED");
     refs.resultView.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 

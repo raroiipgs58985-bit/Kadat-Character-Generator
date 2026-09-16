@@ -105,15 +105,36 @@
       2,
     );
   }
-  document
-    .querySelector("#backup-export")
-    .addEventListener("click", () =>
-      U.download(
-        serialize(),
-        `${U.fileName(root.KadatCharacterUI.store.get().name || "Kadat")}.json`,
-        "application/json",
-      ),
+  document.querySelector("#backup-export").addEventListener("click", () => {
+    U.download(
+      serialize(),
+      `${U.fileName(root.KadatCharacterUI.store.get().name || "Kadat")}.json`,
+      "application/json",
     );
+    U.announce(
+      "JSON подготовлен: все четыре черновика и сохранённые полки",
+      "valid",
+      "ARCHIVE COMPILED",
+    );
+  });
+  // Existing workspace export and browser print, available from every dossier.
+  document
+    .querySelectorAll(".builder-view .result-toolbar")
+    .forEach((toolbar) => {
+      const save = document.createElement("button");
+      save.type = "button";
+      save.className = "secondary";
+      save.textContent = "Сохранить JSON";
+      save.addEventListener("click", () =>
+        document.querySelector("#backup-export").click(),
+      );
+      const print = document.createElement("button");
+      print.type = "button";
+      print.className = "quiet";
+      print.textContent = "Печать";
+      print.addEventListener("click", () => root.print());
+      toolbar.append(save, print);
+    });
   const input = document.querySelector("#backup-file");
   document
     .querySelector("#backup-import")
@@ -129,7 +150,7 @@
       beforeImport = JSON.parse(serialize()).data;
       restore(value);
       root.KadatCharacterUI.notify(
-        "Сохранение открыто. Все четыре черновика восстановлены.",
+        `Сохранение открыто. Все четыре черновика восстановлены: персонаж «${value.character.name || "Без имени"}», полк «${value.regimentDraft.name || "Без имени"}», ксенос «${value.xenoDraft.name || "Без имени"}», броня «${value.armorDraft.name || "Без имени"}». Формат совместим; готовность каждого формуляра показана в его мастере.`,
       );
       const button = document.createElement("button");
       button.type = "button";

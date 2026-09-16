@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#101719" />
+    <meta name="theme-color" content="#101310" />
     <meta
       name="description"
       content="Генератор Кадата: персонаж, полк, ксено-раса и серво-броня. Пошаговое создание, сохранение черновиков и Excel."
@@ -19,6 +19,10 @@
   <body data-registry-mode="character">
     <a class="skip-link" href="#main-content">К содержимому</a>
     <main class="page" id="main-content">
+      <div class="terminal-strip" aria-hidden="true">
+        <span>COGITATOR NODE / K–100</span
+        ><span>REGISTRUM KADAT · REV. 2.1</span>
+      </div>
       <header class="hero">
         <a class="brand" href="./" aria-label="Кадат — начало"
           ><img
@@ -26,10 +30,14 @@
             width="40"
             height="40"
             alt=""
-          /><span>КАДАТ<small>REGISTRUM / K–100</small></span></a
+          /><span>КАДАТ<small>КОГИТАТОРНЫЙ КОМПЛЕКС</small></span></a
         >
         <div class="header-label">
-          <span class="live-dot"></span> АРХИВ ЛИЧНОГО СОСТАВА
+          <span class="live-dot" aria-hidden="true"></span>
+          <div>
+            <strong>РЕЕСТРЫ СЕКТОРА</strong
+            ><small>ADMINISTRATUM · MUNITORUM · MECHANICUS</small>
+          </div>
         </div>
         <div class="file-actions">
           <button type="button" id="backup-export" class="secondary">
@@ -87,8 +95,13 @@
       </nav>
       <div class="workspace-heading">
         <div>
-          <p class="eyebrow">ГЕНЕРАТОР КАДАТА</p>
+          <p class="eyebrow" id="registry-authority">
+            ADEPTUS ADMINISTRATUM / PERSONNEL REGISTRY
+          </p>
           <h1 id="mode-caption">Создание персонажа</h1>
+          <p class="workspace-description" id="registry-description">
+            Личное дело · происхождение, назначение и развитие
+          </p>
         </div>
         <span id="save-status" class="save-status" role="status"
           >Новый черновик</span
@@ -100,6 +113,7 @@
           class="wizard-progress"
           aria-label="Этапы создания персонажа"
         ></nav>
+        <div id="character-mobile-summary" class="mobile-record-strip"></div>
         <div class="workspace-layout">
           <form id="character-form" class="panel dossier-form" novalidate>
             <div id="character-stage"></div>
@@ -150,10 +164,20 @@
         <div id="result" class="panel character-card"></div>
       </section>
       <footer class="page-footer">
-        <span>КАДАТ · СИСТЕМА К100</span
-        ><span>Генератор 2.0 · Техническая модернизация</span>
+        <span>КАДАТ · СИСТЕМА К100 <small>REGISTRUM / 2.1</small></span
+        ><span
+          >Черновики хранятся в этом браузере.<br />JSON сохраняет все четыре
+          генератора.</span
+        >
       </footer>
     </main>
+    <div
+      id="system-feedback"
+      class="system-feedback is-idle"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
     <noscript><p>Для работы генератора включите JavaScript.</p></noscript>
     <!-- Deterministic, synchronous loading; no runtime decompression or remote dependencies. -->
     <script src="src/services/store.js"></script>
