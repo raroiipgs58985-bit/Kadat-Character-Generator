@@ -88,12 +88,6 @@
           </div>
         </div>
         <section class="panel result-panel regiment-result-panel" tabindex="-1">
-          <div class="result-stamp" aria-hidden="true">УЧТЁН</div>
-          <div class="result-document-heading">
-            <p>DEPARTMENTO MUNITORUM</p>
-            <h2>Итоговый формуляр полка</h2>
-            <span>REGIMENTAL REGISTRY // KADAT</span>
-          </div>
           <div id="regiment-result"></div>
         </section>
       </section>
@@ -760,8 +754,6 @@
       ${recordMap(calc)}${doctrineSlots(calc)}
       <div class="visual-budget-grid">${U.meter("Расход полковых очков", calc.spent, calc.spent + calc.remaining, "gold")}${U.meter("Расход снабжения", calc.equipmentSpent, calc.equipmentPool)}</div>
       <section class="regiment-result-identity">
-        <p>НАИМЕНОВАНИЕ ПОЛКА</p>
-        <h3>${escapeHtml(state.name)}</h3>
         <div class="regiment-result-ledger">
           ${summaryRow("Полковые очки", `${calc.remaining} осталось из ${12 + calc.drawbackBonus}`)}
           ${summaryRow("Очки снабжения", `${calc.equipmentRemaining} осталось из ${calc.equipmentPool}`)}
@@ -782,7 +774,7 @@
     refs.resultView.classList.remove("hidden");
     refs.resultView.querySelector(".result-panel")?.focus();
     U.announce("Полковой формуляр сформирован", "valid", "DOSSIER COMPILED");
-    refs.resultView.scrollIntoView({ behavior: "smooth", block: "start" });
+    refs.resultView.scrollIntoView({ behavior: "instant", block: "start" });
   }
 
   function snapshot() {
