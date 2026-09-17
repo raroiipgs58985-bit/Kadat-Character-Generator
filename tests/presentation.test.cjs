@@ -38,10 +38,22 @@ const { loadApp } = require("./helpers.cjs");
   assert(card.textContent.includes("ОС"), "Supply prices use the supply unit");
   assert(card.textContent.includes(item.restrictionText));
   assert.equal(card.textContent.split(item.restrictionText).length, 2);
+  assert.equal($("#save-status").textContent, "Черновик сохранён");
+  await click('[data-registry-mode="xeno"]');
+  assert.equal($("#save-status").textContent, "Новый черновик");
+  const saved = app.storage();
   assert.deepEqual(app.errors, []);
   app.dom.window.close();
+  const restored = await loadApp(saved);
+  await restored.click('[data-registry-mode="regiment"]');
+  assert.equal(restored.$("#save-status").textContent, "Черновик восстановлен");
+  assert.equal(restored.$("#save-status").dataset.state, "valid");
+  await restored.click('[data-registry-mode="power-armor"]');
+  assert.equal(restored.$("#save-status").textContent, "Новый черновик");
+  assert.deepEqual(restored.errors, []);
+  restored.dom.window.close();
   console.log(
-    "Presentation: unrolled xeno values, keyboard focus across re-render and factual supply restrictions OK.",
+    "Presentation: unrolled xeno values, keyboard focus, supply restrictions and per-registry save/restore status OK.",
   );
 })().catch((error) => {
   console.error(error);

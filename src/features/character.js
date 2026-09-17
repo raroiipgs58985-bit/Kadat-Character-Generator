@@ -62,15 +62,11 @@
   );
   if (S.lastError) notify(S.lastError, true);
   function save() {
-    if (
-      storage.write(S.KEYS.character, {
-        version: 2,
-        draft: store.get(),
-        step: ui.step,
-      })
-    )
-      $("#save-status").textContent = "Черновик сохранён";
-    else $("#save-status").textContent = "Сохранение недоступно";
+    storage.write(S.KEYS.character, {
+      version: 2,
+      draft: store.get(),
+      step: ui.step,
+    });
   }
   function render() {
     schedule = false;
@@ -428,6 +424,7 @@
       $("#result-view").classList.toggle("hidden", !active || !resultMode);
     },
   });
+  if (saved) root.KadatModes.restored("character");
   function useRegiment(regiment) {
     ui.regiments = storage.read(
       S.KEYS.regiments,

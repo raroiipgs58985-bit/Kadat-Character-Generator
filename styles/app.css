@@ -2805,6 +2805,18 @@ summary {
   fill: var(--text);
   font-size: 10px;
 }
+.armor-diagram > .diagram-metrics {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+  font: 0.75rem var(--mono);
+}
+.diagram-metrics > span {
+  display: grid;
+  gap: 4px;
+}
 .armor-visual {
   background: transparent;
   border: 0;

@@ -835,6 +835,7 @@
     refs.form.classList.remove("hidden");
     refs.progress[0].parentElement.classList.remove("hidden");
     renderStep();
+    window.KadatModes.restored("regiment");
   }
   function saveRegiment() {
     reconcileSupply();
