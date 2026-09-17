@@ -560,6 +560,7 @@
     refs.form.classList.remove("hidden");
     refs.progress[0].parentElement.classList.remove("hidden");
     renderStep();
+    window.KadatModes.restored("xeno");
   }
   buildShell();
   window.KadatModes.register("xeno", {
