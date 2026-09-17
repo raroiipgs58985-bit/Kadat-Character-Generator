@@ -398,6 +398,7 @@
     resultMode = true;
     root.KadatModes.open("character");
     $("#result-title").focus({ preventScroll: true });
+    $("#result-view").scrollIntoView({ block: "start", behavior: "instant" });
     U.announce("Досье сформировано", "valid", "DOSSIER COMPILED");
   });
   $("#return-to-builder").addEventListener("click", () => {

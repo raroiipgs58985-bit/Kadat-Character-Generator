@@ -96,8 +96,6 @@
           <div class="result-document-code"><span>КСЕНО-ФОРМУЛЯР</span><strong id="xeno-code">XEN-000000</strong></div>
         </div>
         <section class="panel result-panel xeno-result-panel" tabindex="-1">
-          <div class="result-stamp" aria-hidden="true">УЧТЁН</div>
-          <div class="result-document-heading"><p>ORDO XENOS</p><h2>Итоговый формуляр ксеноса</h2><span>XENOS RECORD // RESTRICTED ARCHIVE</span></div>
           <div id="xeno-result"></div>
         </section>
       </section>`;
