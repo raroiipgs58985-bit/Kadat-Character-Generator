@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#080706" />
+    <meta
+      name="description"
+      content="Imperial Tarot — три интерактивных визуальных концепции для Kadat. Stage I."
+    />
+    <title>Imperial Tarot — Visual Concepts</title>
+    <link rel="icon" type="image/svg+xml" href="assets/imperial-seal.svg" />
+    <link rel="stylesheet" href="prototype.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">К содержимому</a>
+    <div id="app"></div>
+    <p
+      id="announcement"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
+    <dialog id="info-dialog" aria-labelledby="dialog-title">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Закрыть окно">×</button>
+      </form>
+      <div id="dialog-body"></div>
+      <form method="dialog">
+        <button class="secondary dialog-done">Вернуться</button>
+      </form>
+    </dialog>
+    <dialog
+      id="transition-dialog"
+      class="transition"
+      aria-labelledby="transition-title"
+    >
+      <div class="transition-mark" aria-hidden="true">I</div>
+      <p class="transition-line">+++ COGITATOR LINK SUSPENDED +++</p>
+      <h2 id="transition-title">DIVINATIO<br />PROTOCOL INITIATED</h2>
+      <p class="transition-vow">THE EMPEROR KNOWS.</p>
+      <form method="dialog">
+        <button class="secondary">Пропустить →</button>
+      </form>
+    </dialog>
+    <noscript
+      ><p class="no-script">
+        Для интерактивного прототипа включите JavaScript. Исходный Kadat:
+        <a href="../index.html">Registrum Kadat</a>.
+      </p></noscript
+    >
+    <script src="prototype.js"></script>
+  </body>
+</html>
