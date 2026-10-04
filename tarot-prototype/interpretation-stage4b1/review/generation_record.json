@@ -1,0 +1,26 @@
+{
+  "fixtureCount": 16,
+  "generationPasses": 1,
+  "sourceSha256": {
+    "engine.js": "9e7cd98006557343b411de1739649a465c171ebf853285f6a0f2d9588960428f",
+    "session-adapter.js": "fb997ce81e8f7af7881e5e2d2159959cc81fd705debb042cf9675f90364b5d34",
+    "data-v1.0.0.js": "00d3e008bbb03aa41da4658ca48b74481f5b43140b5542e75e1b9b0ec17aebf9",
+    "tests/fixtures.cjs": "68e93e01c1e311b00604d2c3176079898a3305bc38fb0cfb731da65de850eebc"
+  },
+  "targetedRepairs": [
+    {
+      "fixtureIds": [
+        "F03",
+        "F07",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F13"
+      ],
+      "reason": "Remove redundant outcome paraphrases and repeated Rosette comparison/connective wording before final validation."
+    }
+  ],
+  "outputsSha256": "ec8a36e18c721ed4b8cbeb9554b8d782c1f9b3eb93db57cb2546e126b3b1cf3b",
+  "samplesSha256": "52de6a468bb3bec0e368f3f900ed5326b942dab5385a991bb9fcef966975f487"
+}

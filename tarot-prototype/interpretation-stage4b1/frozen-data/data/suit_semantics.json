@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0.0",
+  "document_type": "suit_semantics",
+  "language": "ru",
+  "structure": {
+    "suit_count": 4,
+    "cards_per_suit": 14,
+    "common_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "court_ranks": [
+      "Servant",
+      "Champion",
+      "Lord",
+      "Master"
+    ],
+    "significance_note_ru": "Обычно старшая карта значимее. Туз — исключение: его значимость может быть высокой или низкой, и он может менять относительную значимость других карт. Числовой алгоритм источник не задаёт.",
+    "provenance": {
+      "type": "source_derived",
+      "source_refs": [
+        "pdf.minor_structure"
+      ]
+    }
+  },
+  "suits": [
+    {
+      "suit_id": "adeptio",
+      "name_high_gothic": "Adeptio",
+      "name_low_gothic_en": "Eagles",
+      "name_ru": "Орлы",
+      "card_count": 14,
+      "classical_element": {
+        "en": "Water",
+        "ru": "Вода"
+      },
+      "imperial_element": {
+        "en": "Quintessence",
+        "ru": "Квинтэссенция"
+      },
+      "association": {
+        "en": "Adepts and holy men",
+        "ru": "Адепты и святые"
+      },
+      "keywords_en": [
+        "Destiny",
+        "love",
+        "obedience",
+        "sacrifice"
+      ],
+      "keywords_ru": [
+        "Судьба",
+        "Любовь",
+        "Послушание",
+        "Жертва"
+      ],
+      "summary_ru": "Судьба, чувства и любовь к Императору; преданность граждан, святое единение с Ним и служение Адептус Терра. В некоторых традициях вода заменяется кровью.",
+      "orientation_tendency": null,
+      "individual_card_meaning_override": false,
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.suit.adeptio",
+          "pdf.minor_overview",
+          "xlsx.suit.adeptio"
+        ],
+        "derivation": "Concise Russian source paraphrase; no automatic replacement of an individual card meaning."
+      },
+      "source_conflict_ids": [
+        "C004"
+      ]
+    },
+    {
+      "suit_id": "discordia",
+      "name_high_gothic": "Discordia",
+      "name_low_gothic_en": "Batons",
+      "name_ru": "Жезлы",
+      "card_count": 14,
+      "classical_element": {
+        "en": "Fire",
+        "ru": "Огонь"
+      },
+      "imperial_element": {
+        "en": "Immaterium",
+        "ru": "Имматериум"
+      },
+      "association": {
+        "en": "Enemies and conflict",
+        "ru": "Враги и конфликт"
+      },
+      "keywords_en": [
+        "Energy",
+        "growth",
+        "creativity",
+        "individuality",
+        "conflict",
+        "chaos"
+      ],
+      "keywords_ru": [
+        "Энергия",
+        "Рост",
+        "Творчество",
+        "Индивидуальность",
+        "Конфликт",
+        "Хаос"
+      ],
+      "summary_ru": "Перемена и конфликт, энергия и рост; неуправляемые голоса масс, опасности свободы и необходимость направлять силу. Жезл напоминает силовую булаву Арбитров.",
+      "orientation_tendency": {
+        "scope": "suit_only",
+        "upright": "usually_negative",
+        "reversed": "usually_positive",
+        "text_ru": "Источник даёт общую склонность масти: прямое положение преимущественно отрицательно, обратное обычно положительно.",
+        "creates_individual_reversed_meanings": false,
+        "creates_card_states": false,
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.suit.discordia"
+          ]
+        }
+      },
+      "individual_card_meaning_override": false,
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.suit.discordia",
+          "pdf.minor_overview",
+          "xlsx.suit.discordia"
+        ],
+        "derivation": "Concise Russian source paraphrase; no automatic replacement of an individual card meaning."
+      },
+      "source_conflict_ids": [
+        "C029"
+      ]
+    },
+    {
+      "suit_id": "excuteria",
+      "name_high_gothic": "Excuteria",
+      "name_low_gothic_en": "Swords",
+      "name_ru": "Мечи",
+      "card_count": 14,
+      "classical_element": {
+        "en": "Air",
+        "ru": "Воздух"
+      },
+      "imperial_element": {
+        "en": "Aether",
+        "ru": "Эфир"
+      },
+      "association": {
+        "en": "Warriors and leaders",
+        "ru": "Воины и руководители"
+      },
+      "keywords_en": [
+        "Force",
+        "ambition",
+        "persistence",
+        "exploration"
+      ],
+      "keywords_ru": [
+        "Сила",
+        "Амбиция",
+        "Настойчивость",
+        "Исследование"
+      ],
+      "summary_ru": "Будущее и неизвестное, преодолеваемые настойчивостью и жертвой; воины, исследователи и руководители стоят между Империумом и гибелью. Меч также обозначает решимость противостоять неизвестному.",
+      "orientation_tendency": null,
+      "individual_card_meaning_override": false,
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.suit.excuteria",
+          "pdf.minor_overview",
+          "xlsx.suit.excuteria"
+        ],
+        "derivation": "Concise Russian source paraphrase; no automatic replacement of an individual card meaning."
+      },
+      "source_conflict_ids": [
+        "C005"
+      ]
+    },
+    {
+      "suit_id": "mandatio",
+      "name_high_gothic": "Mandatio",
+      "name_low_gothic_en": "Thrones",
+      "name_ru": "Троны",
+      "card_count": 14,
+      "classical_element": {
+        "en": "Earth",
+        "ru": "Земля"
+      },
+      "imperial_element": {
+        "en": "Materium",
+        "ru": "Материум"
+      },
+      "association": {
+        "en": "Citizens and rulers",
+        "ru": "Граждане и правители"
+      },
+      "keywords_en": [
+        "Government",
+        "wealth",
+        "stability",
+        "tradition",
+        "devotion"
+      ],
+      "keywords_ru": [
+        "Правление",
+        "Богатство",
+        "Устойчивость",
+        "Традиция",
+        "Преданность"
+      ],
+      "summary_ru": "Материальное достояние, процедура, традиция и послушание; служба Империуму ценнее золота. Трон обозначает и источник власти, и имперскую валюту. Масть охватывает человечество от дикарей до Верховных Лордов.",
+      "orientation_tendency": null,
+      "individual_card_meaning_override": false,
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.suit.mandatio",
+          "pdf.minor_overview",
+          "xlsx.suit.mandatio"
+        ],
+        "derivation": "Concise Russian source paraphrase; no automatic replacement of an individual card meaning."
+      },
+      "source_conflict_ids": []
+    }
+  ]
+}

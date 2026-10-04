@@ -1,0 +1,70 @@
+{
+  "package_id": "imperial_tarot_stage4a",
+  "schema_version": "1.0.0",
+  "date": "2026-10-04",
+  "language": "ru",
+  "scope": "isolated_data_authoring_only",
+  "counts": {
+    "cards": 78,
+    "major": 22,
+    "minor": 56,
+    "supported_card_states": 100,
+    "authored_interpretation_fragments": 300,
+    "spreads": 5,
+    "spreads_with_complete_individual_position_semantics": 3,
+    "spreads_with_group_semantics": 1,
+    "spreads_with_unresolved_positions": 1,
+    "suits": 4,
+    "source_conflicts": 32,
+    "unresolved_items": 8,
+    "synthesis_templates": 34
+  },
+  "files": [
+    "data/card_semantics.json",
+    "data/interpretation_fragments.json",
+    "data/suit_semantics.json",
+    "data/spread_semantics.json",
+    "data/synthesis_templates.json",
+    "audit/source_registry.json",
+    "audit/semantic_evidence.json",
+    "audit/production_identity_lock.json",
+    "audit/source_conflicts.json",
+    "audit/unresolved_items.json",
+    "audit/source_provenance.md",
+    "audit/source_conflicts.md",
+    "audit/unresolved_items.md",
+    "audit/validation_report.md",
+    "audit/validation_report.json",
+    "schema/interpretation_data_schema.json",
+    "manifest.json",
+    "README.md"
+  ],
+  "source_priority": [
+    "production_identity_from_final_zip",
+    "semantic_meaning_from_pdf",
+    "russian_language_from_xlsx"
+  ],
+  "runtime_requirements": {
+    "ai": false,
+    "api": false,
+    "backend": false,
+    "new_dependencies": false
+  },
+  "git": {
+    "used": false,
+    "branch": null,
+    "commit": null,
+    "status": "standalone_directory_no_repository_operations"
+  },
+  "scope_preservation": {
+    "production_tarot_modified": false,
+    "artwork_mappings_modified": false,
+    "artwork_files_modified": false,
+    "ritual_ux_modified": false,
+    "four_kadat_generators_modified": false,
+    "stage4b_started": false,
+    "published": false,
+    "pushed": false,
+    "merged": false
+  }
+}

@@ -1,0 +1,1550 @@
+{
+  "schema_version": "1.0.0",
+  "document_type": "spread_semantics",
+  "language": "ru",
+  "position_roles": [
+    {
+      "role_id": "past_origin",
+      "name_en": "Past / origin",
+      "name_ru": "Прошлое и исток",
+      "meaning_ru": "События прошлого и возникновение нынешнего вопроса.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "present_problem",
+      "name_en": "Present problem",
+      "name_ru": "Настоящее и суть вопроса",
+      "meaning_ru": "Текущее состояние, природа и суть проблемы.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "solution_or_outcome",
+      "name_en": "Suggested solution / possible outcome",
+      "name_ru": "Решение или возможный исход",
+      "meaning_ru": "Предлагаемое решение либо возможный исход; эти функции не разделены на две позиции.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "forces_and_options",
+      "name_en": "Forces and options, as a group",
+      "name_ru": "Силы и варианты в совокупности",
+      "meaning_ru": "Пара карт совместно описывает действующие силы и имеющиеся варианты.",
+      "scope": "group",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "branching_futures",
+      "name_en": "Two possible directions, as a group",
+      "name_ru": "Два возможных направления",
+      "meaning_ru": "Пара карт показывает ветвящееся будущее в зависимости от выбора.",
+      "scope": "group",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "hidden_influence",
+      "name_en": "Hidden or overlooked influences",
+      "name_ru": "Скрытое влияние",
+      "meaning_ru": "Невидимые или упущенные события, вещи и влияния.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "obstacle",
+      "name_en": "Obstacles or challenges",
+      "name_ru": "Препятствие",
+      "meaning_ru": "Трудности или испытания, которым предстоит проявиться.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "surroundings",
+      "name_en": "Surroundings, people, influences",
+      "name_ru": "Окружение",
+      "meaning_ru": "Среда, люди и прочие влияния, способные вступить в дело.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "advice",
+      "name_en": "Best course of action",
+      "name_ru": "Совет",
+      "meaning_ru": "Лучший предлагаемый курс действий.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "conditional_outcome",
+      "name_en": "Outcome if advice is heeded",
+      "name_ru": "Исход при исполнении совета",
+      "meaning_ru": "Исход обусловлен тем, что совет предыдущей карты будет исполнен.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "present_situation",
+      "name_en": "Present situation",
+      "name_ru": "Текущая ситуация",
+      "meaning_ru": "Нынешняя ситуация, раскрытая картой.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "immediate_challenge",
+      "name_en": "Immediate challenge",
+      "name_ru": "Ближайшее испытание",
+      "meaning_ru": "Непосредственное испытание. Благоприятная карта в этой позиции также представляет испытание.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "distant_past",
+      "name_en": "Distant past / foundation",
+      "name_ru": "Далёкое прошлое и основание",
+      "meaning_ru": "Глубинный исток вопроса и его прежнее основание.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "recent_past",
+      "name_en": "Recent past / events",
+      "name_ru": "Недавнее прошлое",
+      "meaning_ru": "Недавние события, в том числе косвенно связанные с вопросом.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "best_possible_outcome",
+      "name_en": "Best hoped-for outcome",
+      "name_ru": "Лучший ожидаемый исход",
+      "meaning_ru": "Лучшее, на что можно надеяться; отдельная функция от вероятного будущего и итоговой карты.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "near_future",
+      "name_en": "Likely immediate future",
+      "name_ru": "Вероятное ближайшее будущее",
+      "meaning_ru": "Наиболее вероятное ближайшее состояние событий.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "internal_factors",
+      "name_en": "Factors or inner feelings",
+      "name_ru": "Факторы и внутренние чувства",
+      "meaning_ru": "Сопоставляется с текущей ситуацией, чтобы понять скрытые силы и направления.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "external_uncontrolled",
+      "name_en": "External influences beyond control",
+      "name_ru": "Внешние неподконтрольные влияния",
+      "meaning_ru": "Люди, силы или события вне контроля вопрошающего, влияющие на исход.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "hopes_fears",
+      "name_en": "Hopes or fears",
+      "name_ru": "Надежды или страхи",
+      "meaning_ru": "Ожидания и опасения относительно ситуации, часто вносящие в неё путаницу.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    },
+    {
+      "role_id": "final_outcome",
+      "name_en": "Final outcome",
+      "name_ru": "Итог",
+      "meaning_ru": "Заключительный результат рассматриваемой ситуации.",
+      "scope": "position",
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Short semantic paraphrase of an explicitly described position or group."
+      }
+    }
+  ],
+  "spreads": [
+    {
+      "spread_id": "imperator",
+      "name_en": "The Imperator",
+      "name_ru": "Император",
+      "card_count": 3,
+      "card_count_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ]
+      },
+      "position_ids": [
+        "imperator.p01",
+        "imperator.p02",
+        "imperator.p03"
+      ],
+      "positions": [
+        {
+          "position_id": "imperator.p01",
+          "number": 1,
+          "role_id": "past_origin",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.imperator"
+            ]
+          }
+        },
+        {
+          "position_id": "imperator.p02",
+          "number": 2,
+          "role_id": "present_problem",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.imperator"
+            ]
+          }
+        },
+        {
+          "position_id": "imperator.p03",
+          "number": 3,
+          "role_id": "solution_or_outcome",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.imperator"
+            ]
+          }
+        }
+      ],
+      "position_groups": [],
+      "interpretation_order": [
+        "imperator.p01",
+        "imperator.p02",
+        "imperator.p03"
+      ],
+      "interpretation_order_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Left-to-right source order."
+      },
+      "relationships": [
+        {
+          "relationship_id": "imperator.sequence",
+          "kind": "past_present_solution_or_outcome",
+          "node_ids": [
+            "imperator.p01",
+            "imperator.p02",
+            "imperator.p03"
+          ],
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        }
+      ],
+      "interpretation_readiness": "complete_position_semantics",
+      "synthesis_hints": [
+        {
+          "text_ru": "Последнюю карту читать как предлагаемое решение или возможный исход, без превращения его в гарантированное событие.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        }
+      ],
+      "layout_semantics": {
+        "text_ru": "Три карты в ряд, чтение слева направо.",
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.page.20"
+          ]
+        }
+      },
+      "source_conflict_ids": [],
+      "unresolved_item_ids": [],
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20",
+          "xlsx.spread.imperator",
+          "production.spread.imperator"
+        ]
+      }
+    },
+    {
+      "spread_id": "branch",
+      "name_en": "The Branch (Traitor or True)",
+      "name_ru": "Ветвь (Предатель или Верный)",
+      "card_count": 6,
+      "card_count_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20"
+        ]
+      },
+      "position_ids": [
+        "branch.p01",
+        "branch.p02",
+        "branch.p03",
+        "branch.p04",
+        "branch.p05",
+        "branch.p06"
+      ],
+      "positions": [
+        {
+          "position_id": "branch.p01",
+          "number": 1,
+          "role_id": "past_origin",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        },
+        {
+          "position_id": "branch.p02",
+          "number": 2,
+          "role_id": "present_problem",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        },
+        {
+          "position_id": "branch.p03",
+          "number": 3,
+          "role_id": null,
+          "group_id": "branch.forces_options",
+          "semantic_status": "group_only",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        },
+        {
+          "position_id": "branch.p04",
+          "number": 4,
+          "role_id": null,
+          "group_id": "branch.forces_options",
+          "semantic_status": "group_only",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        },
+        {
+          "position_id": "branch.p05",
+          "number": 5,
+          "role_id": null,
+          "group_id": "branch.branching_future",
+          "semantic_status": "group_only",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        },
+        {
+          "position_id": "branch.p06",
+          "number": 6,
+          "role_id": null,
+          "group_id": "branch.branching_future",
+          "semantic_status": "group_only",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20",
+              "xlsx.spread.branch"
+            ]
+          }
+        }
+      ],
+      "position_groups": [
+        {
+          "group_id": "branch.forces_options",
+          "position_ids": [
+            "branch.p03",
+            "branch.p04"
+          ],
+          "role_id": "forces_and_options",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        },
+        {
+          "group_id": "branch.branching_future",
+          "position_ids": [
+            "branch.p05",
+            "branch.p06"
+          ],
+          "role_id": "branching_futures",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        }
+      ],
+      "interpretation_order": [
+        "branch.p01",
+        "branch.p02",
+        "branch.forces_options",
+        "branch.branching_future"
+      ],
+      "interpretation_order_provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local deterministic order of confirmed groups; order within each pair is unspecified."
+      },
+      "relationships": [
+        {
+          "relationship_id": "branch.choice",
+          "kind": "options_then_alternative_futures",
+          "node_ids": [
+            "branch.forces_options",
+            "branch.branching_future"
+          ],
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        },
+        {
+          "relationship_id": "branch.alternatives",
+          "kind": "alternative_futures",
+          "node_ids": [
+            "branch.p05",
+            "branch.p06"
+          ],
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        }
+      ],
+      "interpretation_readiness": "confirmed_group_semantics_only",
+      "synthesis_hints": [
+        {
+          "text_ru": "Позиции 3–4 и 5–6 сохранять как смысловые пары.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        },
+        {
+          "text_ru": "Сравнивать возможные направления без присвоения им отсутствующих в тексте названий «верность» и «предательство».",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        },
+        {
+          "text_ru": "Диаграмма ставит 3 и 5 в нижнюю ветвь, 4 и 6 в верхнюю; причинное соответствие отдельных карт текстом не установлено.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.20"
+            ]
+          }
+        }
+      ],
+      "layout_semantics": {
+        "text_ru": "Первые две карты как в раскладе Император; следующие две в одной колонке описывают силы и варианты; последние две в отдельной колонке показывают ветвящееся будущее.",
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.page.20"
+          ]
+        }
+      },
+      "source_conflict_ids": [],
+      "unresolved_item_ids": [
+        "U003",
+        "U004",
+        "U005"
+      ],
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.20",
+          "xlsx.spread.branch",
+          "production.spread.branch"
+        ]
+      }
+    },
+    {
+      "spread_id": "throne_of_terra",
+      "name_en": "The Throne of Terra",
+      "name_ru": "Трон Терры",
+      "card_count": 7,
+      "card_count_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21"
+        ]
+      },
+      "position_ids": [
+        "throne_of_terra.p01",
+        "throne_of_terra.p02",
+        "throne_of_terra.p03",
+        "throne_of_terra.p04",
+        "throne_of_terra.p05",
+        "throne_of_terra.p06",
+        "throne_of_terra.p07"
+      ],
+      "positions": [
+        {
+          "position_id": "throne_of_terra.p01",
+          "number": 1,
+          "role_id": "past_origin",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p02",
+          "number": 2,
+          "role_id": "present_problem",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p03",
+          "number": 3,
+          "role_id": "hidden_influence",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p04",
+          "number": 4,
+          "role_id": "obstacle",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p05",
+          "number": 5,
+          "role_id": "surroundings",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p06",
+          "number": 6,
+          "role_id": "advice",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        },
+        {
+          "position_id": "throne_of_terra.p07",
+          "number": 7,
+          "role_id": "conditional_outcome",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21",
+              "xlsx.spread.throne_of_terra"
+            ]
+          }
+        }
+      ],
+      "position_groups": [],
+      "interpretation_order": [
+        "throne_of_terra.p01",
+        "throne_of_terra.p02",
+        "throne_of_terra.p03",
+        "throne_of_terra.p04",
+        "throne_of_terra.p05",
+        "throne_of_terra.p06",
+        "throne_of_terra.p07"
+      ],
+      "interpretation_order_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21",
+          "pdf.page.23",
+          "pdf.page.24",
+          "pdf.page.25",
+          "pdf.page.26"
+        ],
+        "derivation": "Source example reads the Throne in numbered order."
+      },
+      "relationships": [
+        {
+          "relationship_id": "throne_of_terra.advice_outcome",
+          "kind": "outcome_conditioned_on_advice",
+          "node_ids": [
+            "throne_of_terra.p06",
+            "throne_of_terra.p07"
+          ],
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.21"
+            ]
+          }
+        }
+      ],
+      "interpretation_readiness": "complete_position_semantics",
+      "synthesis_hints": [
+        {
+          "text_ru": "Исход позиции 7 сохранять условным: он относится к исполнению совета позиции 6.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.21"
+            ]
+          }
+        },
+        {
+          "text_ru": "Не смешивать скрытые влияния позиции 3 с описанием окружения позиции 5.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.21"
+            ]
+          }
+        }
+      ],
+      "layout_semantics": {
+        "text_ru": "Перевёрнутая V или полукруг.",
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.page.21"
+          ]
+        }
+      },
+      "source_conflict_ids": [],
+      "unresolved_item_ids": [],
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21",
+          "xlsx.spread.throne_of_terra",
+          "production.spread.throne_of_terra"
+        ]
+      }
+    },
+    {
+      "spread_id": "haloed_rosette",
+      "name_en": "The Haloed Rosette",
+      "name_ru": "Ореол Росетты",
+      "card_count": 10,
+      "card_count_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22"
+        ]
+      },
+      "position_ids": [
+        "haloed_rosette.p01",
+        "haloed_rosette.p02",
+        "haloed_rosette.p03",
+        "haloed_rosette.p04",
+        "haloed_rosette.p05",
+        "haloed_rosette.p06",
+        "haloed_rosette.p07",
+        "haloed_rosette.p08",
+        "haloed_rosette.p09",
+        "haloed_rosette.p10"
+      ],
+      "positions": [
+        {
+          "position_id": "haloed_rosette.p01",
+          "number": 1,
+          "role_id": "present_situation",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p02",
+          "number": 2,
+          "role_id": "immediate_challenge",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p03",
+          "number": 3,
+          "role_id": "distant_past",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p04",
+          "number": 4,
+          "role_id": "recent_past",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p05",
+          "number": 5,
+          "role_id": "best_possible_outcome",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p06",
+          "number": 6,
+          "role_id": "near_future",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p07",
+          "number": 7,
+          "role_id": "internal_factors",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p08",
+          "number": 8,
+          "role_id": "external_uncontrolled",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p09",
+          "number": 9,
+          "role_id": "hopes_fears",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        },
+        {
+          "position_id": "haloed_rosette.p10",
+          "number": 10,
+          "role_id": "final_outcome",
+          "group_id": null,
+          "semantic_status": "confirmed",
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22",
+              "xlsx.spread.haloed_rosette"
+            ]
+          }
+        }
+      ],
+      "position_groups": [],
+      "interpretation_order": [
+        "haloed_rosette.p01",
+        "haloed_rosette.p02",
+        "haloed_rosette.p03",
+        "haloed_rosette.p04",
+        "haloed_rosette.p05",
+        "haloed_rosette.p06",
+        "haloed_rosette.p07",
+        "haloed_rosette.p08",
+        "haloed_rosette.p09",
+        "haloed_rosette.p10"
+      ],
+      "interpretation_order_provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local numerical reading convention; source numbers positions but does not require a reveal order."
+      },
+      "relationships": [
+        {
+          "relationship_id": "haloed_rosette.inner_present",
+          "kind": "compare_internal_factors_with_present",
+          "node_ids": [
+            "haloed_rosette.p07",
+            "haloed_rosette.p01"
+          ],
+          "provenance": {
+            "type": "source_derived",
+            "source_refs": [
+              "pdf.page.22"
+            ]
+          }
+        }
+      ],
+      "interpretation_readiness": "complete_position_semantics",
+      "synthesis_hints": [
+        {
+          "text_ru": "Благоприятность карты не отменяет роль испытания в позиции 2.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.22"
+            ]
+          }
+        },
+        {
+          "text_ru": "Позиции 5, 6 и 10 различать: лучший ожидаемый исход, вероятное ближайшее будущее, итог.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.22"
+            ]
+          }
+        },
+        {
+          "text_ru": "Позицию 7 сопоставлять с позицией 1, а надежды и страхи позиции 9 не выдавать за событие.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.22"
+            ]
+          }
+        }
+      ],
+      "layout_semantics": {
+        "text_ru": "Вариант Кельтского креста для 40k; последние четыре карты образуют ряд над крестом.",
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.page.22"
+          ]
+        }
+      },
+      "source_conflict_ids": [],
+      "unresolved_item_ids": [
+        "U005"
+      ],
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.22",
+          "xlsx.spread.haloed_rosette",
+          "production.spread.haloed_rosette"
+        ]
+      }
+    },
+    {
+      "spread_id": "astro_horoscope",
+      "name_en": "The Astro-Horoscope",
+      "name_ru": "Астро-гороскоп",
+      "card_count": 24,
+      "card_count_provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.7"
+        ]
+      },
+      "position_ids": [
+        "astro_horoscope.p01",
+        "astro_horoscope.p02",
+        "astro_horoscope.p03",
+        "astro_horoscope.p04",
+        "astro_horoscope.p05",
+        "astro_horoscope.p06",
+        "astro_horoscope.p07",
+        "astro_horoscope.p08",
+        "astro_horoscope.p09",
+        "astro_horoscope.p10",
+        "astro_horoscope.p11",
+        "astro_horoscope.p12",
+        "astro_horoscope.p13",
+        "astro_horoscope.p14",
+        "astro_horoscope.p15",
+        "astro_horoscope.p16",
+        "astro_horoscope.p17",
+        "astro_horoscope.p18",
+        "astro_horoscope.p19",
+        "astro_horoscope.p20",
+        "astro_horoscope.p21",
+        "astro_horoscope.p22",
+        "astro_horoscope.p23",
+        "astro_horoscope.p24"
+      ],
+      "positions": [
+        {
+          "position_id": "astro_horoscope.p01",
+          "number": 1,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p02",
+          "number": 2,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p03",
+          "number": 3,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p04",
+          "number": 4,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p05",
+          "number": 5,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p06",
+          "number": 6,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p07",
+          "number": 7,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p08",
+          "number": 8,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p09",
+          "number": 9,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p10",
+          "number": 10,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p11",
+          "number": 11,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p12",
+          "number": 12,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p13",
+          "number": 13,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p14",
+          "number": 14,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p15",
+          "number": 15,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p16",
+          "number": 16,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p17",
+          "number": 17,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p18",
+          "number": 18,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p19",
+          "number": 19,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p20",
+          "number": 20,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p21",
+          "number": 21,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p22",
+          "number": 22,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p23",
+          "number": 23,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        },
+        {
+          "position_id": "astro_horoscope.p24",
+          "number": 24,
+          "role_id": null,
+          "group_id": null,
+          "semantic_status": "not_specified",
+          "provenance": {
+            "type": "unresolved",
+            "source_refs": [
+              "pdf.page.21",
+              "pdf.page.7"
+            ],
+            "derivation": "Slot identifiers enumerate the explicitly stated 24-card spread; no individual meaning is assigned."
+          }
+        }
+      ],
+      "position_groups": [],
+      "interpretation_order": null,
+      "interpretation_order_provenance": {
+        "type": "unresolved",
+        "source_refs": [
+          "pdf.page.21",
+          "pdf.page.7"
+        ],
+        "derivation": "No source order supplied."
+      },
+      "relationships": [],
+      "interpretation_readiness": "positions_unresolved",
+      "synthesis_hints": [
+        {
+          "text_ru": "Индивидуальное чтение позиций не определено источником.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.21"
+            ]
+          }
+        },
+        {
+          "text_ru": "Не присваивать 24 слотам знаки зодиака, дома или персональные значения без отдельного основания.",
+          "provenance": {
+            "type": "authored_derivative",
+            "source_refs": [
+              "pdf.page.21"
+            ]
+          }
+        }
+      ],
+      "layout_semantics": {
+        "text_ru": "Свободный рисунок: ряды, колонки, круги, звезда и другие формы; закреплённой схемы нет.",
+        "provenance": {
+          "type": "source_derived",
+          "source_refs": [
+            "pdf.page.21"
+          ]
+        }
+      },
+      "source_conflict_ids": [
+        "C026",
+        "C027"
+      ],
+      "unresolved_item_ids": [
+        "U006"
+      ],
+      "provenance": {
+        "type": "source_derived",
+        "source_refs": [
+          "pdf.page.21",
+          "xlsx.spread.astro_horoscope",
+          "production.spread.astro_horoscope"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.0.0",
+  "document_type": "synthesis_templates",
+  "language": "ru",
+  "usage_notes_ru": [
+    "Это данные формулировок, а не алгоритм выбора или сборки.",
+    "Framing не меняет значение карты и не определяет polarity.",
+    "Позиционные рамки позволяют использовать короткий индивидуальный фрагмент без 24–78 копий по временным категориям.",
+    "В позиции испытания благоприятный текст также относится к испытанию.",
+    "Не использовать opening_02 в раскладе с неустановленными временными ролями.",
+    "Окончательное толкование требует отдельной реализации Stage 4B."
+  ],
+  "templates": [
+    {
+      "template_id": "opening_01",
+      "category": "opening",
+      "role_id": null,
+      "text_ru": "Карты открывают знаки вокруг заданного вопроса.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "opening_02",
+      "category": "opening",
+      "role_id": null,
+      "text_ru": "Перед взором чтеца лежат истоки дела и его возможные пути.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "transition_01",
+      "category": "transition",
+      "role_id": null,
+      "text_ru": "Следующий знак добавляет иной слой к тому же вопросу.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "transition_02",
+      "category": "transition",
+      "role_id": null,
+      "text_ru": "За этим свидетельством раскрывается следующая сторона дела.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "reinforcement_01",
+      "category": "reinforcement",
+      "role_id": null,
+      "text_ru": "Знаки повторяют одну тему и усиливают её присутствие в раскладе.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "reinforcement_02",
+      "category": "reinforcement",
+      "role_id": null,
+      "text_ru": "Это свидетельство поддерживает уже раскрытое направление.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "tension_01",
+      "category": "tension",
+      "role_id": null,
+      "text_ru": "Между знаками остаётся противоречие; оба свидетельства следует сохранить.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "tension_02",
+      "category": "tension",
+      "role_id": null,
+      "text_ru": "Карты показывают встречные силы, и их различие ещё не разрешено.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "warning_01",
+      "category": "warning",
+      "role_id": null,
+      "text_ru": "Этот знак требует особой осторожности.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "warning_02",
+      "category": "warning",
+      "role_id": null,
+      "text_ru": "Предостережение этой карты сохраняет силу в общем чтении.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "resolution_01",
+      "category": "resolution",
+      "role_id": null,
+      "text_ru": "Завершающий знак уточняет возможный исход дела.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "resolution_02",
+      "category": "resolution",
+      "role_id": null,
+      "text_ru": "Итоговое свидетельство следует читать вместе с условиями, раскрытыми ранее.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "closing_01",
+      "category": "closing_omen",
+      "role_id": null,
+      "text_ru": "Таковы открывшиеся знаки; будущее ещё пребывает в движении.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "closing_02",
+      "category": "closing_omen",
+      "role_id": null,
+      "text_ru": "Чтение завершено. Возможный путь обозначен, но его исход ещё не закреплён.",
+      "placeholders": [],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.7"
+        ],
+        "derivation": "Local connective framing; not a quoted prayer or a new card meaning."
+      }
+    },
+    {
+      "template_id": "role_frame.past_origin",
+      "category": "position_frame",
+      "role_id": "past_origin",
+      "text_ru": "Исток нынешнего вопроса лежит в прошлом. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.present_problem",
+      "category": "position_frame",
+      "role_id": "present_problem",
+      "text_ru": "Такова нынешняя суть дела. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.solution_or_outcome",
+      "category": "position_frame",
+      "role_id": "solution_or_outcome",
+      "text_ru": "Карта указывает на возможное решение или исход. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.forces_and_options",
+      "category": "position_frame",
+      "role_id": "forces_and_options",
+      "text_ru": "В этой паре раскрываются действующие силы и доступные варианты. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.branching_futures",
+      "category": "position_frame",
+      "role_id": "branching_futures",
+      "text_ru": "Перед тобой одно из возможных направлений будущего. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.20"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.hidden_influence",
+      "category": "position_frame",
+      "role_id": "hidden_influence",
+      "text_ru": "За видимым ходом дела остаётся скрытое влияние. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.obstacle",
+      "category": "position_frame",
+      "role_id": "obstacle",
+      "text_ru": "Этот знак описывает предстоящее препятствие. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.surroundings",
+      "category": "position_frame",
+      "role_id": "surroundings",
+      "text_ru": "Окружение вступает в дело под этим знаком. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.advice",
+      "category": "position_frame",
+      "role_id": "advice",
+      "text_ru": "Таков предлагаемый курс действий. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.conditional_outcome",
+      "category": "position_frame",
+      "role_id": "conditional_outcome",
+      "text_ru": "Если прежнему совету последовать, возможен такой исход. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.21"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.present_situation",
+      "category": "position_frame",
+      "role_id": "present_situation",
+      "text_ru": "Нынешняя ситуация раскрывается так. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.immediate_challenge",
+      "category": "position_frame",
+      "role_id": "immediate_challenge",
+      "text_ru": "Здесь карта означает ближайшее испытание. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.distant_past",
+      "category": "position_frame",
+      "role_id": "distant_past",
+      "text_ru": "В глубоком основании вопроса стоит этот знак. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.recent_past",
+      "category": "position_frame",
+      "role_id": "recent_past",
+      "text_ru": "Недавние события отзываются в нынешнем деле. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.best_possible_outcome",
+      "category": "position_frame",
+      "role_id": "best_possible_outcome",
+      "text_ru": "Так обозначен лучший исход, на который можно надеяться. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.near_future",
+      "category": "position_frame",
+      "role_id": "near_future",
+      "text_ru": "Ближайшее будущее может принять такую форму. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.internal_factors",
+      "category": "position_frame",
+      "role_id": "internal_factors",
+      "text_ru": "Внутренние чувства и скрытые направления требуют сопоставления с настоящим. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.external_uncontrolled",
+      "category": "position_frame",
+      "role_id": "external_uncontrolled",
+      "text_ru": "Вне твоего контроля действует это влияние. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.hopes_fears",
+      "category": "position_frame",
+      "role_id": "hopes_fears",
+      "text_ru": "Надежды или страхи окрашивают видение ситуации. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    },
+    {
+      "template_id": "role_frame.final_outcome",
+      "category": "position_frame",
+      "role_id": "final_outcome",
+      "text_ru": "Итог дела показан этим знаком. {{fragment}}",
+      "placeholders": [
+        {
+          "name": "fragment",
+          "value_type": "complete_ru_sentence"
+        }
+      ],
+      "provenance": {
+        "type": "authored_derivative",
+        "source_refs": [
+          "pdf.page.22"
+        ],
+        "derivation": "Local sentence frame based on the source role; no selection or assembly logic."
+      }
+    }
+  ]
+}

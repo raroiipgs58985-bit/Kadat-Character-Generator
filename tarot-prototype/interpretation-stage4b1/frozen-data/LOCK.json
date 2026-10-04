@@ -1,0 +1,13 @@
+{
+  "source_archive_sha256": "55d9762404cf05425634c038ad87b6373845c1e9639817eefaa56709c5bc32d8",
+  "data_version": "1.0.0",
+  "files_sha256": {
+    "data/card_semantics.json": "c3f2caa6c0d79de4a666050f009484503c7dd28748b408058e9523523a4aab26",
+    "data/interpretation_fragments.json": "af75a4b47052a5c006bd18fc4dc6095116fab2cb72b0f1e21ada88436d25eb2e",
+    "data/spread_semantics.json": "f1d535e87e435e2fd6c6c2ce51e10c2a01cc608a03369627fca6e0e8a2a7e77b",
+    "data/suit_semantics.json": "0d3edc47956271ef67dffef3df92b1f46cca7ff231b91c0bbfb698411b2445b7",
+    "data/synthesis_templates.json": "263f29a5e46b50e12106010d8a78439acac6566f48a3efcb53fb9b4e3819735a",
+    "manifest.json": "7e49e1a985fc97a49b5ad37b86f508e689fbd38b00709461e473d04bb38290c9"
+  },
+  "scope": "Byte-identical copy of frozen source files; JavaScript bundle below is serialization only."
+}
