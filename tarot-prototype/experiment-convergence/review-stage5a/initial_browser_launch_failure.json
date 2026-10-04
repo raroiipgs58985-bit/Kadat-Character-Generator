@@ -1,0 +1,71 @@
+{
+  "baseline": "0dc66e6db4522276de7536ac8292af587b26e4a8",
+  "branch": "experiment/imperial-tarot-convergence",
+  "status": "FAIL",
+  "checks": [
+    {
+      "id": 1,
+      "name": "exactly 16 unique production cards",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "name": "exactly five paths",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "name": "three ordered cards per path",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "name": "XVI separate from paths",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "name": "strict path order 01 through 15",
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "name": "XVI blocked before all paths",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "name": "XVI requires the distinct explicit action",
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "name": "no fixed semantic roles",
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "name": "paths have no predefined themes",
+      "status": "PASS"
+    },
+    {
+      "id": 14,
+      "name": "Minor has no invented reverse state",
+      "status": "PASS"
+    }
+  ],
+  "layouts": [],
+  "screenshots": [],
+  "errors": [
+    {
+      "kind": "validation-infrastructure-or-flow",
+      "message": "browserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> /workspace/scratch/df03253c6aec/browser-runtime/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=/tmp/playwright_chromiumdev_profile-2g0Z0N --remote-debugging-pipe --no-startup-window\n<launched> pid=16\nCall log:\n\u001b[2m  - <launching> /workspace/scratch/df03253c6aec/browser-runtime/chromium --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-gpu --disable-dev-shm-usage --user-data-dir=/tmp/playwright_chromiumdev_profile-2g0Z0N --remote-debugging-pipe --no-startup-window\u001b[22m\n\u001b[2m  - <launched> pid=16\u001b[22m\n\u001b[2m  - [pid=16] <gracefully close start>\u001b[22m\n\u001b[2m  - [pid=16] <kill>\u001b[22m\n\u001b[2m  - [pid=16] <will force kill>\u001b[22m\n\u001b[2m  - [pid=16] exception while trying to kill process: Error: kill ESRCH\u001b[22m\n\u001b[2m  - [pid=16] <process did exit: exitCode=null, signal=SIGSEGV>\u001b[22m\n\u001b[2m  - [pid=16] starting temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=16] finished temporary directories cleanup\u001b[22m\n\u001b[2m  - [pid=16] <gracefully close end>\u001b[22m\n\n    at /workspace/scratch/351c150783c8/kadat-character-generator/tarot-prototype/experiment-convergence/validate-stage5a.cjs:151:30"
+    }
+  ],
+  "interpretationCalls": 0,
+  "aiApiCalls": 0,
+  "previousStageSuitesRerun": false,
+  "note": "Local HTTP only. One complete UI session reused across viewports; reset is checked by starting a new unrevealed session. Test-only uint32 stream includes a reversed Major and a Minor.",
+  "passed": 10,
+  "total": 26
+}

@@ -1,0 +1,627 @@
+{
+  "baseline": "0dc66e6db4522276de7536ac8292af587b26e4a8",
+  "branch": "experiment/imperial-tarot-convergence",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": 1,
+      "name": "exactly 16 unique production cards",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "name": "exactly five paths",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "name": "three ordered cards per path",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "name": "XVI separate from paths",
+      "status": "PASS"
+    },
+    {
+      "id": 5,
+      "name": "strict path order 01 through 15",
+      "status": "PASS"
+    },
+    {
+      "id": 6,
+      "name": "XVI blocked before all paths",
+      "status": "PASS"
+    },
+    {
+      "id": 7,
+      "name": "XVI requires the distinct explicit action",
+      "status": "PASS"
+    },
+    {
+      "id": 8,
+      "name": "no interpretation during any reveal",
+      "status": "PASS"
+    },
+    {
+      "id": 9,
+      "name": "no fixed semantic roles",
+      "status": "PASS"
+    },
+    {
+      "id": 10,
+      "name": "paths have no predefined themes",
+      "status": "PASS"
+    },
+    {
+      "id": 11,
+      "name": "question persists including reload and completion",
+      "status": "PASS"
+    },
+    {
+      "id": 12,
+      "name": "reset clears/replaces the whole session only",
+      "status": "PASS"
+    },
+    {
+      "id": 13,
+      "name": "reversed artwork remains upright and labelled",
+      "status": "PASS"
+    },
+    {
+      "id": 14,
+      "name": "Minor has no invented reverse state",
+      "status": "PASS"
+    },
+    {
+      "id": 15,
+      "name": "desktop five paths converge to one card",
+      "status": "PASS"
+    },
+    {
+      "id": 16,
+      "name": "mobile current-path focus is readable at 320 and 414",
+      "status": "PASS"
+    },
+    {
+      "id": 17,
+      "name": "no mobile page overflow including completed inspection",
+      "status": "PASS"
+    },
+    {
+      "id": 18,
+      "name": "completed state contains five paths and XVI",
+      "status": "PASS"
+    },
+    {
+      "id": 19,
+      "name": "Stage 5B contract exposes ordered stable references only",
+      "status": "PASS"
+    },
+    {
+      "id": 20,
+      "name": "no AI/API/network reader or runtime interpretation",
+      "status": "PASS"
+    },
+    {
+      "id": 21,
+      "name": "Stage 4A data unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": 22,
+      "name": "frozen interpretation and production session modules unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": 23,
+      "name": "artwork/data mappings unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": 24,
+      "name": "four canonical spreads and V1 entry unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": 25,
+      "name": "Archive unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": 26,
+      "name": "four Kadat generators and deployment unchanged",
+      "status": "PASS"
+    }
+  ],
+  "layouts": [
+    {
+      "label": "entry_320",
+      "viewport": 320,
+      "scrollWidth": 320,
+      "art": null,
+      "rail": null,
+      "question": null,
+      "board": null,
+      "pathCount": 0,
+      "threadCount": 0,
+      "knot": null,
+      "lastPathCard": null,
+      "clipped": 0
+    },
+    {
+      "label": "entry_414",
+      "viewport": 414,
+      "scrollWidth": 414,
+      "art": null,
+      "rail": null,
+      "question": null,
+      "board": null,
+      "pathCount": 0,
+      "threadCount": 0,
+      "knot": null,
+      "lastPathCard": null,
+      "clipped": 0
+    },
+    {
+      "label": "entry_1366",
+      "viewport": 1366,
+      "scrollWidth": 1366,
+      "art": null,
+      "rail": null,
+      "question": null,
+      "board": null,
+      "pathCount": 0,
+      "threadCount": 0,
+      "knot": null,
+      "lastPathCard": null,
+      "clipped": 0
+    },
+    {
+      "label": "active_path_320",
+      "viewport": 320,
+      "scrollWidth": 320,
+      "art": {
+        "width": 288,
+        "height": 432,
+        "top": 473.453125,
+        "left": 16,
+        "fontSize": 17
+      },
+      "rail": {
+        "width": 280,
+        "height": 126.1875,
+        "top": 327.265625,
+        "left": 20,
+        "fontSize": 17
+      },
+      "question": {
+        "width": 288,
+        "height": 64,
+        "top": 1318.359375,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "active_path_414",
+      "viewport": 414,
+      "scrollWidth": 414,
+      "art": {
+        "width": 300,
+        "height": 450,
+        "top": 454.765625,
+        "left": 57,
+        "fontSize": 17
+      },
+      "rail": {
+        "width": 280,
+        "height": 126.1875,
+        "top": 308.578125,
+        "left": 67,
+        "fontSize": 17
+      },
+      "question": {
+        "width": 382,
+        "height": 64,
+        "top": 1317.671875,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "active_path_1366",
+      "viewport": 1366,
+      "scrollWidth": 1366,
+      "art": {
+        "width": 290,
+        "height": 435,
+        "top": 429.46875,
+        "left": 917.796875,
+        "fontSize": 17
+      },
+      "rail": {
+        "width": 280,
+        "height": 123.390625,
+        "top": 282.078125,
+        "left": 922.796875,
+        "fontSize": 17
+      },
+      "question": {
+        "width": 740,
+        "height": 33.59375,
+        "top": 1279.828125,
+        "left": 313,
+        "fontSize": 21
+      },
+      "board": {
+        "width": 704.609375,
+        "height": 596,
+        "top": 315.375,
+        "left": 83,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 104,
+        "height": 206.390625,
+        "top": 510.171875,
+        "left": 683.609375,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 78,
+        "height": 107.59375,
+        "top": 783.578125,
+        "left": 495.5,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "gate_320",
+      "viewport": 320,
+      "scrollWidth": 320,
+      "art": {
+        "width": 288,
+        "height": 432,
+        "top": 727.25,
+        "left": 16,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 288,
+        "height": 64,
+        "top": 1573.515625,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "gate_414",
+      "viewport": 414,
+      "scrollWidth": 414,
+      "art": {
+        "width": 320,
+        "height": 480,
+        "top": 708.5625,
+        "left": 47,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 382,
+        "height": 64,
+        "top": 1602.828125,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "completed_320",
+      "viewport": 320,
+      "scrollWidth": 320,
+      "art": {
+        "width": 288,
+        "height": 432,
+        "top": 192.4375,
+        "left": 16,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 288,
+        "height": 64,
+        "top": 1098.734375,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "inspection_320",
+      "viewport": 320,
+      "scrollWidth": 320,
+      "art": {
+        "width": 288,
+        "height": 432,
+        "top": 338.4375,
+        "left": 16,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 288,
+        "height": 64,
+        "top": 1244.734375,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "completed_414",
+      "viewport": 414,
+      "scrollWidth": 414,
+      "art": {
+        "width": 300,
+        "height": 450,
+        "top": 300.5625,
+        "left": 57,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 382,
+        "height": 64,
+        "top": 1224.859375,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    },
+    {
+      "label": "inspection_414",
+      "viewport": 414,
+      "scrollWidth": 414,
+      "art": {
+        "width": 300,
+        "height": 450,
+        "top": 300.5625,
+        "left": 57,
+        "fontSize": 17
+      },
+      "rail": null,
+      "question": {
+        "width": 382,
+        "height": 64,
+        "top": 1224.859375,
+        "left": 16,
+        "fontSize": 20
+      },
+      "board": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "pathCount": 5,
+      "threadCount": 5,
+      "knot": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "lastPathCard": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "left": 0,
+        "fontSize": 17
+      },
+      "clipped": 0
+    }
+  ],
+  "screenshots": [
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/01_entry_start.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/07_mobile_320.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/08_mobile_414.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/02_active_path_I.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/03_path_transition.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/04_five_paths_XVI_closed.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/05_convergence_reveal.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/06_completed_spread.png",
+    "tarot-prototype/experiment-convergence/review-stage5a/screenshots/09_desktop_1366.png"
+  ],
+  "errors": [],
+  "interpretationCalls": 0,
+  "aiApiCalls": 0,
+  "previousStageSuitesRerun": false,
+  "note": "Local HTTP only. One complete UI session reused across viewports; reset is checked by starting a new unrevealed session. Test-only uint32 stream includes a reversed Major and a Minor.",
+  "passed": 26,
+  "total": 26,
+  "continuedUiOnly": true,
+  "passedStructuralChecksRetained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    14
+  ],
+  "infrastructureRecovery": "Previous scratch Chromium was truncated to 69,928,960 bytes; re-extracted the existing vendor Brotli payload to a temporary complete binary. No application changes or passed checks rerun."
+}

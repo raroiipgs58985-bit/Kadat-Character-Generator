@@ -1,0 +1,115 @@
+{
+  "contract_version": "convergence-stage5a-v1",
+  "spread": "convergence",
+  "experimental": true,
+  "data_version": "blanche-final-v1-5d3bd931d33c",
+  "session_id": "2bf14939-da22-443a-911e-0749e666a6ac",
+  "question": "Как Келусу получить археотех Штрассе?",
+  "paths": {
+    "path_1": [
+      {
+        "position": 1,
+        "card_id": "major_00",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 2,
+        "card_id": "adeptio_02",
+        "type": "minor"
+      },
+      {
+        "position": 3,
+        "card_id": "major_02",
+        "type": "major",
+        "orientation": "reversed"
+      }
+    ],
+    "path_2": [
+      {
+        "position": 4,
+        "card_id": "major_03",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 5,
+        "card_id": "major_04",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 6,
+        "card_id": "major_05",
+        "type": "major",
+        "orientation": "reversed"
+      }
+    ],
+    "path_3": [
+      {
+        "position": 7,
+        "card_id": "major_06",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 8,
+        "card_id": "major_07",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 9,
+        "card_id": "major_08",
+        "type": "major",
+        "orientation": "reversed"
+      }
+    ],
+    "path_4": [
+      {
+        "position": 10,
+        "card_id": "major_09",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 11,
+        "card_id": "major_10",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 12,
+        "card_id": "major_11",
+        "type": "major",
+        "orientation": "reversed"
+      }
+    ],
+    "path_5": [
+      {
+        "position": 13,
+        "card_id": "major_12",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 14,
+        "card_id": "major_13",
+        "type": "major",
+        "orientation": "reversed"
+      },
+      {
+        "position": 15,
+        "card_id": "major_14",
+        "type": "major",
+        "orientation": "reversed"
+      }
+    ]
+  },
+  "convergence": {
+    "position": 16,
+    "card_id": "major_15",
+    "type": "major",
+    "orientation": "reversed"
+  }
+}

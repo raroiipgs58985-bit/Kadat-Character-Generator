@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#080707" />
+    <meta name="description" content="Схождение — изолированный экспериментальный Astro-Horoscope. Пять путей, шестнадцать карт. Толкование ещё не подключено." />
+    <title>Схождение — Sacred Divinatio / Experimentum</title>
+    <link rel="icon" href="../assets/imperial-seal.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../prototype.css" />
+    <link rel="stylesheet" href="../concept-d.css" />
+    <link rel="stylesheet" href="convergence.css" />
+  </head>
+  <body data-concept="d" data-experiment="convergence">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="concept-shell cv-shell">
+      <header class="product-header">
+        <a class="kadat-link" href="../index.html">← IMPERIAL TAROT V1</a>
+        <span class="chapter-label">DIVINATIO IMPERIALIS</span>
+        <a class="cv-kadat" href="../../index.html">REGISTRUM KADAT ↗</a>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="concept-footer"><span>Sacred Divinatio · Experimentum</span><span>CONVERGENCE / XVI</span></footer>
+    </div>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+    <dialog id="cv-reset-dialog" aria-labelledby="cv-reset-title" aria-describedby="cv-reset-description">
+      <p class="overline">NOVUS RITUS</p>
+      <h2 id="cv-reset-title">Начать новый расклад?</h2>
+      <p id="cv-reset-description">Все шестнадцать карт и вопрос текущей сессии будут сброшены. Отдельные знаки заменить нельзя.</p>
+      <div class="cv-reset-actions">
+        <form method="dialog"><button class="secondary" autofocus>Сохранить расклад</button></form>
+        <button class="primary" id="cv-confirm-reset">Новый расклад</button>
+      </div>
+    </dialog>
+    <noscript><p class="no-script">Для последовательного открытия карт включите JavaScript.</p></noscript>
+    <script src="../data/content.js"></script>
+    <script src="../production-data.js"></script>
+    <script src="../ritual-session.js"></script>
+    <script src="session.js"></script>
+    <script src="convergence.js"></script>
+  </body>
+</html>
