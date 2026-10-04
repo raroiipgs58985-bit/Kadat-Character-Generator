@@ -219,17 +219,16 @@
       spread_id: "astro_horoscope",
       name_en: "The Astro-Horoscope",
       name_ru: "Астро-гороскоп",
-      card_count: 24,
-      purpose_ru: "Сложный расклад о человеке и его возможном будущем.",
-      source_status: "SOURCE_INCOMPLETE",
-      source_pages: [7, 21],
-      map_width: 300,
-      map_height: 390,
+      card_count: null,
+      startable: false,
+      purpose_ru: "Свободный сложный расклад.",
+      source_status: "SOURCE_FLEXIBLE",
+      source_pages: [21],
+      map_width: null,
+      map_height: null,
       layout_note_ru:
-        "24 карты подтверждены на стр. 7. На стр. 21 разрешены ряды и столбцы; здесь выбран обзор 4 × 6. Функции позиций и фиксированный порядок источником не заданы: номера обозначают только последовательность открытия в прототипе.",
-      positions: Array.from({ length: 24 }, (_, i) =>
-        position(null, null, 42 + (i % 4) * 72, 35 + Math.floor(i / 4) * 64),
-      ),
+        "Источник не задаёт единого количества карт или фиксированной схемы. Допускаются ряды и столбцы, большой круг, концентрические круги, звезда и другие формы. Запуск пока недоступен.",
+      positions: [],
     },
   ];
   function freeze(value) {

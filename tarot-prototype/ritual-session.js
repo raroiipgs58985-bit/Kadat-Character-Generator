@@ -32,10 +32,16 @@
   function resolveCard(card, orientation) {
     return card.type === "major" ? card[orientation] : card;
   }
+  function questionStatus(text) {
+    return text.length ? "QUESTION_STATED" : "QUESTION_UNSPOKEN";
+  }
   function createSession(data, spreadId, question = "", options = {}) {
     const spread = data.spreads.find((x) => x.spread_id === spreadId);
     if (
       !spread ||
+      spread.startable === false ||
+      !Number.isInteger(spread.card_count) ||
+      spread.card_count < 1 ||
       spread.card_count > data.cards.length ||
       new Set(data.cards.map((x) => x.card_id)).size !== data.cards.length
     )
@@ -56,12 +62,14 @@
       draw.image = art.image;
       return draw;
     });
+    const questionText = question == null ? "" : String(question);
     return freeze({
       version: VERSION,
       data_version: data.version,
       session_id: options.sessionId || globalThis.crypto.randomUUID(),
       spread_id: spreadId,
-      question: String(question).trim().slice(0, 600),
+      question: questionText,
+      question_status: questionStatus(questionText),
       draws,
       progress: { opened_count: 0, current_index: 0, finished: false },
     });
@@ -106,7 +114,7 @@
     // Original draws (including orientations and art state) are reused verbatim.
     return freeze({ ...session, progress });
   }
-  function restore(raw, data) {
+  function restore(raw, data, options = {}) {
     try {
       const s = typeof raw === "string" ? JSON.parse(raw) : raw;
       if (
@@ -115,13 +123,16 @@
         s.data_version !== data.version ||
         typeof s.session_id !== "string" ||
         !s.session_id ||
-        typeof s.question !== "string" ||
-        s.question.length > 600
+        typeof s.question !== "string"
       )
         return null;
-      const spread = data.spreads.find((x) => x.spread_id === s.spread_id);
+      const spreadId = options.spreadAliases?.[s.spread_id] || s.spread_id;
+      const spread = data.spreads.find((x) => x.spread_id === spreadId);
       if (
         !spread ||
+        spread.startable === false ||
+        !Number.isInteger(spread.card_count) ||
+        spread.card_count < 1 ||
         !Array.isArray(s.draws) ||
         s.draws.length !== spread.card_count ||
         new Set(s.draws.map((x) => x.card_id)).size !== s.draws.length
@@ -165,8 +176,9 @@
         version: VERSION,
         data_version: data.version,
         session_id: s.session_id,
-        spread_id: s.spread_id,
+        spread_id: spreadId,
         question: s.question,
+        question_status: questionStatus(s.question),
         draws,
         progress: {
           opened_count: p.opened_count,
@@ -184,5 +196,6 @@
     restore,
     randomBelow,
     resolveCard,
+    questionStatus,
   });
 });

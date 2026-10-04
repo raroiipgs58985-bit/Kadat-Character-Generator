@@ -31,6 +31,18 @@
 [data-concept="d"] .stage2-spread-option:hover {
   border-color: #9a8155;
 }
+[data-concept="d"] .stage2-spread-option:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  border-color: #433224;
+}
+[data-concept="d"] .stage2-flexible-form {
+  color: #b8a990;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.7;
+}
 [data-concept="d"] .stage2-spread-copy {
   display: flex;
   flex-direction: column;
@@ -163,6 +175,42 @@
   font-size: 14px;
   font-style: italic;
 }
+[data-concept="d"] .stage2-question-saved {
+  color: #b8a990;
+  font-size: 12px;
+  line-height: 1.7;
+}
+[data-concept="d"] .stage2-question-desktop {
+  display: none;
+}
+[data-concept="d"] .stage2-question-mobile {
+  text-align: left;
+  border-block: 1px solid #433224;
+  margin-bottom: 24px;
+}
+[data-concept="d"] .stage2-question-mobile summary {
+  padding-block: 14px;
+  min-height: 48px;
+  cursor: pointer;
+  color: #d0c3a3;
+  font-size: 14px;
+  line-height: 1.6;
+}
+[data-concept="d"] .stage2-question-mobile summary > span:first-child {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+[data-concept="d"] .stage2-question-hide,
+[data-concept="d"] .stage2-question-mobile[open] .stage2-question-show {
+  display: none;
+}
+[data-concept="d"] .stage2-question-mobile[open] .stage2-question-hide {
+  display: inline;
+}
+[data-concept="d"] .stage2-question-mobile summary:focus-visible {
+  outline: 2px solid #d1b983;
+  outline-offset: 5px;
+}
 [data-concept="d"] .stage2-confirm-map {
   max-width: 195px;
   margin: 25px auto;
@@ -284,6 +332,7 @@
   width: 100%;
   max-width: 320px;
   margin: 12px auto;
+  container-type: inline-size;
 }
 [data-concept="d"] .stage2-map-position {
   position: absolute;
@@ -295,7 +344,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4px;
+  padding: 2px;
   background: #100b08;
   border: 1px solid #735c3d;
   color: #c4b79b;
@@ -322,11 +371,33 @@
   border-bottom: 3px solid #8e4c3e;
   color: #ebe1c8;
 }
-[data-concept="d"] .stage2-map-position small {
+[data-concept="d"] .stage2-map-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+[data-concept="d"] .stage2-map-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+[data-concept="d"] .stage2-map-art.is-reversed {
+  transform: rotate(180deg);
+}
+[data-concept="d"] .stage2-map-number {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  min-width: 17px;
+  padding: 1px 3px;
+  background: #080706;
+  color: #ebe1c8;
   font-size: 10px;
-  height: 10px;
-  line-height: 10px;
-  color: #dcc293;
+  line-height: 14px;
+  pointer-events: none;
 }
 [data-concept="d"] .stage2-map-legend {
   display: flex;
@@ -378,6 +449,21 @@
 }
 [data-concept="d"] .stage2-completion .stage2-question {
   text-align: left;
+}
+[data-concept="d"] .stage2-completed-spread {
+  margin: 30px auto;
+}
+[data-concept="d"] .stage2-completed-spread .stage2-map-legend {
+  justify-content: center;
+}
+[data-concept="d"] .stage2-fixture-notice {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #433224;
+  color: #b8a990;
+  font-size: 12px;
+  line-height: 1.7;
 }
 [data-concept="d"] .stage2-placeholder {
   color: #c2b69c;
@@ -438,7 +524,7 @@
     margin: 0 auto;
   }
   [data-concept="d"] .stage2-ritual-layout {
-    grid-template-columns: minmax(220px, 300px) minmax(0, 350px) minmax(
+    grid-template-columns: minmax(300px, 360px) minmax(0, 350px) minmax(
         150px,
         240px
       );
@@ -451,6 +537,23 @@
   [data-concept="d"] .stage2-map-aside {
     display: block;
     padding-top: 48px;
+  }
+  [data-concept="d"] .stage2-map-stage {
+    max-width: 360px;
+  }
+  [data-concept="d"] .stage2-map-position {
+    width: clamp(44px, 13.34cqw, 48px);
+    height: clamp(50px, calc(40cqw - 72px), 72px);
+  }
+  [data-concept="d"] .stage2-map-position.is-horizontal {
+    width: clamp(60px, 18.9cqw, 68px);
+    height: 44px;
+  }
+  [data-concept="d"] .stage2-question-desktop {
+    display: block;
+  }
+  [data-concept="d"] .stage2-question-mobile {
+    display: none;
   }
   [data-concept="d"] .stage2-ritual-aside {
     text-align: left;

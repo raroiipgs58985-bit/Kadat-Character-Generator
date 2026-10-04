@@ -1,6 +1,8 @@
-# Imperial Tarot — Stage II validation
+# Imperial Tarot — Stage II validation (historical)
 
-Date: 2026-10-04. Result: **PASS — 40/40**. Scope: `tarot-prototype/` only.
+Date: 2026-10-04. Historical Stage II test result: **PASS — 40/40**. Scope: `tarot-prototype/` only.
+
+**Superseded by [STAGE2_1_VALIDATION.md](STAGE2_1_VALIDATION.md).** The original technical test outcomes below describe the pre-patch build, not current source validity. Stage 2.1 fixes the question submission/persistence path and replaces numbered overview markers with actual thumbnails. The former claim that Astro-Horoscope is a fixed 24-card spread is withdrawn; current UI exposes four fixed spreads and a disabled SOURCE_FLEXIBLE Astro entry. The 24-position engine survives only as an internal stress fixture.
 
 Visual Direction V1: **D — Sacred Divinatio**. Stage I parent: `32d9d48eddf31ab537ad9959d432aa2cfdeec7b0`. Production Kadat base: `2792d775abf4e13f2ac741886b8ef9dde1cdb135`.
 
@@ -12,7 +14,7 @@ Visual Direction V1: **D — Sacred Divinatio**. Stage I parent: `32d9d48eddf31a
 | 04  | 6-card UX supported                            | PASS   | Branch; full lifecycle at all six sizes.                                                                                                                                  |
 | 05  | 7-card UX supported                            | PASS   | Throne of Terra; full lifecycle at all six sizes.                                                                                                                         |
 | 06  | 10-card UX supported                           | PASS   | Haloed Rosette; full lifecycle at all six sizes.                                                                                                                          |
-| 07  | 24-card UX supported                           | PASS   | Astro-Horoscope; full 24-step lifecycle at all six sizes. Position functions remain SOURCE_INCOMPLETE.                                                                    |
+| 07  | 24-card UX supported                           | PASS   | Historical 24-step engine test at all six sizes; renamed LARGE_SPREAD_STRESS_TEST in 2.1. No fixed Astro rule.                                                            |
 | 08  | Sequential reveal enforced                     | PASS   | Session reducer accepts reveal only at opened_count and active index.                                                                                                     |
 | 09  | Future positions cannot be opened              | PASS   | Disabled map controls plus engine guards; synthetic future clicks tested.                                                                                                 |
 | 10  | Individual reroll impossible                   | PASS   | No reroll action; duplicate reveal is a no-op.                                                                                                                            |
@@ -49,13 +51,13 @@ Visual Direction V1: **D — Sacred Divinatio**. Stage I parent: `32d9d48eddf31a
 
 ## Source discipline
 
-The provided **The Emperor's Tarot v1.30** was checked directly as text and rendered diagrams (PDF pages 20–22; 24-card count on page 7). Four defined schemes follow those diagrams rather than general Tarot conventions.
+The provided **The Emperor's Tarot v1.30** was checked directly as text and rendered diagrams (PDF pages 20–22). Four defined schemes follow those diagrams rather than general Tarot conventions.
 
 - Imperator: three cards, left-to-right, past / present-problem / suggested solution or outcome.
 - Branch: functions of III–IV and V–VI are described jointly; no invented separate function for either member of a pair.
 - Throne: inverted V with I–VII ordered as shown.
 - Haloed Rosette: VII–X above the cross; VI above the centre, III below, IV left and V right as shown. I–II share the centre; hit areas are slightly separated for accessibility.
-- Astro-Horoscope: page 7 confirms 24 cards; page 21 explicitly permits rows/columns and other patterns, but does not supply position functions or a fixed canonical order. The prototype uses a permitted 4×6 overview. All function labels remain null and SOURCE_INCOMPLETE is visible in selection, confirmation and overview. Numbers are UX reveal indices, not invented interpretation rules.
+- Astro-Horoscope — corrected in Stage 2.1: the source allows a flexible complex spread with rows/columns, a great circle, concentric circles, a star and other forms. No unified fixed count or canonical grid is established. Current entry is SOURCE_FLEXIBLE and cannot be started. The former 4×6/24-position configuration is an internal technical fixture only; its position functions remain null.
 
 The former package's spread metadata was read only for comparison. No production card dataset, final artwork assignment or final artwork file was imported. The source PDF/ZIP themselves are not part of this deployment.
 

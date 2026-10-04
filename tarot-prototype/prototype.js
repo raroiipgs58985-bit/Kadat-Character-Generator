@@ -110,7 +110,7 @@
     return `<main id="main" class="comparison" tabindex="-1"><header class="comparison-top"><a href="../index.html" class="kadat-link">← REGISTRUM KADAT</a><span class="stage-badge">STAGE II / RITUAL UX</span></header><div class="comparison-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Sacred<br><em>Divinatio.</em></h1><p>D — утверждённое направление V1 · Stage II.<br class="desktop-break"> A и C сохранены как визуальные references.</p></div><section class="concept-options" aria-label="Утверждённый D и references A, C">${activeConcepts
       .map(
         (k) =>
-          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}${k === "d" ? " · V1 / STAGE II" : ""}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "d" ? "Выбор расклада. Вопрос. Последовательный ритуал на 3–24 карты. Утверждённый визуальный язык D." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
+          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}${k === "d" ? " · V1 / STAGE II" : ""}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "d" ? "Выбор расклада. Вопрос. Последовательный ритуал на 3, 6, 7 или 10 карт. Утверждённый визуальный язык D." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
       )
       .join(
         "",
@@ -217,7 +217,9 @@
     const e = event.target.closest(
       "[data-concept],[data-view],[data-action],[data-flip],[data-focus]",
     );
-    if (!e) return;
+    // data-concept on <body> is a theme marker, not a navigation action.
+    // Re-routing D here would cancel native question-form submission.
+    if (!e || !root.contains(e)) return;
     if (e.hasAttribute("data-concept")) {
       event.preventDefault();
       route(e.dataset.concept, e.dataset.entry === "true");
