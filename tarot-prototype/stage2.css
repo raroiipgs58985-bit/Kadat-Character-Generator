@@ -384,8 +384,9 @@
   height: 100%;
   object-fit: contain;
 }
+[data-concept="d"] .card-art.is-reversed,
 [data-concept="d"] .stage2-map-art.is-reversed {
-  transform: rotate(180deg);
+  transform: none;
 }
 [data-concept="d"] .stage2-map-number {
   position: absolute;
