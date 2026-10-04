@@ -1,0 +1,14 @@
+{
+  "checkId": "keyboard_disclosure_and_visible_focus",
+  "status": "PASS",
+  "reason": "Measure focus after the keyboard event, not after pointer-mode programmatic focus.",
+  "fullSuiteRerun": false,
+  "fixturesRerun": false,
+  "interpretationCalls": 0,
+  "evidence": {
+    "focusVisible": true,
+    "outline": "solid",
+    "expanded": true,
+    "calls": 0
+  }
+}

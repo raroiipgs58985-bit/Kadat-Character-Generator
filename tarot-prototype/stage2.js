@@ -5,12 +5,14 @@
   // The public page loads the frozen production content, not stage2-data.js.
   const data = window.ImperialTarotProduction || window.ImperialTarotDemo;
   const engine = window.ImperialTarotSession;
+  const readingUI = window.ImperialTarotReadingUI;
+  const ritualData = readingUI?.sessionData || data;
   const fixture = window.ImperialTarotStressFixture;
   const developerMode =
     new URLSearchParams(location.search).get("fixture") === "large-spread";
   const sessionData = Object.freeze({
-    ...data,
-    spreads: Object.freeze([...data.spreads, ...(fixture ? [fixture] : [])]),
+    ...ritualData,
+    spreads: Object.freeze([...ritualData.spreads, ...(fixture ? [fixture] : [])]),
   });
   const STORAGE_KEY = developerMode
     ? "imperial-tarot.prototype.stage2.fixture.large-spread.v1"
@@ -93,11 +95,7 @@
     const raw = sessionStorage.getItem(STORAGE_KEY);
     if (raw) {
       const saved = JSON.parse(raw);
-      session = saved.session
-        ? engine.restore(saved.session, sessionData, {
-            spreadAliases: { astro_horoscope: "LARGE_SPREAD_STRESS_TEST" },
-          })
-        : null;
+      session = saved.session ? engine.restore(saved.session, sessionData) : null;
       if (saved.session && !session)
         restoreNotice =
           "Сохранённый расклад относится к прежней версии данных. Его карты не перенесены в новую колоду. Вопрос сохранён в черновике. Подтвердите начало нового ритуала.";
@@ -118,14 +116,6 @@
           !session?.progress.finished)
       )
         view = "home";
-      if (session && saved.session.spread_id === "astro_horoscope") {
-        restoreNotice =
-          "Сохранённые 24 позиции перенесены во внутренний технический тест. Карты, их положения и вопрос сохранены. Это не фиксированный Астро-гороскоп.";
-      } else if (!session && saved.selectedSpread === "astro_horoscope") {
-        view = "spreads";
-        restoreNotice =
-          "Астро-гороскоп — свободный расклад, его запуск пока недоступен. Текст вопроса сохранён в черновике.";
-      }
     }
   } catch {
     storageAvailable = false;
@@ -202,10 +192,12 @@
     return `<section class="forbidden-home sacred-home"><div class="silence-copy"><p class="overline"><span class="sacred-initial" aria-hidden="true">I</span>THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><p class="silence-subtitle">DIVINATIO IMPERIALIS</p><div class="home-actions"><button class="primary" data-s2="${session ? "resume" : "choose"}">${session ? "Вернуться к ритуалу" : "Провести гадание"} <span aria-hidden="true">→</span></button><div class="secondary-actions">${session ? '<button class="quiet" data-s2="reset">Новый ритуал</button>' : ""}<button class="quiet" data-s2="archive">Архив арканов ↗</button><button class="quiet" data-s2="about">О Таро</button></div></div></div><div class="void-deck sacred-deck"><div class="deck" aria-label="Закрытая колода Императорского Таро"><span class="deck-layer" aria-hidden="true"></span><span class="deck-layer" aria-hidden="true"></span><img src="assets/card-back-d.svg" alt="Рубашка карты: симметричная имперская геральдика на тёмном поле."></div><div class="sacred-divider" aria-hidden="true"><span>✦</span></div><span class="void-inscription">IN NOMINE IMPERATORIS</span></div><div class="silence-footnote"><p>Откройте карты по одной.<br>Толкование — после завершения ритуала.</p><button class="quiet stage2-demo-link" data-s2="demo">Посмотреть лица арканов ↗</button>${restoreNotice ? `<p role="status">${esc(restoreNotice)}</p>` : ""}${!storageAvailable ? "<p>Хранилище вкладки недоступно. Сессия сохраняется в памяти до перезагрузки страницы.</p>" : ""}</div></section>`;
   }
   function miniMap(spread) {
+    if (spread.deferred_review)
+      return '<span class="stage2-flexible-form" aria-hidden="true">Сложное<br>знамение</span>';
     return `<svg class="stage2-mini-map" viewBox="0 0 ${spread.map_width} ${spread.map_height}" aria-hidden="true" focusable="false">${spread.positions.map((p, i) => `<g transform="translate(${p.x} ${p.y})"><rect x="${p.horizontal ? -29 : -19}" y="${p.horizontal ? -14 : -25}" width="${p.horizontal ? 58 : 38}" height="${p.horizontal ? 28 : 50}"/><text dy="4">${i + 1}</text></g>`).join("")}</svg>`;
   }
   function chooseSpread() {
-    return `<section class="stage2-selection">${heading("FORMA RITUALIS", "Выберите расклад", "У каждого ритуала своя форма.<br>Карты появятся только после подтверждения начала.")}<div class="stage2-spread-options">${data.spreads.map((s) => `<button class="stage2-spread-option" data-s2="select" data-spread="${s.spread_id}" ${s.startable === false ? "disabled" : ""}><span class="stage2-spread-copy"><span class="stage2-spread-count">${s.card_count == null ? "СВОБОДНЫЙ РАСКЛАД" : `${s.card_count} КАРТ`}</span><strong>${s.name_ru}</strong><span class="stage2-spread-en">${s.name_en}</span><span class="stage2-spread-purpose">${s.purpose_ru}</span>${s.source_status === "SOURCE_FLEXIBLE" ? `<span class="stage2-source-warning">SOURCE_FLEXIBLE · запуск пока недоступен</span><span class="stage2-spread-purpose">Источник не задаёт единого количества карт или фиксированной схемы.</span>` : ""}</span>${s.startable === false ? '<span class="stage2-flexible-form" aria-hidden="true">Свободная<br>форма</span>' : miniMap(s)}${s.startable === false ? "" : '<span class="stage2-spread-arrow" aria-hidden="true">↗</span>'}</button>`).join("")}</div><p class="stage2-source-note">Четыре фиксированные схемы: The Emperor's Tarot v1.30, стр. 20–22. Астро-гороскоп сохранён как свободный расклад.</p>${session ? '<p class="stage2-source-note">Текущий расклад сохранён. Выбор другого потребует подтверждения сброса.</p>' : ""}${restoreNotice && !session ? `<p class="stage2-source-note" role="status">${esc(restoreNotice)}</p>` : ""}</section>`;
+    return `<section class="stage2-selection">${heading("FORMA RITUALIS", "Выберите расклад", "У каждого ритуала своя форма.<br>Карты появятся только после подтверждения начала.")}<div class="stage2-spread-options">${ritualData.spreads.map((s) => `<button class="stage2-spread-option" data-s2="select" data-spread="${s.spread_id}" ${s.startable === false ? "disabled" : ""}><span class="stage2-spread-copy"><span class="stage2-spread-count">${s.card_count == null ? "СВОБОДНЫЙ РАСКЛАД" : `${s.card_count} КАРТ`}</span><strong>${s.name_ru}</strong><span class="stage2-spread-en">${s.name_en}</span><span class="stage2-spread-purpose">${s.purpose_ru}</span>${s.deferred_review ? '<span class="stage2-spread-purpose">24 карты без отдельных значений позиций. Связное толкование пока недоступно.</span>' : ""}</span>${s.startable === false ? '<span class="stage2-flexible-form" aria-hidden="true">Свободная<br>форма</span>' : miniMap(s)}${s.startable === false ? "" : '<span class="stage2-spread-arrow" aria-hidden="true">↗</span>'}</button>`).join("")}</div><p class="stage2-source-note">Четыре фиксированные схемы: The Emperor's Tarot v1.30, стр. 20–22. Астро-гороскоп: 24 карты как единое сложное знамение, без назначенной схемы.</p>${session ? '<p class="stage2-source-note">Текущий расклад сохранён. Выбор другого потребует подтверждения сброса.</p>' : ""}${restoreNotice && !session ? `<p class="stage2-source-note" role="status">${esc(restoreNotice)}</p>` : ""}</section>`;
   }
   function askQuestion() {
     const s = currentSpread();
@@ -253,9 +245,10 @@
     const i = session.progress.current_index;
     const opened = i < session.progress.opened_count;
     const s = currentSpread();
-    return `<figure id="active-figure" tabindex="-1" class="card-unit stage2-focus-card"><button class="flip-card stage2-flip" data-s2="reveal" data-index="${i}" ${opened || busy ? "disabled" : ""} aria-label="${opened ? `Открытая карта: ${esc(cardDetails(session.draws[i]).card.name_ru)}` : `Открыть позицию ${roman(i + 1)}`}" aria-describedby="ritual-rule"><span class="card-object${opened ? " is-revealed" : ""}"><span class="card-back"><img src="assets/card-back-d.svg" alt="" draggable="false"></span>${opened ? face(session.draws[i]) : ""}</span></button>${opened ? label(session.draws[i]) : `<figcaption class="closed-label">Позиция ${roman(i + 1)} · нажмите, чтобы открыть</figcaption>`}<span class="sr-only">${esc(s.positions[i].name_ru || "Функция позиции не задана источником")}</span></figure>`;
+    return `<figure id="active-figure" tabindex="-1" class="card-unit stage2-focus-card"><button class="flip-card stage2-flip" data-s2="reveal" data-index="${i}" ${opened || busy ? "disabled" : ""} aria-label="${opened ? `Открытая карта: ${esc(cardDetails(session.draws[i]).card.name_ru)}` : `Открыть ${s.deferred_review ? "карту" : "позицию"} ${roman(i + 1)}`}" aria-describedby="ritual-rule"><span class="card-object${opened ? " is-revealed" : ""}"><span class="card-back"><img src="assets/card-back-d.svg" alt="" draggable="false"></span>${opened ? face(session.draws[i]) : ""}</span></button>${opened ? label(session.draws[i]) : `<figcaption class="closed-label">${s.deferred_review ? "Карта" : "Позиция"} ${roman(i + 1)} · нажмите, чтобы открыть</figcaption>`}${s.positions[i].name_ru ? `<span class="sr-only">${esc(s.positions[i].name_ru)}</span>` : ""}</figure>`;
   }
   function map(spread = currentSpread(), interactive = true) {
+    if (spread.deferred_review) return astroGallery(interactive);
     const progress = session.progress;
     return `<div class="stage2-map-stage" style="--map-ratio:${spread.map_width}/${spread.map_height}" role="group" aria-label="Схема ${esc(spread.name_ru)}">${spread.positions
       .map((p, i) => {
@@ -281,7 +274,7 @@
     const p = session.progress,
       n = session.draws.length;
     const all = p.opened_count === n;
-    return `<div class="stage2-ritual-controls"><p class="opened-count">Открыто ${p.opened_count} из ${n} · осталось ${n - p.opened_count}</p>${all ? `<p class="stage2-finish-mark">РАСКЛАД ЗАВЕРШЁН</p><button class="primary stage2-continue" data-s2="${p.finished ? "completed" : "finish"}">${p.finished ? "К завершённому ритуалу" : "Завершить ритуал"} →</button>` : p.current_index < p.opened_count ? `<button class="primary stage2-continue" data-s2="next">К следующей карте ${roman(p.opened_count + 1)} →</button>` : '<p id="ritual-prompt" class="ritual-prompt">Откройте текущую карту.</p>'}<button class="quiet stage2-map-trigger" data-s2="map">Схема расклада <span aria-hidden="true">↗</span></button><button class="quiet restart-link" data-s2="reset">Начать заново</button></div>`;
+    return `<div class="stage2-ritual-controls"><p class="opened-count">Открыто ${p.opened_count} из ${n} · осталось ${n - p.opened_count}</p>${all ? `<p class="stage4b2-transition" role="status"><span>+++ РАСКЛАД ЗАВЕРШЁН +++</span><span>+++ ${currentSpread().deferred_review ? "ЗНАМЕНИЕ СОХРАНЕНО" : "ТОЛКОВАНИЕ ДОПУЩЕНО"} +++</span></p><button class="primary stage2-continue" data-s2="interpret">${currentSpread().deferred_review ? "Изучить расклад" : "Запросить толкование"} →</button>` : p.current_index < p.opened_count ? `<button class="primary stage2-continue" data-s2="next">К следующей карте ${roman(p.opened_count + 1)} →</button>` : '<p id="ritual-prompt" class="ritual-prompt">Откройте текущую карту.</p>'}<button class="quiet stage2-map-trigger" data-s2="map">${currentSpread().deferred_review ? "Карты расклада" : "Схема расклада"} <span aria-hidden="true">↗</span></button><button class="quiet restart-link" data-s2="reset">Начать заново</button></div>`;
   }
   function ritual() {
     if (!session) return chooseSpread();
@@ -292,11 +285,77 @@
   function complete() {
     if (!session?.progress.finished) return ritual();
     const s = currentSpread();
-    return `<section class="stage2-completion">${heading("RITUS COMPLETUS", "Ритуал завершён", `${s.name_ru} · открыты все ${s.card_count} карт`)}<div class="stage2-completed-spread">${map()}${mapLegend()}</div>${seal}<p class="stage2-complete-vow">ТОЛКОВАНИЕ ДОПУЩЕНО</p>${questionPanel()}<div class="stage2-form-actions"><button class="primary" data-s2="interpret">Перейти к толкованию →</button><button class="quiet" data-s2="resume">Вернуться к картам</button><button class="quiet" data-s2="reset">Новый ритуал</button></div></section>`;
+    return `<section class="stage2-completion">${heading("RITUS COMPLETUS", "Ритуал завершён", `${s.name_ru} · открыты все ${s.card_count} карт`)}<div class="stage2-completed-spread">${map()}${mapLegend()}</div>${seal}<p class="stage2-complete-vow">${s.deferred_review ? "ЗНАМЕНИЕ СОХРАНЕНО" : "ТОЛКОВАНИЕ ДОПУЩЕНО"}</p>${questionPanel()}<div class="stage2-form-actions"><button class="primary" data-s2="interpret">${s.deferred_review ? "Изучить расклад" : "Запросить толкование"} →</button><button class="quiet" data-s2="resume">Вернуться к картам</button><button class="quiet" data-s2="reset">Новый ритуал</button></div></section>`;
+  }
+  function astroGallery(interactive = true) {
+    const p = session.progress;
+    return `<div class="stage4b2-astro-grid" role="group" aria-label="Карты в порядке открытия">${session.draws.map((draw, i) => {
+      const opened = i < p.opened_count;
+      const card = opened ? cardDetails(draw).card : null;
+      return `<button class="stage4b2-astro-slot${i === p.current_index ? " is-current" : ""}" data-s2="map-focus" data-index="${i}" ${!interactive || i > p.opened_count ? "disabled" : ""} aria-label="Карта ${roman(i + 1)}${opened ? `: ${esc(card.name_ru)}${draw.orientation === "reversed" ? ". Перевёрнутое положение" : ""}` : ": закрыта"}"><img src="${opened ? esc(draw.image) : "assets/card-back-d.svg"}" alt="" loading="lazy" decoding="async"><span>${roman(i + 1)}</span></button>`;
+    }).join("")}</div><p class="stage4b2-astro-order">Порядок открытия карт. Отдельная схема и значения позиций не назначены.</p>`;
+  }
+  function readingQuestion(reading) {
+    return reading.question.trim()
+      ? `<aside class="stage4b2-question" aria-label="Вопрос чтеца"><p class="overline">ВОПРОС ЧТЕЦА</p><blockquote>«${esc(reading.question)}»</blockquote></aside>`
+      : "";
+  }
+  function signCard(sign, reading, alternativeLabel = "") {
+    const draw = session.draws[sign.position - 1];
+    const { card, art } = cardDetails(draw);
+    const conditional = reading.relations.some((relation) =>
+      relation.condition?.outcomePositionId === sign.positionId,
+    );
+    const comparison = reading.relations.some((relation) =>
+      relation.purpose === "compare_internal_factors_with_present" &&
+      relation.nodeIds[0] === sign.positionId,
+    );
+    const role = conditional ? "Исход при следовании совету" :
+      alternativeLabel || sign.role?.nameRu || "";
+    const state = card.type === "major"
+      ? (sign.state === "reversed" ? "Перевёрнутое положение" : "Прямое положение")
+      : `${card.suit} · ${card.rank}`;
+    return `<li class="stage4b2-sign" data-sign-position="${sign.position}"><figure><img src="${esc(art.image)}" alt="${esc(art.alt)}" loading="lazy" decoding="async"></figure><div class="stage4b2-sign-copy">${role ? `<p class="stage4b2-sign-role">${roman(sign.position)} · ${esc(role)}</p>` : `<p class="stage4b2-sign-role">Карта ${roman(sign.position)}</p>`}<h3>${esc(sign.nameRu)}</h3><p class="stage4b2-sign-state">${card.type === "major" ? `${esc(card.number)} · ` : ""}${esc(state)}</p>${sign.renderedInterpretation ? `<p class="stage4b2-sign-text">${esc(sign.renderedInterpretation)}</p>` : ""}${comparison ? '<p class="stage4b2-relation-note">Этот знак сопоставляется с настоящим.</p>' : ""}${conditional ? '<p class="stage4b2-relation-note">Исход зависит от следования предыдущему совету.</p>' : ""}</div></li>`;
+  }
+  function signsDisclosure(reading) {
+    const groups = new Set();
+    let loose = [];
+    let body = "";
+    const flush = () => {
+      if (loose.length) body += `<ol class="stage4b2-sign-list">${loose.map((sign) => signCard(sign, reading)).join("")}</ol>`;
+      loose = [];
+    };
+    for (const sign of reading.signs) {
+      if (!sign.role?.groupId) { loose.push(sign); continue; }
+      const id = sign.role.groupId;
+      if (groups.has(id)) continue;
+      groups.add(id);
+      flush();
+      const members = reading.signs.filter((entry) => entry.role?.groupId === id);
+      const section = reading.sections.find((entry) => entry.groupId === id);
+      const alternatives = section?.alternatives || [];
+      body += `<section class="stage4b2-sign-group"><h2>${esc(sign.role.nameRu)}</h2>${alternatives.length ? '<p>Два возможных направления. Ни одно не выбрано.</p>' : '<p>Карты этой пары рассматриваются совместно.</p>'}<ol class="stage4b2-sign-list">${members.map((member) => {
+        const i = alternatives.findIndex((entry) => entry.positionIds.includes(member.positionId));
+        return signCard(member, reading, i < 0 ? "" : i === 0 ? "Первое направление" : "Второе направление");
+      }).join("")}</ol></section>`;
+    }
+    flush();
+    return `<details class="stage4b2-signs"><summary>ИЗУЧИТЬ ЗНАМЕНИЯ</summary>${body}</details>`;
   }
   function interpretation() {
     if (!session?.progress.finished) return ritual();
-    return `<section class="stage2-completion">${heading("INTERPRETATIO", "Толкование", "Будет реализовано на отдельном этапе.")}<p class="stage2-placeholder">Ритуал сохранён.<br>Интерфейс толкования пока не реализован.</p><div class="stage2-form-actions"><button class="secondary" data-s2="completed">← К завершённому ритуалу</button><button class="quiet" data-s2="resume">Посмотреть карты</button></div></section>`;
+    let reading;
+    try { reading = readingUI.readCompleted(session); }
+    catch {
+      return `<section class="stage2-completion">${heading("RITUS CONSERVATUS", "Расклад сохранён")}<p role="status">Толкование сейчас недоступно. Открытые карты и вопрос сохранены.</p><div class="stage2-form-actions"><button class="secondary" data-s2="resume">Вернуться к картам</button><button class="quiet" data-s2="reset">Новый расклад</button></div></section>`;
+    }
+    const s = currentSpread();
+    const deferred = reading.interpretationMode === "deferred_complex_reading";
+    const { art } = cardDetails(session.draws[0]);
+    const content = deferred
+      ? `<article class="stage4b2-deferred" aria-labelledby="reading-title"><h1 id="reading-title">Сложное знамение</h1><p>Источник не устанавливает отдельных значений для двадцати четырёх позиций этого расклада. Карты сохранены как единое сложное знамение.</p><p>Связное толкование этого расклада пока недоступно.</p></article>`
+      : `<article class="stage4b2-prophecy" aria-labelledby="reading-title"><h1 id="reading-title">ПРОРОЧЕСТВО</h1>${reading.prophecy.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}</article>`;
+    return `<section class="stage4b2-reading"><header class="stage4b2-reading-header"><p class="stage4b2-status">+++ ${deferred ? "РАСКЛАД ЗАВЕРШЁН" : "ТОЛКОВАНИЕ ДОПУЩЕНО"} +++</p><div class="stage4b2-title-row"><p class="stage4b2-spread-name">${esc(s.name_ru)}</p><img class="stage4b2-mobile-art" src="${esc(art.image)}" alt="" aria-hidden="true" decoding="async"></div></header><div class="stage4b2-reading-layout"><figure class="stage4b2-frontispiece"><img src="${esc(art.image)}" alt="${esc(art.alt)}" decoding="async"><figcaption>Из открытого расклада</figcaption></figure><div class="stage4b2-reading-body">${readingQuestion(reading)}${content}${deferred ? `<details class="stage4b2-signs" open><summary>ОТКРЫТЫЕ КАРТЫ · ${reading.signs.length}</summary><ol class="stage4b2-sign-list">${reading.signs.map((sign) => signCard(sign, reading)).join("")}</ol></details>` : signsDisclosure(reading)}<div class="stage4b2-reading-actions"><button class="primary" data-s2="reset">Новый расклад</button><button class="quiet" data-s2="resume">Вернуться к картам</button></div></div></div></section>`;
   }
   function demo() {
     const major = data.cards.find((c) => c.card_id === "major_02");
@@ -313,16 +372,16 @@
     document.getElementById("dialog-body").innerHTML =
       which === "archive"
         ? '<p class="overline">ARCHIVUM ARCANORUM</p><h2 id="dialog-title">Архив арканов</h2><p>Вход сохранён. Полный архив на этом этапе не реализован.</p>'
-        : '<p class="overline">DIVINATIO IMPERIALIS</p><h2 id="dialog-title">О Таро</h2><p>Sacred Divinatio — утверждённое направление V1. Последовательный ритуал с финальной авторской курацией.</p><p>78 карт, 100 художественных назначений, 99 произведений John Blanche. Толкование будет реализовано отдельно. Сессия хранится только в этой вкладке.</p>';
+        : '<p class="overline">DIVINATIO IMPERIALIS</p><h2 id="dialog-title">О Таро</h2><p>Sacred Divinatio — утверждённое направление V1. Последовательный ритуал с финальной авторской курацией.</p><p>78 карт, 100 художественных назначений, 99 произведений John Blanche. Толкование открывается после последней карты. Сессия хранится только в этой вкладке.</p>';
     info.showModal();
   }
   function openMap() {
     if (!session || busy) return;
     const s = currentSpread();
     document.getElementById("ritual-map-body").innerHTML =
-      `<p class="overline">FORMA RITUALIS</p><h2 id="ritual-map-title">${s.name_ru}</h2><p class="stage2-source-note">Открыто ${session.progress.opened_count} из ${s.card_count}. Выберите открытую или следующую позицию.</p>${map()}${mapLegend()}<p class="stage2-source-note">${s.layout_note_ru}</p>${s.source_status === "SOURCE_INCOMPLETE" ? '<p class="stage2-source-warning">SOURCE_INCOMPLETE · без значений позиций</p>' : ""}`;
+      `<p class="overline">${s.deferred_review ? "SIGNUM COMPLEXUM" : "FORMA RITUALIS"}</p><h2 id="ritual-map-title">${s.name_ru}</h2><p class="stage2-source-note">Открыто ${session.progress.opened_count} из ${s.card_count}. Выберите открытую или следующую ${s.deferred_review ? "карту" : "позицию"}.</p>${map()}${mapLegend()}${s.deferred_review ? "" : `<p class="stage2-source-note">${s.layout_note_ru}</p>`}${s.source_status === "SOURCE_INCOMPLETE" ? '<p class="stage2-source-warning">SOURCE_INCOMPLETE · без значений позиций</p>' : ""}`;
     mapDialog.showModal();
-    const current = mapDialog.querySelector(".stage2-map-position.is-current");
+    const current = mapDialog.querySelector(".stage2-map-position.is-current, .stage4b2-astro-slot.is-current");
     current?.focus({ preventScroll: true });
   }
   function reset(target = null) {
@@ -479,7 +538,9 @@
         if (session?.progress.finished) go("complete");
         break;
       case "interpret":
-        if (session?.progress.finished) go("interpretation");
+        if (!session || session.progress.opened_count !== session.draws.length) return;
+        session = engine.update(session, "finish");
+        if (session.progress.finished) go("interpretation");
         break;
       case "reset":
         reset();
@@ -509,6 +570,7 @@
     resetDialog.close();
     cancelAnimation();
     session = null;
+    readingUI?.clear();
     loadedArt.clear();
     question = "";
     restoreNotice = "";

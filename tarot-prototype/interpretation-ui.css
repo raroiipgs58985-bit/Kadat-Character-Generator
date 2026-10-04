@@ -1,0 +1,245 @@
+/* Final page of Sacred Divinatio. Scoped to D; no changes to other generators. */
+[data-concept="d"] .stage4b2-transition {
+  margin: 28px 0 24px;
+  color: #d8c29a;
+  font-size: 11px;
+  letter-spacing: .12em;
+  line-height: 2;
+}
+[data-concept="d"] .stage4b2-transition span { display: block; }
+[data-concept="d"] .stage4b2-reading {
+  max-width: 920px;
+  margin: 54px auto 92px;
+}
+[data-concept="d"] .stage4b2-reading-header,
+[data-concept="d"] .stage4b2-reading-body,
+[data-concept="d"] .stage4b2-signs {
+  min-width: 0;
+}
+[data-concept="d"] .stage4b2-status {
+  margin: 0 0 24px;
+  color: #b7a078;
+  font-size: 11px;
+  letter-spacing: .12em;
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-spread-name {
+  margin: 0;
+  color: #cbb78f;
+  font: normal 23px/1.35 var(--display);
+}
+[data-concept="d"] .stage4b2-mobile-art { display: none; }
+[data-concept="d"] .stage4b2-reading-layout {
+  display: grid;
+  grid-template-columns: 164px minmax(0, 1fr);
+  gap: 60px;
+  margin-top: 32px;
+  align-items: start;
+}
+[data-concept="d"] .stage4b2-frontispiece {
+  margin: 8px 0 0;
+  padding: 9px;
+  border: 1px solid #51402c;
+  border-bottom: 3px solid #5b2923;
+}
+[data-concept="d"] .stage4b2-frontispiece img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 245px;
+  object-fit: contain;
+  transform: none;
+}
+[data-concept="d"] .stage4b2-frontispiece figcaption {
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #b8a990;
+  text-align: center;
+}
+[data-concept="d"] .stage4b2-question {
+  margin: 0 0 32px;
+  padding-left: 18px;
+  border-left: 1px solid #754137;
+}
+[data-concept="d"] .stage4b2-question .overline {
+  margin-bottom: 9px;
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+[data-concept="d"] .stage4b2-question blockquote {
+  margin: 0;
+  color: #bfb097;
+  font: italic 17px/1.65 var(--serif);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-prophecy h1,
+[data-concept="d"] .stage4b2-deferred h1 {
+  margin: 0 0 28px;
+  color: #ebe1c8;
+  font: normal clamp(32px, 4vw, 48px)/1.15 var(--display);
+  letter-spacing: .015em;
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-prophecy p,
+[data-concept="d"] .stage4b2-deferred > p {
+  max-width: 62ch;
+  margin: 0 0 24px;
+  color: #ddd0b4;
+  font: 20px/1.85 var(--serif);
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-reading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  margin-top: 34px;
+}
+[data-concept="d"] .stage4b2-signs {
+  margin-top: 44px;
+  border-top: 1px solid #59452e;
+  border-bottom: 1px solid #3e3022;
+}
+[data-concept="d"] .stage4b2-signs > summary {
+  padding: 20px 0;
+  color: #c9b88f;
+  font-size: 12px;
+  letter-spacing: .12em;
+  cursor: pointer;
+  min-height: 56px;
+}
+[data-concept="d"] .stage4b2-signs > summary:focus-visible,
+[data-concept="d"] .stage4b2-astro-slot:focus-visible {
+  outline: 2px solid #d1b983;
+  outline-offset: 5px;
+}
+[data-concept="d"] .stage4b2-sign-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+[data-concept="d"] .stage4b2-sign {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding: 26px 0;
+  border-top: 1px solid #2f251c;
+}
+[data-concept="d"] .stage4b2-sign figure { margin: 0; }
+[data-concept="d"] .stage4b2-sign img {
+  display: block;
+  width: 100%;
+  height: 136px;
+  object-fit: contain;
+  background: #100c0a;
+  transform: none;
+  border: 1px solid #493823;
+}
+[data-concept="d"] .stage4b2-sign-copy { min-width: 0; }
+[data-concept="d"] .stage4b2-sign h3 {
+  margin: 6px 0 9px;
+  color: #e4d7bd;
+  font: normal 22px/1.3 var(--display);
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-sign-role,
+[data-concept="d"] .stage4b2-sign-state {
+  margin: 0 0 8px;
+  color: #bda985;
+  font-size: 12px;
+  line-height: 1.6;
+}
+[data-concept="d"] .stage4b2-sign-text {
+  margin: 12px 0 0;
+  font: 17px/1.75 var(--serif);
+  overflow-wrap: anywhere;
+}
+[data-concept="d"] .stage4b2-relation-note {
+  margin: 12px 0 0;
+  color: #baaa8e;
+  font-size: 14px;
+  font-style: italic;
+}
+[data-concept="d"] .stage4b2-sign-group {
+  margin: 28px 0 8px;
+  padding-left: 16px;
+  border-left: 1px solid #754137;
+}
+[data-concept="d"] .stage4b2-sign-group h2 {
+  color: #c9b88f;
+  font: normal 20px/1.4 var(--display);
+  margin: 0 0 8px;
+}
+[data-concept="d"] .stage4b2-sign-group > p {
+  font-size: 14px;
+  margin: 0 0 20px;
+  color: #b8a990;
+}
+[data-concept="d"] .stage4b2-astro-order {
+  color: #b8a990;
+  font-size: 12px;
+  line-height: 1.7;
+}
+[data-concept="d"] .stage4b2-astro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+[data-concept="d"] .stage4b2-astro-slot {
+  min-width: 0;
+  padding: 5px;
+  background: #100c0a;
+  border: 1px solid #493823;
+  color: #bda985;
+}
+[data-concept="d"] .stage4b2-astro-slot.is-current {
+  border-bottom: 3px solid #bda985;
+}
+[data-concept="d"] .stage4b2-astro-slot img {
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  transform: none;
+}
+[data-concept="d"] .stage4b2-astro-slot span {
+  font-size: 12px;
+  display: block;
+}
+@media (max-width: 760px) {
+  [data-concept="d"] .stage4b2-reading { margin: 30px auto 62px; }
+  [data-concept="d"] .stage4b2-reading-layout { display: block; margin-top: 24px; }
+  [data-concept="d"] .stage4b2-frontispiece { display: none; }
+  [data-concept="d"] .stage4b2-title-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 70px;
+    align-items: center;
+    gap: 20px;
+  }
+  [data-concept="d"] .stage4b2-mobile-art {
+    display: block;
+    width: 70px;
+    height: 94px;
+    object-fit: contain;
+    transform: none;
+    border: 1px solid #493823;
+  }
+  [data-concept="d"] .stage4b2-prophecy p,
+  [data-concept="d"] .stage4b2-deferred > p { font-size: 19px; line-height: 1.8; }
+  [data-concept="d"] .stage4b2-sign { grid-template-columns: 78px minmax(0, 1fr); gap: 16px; }
+  [data-concept="d"] .stage4b2-sign img { height: 112px; }
+  [data-concept="d"] .stage4b2-sign h3 { font-size: 20px; }
+  [data-concept="d"] .stage4b2-reading-actions { flex-direction: column; align-items: stretch; }
+  [data-concept="d"] .stage4b2-reading-actions .quiet { text-align: center; }
+  [data-concept="d"] .stage4b2-sign-group { padding-left: 12px; }
+  [data-concept="d"] .stage4b2-astro-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-concept="d"] { scroll-behavior: auto; }
+  [data-concept="d"] .stage4b2-reading *,
+  [data-concept="d"] .stage4b2-transition * { animation: none; transition: none; }
+}

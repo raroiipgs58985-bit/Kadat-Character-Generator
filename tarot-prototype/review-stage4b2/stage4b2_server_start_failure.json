@@ -1,0 +1,225 @@
+{
+  "status": "FAIL",
+  "baseline": "28de1159097b7814e6733dfead7c3e08bf69ba09",
+  "branch": "prototype/imperial-tarot-stage4b2",
+  "boundedPasses": 1,
+  "representativeFlows": 0,
+  "checksPassed": 3,
+  "checksTotal": 28,
+  "previousStageSuitesRun": 0,
+  "interpretationCalls": "6 UI reads + 1 reload replay + 1 display-only question check",
+  "viewports": [
+    320,
+    414,
+    1366
+  ],
+  "checks": [
+    {
+      "id": "six_representative_ritual_flows",
+      "status": "FAIL",
+      "message": "imperator"
+    },
+    {
+      "id": "closed_faces_and_future_cards_unavailable",
+      "status": "FAIL",
+      "message": "imperator"
+    },
+    {
+      "id": "no_meanings_or_engine_calls_during_reveal",
+      "status": "FAIL",
+      "message": "imperator"
+    },
+    {
+      "id": "last_reveal_ceremonial_transition_one_action",
+      "status": "FAIL",
+      "message": "imperator"
+    },
+    {
+      "id": "accepted_adapter_used_once_for_completed_reading",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'calls')"
+    },
+    {
+      "id": "main_prophecy_exact_paragraphs_from_engine",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'reading')"
+    },
+    {
+      "id": "question_shown_verbatim_or_omitted_and_html_escaped",
+      "status": "FAIL",
+      "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ undefined\n- [\n-   '«Что ожидает экспедицию за пределами света Астрономикона?»'\n- ]\n"
+    },
+    {
+      "id": "question_display_only_integration",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'reading')"
+    },
+    {
+      "id": "optional_signs_collapsed_by_default",
+      "status": "FAIL",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- true\n"
+    },
+    {
+      "id": "keyboard_disclosure_and_visible_focus",
+      "status": "FAIL",
+      "message": "The expression evaluated to a falsy value:\n\n  assert.ok(item.focusVisible)\n"
+    },
+    {
+      "id": "signs_use_structured_engine_text_and_production_art",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'forEach')"
+    },
+    {
+      "id": "no_internal_ids_trace_or_provenance_visible",
+      "status": "PASS"
+    },
+    {
+      "id": "reversed_major_assigned_art_upright_and_labelled",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'forEach')"
+    },
+    {
+      "id": "minor_standard_only_without_orientation_control",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'draws')"
+    },
+    {
+      "id": "branch_shared_forces_and_two_unselected_futures",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'map')"
+    },
+    {
+      "id": "throne_outcome_conditional_on_advice",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading '6')"
+    },
+    {
+      "id": "rosette_ten_signs_positive_card_stays_challenge",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'length')"
+    },
+    {
+      "id": "rosette_present_internal_relation_from_engine",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading '6')"
+    },
+    {
+      "id": "astro_deferred_no_fake_prophecy_roles_or_framing",
+      "status": "FAIL",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'deferred_complex_reading'\n"
+    },
+    {
+      "id": "return_to_cards_keeps_draws_and_change_requires_reset",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'draws')"
+    },
+    {
+      "id": "new_reading_clears_entire_session_and_question",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'session')"
+    },
+    {
+      "id": "same_input_seed_output_after_reload",
+      "status": "FAIL",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- true\n"
+    },
+    {
+      "id": "no_external_interpretation_or_resource_dependency",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'length')"
+    },
+    {
+      "id": "320_414_and_desktop_layouts_no_overflow_or_clipping",
+      "status": "FAIL",
+      "message": "imperator"
+    },
+    {
+      "id": "readable_artwork_thumbnails_all_screen_widths",
+      "status": "PASS"
+    },
+    {
+      "id": "phone_review_dialog_bounded_and_scrollable",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'height')"
+    },
+    {
+      "id": "reduced_motion_no_new_transition_or_smooth_scroll",
+      "status": "FAIL",
+      "message": "Cannot read properties of undefined (reading 'preference')"
+    },
+    {
+      "id": "frozen_engine_stage4a_artwork_and_four_generators_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "errors": [
+    {
+      "fixture": "imperator",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "fixture": "imperator-reversed",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "fixture": "branch",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "fixture": "throne",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "fixture": "rosette",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "fixture": "astro",
+      "message": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "imperator",
+      "title": "Imperator — complete normal flow",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "id": "imperator-reversed",
+      "title": "Imperator — reversed Major / no question",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "id": "branch",
+      "title": "Branch — shared forces and two alternatives",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "id": "throne",
+      "title": "Throne — advice and conditional outcome",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "id": "rosette",
+      "title": "Rosette — ten signs, positive challenge, present/internal comparison",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "id": "astro",
+      "title": "Astro — deferred result / 24 revealed cards",
+      "status": "FAIL",
+      "layouts": [],
+      "error": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4173/tarot-prototype/?concept=d\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4173/tarot-prototype/?concept=d\", waiting until \"load\"\u001b[22m\n"
+    }
+  ]
+}
