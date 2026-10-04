@@ -6,12 +6,13 @@
     <meta name="theme-color" content="#080706" />
     <meta
       name="description"
-      content="Imperial Tarot — Sacred Manuscript, Forbidden Divinatio и Sacred Divinatio. Stage I."
+      content="Imperial Tarot — Sacred Divinatio V1. Stage II: выбор расклада и последовательный ритуал. A и C — визуальные references."
     />
     <title>Imperial Tarot — Visual Concepts</title>
     <link rel="icon" type="image/svg+xml" href="assets/imperial-seal.svg" />
     <link rel="stylesheet" href="prototype.css" />
     <link rel="stylesheet" href="concept-d.css" />
+    <link rel="stylesheet" href="stage2.css?v=stage2-20261004" />
   </head>
   <body>
     <a href="#main" class="skip-link">К содержимому</a>
@@ -33,6 +34,37 @@
       </form>
     </dialog>
     <dialog
+      id="ritual-map-dialog"
+      class="stage2-modal stage2-map-dialog"
+      aria-labelledby="ritual-map-title"
+    >
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Закрыть схему">×</button>
+      </form>
+      <div id="ritual-map-body"></div>
+      <form method="dialog">
+        <button class="secondary dialog-done">Вернуться к карте</button>
+      </form>
+    </dialog>
+    <dialog
+      id="ritual-reset-dialog"
+      class="stage2-modal"
+      aria-labelledby="reset-title"
+      aria-describedby="reset-description"
+    >
+      <p class="overline">NOVUS RITUS</p>
+      <h2 id="reset-title">Начать заново?</h2>
+      <p id="reset-description"></p>
+      <div class="stage2-reset-actions">
+        <form method="dialog">
+          <button class="secondary" autofocus>Сохранить ритуал</button>
+        </form>
+        <button class="primary" id="confirm-reset">
+          Удалить и начать заново
+        </button>
+      </div>
+    </dialog>
+    <dialog
       id="transition-dialog"
       class="transition"
       aria-labelledby="transition-title"
@@ -51,6 +83,9 @@
         <a href="../index.html">Registrum Kadat</a>.
       </p></noscript
     >
-    <script src="prototype.js?v=stage1-d-20261004"></script>
+    <script src="stage2-data.js?v=stage2-20261004"></script>
+    <script src="ritual-session.js?v=stage2-20261004"></script>
+    <script src="stage2.js?v=stage2-20261004"></script>
+    <script src="prototype.js?v=stage2-20261004"></script>
   </body>
 </html>

@@ -76,7 +76,7 @@
       .join("")}</nav>`;
   }
   function bar() {
-    return `<div class="preview-bar"><a class="compare-link" href="./" data-action="compare">← Все концепции</a>${links()}<span class="stage-badge">STAGE I <span>ВИЗУАЛЬНЫЙ ПРОТОТИП</span></span></div>`;
+    return `<div class="preview-bar"><a class="compare-link" href="./" data-action="compare">← Все концепции</a>${links()}<span class="stage-badge">${concept === "d" ? "STAGE II <span>RITUAL UX · D / V1</span>" : "STAGE I <span>ВИЗУАЛЬНЫЙ ПРОТОТИП</span>"}</span></div>`;
   }
   function navigation() {
     return `<nav class="view-nav" aria-label="Экраны прототипа">${[
@@ -95,6 +95,11 @@
     document.title = concept
       ? `${names[concept]} — Imperial Tarot`
       : "Imperial Tarot — Visual Concepts";
+    if (concept === "d" && window.ImperialTarotStage2) {
+      window.ImperialTarotStage2.mount(root, { bar: bar() });
+      return;
+    }
+    window.ImperialTarotStage2?.unmount();
     root.innerHTML = concept
       ? `${bar()}<div class="concept-shell"><header class="product-header"><a class="kadat-link" href="../index.html">← REGISTRUM KADAT</a><span class="chapter-label">DIVINATIO IMPERIALIS</span><button class="entry-link" data-action="transition" aria-label="Показать переход из Kadat">Вход из Kadat ↗</button></header>${navigation()}<main id="main" tabindex="-1">${view === "home" ? home() : view === "cards" ? showcase() : view === "complete" ? complete() : ritual()}</main><footer class="concept-footer"><span>${concept.toUpperCase()} / ${names[concept]}</span><span>THE EMPEROR'S TAROT</span></footer></div>`
       : comparison();
@@ -102,14 +107,14 @@
   function comparison() {
     const preview = (k) =>
       `<div class="concept-preview preview-${k}" aria-hidden="true"><span class="preview-tag">DIVINATIO IMPERIALIS</span>${k === "b" ? mark : ""}<div class="preview-title">${k === "a" ? "LIBER<br>DIVINATIONIS" : k === "d" ? "DIVINATIO<br><em>SACRA</em>" : "THE EMPEROR<br>KNOWS."}</div><img class="preview-back" src="assets/card-back-${k}.svg" alt=""><span class="preview-rule"></span></div>`;
-    return `<main id="main" class="comparison" tabindex="-1"><header class="comparison-top"><a href="../index.html" class="kadat-link">← REGISTRUM KADAT</a><span class="stage-badge">STAGE I / ВИЗУАЛЬНЫЙ ПРОТОТИП</span></header><div class="comparison-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Три образа<br><em>одного ритуала.</em></h1><p>Выберите концепцию. Откройте колоду,<br class="desktop-break"> посмотрите карты и проведите пробный расклад.</p></div><section class="concept-options" aria-label="Направления A, C и D">${activeConcepts
+    return `<main id="main" class="comparison" tabindex="-1"><header class="comparison-top"><a href="../index.html" class="kadat-link">← REGISTRUM KADAT</a><span class="stage-badge">STAGE II / RITUAL UX</span></header><div class="comparison-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Sacred<br><em>Divinatio.</em></h1><p>D — утверждённое направление V1 · Stage II.<br class="desktop-break"> A и C сохранены как визуальные references.</p></div><section class="concept-options" aria-label="Утверждённый D и references A, C">${activeConcepts
       .map(
         (k) =>
-          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "d" ? "Тёмное пространство C. Типографика и тонкие манускриптные акценты A. Одна крупная карта." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
+          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}${k === "d" ? " · V1 / STAGE II" : ""}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "d" ? "Выбор расклада. Вопрос. Последовательный ритуал на 3–24 карты. Утверждённый визуальный язык D." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
       )
       .join(
         "",
-      )}</section><footer class="comparison-footer"><span>78 карт — на следующем этапе.<br>Здесь — три демонстрационных гравюры.</span><span>MANUSCRIPT · DIVINATIO · A + C</span></footer></main>`;
+      )}</section><footer class="comparison-footer"><span>D: 28 демо-карт / 3 SVG.<br>Production-колода и толкования не подключены.</span><span>SACRED DIVINATIO · VISUAL DIRECTION V1</span></footer></main>`;
   }
   function home() {
     if (concept === "a")

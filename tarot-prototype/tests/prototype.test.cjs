@@ -7,7 +7,7 @@ const html = fs.readFileSync(path.join(dir, "index.html"), "utf8");
 const script = fs.readFileSync(path.join(dir, "prototype.js"), "utf8");
 const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
 (async () => {
-  for (const concept of ["a", "b", "c", "d", null]) {
+  for (const concept of ["a", "b", "c", null]) {
     const errors = [];
     const vc = new VirtualConsole();
     vc.on("jsdomError", (e) => errors.push(e.message));
@@ -26,6 +26,9 @@ const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
       this.removeAttribute("open");
       this.dispatchEvent(new w.Event("close"));
     };
+    for (const file of ["stage2-data.js", "ritual-session.js", "stage2.js"]) {
+      w.eval(fs.readFileSync(path.join(dir, file), "utf8"));
+    }
     w.eval(script);
     const q = (s) => w.document.querySelector(s),
       click = (s) => q(s).click();
@@ -102,7 +105,7 @@ const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
   }
   assert(!/fetch\(|localStorage|tarot_cards\.json|KadatFeatures/.test(script));
   console.log(
-    "Stage I: active A/C/D comparison, archived B, all four demo routes, strict I→II→III reveal, labels, reversed artwork, finish-only summary and reset PASS. No production data or Kadat storage access.",
+    "Stage I references: A/C unchanged, B archived, A/C/D comparison, strict I→II→III reveal, labels and reset PASS. D's Stage II flow is checked separately. No production data or Kadat storage access.",
   );
 })().catch((e) => {
   console.error(e);

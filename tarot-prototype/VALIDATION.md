@@ -1,5 +1,7 @@
 # Stage I validation
 
+Historical Stage I record. D is now approved Visual Direction V1; current ritual/session validation is in `STAGE2_VALIDATION.md`.
+
 Date: 2026-10-04 (Asia/Yekaterinburg). Base Kadat commit: `2792d775abf4e13f2ac741886b8ef9dde1cdb135`.
 
 | Check                                                                | Result        |
