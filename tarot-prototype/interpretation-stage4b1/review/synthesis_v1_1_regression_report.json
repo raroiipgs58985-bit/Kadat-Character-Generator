@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "regressionPasses": 1,
+  "checkCount": 24,
+  "passedChecks": 24,
+  "fixtureCount": 8,
+  "reviewCalls": 8,
+  "extraBoundedCalls": 4,
+  "oldFixtureSuiteRuns": 0,
+  "oldSixtyCheckSuiteRuns": 0,
+  "astroFixtureRuns": 0,
+  "baseCommit": "2c8b63f0f42bf9917c3299c5d5f2f05150f821af",
+  "branch": "prototype/imperial-tarot-stage4b1",
+  "semanticEngineChanged": false,
+  "stage4aChanged": false,
+  "synthesisVersion": "4b1.1.1",
+  "productionUiChanged": false,
+  "artworkMappingsChanged": false,
+  "fourKadatGeneratorsChanged": false,
+  "githubPagesPublished": false,
+  "stage4b2": "NOT_STARTED",
+  "checks": [
+    {
+      "id": "exactly_eight_existing_review_fixtures_once",
+      "status": "PASS"
+    },
+    {
+      "id": "semantic_state_fragment_and_relation_code_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "all_eight_semantic_outputs_and_source_provenance_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "stage4a_frozen_files_and_bundle_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "same_input_and_seed_reproducible",
+      "status": "PASS"
+    },
+    {
+      "id": "reload_browser_static_parity_without_network_or_randomness",
+      "status": "PASS"
+    },
+    {
+      "id": "question_is_still_display_only",
+      "status": "PASS"
+    },
+    {
+      "id": "minor_standard_only_and_reversed_rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "major_reversed_and_adverse_restrictions_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "branch_group_semantics_and_both_alternatives_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "branch_accepted_pair_and_future_prose_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "throne_advice_to_conditional_outcome_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "positive_challenge_and_obstacle_keep_roles_and_source_themes",
+      "status": "PASS"
+    },
+    {
+      "id": "rosette_seven_and_one_source_comparison_preserved_in_prose",
+      "status": "PASS"
+    },
+    {
+      "id": "tension_combines_both_sides_without_promising_resolution",
+      "status": "PASS"
+    },
+    {
+      "id": "thematic_compression_uses_existing_shared_tags_and_keeps_distinctions",
+      "status": "PASS"
+    },
+    {
+      "id": "neutral_comparison_has_no_invented_tension",
+      "status": "PASS"
+    },
+    {
+      "id": "astro_deferred_code_and_output_construction_unchanged_no_fixture_run",
+      "status": "PASS"
+    },
+    {
+      "id": "source_explicit_vs_rendering_heuristic_provenance_separate",
+      "status": "PASS"
+    },
+    {
+      "id": "no_new_card_meanings_only_presentation_changes",
+      "status": "PASS"
+    },
+    {
+      "id": "no_runtime_nlp_ai_api_backend_or_randomness",
+      "status": "PASS"
+    },
+    {
+      "id": "all_eight_prophecies_shorter_without_technical_labels",
+      "status": "PASS"
+    },
+    {
+      "id": "before_after_artifact_contains_exact_cached_readings",
+      "status": "PASS"
+    },
+    {
+      "id": "production_ui_artwork_four_generators_and_historical_reports_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "initialPassStatus": "FAIL",
+  "targetedRechecks": [
+    {
+      "checkId": "thematic_compression_uses_existing_shared_tags_and_keeps_distinctions",
+      "status": "PASS",
+      "interpretationCalls": 0,
+      "reason": "Assertion corrected to preserve literal source subject and predicate across contextual insertion; the rendering and semantic data were unchanged.",
+      "initialMessage": "The expression evaluated to a falsy value:\n\n  assert.ok(o.prophecy.paragraphs[0].toLowerCase().includes(o.signs[position - 1].selectedFragments[0].textRu.slice(0, -1).toLowerCase()))\n"
+    }
+  ]
+}

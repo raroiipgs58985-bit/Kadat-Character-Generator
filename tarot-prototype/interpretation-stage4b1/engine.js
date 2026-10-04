@@ -46,8 +46,8 @@
     ],
     haloed_rosette: [
       { id: "foundations", nodes: [3, 4] },
-      { id: "situation_challenge", nodes: [1, 2] },
-      { id: "inner_outer_expectations", nodes: [7, 8, 9] },
+      { id: "situation_challenge", nodes: [1, 7, 2] },
+      { id: "inner_outer_expectations", nodes: [8, 9] },
       { id: "possible_near_future", nodes: [5, 6] },
       { id: "final_outcome", nodes: [10] },
     ],
@@ -231,31 +231,106 @@
           type, nodeIds: [left.positionId, right.positionId], purpose, origin: "engine_synthesis_heuristic", evidence });
       }
       result.relations = [...relationMap.values()];
-      const connectorBudget = spread.spread_id === "haloed_rosette" ? 2 : 1;
-      let connectorsUsed = 0;
-      const connectorTrace = [];
-      const connectorTypesUsed = new Set();
-      let innerComparisonRendered = false;
-      const innerRelation = result.relations.find((r) => r.purpose === "compare_internal_factors_with_present");
-      function connective(relation, scope) {
-        if (!relation || connectorsUsed >= connectorBudget || connectorTypesUsed.has(relation.type)) return "";
-        // Reserve one bridge for the source-explicit Rosette 7 ↔ 1 comparison.
-        if (spread.spread_id === "haloed_rosette" && !innerComparisonRendered &&
-            relation.purpose !== "compare_internal_factors_with_present" &&
-            (connectorsUsed >= connectorBudget - 1 || relation.type === innerRelation.type)) return "";
-        let ids;
-        if (relation.type === "TENSION") ids = ["tension_01", "tension_02"];
-        // _01 only asserts a recurring theme. _02 could falsely assert agreement.
-        else if (relation.type === "REINFORCEMENT") ids = ["reinforcement_01"];
-        else return "";
-        const t = choose(ids, scope); connectorsUsed++;
-        connectorTypesUsed.add(relation.type);
-        connectorTrace.push({ templateId: t.template_id, relationId: relation.relationId, scope });
-        return t.text_ru;
+      // Stage 4B-1.1 changes presentation only, after the unchanged Astro return.
+      // These short frames express existing roles; they are not card meanings.
+      const contextualFrames = {
+        past_origin: ["У истоков нынешнего положения ", "В прошлом "],
+        present_problem: ["Теперь ", "В нынешнем положении "],
+        present_situation: ["Теперь ", "В настоящем "],
+        solution_or_outcome: ["Решение может открыться в том, что ", "Возможный исход таков: "],
+        hidden_influence: ["За видимым ходом событий ", "За завесой происходящего "],
+        obstacle: ["Препятствие связано с тем, что ", "Трудность пути состоит в том, что "],
+        immediate_challenge: ["Испытание состоит в том, что ", "Ближайшее испытание связано с тем, что "],
+        surroundings: ["Среди окружающих обстоятельств ", "Вокруг дела "],
+        advice: ["Действуй, учитывая, что ", "Выбирай путь с учётом того, что "],
+        conditional_outcome: ["Если последовать этому совету, ", "При следовании этому совету "],
+        distant_past: ["У давних истоков ", "В далёком прошлом "],
+        recent_past: ["В недавних событиях ", "Незадолго до нынешних событий "],
+        best_possible_outcome: ["В лучшем из возможных исходов ", "Лучшее, на что можно надеяться: "],
+        near_future: ["В ближайшем будущем ", "Впереди, в ближайшем будущем, "],
+        internal_factors: ["Внутри ", "Во внутренних силах "],
+        external_uncontrolled: ["Извне, вне твоей власти, ", "За пределами твоего контроля "],
+        hopes_fears: ["В надеждах и страхах ", "В ожиданиях и сомнениях "],
+        final_outcome: ["На исходе этого пути ", "Завершиться этот путь может тем, что "],
+      };
+      const renderingTrace = [];
+      const sourceTemplateTrace = [];
+      const themeLabels = new Map(data.card_semantics.tag_vocabulary.map((t) => [t.tag_id, t.label_ru]));
+      const usedThemeTags = new Set();
+      function variant(options, scope) {
+        const index = stableHash(identity + "|render.v1.1|" + scope) % options.length;
+        return { text: options[index], index };
+      }
+      function record(templateId, members, detail = {}) {
+        renderingTrace.push({ templateId, origin: "engine_synthesis_heuristic",
+          positionIds: members.map((s) => s.positionId), roleIds: members.map((s) => s.role.roleId),
+          basisFragmentIds: members.flatMap((s) => s.selectedFragments.map((f) => f.fragmentId)), ...detail });
+      }
+      // Orthography only: lower a sentence initial and remove its final full stop
+      // when joining clauses. Exact card names retain their capitals. No parsing,
+      // inflection, keyword classification, or semantic comparison of prose.
+      function clause(text, sign) {
+        const body = text.endsWith(".") ? text.slice(0, -1) : text;
+        return body.startsWith(sign.nameRu) ? body : body.charAt(0).toLowerCase() + body.slice(1);
+      }
+      function fragmentsClause(sign) {
+        return sign.selectedFragments.map((f) => clause(f.textRu, sign)).join("; ");
+      }
+      function renderSign(sign) {
+        const roleId = sign.role.roleId;
+        if (["obstacle", "immediate_challenge"].includes(roleId) &&
+            sign.semanticAnchor.tendency?.value === "favourable" && sign.semanticAnchor.themesRu.length > 1) {
+          // Nominal source themes give a cautious challenge context without
+          // inventing why a favourable sign obstructs the course of events.
+          const names = sign.semanticAnchor.themesRu.map((x) => x.charAt(0).toLowerCase() + x.slice(1));
+          const themes = names.slice(0, -1).join(", ") + " и " + names[names.length - 1];
+          const frame = variant(["В центре испытания — {{themes}}.", "{{themes}} становятся средоточием испытания."], roleId + ".favourable");
+          let text = frame.text.replace("{{themes}}", themes);
+          text = text.charAt(0).toUpperCase() + text.slice(1);
+          record("engine.context." + roleId + ".favourable." + frame.index, [sign],
+            { basis: "existing_semantic_themes_and_explicit_favourable_tendency", sourceThemesRu: [...sign.semanticAnchor.themesRu], causalExplanation: null });
+          return text;
+        }
+        const frame = variant(contextualFrames[roleId], roleId);
+        const linked = result.relations.find((r) => roleId === "conditional_outcome" ? r.condition?.outcomePositionId === sign.positionId :
+          roleId === "final_outcome" && r.type === "CONCLUSION" && r.nodeIds[1] === sign.positionId);
+        record("engine.context." + roleId + "." + frame.index, [sign], {
+          ...(linked ? { relationId: linked.relationId, relationOrigin: linked.origin } : {}),
+          ...(sign.selectedFragments.some((f) => f.category === "warning") ? { warningIntegrated: true } : {}) });
+        return frame.text + fragmentsClause(sign) + ".";
+      }
+      function renderPair(left, right, relation, temporal) {
+        const type = relation?.type || "CONTINUATION";
+        if (type === "REINFORCEMENT") {
+          const shared = relation.evidence.sharedTags.filter((t) => themeLabels.has(t) && !usedThemeTags.has(t));
+          if (shared.length) {
+            const tag = shared[stableHash(identity + "|render.theme|" + relation.relationId) % shared.length];
+            usedThemeTags.add(tag);
+            const label = themeLabels.get(tag).toLowerCase();
+            const frame = temporal ? "В давних истоках и недавних событиях повторяется мотив «" + label + "»: " :
+              "В настоящем и внутренних силах повторяется мотив «" + label + "»: ";
+            record(temporal ? "engine.reinforcement.temporal" : "engine.reinforcement.present_inner", [left, right],
+              { relationId: relation.relationId, relationOrigin: relation.origin, sharedTag: tag, basis: relation.evidence.basis, compression: "one_shared_frame_two_distinct_clauses" });
+            const leftClause = fragmentsClause(left), repeatedLabel = label + " ";
+            const join = temporal ? "; недавно " : "; внутри ";
+            // Literal surface deduplication after a tag was independently
+            // established: reuse its existing subject, retain every predicate.
+            if (leftClause.startsWith(repeatedLabel))
+              return themeLabels.get(tag) + (temporal ? " у давних истоков " : " в настоящем ") +
+                leftClause.slice(repeatedLabel.length) + join + fragmentsClause(right) + ".";
+            return frame + leftClause + join + fragmentsClause(right) + ".";
+          }
+        }
+        if (!temporal) {
+          const frame = variant(contextualFrames.present_situation, "present_inner.present");
+          const bridge = variant(type === "TENSION" ? ["; однако внутри ", "; но внутри "] : ["; рядом с этим внутри ", "; внутри же "], "present_inner." + type);
+          record("engine.compare.present_inner." + type + "." + bridge.index, [left, right],
+            { relationId: relation.relationId, relationOrigin: relation.origin, basis: relation.evidence.basis });
+          return frame.text + fragmentsClause(left) + bridge.text + fragmentsClause(right) + ".";
+        }
+        return renderSign(left) + " " + renderSign(right);
       }
       const plans = PLANS[spread.spread_id];
-      const opening = choose(["opening_01", "opening_02"], "opening");
-      const closing = choose(["closing_01", "closing_02"], "closing");
       for (let index = 0; index < plans.length; index++) {
         const plan = plans[index];
         const members = plan.nodes.map((n) => byNumber.get(n));
@@ -276,24 +351,24 @@
           const frame = templates.get("role_frame." + groupMap.get(plan.group).role_id);
           text = frame.text_ru.replace("{{fragment}}", members.map((s) => s.selectedFragments.map((f) => f.textRu).join(" ")).join(" "));
         } else {
-          const parts = [];
-          members.forEach((sign, i) => {
-            if (i > 0) {
-              const edge = result.relations.find((r) => r.nodeIds.length === 2 && r.nodeIds[0] === members[i - 1].positionId && r.nodeIds[1] === sign.positionId);
-              const bridge = connective(edge, sectionId + ".link");
-              if (bridge) parts.push(bridge);
-            }
-            if (sign.role?.roleId === "internal_factors") {
-              const bridge = connective(innerRelation, sectionId + ".inner_present");
-              if (bridge) parts.push(bridge);
-              innerComparisonRendered = true;
-            }
-            parts.push(sign.renderedInterpretation);
-          });
-          text = parts.join(" ");
+          if (spread.spread_id === "haloed_rosette" && plan.id === "situation_challenge") {
+            const relation = result.relations.find((r) => r.purpose === "compare_internal_factors_with_present");
+            text = renderPair(members[0], members[1], relation, false) + " " + renderSign(members[2]);
+          } else if (spread.spread_id === "haloed_rosette" && plan.id === "foundations") {
+            const relation = result.relations.find((r) => r.nodeIds[0] === members[0].positionId && r.nodeIds[1] === members[1].positionId);
+            text = renderPair(members[0], members[1], relation, true);
+          } else if (plan.id === "origin_present") {
+            const first = renderSign(members[0]);
+            const second = renderSign(members[1]);
+            text = first.slice(0, -1) + "; " + second.charAt(0).toLowerCase() + second.slice(1);
+          } else text = members.map(renderSign).join(" ");
         }
-        if (index === 0) text = opening.text_ru + " " + text;
-        if (index === plans.length - 1) text += " " + closing.text_ru;
+        // Branch's accepted paired forces and two future paragraphs stay intact.
+        if (spread.spread_id === "branch" && index === plans.length - 1) {
+          const closing = choose(["closing_01", "closing_02"], "closing");
+          text += " " + closing.text_ru;
+          sourceTemplateTrace.push({ templateId: closing.template_id, scope: "closing" });
+        }
         const relevant = result.relations.filter((r) => r.nodeIds.some((id) => members.some((s) => s.positionId === id) || id === plan.group));
         result.prophecy.paragraphs.push(text);
         result.sections.push({ sectionId, positionIds: members.map((s) => s.positionId), groupId: plan.group || null,
@@ -302,9 +377,10 @@
           condition: relevant.find((r) => r.condition)?.condition || null });
         for (const sign of members) sign.mainParagraphIds.push(sectionId);
       }
-      result.metadata.selectedSynthesisTemplates = [{ templateId: opening.template_id, scope: "opening" },
-        ...connectorTrace, { templateId: closing.template_id, scope: "closing" }];
-      result.metadata.connectorCount = connectorsUsed;
+      result.metadata.selectedSynthesisTemplates = sourceTemplateTrace;
+      result.metadata.connectorCount = 0;
+      result.metadata.synthesisVersion = "4b1.1.1";
+      result.metadata.renderingTrace = renderingTrace;
       return result;
     }
     return Object.freeze({ engineVersion: ENGINE_VERSION, dataVersion: DATA_VERSION, supportedSpreads: Object.freeze([...SUPPORTED_SPREADS]), interpret });

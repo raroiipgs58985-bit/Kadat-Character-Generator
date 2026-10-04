@@ -1,0 +1,73 @@
+{
+  "baseCommit": "2c8b63f0f42bf9917c3299c5d5f2f05150f821af",
+  "synthesisVersion": "4b1.1.1",
+  "fixtureIds": [
+    "F01",
+    "F02",
+    "F05",
+    "F07",
+    "F09",
+    "F10",
+    "F11",
+    "F12"
+  ],
+  "reviewPasses": 1,
+  "interpretationCalls": 8,
+  "astroCalls": 0,
+  "engineSha256": "1aa67568c18bdc9e5cfe9129de1172624772ef9df9faf4c40579ad55f0c506e9",
+  "fixturesSha256": "68e93e01c1e311b00604d2c3176079898a3305bc38fb0cfb731da65de850eebc",
+  "outputsSha256": "f7f8f73708b4d137d68cdac4c05e58959060adf2178f510c90afdc1db4a536c8",
+  "comparisonSha256": "41090e131a3768862c68e3ee50a46b786dabf3cd8c0b3b25b7dff1035b9374cf",
+  "lengths": [
+    {
+      "fixtureId": "F01",
+      "beforeWords": 59,
+      "afterWords": 36
+    },
+    {
+      "fixtureId": "F02",
+      "beforeWords": 70,
+      "afterWords": 43
+    },
+    {
+      "fixtureId": "F05",
+      "beforeWords": 106,
+      "afterWords": 91
+    },
+    {
+      "fixtureId": "F07",
+      "beforeWords": 144,
+      "afterWords": 112
+    },
+    {
+      "fixtureId": "F09",
+      "beforeWords": 122,
+      "afterWords": 84
+    },
+    {
+      "fixtureId": "F10",
+      "beforeWords": 169,
+      "afterWords": 112
+    },
+    {
+      "fixtureId": "F11",
+      "beforeWords": 172,
+      "afterWords": 123
+    },
+    {
+      "fixtureId": "F12",
+      "beforeWords": 175,
+      "afterWords": 120
+    }
+  ],
+  "initialEngineSha256": "2786983245f03f86fc889873d297a56b32a50f18c200fd693688fe5a8fc953ae",
+  "cachedRenderingCorrections": {
+    "fixtureIds": [
+      "F10",
+      "F11",
+      "F12"
+    ],
+    "interpretationCalls": 0,
+    "reason": "Remove one duplicated context noun and two repeated theme subjects; literal surface correction only, before regression."
+  }
+}
