@@ -1,0 +1,338 @@
+/* D — C's dark, solitary ritual with sparse manuscript details from A.
+   Every rule is scoped to D or its comparison thumbnail. A/B/C are untouched. */
+[data-concept="d"] {
+  background: #080707;
+  --gold: #a38a60;
+  --text: #d0c3a3;
+  --muted: #b3a58d;
+}
+[data-concept="d"] .concept-shell {
+  max-width: 1200px;
+}
+[data-concept="d"] .view-nav {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 375px;
+  border-top: 1px solid #3e3022;
+  border-bottom: 0;
+}
+[data-concept="d"] .view-nav button {
+  font-size: 12px;
+  color: #b6a58a;
+}
+[data-concept="d"] .view-nav button[aria-current] {
+  background: none;
+  border-top: 2px solid #8a6e46;
+  margin-top: -1px;
+}
+[data-concept="d"] .chapter-label {
+  color: #ad9470;
+}
+[data-concept="d"] .sacred-home {
+  column-gap: 70px;
+  padding-right: 20px;
+  min-height: 630px;
+}
+[data-concept="d"] .silence-copy h1 {
+  font-size: clamp(43px, 6.1vw, 78px);
+  letter-spacing: -0.025em;
+}
+[data-concept="d"] .silence-copy h1 em {
+  font-style: italic;
+  color: #c9b88f;
+}
+[data-concept="d"] .sacred-initial {
+  display: inline-grid;
+  place-items: center;
+  width: 27px;
+  height: 35px;
+  font: italic 30px/1 var(--display);
+  color: #ad8e5b;
+  border-bottom: 1px solid #754137;
+  flex: none;
+}
+[data-concept="d"] .silence-subtitle {
+  color: #b49d79;
+  letter-spacing: 0.25em;
+}
+[data-concept="d"] .primary {
+  background: none;
+  border: 1px solid #6b5135;
+  box-shadow: none;
+  color: #ebe1c8;
+}
+[data-concept="d"] .primary:hover {
+  background: #211512;
+  border-color: #a58a5b;
+  box-shadow: none;
+}
+[data-concept="d"] .home-actions .primary {
+  border-left: 0;
+  border-right: 0;
+}
+[data-concept="d"] .sacred-deck {
+  gap: 0;
+}
+[data-concept="d"] .sacred-deck .deck {
+  width: 270px;
+  transform: rotate(1deg);
+}
+[data-concept="d"] .deck-layer {
+  background: #120d0a;
+  border-color: #51412d;
+}
+[data-concept="d"] .deck img {
+  border-color: #786140;
+}
+[data-concept="d"] .sacred-divider,
+[data-concept="d"] .sacred-caption-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #a48756;
+  font-size: 9px;
+  line-height: 1;
+}
+[data-concept="d"] .sacred-divider {
+  width: 160px;
+  margin: 32px 0 18px;
+}
+[data-concept="d"] .sacred-divider:before,
+[data-concept="d"] .sacred-divider:after,
+[data-concept="d"] .sacred-caption-rule:before,
+[data-concept="d"] .sacred-caption-rule:after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #56412b;
+}
+[data-concept="d"] .void-inscription {
+  color: #b29a76;
+}
+[data-concept="d"] .card-front,
+[data-concept="d"] .card-back {
+  border: 1px solid #89714c;
+  padding: 4px;
+  background: #100b08;
+  box-shadow: 0 28px 40px #000;
+}
+[data-concept="d"] .front-number {
+  border: 0;
+  border-bottom: 1px solid #89714c;
+  color: #e0cfaa;
+  font-family: var(--serif);
+}
+[data-concept="d"] .card-label {
+  margin-top: 23px;
+  gap: 9px;
+}
+[data-concept="d"] .sacred-caption-rule {
+  width: 112px;
+  margin-bottom: 8px;
+}
+[data-concept="d"] .card-name-en {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+[data-concept="d"] .card-name-ru {
+  font-style: italic;
+  color: #d0c3a3;
+}
+[data-concept="d"] .card-state {
+  color: #b3a58d;
+}
+[data-concept="d"] .showcase-space {
+  gap: 90px;
+}
+[data-concept="d"] .showcase-space .card-unit {
+  max-width: 300px;
+}
+[data-concept="d"] .ritual-surface {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+[data-concept="d"] .ritual-watermark {
+  display: none;
+}
+[data-concept="d"] .ritual-canvas {
+  display: block;
+  max-width: 310px;
+  margin: auto;
+}
+[data-concept="d"] .ritual-card {
+  display: none;
+  max-width: 100%;
+}
+[data-concept="d"] .ritual-card.is-focused {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+[data-concept="d"] .ritual-heading {
+  margin-bottom: 32px;
+}
+[data-concept="d"] .ritual-heading h1 {
+  font-size: 36px;
+}
+[data-concept="d"] .ritual-controls {
+  margin-top: 28px;
+}
+[data-concept="d"] .progress-step {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #665137;
+}
+[data-concept="d"] .progress-step.is-current {
+  border-color: #c0a16b;
+  box-shadow: inset 0 -2px #633027;
+}
+[data-concept="d"] .progress-step.is-open {
+  color: #ebe1c8;
+}
+[data-concept="d"] .ritual-progress:before {
+  display: none;
+}
+[data-concept="d"] .concept-footer {
+  border-top-color: #392b1e;
+}
+.preview-d {
+  background: #090807;
+  border-color: #3c3022;
+}
+.preview-d .preview-tag {
+  color: #b09b77;
+}
+.preview-d .preview-title {
+  top: 83px;
+  left: 26px;
+  font-size: 20px;
+  color: #d1c4a8;
+}
+.preview-d .preview-title em {
+  color: #bca57b;
+  font-size: 24px;
+}
+.preview-d .preview-back {
+  width: 111px;
+  bottom: 37px;
+  right: 31px;
+  box-shadow: 0 20px 25px #000;
+}
+.preview-d .preview-rule {
+  height: 1px;
+  width: 66px;
+  left: 26px;
+  bottom: 41px;
+  background: #7b5e3c;
+}
+@media (max-width: 1050px) {
+  [data-concept="d"] .sacred-home {
+    column-gap: 30px;
+    padding-right: 0;
+  }
+  [data-concept="d"] .sacred-deck .deck {
+    width: 240px;
+  }
+  .preview-d .preview-title {
+    font-size: 16px;
+    left: 20px;
+  }
+  .preview-d .preview-back {
+    width: 100px;
+    right: 22px;
+  }
+}
+@media (max-width: 800px) {
+  [data-concept="d"] .silence-copy h1 {
+    font-size: 43px;
+  }
+  [data-concept="d"] .sacred-deck .deck {
+    width: 205px;
+  }
+  .preview-d .preview-back {
+    width: 128px;
+    right: 45px;
+  }
+}
+@media (max-width: 600px) {
+  [data-concept="d"] .sacred-home {
+    min-height: 0;
+    padding: 9px 0 0;
+  }
+  [data-concept="d"] .silence-copy h1 {
+    font-size: 42px;
+    margin: 19px 0 13px;
+    line-height: 1.14;
+  }
+  [data-concept="d"] .silence-copy .overline {
+    gap: 10px;
+  }
+  [data-concept="d"] .sacred-initial {
+    width: 20px;
+    height: 28px;
+    font-size: 24px;
+  }
+  [data-concept="d"] .sacred-deck {
+    margin: 35px 0 31px;
+  }
+  [data-concept="d"] .sacred-deck .deck {
+    width: 238px;
+    transform: none;
+  }
+  [data-concept="d"] .sacred-divider {
+    margin: 25px 0 13px;
+    width: 132px;
+  }
+  [data-concept="d"] .silence-copy .home-actions {
+    max-width: 318px;
+  }
+  [data-concept="d"] .showcase-space {
+    gap: 54px;
+  }
+  [data-concept="d"] .showcase-space .card-unit {
+    max-width: 276px;
+  }
+  [data-concept="d"] .ritual-surface {
+    padding: 0 !important;
+  }
+  [data-concept="d"] .ritual-canvas {
+    max-width: 276px;
+  }
+  [data-concept="d"] .ritual-heading h1 {
+    font-size: 30px;
+  }
+  [data-concept="d"] .ritual-heading {
+    margin-bottom: 32px;
+  }
+  [data-concept="d"] .sacred-caption-rule {
+    margin-bottom: 6px;
+  }
+  .preview-d .preview-title {
+    left: 27px;
+    top: 86px;
+    font-size: 20px;
+  }
+  .preview-d .preview-back {
+    width: 118px;
+    right: 31px;
+    bottom: 31px;
+  }
+}
+@media (max-width: 375px) {
+  [data-concept="d"] .silence-copy h1 {
+    font-size: 39px;
+  }
+  [data-concept="d"] .sacred-deck .deck {
+    width: 228px;
+  }
+  .preview-d .preview-title {
+    left: 24px;
+    font-size: 18px;
+  }
+  .preview-d .preview-back {
+    right: 26px;
+    width: 110px;
+  }
+}

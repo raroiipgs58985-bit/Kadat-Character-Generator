@@ -8,12 +8,16 @@
     a: "Sacred Manuscript",
     b: "Imperial Reliquary",
     c: "Forbidden Divinatio",
+    d: "Sacred Divinatio",
   };
   const titles = {
     a: "Сакральный манускрипт",
     b: "Имперский реликварий",
     c: "Запретное прорицание",
+    d: "Сакральное прорицание",
   };
+  // B is retained as an unchanged historical prototype, outside the active comparison.
+  const activeConcepts = ["a", "c", "d"];
   // Exactly three demo identities. No final assignments, meanings or production dataset.
   const cards = [
     {
@@ -64,9 +68,7 @@
   const secondary =
     '<button class="quiet" data-action="archive">Архив арканов <span aria-hidden="true">↗</span></button><button class="quiet" data-action="about">О Таро</button>';
   function links() {
-    return `<nav class="concept-switch" aria-label="Визуальная концепция">${Object.keys(
-      names,
-    )
+    return `<nav class="concept-switch" aria-label="Визуальная концепция">${activeConcepts
       .map(
         (k) =>
           `<a href="?concept=${k}" data-concept="${k}" ${concept === k ? 'aria-current="page"' : ""}><span>${k.toUpperCase()}</span><span class="switch-name">${names[k]}</span></a>`,
@@ -99,27 +101,27 @@
   }
   function comparison() {
     const preview = (k) =>
-      `<div class="concept-preview preview-${k}" aria-hidden="true"><span class="preview-tag">DIVINATIO IMPERIALIS</span>${k === "b" ? mark : ""}<div class="preview-title">${k === "a" ? "LIBER<br>DIVINATIONIS" : k === "b" ? "RELIQUARIUM" : "THE EMPEROR<br>KNOWS."}</div><img class="preview-back" src="assets/card-back-${k}.svg" alt=""><span class="preview-rule"></span></div>`;
-    return `<main id="main" class="comparison" tabindex="-1"><header class="comparison-top"><a href="../index.html" class="kadat-link">← REGISTRUM KADAT</a><span class="stage-badge">STAGE I / ВИЗУАЛЬНЫЙ ПРОТОТИП</span></header><div class="comparison-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Три образа<br><em>одного ритуала.</em></h1><p>Выберите концепцию. Откройте колоду,<br class="desktop-break"> посмотрите карты и проведите пробный расклад.</p></div><section class="concept-options" aria-label="Три направления интерфейса">${Object.keys(
-      names,
-    )
+      `<div class="concept-preview preview-${k}" aria-hidden="true"><span class="preview-tag">DIVINATIO IMPERIALIS</span>${k === "b" ? mark : ""}<div class="preview-title">${k === "a" ? "LIBER<br>DIVINATIONIS" : k === "d" ? "DIVINATIO<br><em>SACRA</em>" : "THE EMPEROR<br>KNOWS."}</div><img class="preview-back" src="assets/card-back-${k}.svg" alt=""><span class="preview-rule"></span></div>`;
+    return `<main id="main" class="comparison" tabindex="-1"><header class="comparison-top"><a href="../index.html" class="kadat-link">← REGISTRUM KADAT</a><span class="stage-badge">STAGE I / ВИЗУАЛЬНЫЙ ПРОТОТИП</span></header><div class="comparison-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Три образа<br><em>одного ритуала.</em></h1><p>Выберите концепцию. Откройте колоду,<br class="desktop-break"> посмотрите карты и проведите пробный расклад.</p></div><section class="concept-options" aria-label="Направления A, C и D">${activeConcepts
       .map(
         (k) =>
-          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "b" ? "Почерневшая бронза. Восковые печати. Колода как священный физический артефакт." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
+          `<a class="concept-option" href="?concept=${k}" data-concept="${k}" data-entry="true">${preview(k)}<div class="option-copy"><span class="option-key">${k.toUpperCase()}</span><div><h2>${names[k]}</h2><p>${titles[k]}</p></div><span class="option-arrow" aria-hidden="true">↗</span></div><p class="option-description">${k === "a" ? "Тёмный пергамент. Иллюминированные поля. Карта как фрагмент древнего текста." : k === "d" ? "Тёмное пространство C. Типографика и тонкие манускриптные акценты A. Одна крупная карта." : "Тишина и темнота. Тонкая красная черта. Одна карта в центре внимания."}</p></a>`,
       )
       .join(
         "",
-      )}</section><footer class="comparison-footer"><span>78 карт — на следующем этапе.<br>Здесь — три демонстрационных гравюры.</span><span>MANUSCRIPT · RELIQUARY · DIVINATIO</span></footer></main>`;
+      )}</section><footer class="comparison-footer"><span>78 карт — на следующем этапе.<br>Здесь — три демонстрационных гравюры.</span><span>MANUSCRIPT · DIVINATIO · A + C</span></footer></main>`;
   }
   function home() {
     if (concept === "a")
       return `<section class="manuscript-home"><div class="folio-head"><span>LIBER DIVINATIONIS</span><span>FOLIO I</span></div><div class="manuscript-layout"><div class="manuscript-copy"><p class="overline">THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><div class="church-divider" aria-hidden="true"><span>✦</span></div><p class="drop-cap">Откройте колоду. Три карты, одна за другой. Их толкование появится лишь по завершении расклада.</p><div class="home-actions">${primary}<div class="secondary-actions">${secondary}</div></div></div><div class="illuminated-plate"><span class="plate-arch" aria-hidden="true"></span>${deck()}<span class="plate-inscription">IN NOMINE IMPERATORIS</span></div></div><div class="folio-foot"><span>I · COLLECTIO</span><span>✦</span><span>VERBUM IMPERATORIS</span></div></section>`;
     if (concept === "b")
       return `<section class="reliquary-home"><div class="shrine-heading"><p class="overline">THE EMPEROR'S TAROT</p><h1>Императорское Таро</h1></div><div class="reliquary-stage"><div class="shrine-crown">${mark}<span>RELIQUARIUM DIVINATIONIS</span></div><div class="altar-side side-left" aria-hidden="true"><span>IN NOMINE</span><i></i><span>IMPERATORIS</span></div><div class="altar-object">${deck()}<div class="wax-seal" aria-hidden="true"><span>I</span></div></div><div class="altar-side side-right" aria-hidden="true"><span>FIDES</span><i></i><span>IMPERIALIS</span></div><div class="altar-base" aria-hidden="true"></div></div><div class="reliquary-actions"><p>Три карты. Три открытия.<br>Толкование — после завершения ритуала.</p>${primary}<div class="secondary-actions">${secondary}</div></div></section>`;
+    if (concept === "d")
+      return `<section class="forbidden-home sacred-home"><div class="silence-copy"><p class="overline"><span class="sacred-initial" aria-hidden="true">I</span>THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><p class="silence-subtitle">DIVINATIO IMPERIALIS</p><div class="home-actions">${primary}<div class="secondary-actions">${secondary}</div></div></div><div class="void-deck sacred-deck">${deck()}<div class="sacred-divider" aria-hidden="true"><span>✦</span></div><span class="void-inscription">IN NOMINE IMPERATORIS</span></div><p class="silence-footnote">Откройте карты по одной.<br>Толкование — после завершения ритуала.</p></section>`;
     return `<section class="forbidden-home"><div class="silence-copy"><p class="overline"><span class="red-rule" aria-hidden="true"></span>THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><p class="silence-subtitle">DIVINATIO IMPERIALIS</p><div class="home-actions">${primary}<div class="secondary-actions">${secondary}</div></div></div><div class="void-deck">${deck()}<span class="void-inscription">THE EMPEROR KNOWS.</span></div><p class="silence-footnote">Откройте карты по одной.<br>Смысл будет раскрыт в конце.</p></section>`;
   }
   const label = (c, visible = true) =>
-    `<figcaption class="card-label" ${visible ? "" : "hidden"}><span class="card-name-en">${c.en}</span><span class="card-name-ru">${c.ru}</span><span class="card-state">${c.reversed ? "Перевёрнутое положение" : "Прямое положение"}</span></figcaption>`;
+    `<figcaption class="card-label" ${visible ? "" : "hidden"}>${concept === "d" ? '<span class="sacred-caption-rule" aria-hidden="true">✦</span>' : ""}<span class="card-name-en">${c.en}</span><span class="card-name-ru">${c.ru}</span><span class="card-state">${c.reversed ? "Перевёрнутое положение" : "Прямое положение"}</span></figcaption>`;
   const face = (c, hidden = false) =>
     `<span class="card-front" ${hidden ? 'aria-hidden="true"' : ""}><img class="card-art${c.reversed ? " is-reversed" : ""}" src="${c.src}" alt="${c.alt}" draggable="false"><span class="front-number">${c.number}</span></span>`;
   function openCard(c, cls = "") {

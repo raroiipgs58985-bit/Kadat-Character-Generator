@@ -7,12 +7,12 @@ const html = fs.readFileSync(path.join(dir, "index.html"), "utf8");
 const script = fs.readFileSync(path.join(dir, "prototype.js"), "utf8");
 const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
 (async () => {
-  for (const concept of ["a", "b", "c"]) {
+  for (const concept of ["a", "b", "c", "d", null]) {
     const errors = [];
     const vc = new VirtualConsole();
     vc.on("jsdomError", (e) => errors.push(e.message));
     const dom = new JSDOM(html, {
-      url: `https://example.test/tarot-prototype/?concept=${concept}`,
+      url: `https://example.test/tarot-prototype/${concept ? `?concept=${concept}` : ""}`,
       runScripts: "outside-only",
       virtualConsole: vc,
     });
@@ -29,6 +29,30 @@ const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
     w.eval(script);
     const q = (s) => w.document.querySelector(s),
       click = (s) => q(s).click();
+    assert.equal(
+      q(
+        '.concept-switch [data-concept="b"], .concept-option[data-concept="b"]',
+      ),
+      null,
+    );
+    if (concept === null) {
+      assert.equal(w.document.body.dataset.concept, "comparison");
+      assert.deepEqual(
+        Array.from(
+          w.document.querySelectorAll(".concept-option"),
+          (e) => e.dataset.concept,
+        ),
+        ["a", "c", "d"],
+      );
+      click('[data-concept="d"]');
+      assert.equal(w.document.body.dataset.concept, "d");
+      assert.equal(
+        q(".deck img").getAttribute("src"),
+        "assets/card-back-d.svg",
+      );
+      dom.window.close();
+      continue;
+    }
     assert.equal(w.document.body.dataset.concept, concept);
     assert.equal(q("h1").textContent.replace(/\s/g, ""), "ИмператорскоеТаро");
     click('[data-action="archive"]');
@@ -71,14 +95,14 @@ const tick = () => new Promise((resolve) => setTimeout(resolve, 15));
     click('[data-action="begin"]');
     assert.equal(w.document.querySelectorAll(".is-revealed").length, 0);
     // Theme navigation does not expose or load any production dataset.
-    click('[data-concept="' + (concept === "a" ? "b" : "a") + '"]');
+    click('[data-concept="' + (concept === "a" ? "c" : "a") + '"]');
     assert(q(".deck"));
     assert.deepEqual(errors, []);
     dom.window.close();
   }
   assert(!/fetch\(|localStorage|tarot_cards\.json|KadatFeatures/.test(script));
   console.log(
-    "Stage I: A/B/C routing, demo dialogs, strict I→II→III reveal, labels, reversed artwork, finish-only summary and reset PASS. No production data or Kadat storage access.",
+    "Stage I: active A/C/D comparison, archived B, all four demo routes, strict I→II→III reveal, labels, reversed artwork, finish-only summary and reset PASS. No production data or Kadat storage access.",
   );
 })().catch((e) => {
   console.error(e);
