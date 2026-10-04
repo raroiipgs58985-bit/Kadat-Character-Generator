@@ -45,7 +45,8 @@
       reversed: false,
     },
   ];
-  let concept = null,
+  // Sacred Divinatio is the public entry; historical concept code stays below.
+  let concept = "d",
     view = "home",
     focusIndex = 0,
     busy = false;
@@ -57,8 +58,6 @@
     busy = false;
   }
   const nextIndex = () => revealed.findIndex((x) => !x);
-  const key = new URLSearchParams(location.search).get("concept");
-  if (Object.hasOwn(names, key)) concept = key;
   const mark =
     '<img class="seal" src="assets/imperial-seal.svg" alt="" aria-hidden="true">';
   const deck = (extra = "") =>
@@ -96,7 +95,7 @@
       ? `${names[concept]} — Imperial Tarot`
       : "Imperial Tarot — Visual Concepts";
     if (concept === "d" && window.ImperialTarotStage2) {
-      window.ImperialTarotStage2.mount(root, { bar: bar() });
+      window.ImperialTarotStage2.mount(root, { bar: "" });
       return;
     }
     window.ImperialTarotStage2?.unmount();
@@ -280,8 +279,7 @@
   });
   window.addEventListener("popstate", () => {
     cancelFlip();
-    const k = new URLSearchParams(location.search).get("concept");
-    concept = Object.hasOwn(names, k) ? k : null;
+    concept = "d";
     view = "home";
     revealed = [false, false, false];
     focusIndex = 0;

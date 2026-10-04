@@ -1,0 +1,1272 @@
+{
+  "baseline": "40ba079635c4341cbce73b2a9c163e5421c4f0a3",
+  "initialObservation": "Archive block whitespace assertion interrupted before any ritual start. Passed checks 01–03 and landing screenshot preserved; only pending checks continued.",
+  "initialDiagnostic": "stage4c_ui_validation_initial.json",
+  "branch": "prototype/imperial-tarot-stage4c",
+  "status": "PASS",
+  "cachedSource": "tarot-prototype/review-stage4b2/stage4b2_validation.json",
+  "interpretationCalls": 0,
+  "newRandomDraws": 0,
+  "priorSuitesRerun": false,
+  "checks": [
+    {
+      "id": "01_all_concepts_link_absent",
+      "status": "PASS"
+    },
+    {
+      "id": "02_concept_selectors_absent",
+      "status": "PASS"
+    },
+    {
+      "id": "03_sacred_divinatio_direct",
+      "status": "PASS"
+    },
+    {
+      "id": "04_tarot_start",
+      "status": "PASS"
+    },
+    {
+      "id": "05_spread_selection",
+      "status": "PASS"
+    },
+    {
+      "id": "06_imperator_reveal_and_reset_preserved",
+      "status": "PASS"
+    },
+    {
+      "id": "07_mobile_prophecy_320",
+      "status": "PASS"
+    },
+    {
+      "id": "08_mobile_prophecy_414",
+      "status": "PASS"
+    },
+    {
+      "id": "09_desktop_prophecy_1366",
+      "status": "PASS"
+    },
+    {
+      "id": "10_mobile_signs_and_keyboard",
+      "status": "PASS"
+    },
+    {
+      "id": "11_branch_grouping_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "12_archive_placeholder_unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "13_return_to_kadat",
+      "status": "PASS"
+    },
+    {
+      "id": "14_no_horizontal_overflow",
+      "status": "PASS"
+    },
+    {
+      "id": "15_no_console_or_resource_errors",
+      "status": "PASS"
+    },
+    {
+      "id": "16_four_generators_load_and_frozen_files",
+      "status": "PASS"
+    }
+  ],
+  "layouts": [
+    {
+      "details": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "paragraph": {
+        "width": 288,
+        "height": 361.09375,
+        "top": 525.609375,
+        "bottom": 886.703125,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 273,
+        "height": 94.03125,
+        "top": 346.78125,
+        "bottom": 440.8125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 288,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 288,
+        "height": 152.96875,
+        "top": 1311.53125,
+        "bottom": 1464.5,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1175.53125,
+        "bottom": 1295.53125,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 188,
+        "height": 22.390625,
+        "top": 1261.59375,
+        "bottom": 1283.984375,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 188,
+        "height": 28.59375,
+        "top": 1215.453125,
+        "bottom": 1244.046875,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 414,
+      "scrollWidth": 414,
+      "paragraph": {
+        "width": 382,
+        "height": 252.765625,
+        "top": 498.859375,
+        "bottom": 751.625,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 367,
+        "height": 62.6875,
+        "top": 346.78125,
+        "bottom": 409.46875,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 382,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 382,
+        "height": 122.375,
+        "top": 1140.34375,
+        "bottom": 1262.71875,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1004.34375,
+        "bottom": 1124.34375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 282,
+        "height": 22.390625,
+        "top": 1090.40625,
+        "bottom": 1112.796875,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 282,
+        "height": 28.59375,
+        "top": 1044.265625,
+        "bottom": 1072.859375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 320,
+      "scrollWidth": 320,
+      "paragraph": {
+        "width": 288,
+        "height": 361.09375,
+        "top": 506.609375,
+        "bottom": 867.703125,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 273,
+        "height": 94.03125,
+        "top": 327.78125,
+        "bottom": 421.8125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 288,
+        "height": 112,
+        "top": 162.390625,
+        "bottom": 274.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 288,
+        "height": 152.96875,
+        "top": 1292.53125,
+        "bottom": 1445.5,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1156.53125,
+        "bottom": 1276.53125,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 188,
+        "height": 22.390625,
+        "top": 1242.59375,
+        "bottom": 1264.984375,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 188,
+        "height": 28.59375,
+        "top": 1196.453125,
+        "bottom": 1225.046875,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 414,
+      "scrollWidth": 414,
+      "paragraph": {
+        "width": 382,
+        "height": 252.765625,
+        "top": 479.859375,
+        "bottom": 732.625,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 367,
+        "height": 62.6875,
+        "top": 327.78125,
+        "bottom": 390.46875,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 382,
+        "height": 112,
+        "top": 162.390625,
+        "bottom": 274.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 382,
+        "height": 122.375,
+        "top": 1121.34375,
+        "bottom": 1243.71875,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 985.34375,
+        "bottom": 1105.34375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 282,
+        "height": 22.390625,
+        "top": 1071.40625,
+        "bottom": 1093.796875,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 282,
+        "height": 28.59375,
+        "top": 1025.265625,
+        "bottom": 1053.859375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 1366,
+      "scrollWidth": 1366,
+      "paragraph": {
+        "width": 696,
+        "height": 148,
+        "top": 464.875,
+        "bottom": 612.875,
+        "font": 20,
+        "lineHeight": 37,
+        "display": "block"
+      },
+      "question": {
+        "width": 677,
+        "height": 28.046875,
+        "top": 321.640625,
+        "bottom": 349.6875,
+        "font": 17,
+        "lineHeight": 28.05,
+        "display": "block"
+      },
+      "context": {
+        "width": 920,
+        "height": 31.046875,
+        "top": 232.59375,
+        "bottom": 263.640625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "desktopArt": {
+        "width": 164,
+        "height": 183.9375,
+        "top": 303.640625,
+        "bottom": 487.578125,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signText": {
+        "width": 578,
+        "height": 89.25,
+        "top": 938.03125,
+        "bottom": 1027.28125,
+        "font": 17,
+        "lineHeight": 29.75,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 96,
+        "height": 136,
+        "top": 842.0625,
+        "bottom": 978.0625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signState": {
+        "width": 520,
+        "height": 19.1875,
+        "top": 906.84375,
+        "bottom": 926.03125,
+        "font": 12,
+        "lineHeight": 19.2,
+        "display": "block"
+      },
+      "signName": {
+        "width": 578,
+        "height": 28.59375,
+        "top": 869.25,
+        "bottom": 897.84375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 320,
+      "scrollWidth": 320,
+      "paragraph": {
+        "width": 288,
+        "height": 361.09375,
+        "top": 525.609375,
+        "bottom": 886.703125,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 273,
+        "height": 94.03125,
+        "top": 346.78125,
+        "bottom": 440.8125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 288,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 288,
+        "height": 152.96875,
+        "top": 1311.53125,
+        "bottom": 1464.5,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1175.53125,
+        "bottom": 1295.53125,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 188,
+        "height": 22.390625,
+        "top": 1261.59375,
+        "bottom": 1283.984375,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 188,
+        "height": 28.59375,
+        "top": 1215.453125,
+        "bottom": 1244.046875,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 320,
+      "scrollWidth": 320,
+      "paragraph": {
+        "width": 288,
+        "height": 324.984375,
+        "top": -492.734375,
+        "bottom": -167.75,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 273,
+        "height": 62.6875,
+        "top": -640.21875,
+        "bottom": -577.53125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 288,
+        "height": 112,
+        "top": -805.609375,
+        "bottom": -693.609375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 288,
+        "height": 152.96875,
+        "top": 1111.59375,
+        "bottom": 1264.5625,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 975.59375,
+        "bottom": 1095.59375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 188,
+        "height": 22.390625,
+        "top": 1061.65625,
+        "bottom": 1084.046875,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 188,
+        "height": 28.59375,
+        "top": 1015.515625,
+        "bottom": 1044.109375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 375,
+      "scrollWidth": 375,
+      "paragraph": {
+        "width": 343,
+        "height": 288.875,
+        "top": 526.328125,
+        "bottom": 815.203125,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 328,
+        "height": 94.03125,
+        "top": 346.78125,
+        "bottom": 440.8125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 343,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 343,
+        "height": 152.96875,
+        "top": 1203.921875,
+        "bottom": 1356.890625,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1067.921875,
+        "bottom": 1187.921875,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 243,
+        "height": 22.390625,
+        "top": 1153.984375,
+        "bottom": 1176.375,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 243,
+        "height": 28.59375,
+        "top": 1107.84375,
+        "bottom": 1136.4375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 375,
+      "scrollWidth": 375,
+      "paragraph": {
+        "width": 343,
+        "height": 252.765625,
+        "top": -421.015625,
+        "bottom": -168.25,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 328,
+        "height": 62.6875,
+        "top": -569.21875,
+        "bottom": -506.53125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 343,
+        "height": 112,
+        "top": -734.609375,
+        "bottom": -622.609375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 343,
+        "height": 122.375,
+        "top": 894.4375,
+        "bottom": 1016.8125,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 758.4375,
+        "bottom": 878.4375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 243,
+        "height": 22.390625,
+        "top": 844.5,
+        "bottom": 866.890625,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 243,
+        "height": 28.59375,
+        "top": 798.359375,
+        "bottom": 826.953125,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 390,
+      "scrollWidth": 390,
+      "paragraph": {
+        "width": 358,
+        "height": 288.875,
+        "top": 527.828125,
+        "bottom": 816.703125,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 343,
+        "height": 94.03125,
+        "top": 346.78125,
+        "bottom": 440.8125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 358,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 358,
+        "height": 122.375,
+        "top": 1205.421875,
+        "bottom": 1327.796875,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1069.421875,
+        "bottom": 1189.421875,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 258,
+        "height": 22.390625,
+        "top": 1155.484375,
+        "bottom": 1177.875,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 258,
+        "height": 28.59375,
+        "top": 1109.34375,
+        "bottom": 1137.9375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 390,
+      "scrollWidth": 390,
+      "paragraph": {
+        "width": 358,
+        "height": 252.765625,
+        "top": -420.515625,
+        "bottom": -167.75,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 343,
+        "height": 62.6875,
+        "top": -570.21875,
+        "bottom": -507.53125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 358,
+        "height": 112,
+        "top": -735.609375,
+        "bottom": -623.609375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 358,
+        "height": 122.375,
+        "top": 858.828125,
+        "bottom": 981.203125,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 722.828125,
+        "bottom": 842.828125,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 258,
+        "height": 22.390625,
+        "top": 808.890625,
+        "bottom": 831.28125,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 258,
+        "height": 28.59375,
+        "top": 762.75,
+        "bottom": 791.34375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 414,
+      "scrollWidth": 414,
+      "paragraph": {
+        "width": 382,
+        "height": 252.765625,
+        "top": 498.859375,
+        "bottom": 751.625,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 367,
+        "height": 62.6875,
+        "top": 346.78125,
+        "bottom": 409.46875,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 382,
+        "height": 112,
+        "top": 181.390625,
+        "bottom": 293.390625,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 382,
+        "height": 122.375,
+        "top": 1140.34375,
+        "bottom": 1262.71875,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 1004.34375,
+        "bottom": 1124.34375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 282,
+        "height": 22.390625,
+        "top": 1090.40625,
+        "bottom": 1112.796875,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 282,
+        "height": 28.59375,
+        "top": 1044.265625,
+        "bottom": 1072.859375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 414,
+      "scrollWidth": 414,
+      "paragraph": {
+        "width": 382,
+        "height": 216.65625,
+        "top": -385.140625,
+        "bottom": -168.484375,
+        "font": 21,
+        "lineHeight": 36.12,
+        "display": "block"
+      },
+      "question": {
+        "width": 367,
+        "height": 62.6875,
+        "top": -537.21875,
+        "bottom": -474.53125,
+        "font": 19,
+        "lineHeight": 31.35,
+        "display": "block"
+      },
+      "context": {
+        "width": 382,
+        "height": 112,
+        "top": -702.609375,
+        "bottom": -590.609375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "grid"
+      },
+      "desktopArt": {
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "bottom": 0,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "none"
+      },
+      "signText": {
+        "width": 382,
+        "height": 122.375,
+        "top": 821.984375,
+        "bottom": 944.359375,
+        "font": 18,
+        "lineHeight": 30.6,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 84,
+        "height": 120,
+        "top": 685.984375,
+        "bottom": 805.984375,
+        "font": 15,
+        "lineHeight": 24,
+        "display": "block"
+      },
+      "signState": {
+        "width": 282,
+        "height": 22.390625,
+        "top": 772.046875,
+        "bottom": 794.4375,
+        "font": 14,
+        "lineHeight": 22.4,
+        "display": "block"
+      },
+      "signName": {
+        "width": 282,
+        "height": 28.59375,
+        "top": 725.90625,
+        "bottom": 754.5,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": false,
+      "width": 1366,
+      "scrollWidth": 1366,
+      "paragraph": {
+        "width": 696,
+        "height": 148,
+        "top": 464.875,
+        "bottom": 612.875,
+        "font": 20,
+        "lineHeight": 37,
+        "display": "block"
+      },
+      "question": {
+        "width": 677,
+        "height": 28.046875,
+        "top": 321.640625,
+        "bottom": 349.6875,
+        "font": 17,
+        "lineHeight": 28.05,
+        "display": "block"
+      },
+      "context": {
+        "width": 920,
+        "height": 31.046875,
+        "top": 232.59375,
+        "bottom": 263.640625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "desktopArt": {
+        "width": 164,
+        "height": 183.9375,
+        "top": 303.640625,
+        "bottom": 487.578125,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signText": {
+        "width": 578,
+        "height": 89.25,
+        "top": 938.03125,
+        "bottom": 1027.28125,
+        "font": 17,
+        "lineHeight": 29.75,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 96,
+        "height": 136,
+        "top": 842.0625,
+        "bottom": 978.0625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signState": {
+        "width": 520,
+        "height": 19.1875,
+        "top": 906.84375,
+        "bottom": 926.03125,
+        "font": 12,
+        "lineHeight": 19.2,
+        "display": "block"
+      },
+      "signName": {
+        "width": 578,
+        "height": 28.59375,
+        "top": 869.25,
+        "bottom": 897.84375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    },
+    {
+      "details": true,
+      "width": 1366,
+      "scrollWidth": 1366,
+      "paragraph": {
+        "width": 696,
+        "height": 111,
+        "top": -419.125,
+        "bottom": -308.125,
+        "font": 20,
+        "lineHeight": 37,
+        "display": "block"
+      },
+      "question": {
+        "width": 677,
+        "height": 28.046875,
+        "top": -562.359375,
+        "bottom": -534.3125,
+        "font": 17,
+        "lineHeight": 28.05,
+        "display": "block"
+      },
+      "context": {
+        "width": 920,
+        "height": 31.046875,
+        "top": -651.40625,
+        "bottom": -620.359375,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "desktopArt": {
+        "width": 164,
+        "height": 256.84375,
+        "top": -580.359375,
+        "bottom": -323.515625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signText": {
+        "width": 578,
+        "height": 89.25,
+        "top": 300.03125,
+        "bottom": 389.28125,
+        "font": 17,
+        "lineHeight": 29.75,
+        "display": "block"
+      },
+      "thumbnail": {
+        "width": 96,
+        "height": 136,
+        "top": 204.0625,
+        "bottom": 340.0625,
+        "font": 16,
+        "lineHeight": 25.6,
+        "display": "block"
+      },
+      "signState": {
+        "width": 520,
+        "height": 19.1875,
+        "top": 268.84375,
+        "bottom": 288.03125,
+        "font": 12,
+        "lineHeight": 19.2,
+        "display": "block"
+      },
+      "signName": {
+        "width": 578,
+        "height": 28.59375,
+        "top": 231.25,
+        "bottom": 259.84375,
+        "font": 22,
+        "lineHeight": 28.6,
+        "display": "block"
+      },
+      "clipped": 0
+    }
+  ],
+  "screenshots": [
+    "tarot-prototype/review-stage4c/screenshots/01-tarot-landing-mobile-414.png",
+    "tarot-prototype/review-stage4c/screenshots/06-archive-placeholder-mobile-414.png",
+    "tarot-prototype/review-stage4c/screenshots/02-prophecy-mobile-320.png",
+    "tarot-prototype/review-stage4c/screenshots/03-prophecy-mobile-414.png",
+    "tarot-prototype/review-stage4c/screenshots/04-signs-expanded-mobile-414.png",
+    "tarot-prototype/review-stage4c/screenshots/05-prophecy-desktop-1366.png"
+  ],
+  "errors": [],
+  "readingDisplays": {
+    "imperator": 1,
+    "branch": 1
+  },
+  "imperatorRevealSessions": 1,
+  "reset": "PASS",
+  "checksPassed": 16,
+  "checksTotal": 16,
+  "initialGeneratorSelector": {
+    "id": "16_four_generators_load_and_frozen_files",
+    "status": "FAIL",
+    "message": "locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: /PERSONA/ })\u001b[22m\n"
+  },
+  "targetedGeneratorRecheck": "stage4c_generator_recheck.json"
+}

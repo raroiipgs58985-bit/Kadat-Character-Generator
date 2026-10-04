@@ -211,31 +211,50 @@
   display: block;
 }
 @media (max-width: 760px) {
-  [data-concept="d"] .stage4b2-reading { margin: 30px auto 62px; }
+  [data-concept="d"][data-s2-view="interpretation"] .stage2-shell { width: calc(100% - 32px); }
+  [data-concept="d"] .stage4b2-reading { margin: 26px auto 56px; }
+  [data-concept="d"] .stage4b2-status { margin-bottom: 16px; font-size: 12px; letter-spacing: .06em; line-height: 1.7; }
+  [data-concept="d"] .stage4b2-spread-name { font-size: 26px; }
   [data-concept="d"] .stage4b2-reading-layout { display: block; margin-top: 24px; }
   [data-concept="d"] .stage4b2-frontispiece { display: none; }
+  /* Compact artwork context above the full-width question and prophecy. */
   [data-concept="d"] .stage4b2-title-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 70px;
+    grid-template-columns: minmax(0, 1fr) 82px;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
   }
   [data-concept="d"] .stage4b2-mobile-art {
     display: block;
-    width: 70px;
-    height: 94px;
+    width: 82px;
+    height: 112px;
     object-fit: contain;
     transform: none;
     border: 1px solid #493823;
   }
+  [data-concept="d"] .stage4b2-question { margin-bottom: 26px; padding-left: 14px; }
+  [data-concept="d"] .stage4b2-question .overline { font-size: 12px; letter-spacing: .08em; }
+  [data-concept="d"] .stage4b2-question blockquote { font-size: 19px; line-height: 1.65; }
+  [data-concept="d"] .stage4b2-prophecy h1,
+  [data-concept="d"] .stage4b2-deferred h1 { margin-bottom: 22px; font-size: clamp(32px, 8.7vw, 36px); }
   [data-concept="d"] .stage4b2-prophecy p,
-  [data-concept="d"] .stage4b2-deferred > p { font-size: 19px; line-height: 1.8; }
-  [data-concept="d"] .stage4b2-sign { grid-template-columns: 78px minmax(0, 1fr); gap: 16px; }
-  [data-concept="d"] .stage4b2-sign img { height: 112px; }
-  [data-concept="d"] .stage4b2-sign h3 { font-size: 20px; }
+  [data-concept="d"] .stage4b2-deferred > p { font-size: 21px; line-height: 1.72; }
+  [data-concept="d"] .stage4b2-signs { margin-top: 32px; }
+  [data-concept="d"] .stage4b2-signs > summary { font-size: 14px; letter-spacing: .08em; }
+  [data-concept="d"] .stage4b2-sign { grid-template-columns: 84px minmax(0, 1fr); gap: 6px 16px; padding: 24px 0; }
+  [data-concept="d"] .stage4b2-sign figure { grid-column: 1; grid-row: 1 / span 3; }
+  [data-concept="d"] .stage4b2-sign img { height: 120px; }
+  [data-concept="d"] .stage4b2-sign-copy { display: contents; }
+  [data-concept="d"] .stage4b2-sign h3 { grid-column: 2; margin: 0; font-size: 22px; }
+  [data-concept="d"] .stage4b2-sign-role,
+  [data-concept="d"] .stage4b2-sign-state { grid-column: 2; margin: 0; font-size: 14px; overflow-wrap: anywhere; }
+  [data-concept="d"] .stage4b2-sign-text { grid-column: 1 / -1; margin-top: 10px; font-size: 18px; line-height: 1.7; }
+  [data-concept="d"] .stage4b2-relation-note { grid-column: 1 / -1; font-size: 15px; line-height: 1.6; }
   [data-concept="d"] .stage4b2-reading-actions { flex-direction: column; align-items: stretch; }
+  [data-concept="d"] .stage4b2-reading-actions button { min-height: 44px; font-size: 14px; line-height: 1.5; }
   [data-concept="d"] .stage4b2-reading-actions .quiet { text-align: center; }
   [data-concept="d"] .stage4b2-sign-group { padding-left: 12px; }
+  [data-concept="d"] .stage4b2-sign-group > p { font-size: 15px; line-height: 1.6; }
   [data-concept="d"] .stage4b2-astro-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) {

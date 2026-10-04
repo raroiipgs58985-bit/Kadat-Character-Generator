@@ -1,0 +1,10 @@
+{
+  "scope": "Only generator entry buttons and frozen-file diff",
+  "interpretationCalls": 0,
+  "tarotFlowsRerun": false,
+  "screenshotsRegenerated": false,
+  "loads": [],
+  "errors": [],
+  "status": "FAIL",
+  "error": "locator.click: Error: strict mode violation: locator('[data-registry-mode=\"character\"]') resolved to 2 elements:\n    1) <body data-registry-mode=\"character\">…</body> aka getByText('К содержимому COGITATOR NODE')\n    2) <button type=\"button\" class=\"is-active\" aria-pressed=\"true\" data-registry-mode=\"character\">…</button> aka getByRole('button', { name: '/ PERSONA Персонаж /' })\n\nCall log:\n\u001b[2m  - waiting for locator('[data-registry-mode=\"character\"]')\u001b[22m\n\n    at /workspace/scratch/df03253c6aec/stage4c-generator-recheck.cjs:24:58"
+}

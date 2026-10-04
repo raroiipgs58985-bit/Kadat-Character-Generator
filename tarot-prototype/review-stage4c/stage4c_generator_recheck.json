@@ -1,0 +1,26 @@
+{
+  "scope": "Only generator entry buttons and frozen-file diff",
+  "interpretationCalls": 0,
+  "tarotFlowsRerun": false,
+  "screenshotsRegenerated": false,
+  "loads": [
+    {
+      "mode": "character",
+      "status": "PASS"
+    },
+    {
+      "mode": "regiment",
+      "status": "PASS"
+    },
+    {
+      "mode": "xeno",
+      "status": "PASS"
+    },
+    {
+      "mode": "power-armor",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "status": "PASS"
+}
