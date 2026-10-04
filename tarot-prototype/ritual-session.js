@@ -5,7 +5,7 @@
   else host.ImperialTarotSession = engine;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
-  const VERSION = 1;
+  const VERSION = 2;
   function freeze(value) {
     if (value && typeof value === "object" && !Object.isFrozen(value)) {
       Object.values(value).forEach(freeze);
@@ -60,6 +60,8 @@
           randomBelow(2, random) === 0 ? "upright" : "reversed";
       const art = resolveCard(card, draw.orientation);
       draw.image = art.image;
+      if (art.artwork_id) draw.artwork_id = art.artwork_id;
+      if (art.identity_id) draw.identity_id = art.identity_id;
       return draw;
     });
     const questionText = question == null ? "" : String(question);
@@ -147,7 +149,12 @@
             : Object.hasOwn(draw, "orientation")
         )
           throw new Error("Invalid orientation");
-        if (draw.image !== resolveCard(card, draw.orientation).image)
+        const art = resolveCard(card, draw.orientation);
+        if (
+          draw.image !== art.image ||
+          (art.artwork_id && draw.artwork_id !== art.artwork_id) ||
+          (art.identity_id && draw.identity_id !== art.identity_id)
+        )
           throw new Error("Wrong artwork state");
         const result = {
           card_id: draw.card_id,
@@ -155,6 +162,8 @@
         };
         if (card.type === "major") result.orientation = draw.orientation;
         result.image = draw.image;
+        if (art.artwork_id) result.artwork_id = art.artwork_id;
+        if (art.identity_id) result.identity_id = art.identity_id;
         return result;
       });
       const p = s.progress,

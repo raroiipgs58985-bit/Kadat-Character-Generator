@@ -1,70 +1,94 @@
-# Imperial Tarot — Stage 2.1
+# Imperial Tarot — Stage 3: Production Data & Artwork Integration
 
-**D — Sacred Divinatio / Visual Direction V1.** Patch существующего Stage II: рабочий вопрос, визуальный overview и исправление источника Astro-Horoscope. A/C остаются references; B — архивный вариант. Stage III не начат.
+**D — Sacred Divinatio / Visual Direction V1.** Финальный контент подключён к изолированному ритуальному прототипу. Художественная курация пользователя заморожена: **78 карт / 100 назначений / 99 произведений и физических файлов**. Толкование остаётся placeholder; основное приложение Kadat не интегрировано с Tarot.
 
 ## Открыть
 
-- [Concept D / Stage 2.1](https://raroiipgs58985-bit.github.io/Kadat-Character-Generator/tarot-prototype/?concept=d&v=stage2-1-20261004)
-- [Comparison / references](https://raroiipgs58985-bit.github.io/Kadat-Character-Generator/tarot-prototype/)
+- [Concept D / Stage 3](https://raroiipgs58985-bit.github.io/Kadat-Character-Generator/tarot-prototype/?concept=d&v=stage3-20261004)
+- [Comparison / references A и C](https://raroiipgs58985-bit.github.io/Kadat-Character-Generator/tarot-prototype/)
 - Локально: `npm start`, затем `/tarot-prototype/?concept=d`.
 
-Home → расклад → необязательный вопрос → подтверждение → последовательное открытие → завершение → placeholder толкования. Статические HTML/CSS/JS, локальные SVG/шрифт; GitHub Pages, без сборки, backend и API.
+Home → расклад → необязательный вопрос → подтверждение → последовательное открытие → завершение → placeholder толкования. Статические HTML/CSS/JS с относительными локальными путями; GitHub Pages, без сборки, backend, API или runtime AI.
 
-## Расклады и источник
+## Финальная авторская курация
 
-| Расклад                              | Карт | Статус / схема                                                 |
-| ------------------------------------ | ---: | -------------------------------------------------------------- |
-| The Imperator / Император            |    3 | SOURCE_SUPPORTED · ряд слева направо                           |
-| The Branch (Traitor or True) / Ветвь |    6 | SOURCE_SUPPORTED · две начальные карты и две расходящиеся пары |
-| The Throne of Terra / Трон Терры     |    7 | SOURCE_SUPPORTED · перевёрнутая V                              |
-| The Haloed Rosette / Ореол Росетты   |   10 | SOURCE_SUPPORTED · крест и верхний ряд VII–X                   |
-| The Astro-Horoscope / Астро-гороскоп |    — | SOURCE_FLEXIBLE · запуск недоступен                            |
+Источник назначений — предоставленный `blanche_tarot_final_data(2).zip`, финальная версия пакета `blanche_tarot_final_data.zip`. Его JSON/CSV сверены между собой. Изображения скопированы побайтно из `final_selected_artworks/`; ни одно произведение не заменено, не обрезано, не перекрашено и не увеличено. Ни новых работ, ни внешних версий не скачивалось.
 
-Сохранены четыре прежние фиксированные схемы из The Emperor's Tarot v1.30, стр. 20–22. Функции пар в Ветви не разделяются искусственно. В Росетте I–II находятся в центральной области; touch targets слегка разнесены для доступности.
+| Карта                     | Состояние    | Artwork ID | Общий локальный файл                   |
+| ------------------------- | ------------ | ---------- | -------------------------------------- |
+| major_16 / The Hulk       | Upright      | JB-LX-073  | `assets/artworks/major_16_upright.jpg` |
+| mandatio_07 / The Speaker | единственное | JB-LX-073  | `assets/artworks/major_16_upright.jpg` |
 
-**Исправление Stage 2.1:** источник описывает Astro-Horoscope как свободный сложный расклад — ряды/столбцы, круг, концентрические круги, звезда и другие формы. Он не задаёт единого количества карт или фиксированной схемы. Прежнее утверждение «Astro-Horoscope = fixed 24» отозвано. У этой записи `card_count: null`, `positions: []`, `startable: false`; UI не показывает 24 карты или выдуманную официальную сетку. Исправление основано на принятом уточнении пользователя; нового исследования не проводилось.
+Это **INTENTIONAL_REUSE**, явно разрешённое пользователем. Две разные Tarot card identities используют одно произведение. Draw без возвращения проверяет **card identity**, а не artwork identity. Создавать сотый физический файл или устранять это повторное использование запрещено.
 
-## Вопрос
+## Данные и источники
 
-- Настоящая форма с submit читает **текущее значение textarea**, включая ввод/IME/autofill. Введённая строка сохраняется без `trim`, обрезки или замены. Текст экранируется для безопасного отображения, оставаясь тем же вопросом.
-- Непустая строка → `QUESTION_STATED`; пустая → `QUESTION_UNSPOKEN`. Кнопка «Оставить невысказанным» скрыта при введённом тексте и не стирает его.
-- При подготовке сохраняется черновик. После начала `session.question` и `question_status` входят в замороженную ritual session вместе с draws и прогрессом. Сохранённый вопрос имеет приоритет над старым черновиком при restore.
-- На desktop QUAESTIO находится справа. На mobile это закрытый по умолчанию `<details>` с действием «Показать вопрос»; active card сохраняет свой размер.
-- Home, возврат, A/C, overview и refresh не изменяют вопрос. Подтверждённый reset удаляет его с текущим раскладом. Отмена reset сохраняет всё.
+| Файл                            | Содержимое                                                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `data/cards.json`               | 22 Major и 56 Minor; EN/RU названия, source image descriptions, исходные значения, variations, artwork mappings и ссылки на PDF/XLSX |
+| `data/spreads.json`             | четыре фиксированных расклада, функции позиций EN/RU и отключённый свободный Astro-Horoscope                                         |
+| `data/content.js`               | статическая browser/CommonJS-версия тех же cards/spreads; сеть и JSON fetch не требуются                                             |
+| `production-data.js`            | неизменяемый runtime adapter и lookup функций `getCard`, `getMeaning`, `getReadingContext`                                           |
+| `data/assignment-manifest.json` | все 100 назначений со стабильными card/artwork/identity ID                                                                           |
+| `data/artwork-manifest.json`    | 99 файлов, размеры/формат/SHA-256, происхождение, assignments и intentional reuse                                                    |
+| `data/intentional-reuse.json`   | решение пользователя о JB-LX-073                                                                                                     |
+| `data/source-provenance.json`   | хеши трёх предоставленных источников, версия данных и правила их использования                                                       |
+| `data/CURATION_FREEZE.md`       | исходный record финальной ручной курации                                                                                             |
+| `assets/artworks/`              | ровно 99 оригинальных JPG/PNG из финального пакета                                                                                   |
 
-Сессия и черновик хранятся только в `sessionStorage` этой вкладки: `imperial-tarot.prototype.stage2.session.v1`. Текст не отправляется на сервер. Если хранилище недоступно, работает память страницы с явным сообщением; refresh в этом режиме не может восстановить сессию.
+English meanings сохранены из финального пакета и сверены с предоставленным The Emperor’s Tarot v1.30. Русские значения всех 100 состояний сохранены из предоставленного XLSX без нового перевода; указаны sheet/cell references. Variations хранятся отдельно от основного meaning. Для 64 карт в XLSX нет отдельного русского описания исходного изображения: соответствующее поле `null`, без придуманного текста. Эти описания относятся к иллюстрациям исходного PDF, а не к выбранным Blanche artworks.
 
-## Карты и overview
+[STAGE3_SOURCE_CONFLICTS.md](STAGE3_SOURCE_CONFLICTS.md) фиксирует расхождения источников и исторические технические записи. Нет неразрешённых конфликтов художественных назначений. Для десяти изображений размеры manifest в ZIP отличались от фактического файла: runtime использует измеренные размеры, прежние значения сохранены в metadata; байты файла прежние.
 
-28 demo card identities: 6 Major, 22 Minor. Иллюстрации — только три прежних локальных SVG. Их повторение между разными demo cards допустимо; это не финальная художественная курация.
+## Расклады
 
-- Все карты выбираются один раз без возвращения при подтверждении начала. `crypto.getRandomValues` и rejection sampling исключают смещение выбора.
-- Major получает независимый равномерный бит 50/50 один раз. Draws/ориентации заморожены; restore и navigation не вызывают RNG.
-- Upright/Reversed имеют разные demo-artwork states. Reversed использует свой asset **и** поворот artwork на 180°. Названия, номера и controls остаются читаемыми.
-- Minor имеет одно изображение, без orientation, reversed state, artwork или meaning.
-- Открытие строго последовательное; следующая карта требует отдельного действия. Будущие позиции закрыты. Нет индивидуального reroll. Flip 820 мс; reduced motion — без анимации.
-- До окончания расклада нет meanings, keywords или интерпретации. После завершения пользователь отдельно открывает placeholder Stage III.
+| Расклад                              | Карт | Статус                             |
+| ------------------------------------ | ---: | ---------------------------------- |
+| The Imperator / Император            |    3 | SOURCE_SUPPORTED                   |
+| The Branch (Traitor or True) / Ветвь |    6 | SOURCE_SUPPORTED                   |
+| The Throne of Terra / Трон Терры     |    7 | SOURCE_SUPPORTED                   |
+| The Haloed Rosette / Ореол Росетты   |   10 | SOURCE_SUPPORTED                   |
+| The Astro-Horoscope / Астро-гороскоп |    — | SOURCE_FLEXIBLE; запуск недоступен |
 
-Overview показывает рубашку для закрытой позиции и **точный `session.draws[i].image`** для открытой. Thumbnail сохраняет reversed state и 180° поворот Major; номер позиции не поворачивается. Текущая позиция выделена тонкой рамкой и crimson-подчёркиванием. Идентичность карты также присутствует в accessible label и `data-card-id` открытой позиции. Будущие faces/IDs не попадают в DOM.
+Схемы, краткие подписи и порядок позиций сохранены из утверждённого Stage 2.1. Функции позиций взяты из PDF, стр. 20–22, и русских XLSX-листов. Для пар III–IV и V–VI Ветви источник даёт общие функции: они сохранены как shared groups, без искусственного распределения смысла между двумя позициями.
 
-На mobile active card остаётся крупной; компактная схема открывается в модальном окне. На desktop реальные thumbnails постепенно заполняют схему слева. Экран завершения сохраняет всю визуальную схему с выпавшими картами в их позициях. Touch targets ≥44 px; внешнего horizontal overflow нет.
+Astro-Horoscope остаётся свободным сложным раскладом: `card_count: null`, `positions: []`, `startable: false`. Упоминание 24 карт в вводном разделе PDF не возвращает отменённое пользователем правило fixed-24. В обычном selector нет 24-card сетки. Технический `LARGE_SPREAD_STRESS_TEST` остаётся в `tests/fixtures/large-spread.js`: 24 позиции, 4 × 6, `INTERNAL_TEST_FIXTURE`, функции `null`. Доступ для разработки: `?concept=d&fixture=large-spread`; отдельная sessionStorage-запись, отсутствует в пользовательском списке раскладов.
 
-## Internal 24-position fixture
+## Сессия и ритуал
 
-`tests/fixtures/large-spread.js` содержит **LARGE_SPREAD_STRESS_TEST**: 24 позиции, 4 × 6, `INTERNAL_TEST_FIXTURE`, все функции позиций `null`. Это техническая конфигурация, а не правило или схема Astro-Horoscope. В обычном списке раскладов её нет.
+- 78 card identities; выбор без возвращения через `crypto.getRandomValues` с rejection sampling. Все draws формируются один раз при подтверждении начала.
+- Каждая Major получает независимый равномерный бит **50/50 Upright/Reversed**. В состоянии Reversed используется назначенный Reversed файл **и** CSS-поворот artwork на 180°. Название, номер, position label и кнопки остаются читаемыми.
+- Minor имеет единственное изображение и `symbolizes_en/ru`; поля orientation/reversed artwork/reversed meaning отсутствуют.
+- Draws, artwork IDs и Major orientations заморожены; restore/navigation не используют RNG. Карты открываются строго последовательно. Индивидуального reroll нет.
+- UI показывает artwork, имя, номер/rank и состояние Major. Meanings, keywords и функции позиции доступны в данных, но не выводятся при открытии, в overview или на завершённом раскладе. Кнопка толкования открывает только placeholder.
+- Вопрос необязателен. Точное значение textarea, включая пробелы/переносы/IME/autofill, хранится без trim и ограничения длины. Пустая строка → `QUESTION_UNSPOKEN`; непустая → `QUESTION_STATED`. Текст экранируется при отображении, не отправляется на сервер. На mobile QUAESTIO — сворачиваемый блок.
+- Home, A/C, refresh и overview сохраняют вопрос, карты, ориентации и прогресс. Reset требует подтверждения, удаляет старую сессию и вопрос; следующий набор появляется только после нового подтверждения начала.
+- Flip 820 мс; `prefers-reduced-motion` отключает анимацию. Картинка предварительно загружается перед flip; смена view во время загрузки не возобновляет старую анимацию и не изменяет draw.
 
-Для разработки: `/tarot-prototype/?concept=d&fixture=large-spread`, затем «Подготовить тест 24 позиций». Явная плашка отделяет его от канонических раскладов. Используется отдельный ключ `imperial-tarot.prototype.stage2.fixture.large-spread.v1`; обычная сессия не перезаписывается.
+### Совместимость сохранений
 
-Старая сохранённая Stage II сессия `astro_horoscope` с 24 draws переносится в эту внутреннюю конфигурацию с явным уведомлением. **Набор, ориентации, вопрос и прогресс сохраняются без нового RNG.** Это совместимость старого сохранения, не доступный новый канонический расклад. После reset обычный интерфейс предлагает только четыре фиксированных схемы. У старых сохранений без `question_status` статус выводится из фактически сохранённой строки. Текст, который предыдущая версия уже потеряла/обрезала, восстановить невозможно.
+`session.version: 2`, `data_version: blanche-final-v1-5d3bd931d33c`. Ключ обычной вкладки сохранён: `imperial-tarot.prototype.stage2.session.v1`; fixture имеет свой ключ. Это позволяет распознать старое сохранение.
 
-## Проверка и изоляция
+**Демосессии Stage 2/2.1 не переносятся на production IDs.** При несовместимой версии cards/orientations отбрасываются с явным уведомлением, точный сохранённый вопрос остаётся черновиком. Новый draw требует подтверждения. Совместимые Stage 3 сессии восстанавливаются без RNG с проверкой card ID, image, artwork ID и identity ID. Если sessionStorage недоступен, работает память страницы и показывается предупреждение; refresh в этом режиме восстановление не гарантирует.
+
+## Artwork и mobile overview
+
+CSS `object-fit: contain` сохраняет полный кадр в active card и thumbnail. Исходные файлы остаются неизменными. Прототип не применяет generative fill, upscale или фильтры для «улучшения» художественного содержания.
+
+Desktop overview показывает рубашки закрытых позиций и реальные изображения открытых. Reversed thumbnail использует тот же файл и поворот, что active card. Завершённый расклад сохраняет визуальную схему всех карт. На mobile крупная active card остаётся главным объектом; карта расклада открывается в dialog, вопрос свёрнут по умолчанию. Touch targets ≥44 px.
+
+99 изображений не загружаются при входе. На Home используются прежние локальные декоративные SVG; при ритуале предварительно загружаются только focused и next artworks, открытые thumbnails — lazy. Декоративный слой D, рубашки, шрифт и три stylesheet остаются прежними. A/C и архивный B используют свои неизменённые Stage I demo assets, не production artwork assignments.
+
+## Проверки
 
 ```sh
+node tarot-prototype/tests/stage3.test.cjs
 node tarot-prototype/tests/stage2.test.cjs
 node tarot-prototype/tests/prototype.test.cjs
 npm test
+npm run check
 ```
 
-[STAGE2_1_VALIDATION.md](STAGE2_1_VALIDATION.md) — текущие результаты. [STAGE2_VALIDATION.md](STAGE2_VALIDATION.md) — история Stage II с пометкой об исправленном source claim. Матрица Chromium: 360×800, 390×844, 412×915, 430×932, 1366×768, 1920×1080.
+Текущий отчёт: [STAGE3_PRODUCTION_VALIDATION.md](STAGE3_PRODUCTION_VALIDATION.md). [Stage 2.1](STAGE2_1_VALIDATION.md) и [Stage II](STAGE2_VALIDATION.md) — исторические проверки прежнего demo build.
 
-Старые `prototype.css`, `concept-d.css`, рубашки, SVG и шрифт сохранены побайтно. Изменения находятся только в `tarot-prototype/`. Production Tarot dataset и финальные Blanche artworks не подключены; четыре генератора Kadat не изменены. API, runtime AI, новые зависимости, interpretation engine и Stage III отсутствуют.
+Изменения ограничены `tarot-prototype/`. Persona, Regimentum, Xenos, Armatura, их UI/данные/сохранения/логика и корневой build/deploy не менялись. Новых зависимостей, API, runtime AI, полного Archive и interpretation engine нет. Stage 3 завершает только интеграцию данных и artwork; дальнейшие этапы требуют отдельного задания.

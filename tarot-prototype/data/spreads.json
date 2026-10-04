@@ -1,0 +1,466 @@
+[
+  {
+    "spread_id": "imperator",
+    "name_en": "The Imperator",
+    "name_ru": "Император",
+    "card_count": 3,
+    "purpose_ru": "Простой, конкретный вопрос. Три карты в ряд, слева направо.",
+    "source_status": "SOURCE_SUPPORTED",
+    "source_pages": [20],
+    "map_width": 300,
+    "map_height": 130,
+    "layout_note_ru": "Три позиции в ряд.",
+    "positions": [
+      {
+        "name_ru": "Прошлое",
+        "name_en": "Past",
+        "x": 50,
+        "y": 65,
+        "horizontal": false,
+        "position": 1,
+        "meaning_en": "The card to the left tells you something about the past, how the problem came to be.",
+        "meaning_ru": "1 - Первая карта символизирует прошлое. ТО с чего началась проблема или причина по которой возник вопрос.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Император",
+          "russian_cell": "E3"
+        }
+      },
+      {
+        "name_ru": "Настоящее / вопрос",
+        "name_en": "Present / problem",
+        "x": 150,
+        "y": 65,
+        "horizontal": false,
+        "position": 2,
+        "meaning_en": "The second card represents the nature of the problem, the essence of the matter, the current state of events.",
+        "meaning_ru": "2 - Вторая Карта символизирует текущее состояние проблемы, её природу и суть.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Император",
+          "russian_cell": "E4"
+        }
+      },
+      {
+        "name_ru": "Император / возможный исход",
+        "name_en": "Imperator / suggested solution or possible outcome",
+        "x": 250,
+        "y": 65,
+        "horizontal": false,
+        "position": 3,
+        "meaning_en": "The right-hand card (called the Imperator, after which the spread is named) suggests the solution to the quandary or a possible outcome of the event being divined.",
+        "meaning_ru": "3 - (эту карту называют Императором) Карта символизирует предлагаемое решение или конечный результат интересующего события.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Император",
+          "russian_cell": "E5"
+        }
+      }
+    ]
+  },
+  {
+    "spread_id": "branch",
+    "name_en": "The Branch (Traitor or True)",
+    "name_ru": "Ветвь",
+    "card_count": 6,
+    "purpose_ru": "Два возможных выбора и два направления будущего.",
+    "source_status": "SOURCE_SUPPORTED",
+    "source_pages": [20],
+    "map_width": 340,
+    "map_height": 320,
+    "layout_note_ru": "III–IV описаны совместно как силы и варианты; V–VI — как два направления. Отдельные функции внутри пар не заданы.",
+    "positions": [
+      {
+        "name_ru": "Прошлое",
+        "name_en": "Past",
+        "x": 40,
+        "y": 160,
+        "horizontal": false,
+        "position": 1,
+        "meaning_en": "The card to the left tells you something about the past, how the problem came to be.",
+        "meaning_ru": "1 - Первая карта символизирует прошлое. ТО с чего началась проблема или причина по которой возник вопрос.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F5"
+        }
+      },
+      {
+        "name_ru": "Настоящее / вопрос",
+        "name_en": "Present / problem",
+        "x": 115,
+        "y": 160,
+        "horizontal": false,
+        "position": 2,
+        "meaning_en": "The second card represents the nature of the problem, the essence of the matter, the current state of events.",
+        "meaning_ru": "2 - Вторая Карта символизирует текущее состояние проблемы, её природу и суть.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F6"
+        }
+      },
+      {
+        "name_ru": "Силы и варианты · III",
+        "name_en": "Forces / options (shared pair)",
+        "x": 195,
+        "y": 220,
+        "horizontal": false,
+        "position": 3,
+        "meaning_en": "The next two cards go into a single column next to the first two (describing the forces at work and the options present).",
+        "meaning_ru": "3, 4 карты кладутся колонной и символизируют силы влияющие на проблему или разные варианты её развития.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F7"
+        },
+        "shared_group": [3, 4]
+      },
+      {
+        "name_ru": "Силы и варианты · IV",
+        "name_en": "Forces / options (shared pair)",
+        "x": 195,
+        "y": 95,
+        "horizontal": false,
+        "position": 4,
+        "meaning_en": "The next two cards go into a single column next to the first two (describing the forces at work and the options present).",
+        "meaning_ru": "3, 4 карты кладутся колонной и символизируют силы влияющие на проблему или разные варианты её развития.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F7"
+        },
+        "shared_group": [3, 4]
+      },
+      {
+        "name_ru": "Направление будущего · V",
+        "name_en": "Branching future (shared pair)",
+        "x": 290,
+        "y": 275,
+        "horizontal": false,
+        "position": 5,
+        "meaning_en": "The final two cards going into a second column, but are separated a bit (representing the branching future, how your choices can point you in either of two directions).",
+        "meaning_ru": "5,6 карты распологаются в следующей колонне и на небольшом удалении друг от друга. Символизируют финальное решение проблемы в зависимости от сделанного выбора.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F8"
+        },
+        "shared_group": [5, 6]
+      },
+      {
+        "name_ru": "Направление будущего · VI",
+        "name_en": "Branching future (shared pair)",
+        "x": 290,
+        "y": 45,
+        "horizontal": false,
+        "position": 6,
+        "meaning_en": "The final two cards going into a second column, but are separated a bit (representing the branching future, how your choices can point you in either of two directions).",
+        "meaning_ru": "5,6 карты распологаются в следующей колонне и на небольшом удалении друг от друга. Символизируют финальное решение проблемы в зависимости от сделанного выбора.",
+        "source": {
+          "pdf_pages": [20],
+          "russian_sheet": "Расклад Ветвь (Отделение, Возмо",
+          "russian_cell": "F8"
+        },
+        "shared_group": [5, 6]
+      }
+    ]
+  },
+  {
+    "spread_id": "throne_of_terra",
+    "name_en": "The Throne of Terra",
+    "name_ru": "Трон Терры",
+    "card_count": 7,
+    "purpose_ru": "Более подробное рассмотрение вопроса. Перевёрнутая V.",
+    "source_status": "SOURCE_SUPPORTED",
+    "source_pages": [21],
+    "map_width": 400,
+    "map_height": 290,
+    "layout_note_ru": "Схема и порядок соответствуют рисунку источника.",
+    "positions": [
+      {
+        "name_ru": "Прошлое",
+        "name_en": "Past",
+        "x": 35,
+        "y": 250,
+        "horizontal": false,
+        "position": 1,
+        "meaning_en": "The first two cards have the same meaning as in the Imperator/Branch (past/present).",
+        "meaning_ru": "1 - Первая карта символизирует прошлое. ТО с чего началась проблема или причина по которой возник вопрос.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J4"
+        }
+      },
+      {
+        "name_ru": "Настоящее",
+        "name_en": "Present",
+        "x": 90,
+        "y": 180,
+        "horizontal": false,
+        "position": 2,
+        "meaning_en": "The first two cards have the same meaning as in the Imperator/Branch (past/present).",
+        "meaning_ru": "2 - Вторая Карта символизирует текущее состояние проблемы, её природу и суть.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J5"
+        }
+      },
+      {
+        "name_ru": "Скрытые влияния",
+        "name_en": "Hidden influences",
+        "x": 145,
+        "y": 110,
+        "horizontal": false,
+        "position": 3,
+        "meaning_en": "The third card is much the same as the corresponding Branch card; it reveals what is hidden, the things/influences/events the querent or subject cannot see or has overlooked.",
+        "meaning_ru": "3 - Символизирует нечто скрытое или то что чтец упустил или не заметил, но что оказывает влияние на интересующее событие или проблему.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J6"
+        }
+      },
+      {
+        "name_ru": "Препятствия",
+        "name_en": "Obstacles / challenges",
+        "x": 200,
+        "y": 40,
+        "horizontal": false,
+        "position": 4,
+        "meaning_en": "The same applies to the fourth card; it tells of obstacles or challenges that will present themselves.",
+        "meaning_ru": "4 - Четвертая карта говорит о препятствиях или испытаниях, что вскоре себя проявят.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J7"
+        }
+      },
+      {
+        "name_ru": "Окружение",
+        "name_en": "Surroundings",
+        "x": 255,
+        "y": 110,
+        "horizontal": false,
+        "position": 5,
+        "meaning_en": "The fifth card adds additional details about the surroundings; the environment, people, influences, etc. that can come into play.",
+        "meaning_ru": "5 - Эта карта говорит об окружении, о вовлеченных в событие людях, различных внешних влияниях и подобном.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J8"
+        }
+      },
+      {
+        "name_ru": "Совет",
+        "name_en": "Advice",
+        "x": 310,
+        "y": 180,
+        "horizontal": false,
+        "position": 6,
+        "meaning_en": "The sixth cards present advice; the best course of action to follow.",
+        "meaning_ru": "6 - Карта предлагает совет или лучший вариант курса для действий чтеца.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J9"
+        }
+      },
+      {
+        "name_ru": "Исход при следовании совету",
+        "name_en": "Outcome if advice is followed",
+        "x": 365,
+        "y": 250,
+        "horizontal": false,
+        "position": 7,
+        "meaning_en": "The seventh and final card tells of the outcome; what will happen if the advice is heeded.",
+        "meaning_ru": "7 - Карта говорит о конечном результате в случае если чтец прислушается к совету 6 карты.",
+        "source": {
+          "pdf_pages": [21],
+          "russian_sheet": "Расклад Трон Терры",
+          "russian_cell": "J10"
+        }
+      }
+    ]
+  },
+  {
+    "spread_id": "haloed_rosette",
+    "name_en": "The Haloed Rosette",
+    "name_ru": "Ореол Росетты",
+    "card_count": 10,
+    "purpose_ru": "Развёрнутый расклад: крест и четыре позиции над ним.",
+    "source_status": "SOURCE_SUPPORTED",
+    "source_pages": [22],
+    "map_width": 320,
+    "map_height": 380,
+    "layout_note_ru": "I–II занимают общую центральную область. Их кнопки немного разнесены для удобного выбора; II пересекает I на рисунке источника.",
+    "positions": [
+      {
+        "name_ru": "Текущая ситуация",
+        "name_en": "Present situation",
+        "x": 160,
+        "y": 207,
+        "horizontal": false,
+        "position": 1,
+        "meaning_en": "The present situation revealed.",
+        "meaning_ru": "1 - Раскрывает текущую ситуацию.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E4"
+        }
+      },
+      {
+        "name_ru": "Ближайшее препятствие",
+        "name_en": "Immediate challenge",
+        "x": 160,
+        "y": 261,
+        "horizontal": true,
+        "position": 2,
+        "meaning_en": "The immediate challenge facing the querent. When you pull a \"good\" card here, examine it carefully because it will still represent a challenge.",
+        "meaning_ru": "2 - Испытание с которым очень скоро столкнется чтец. Даже если на эту позицию выпала \"хорошая\" карта, будьте внимательны - она все равно обозначает испытание.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E5"
+        }
+      },
+      {
+        "name_ru": "Далёкое прошлое / основа",
+        "name_en": "Distant past / foundation",
+        "x": 160,
+        "y": 345,
+        "horizontal": false,
+        "position": 3,
+        "meaning_en": "Distant past, foundation. This card should indicate the root of the subject matter of the question",
+        "meaning_ru": "3 - Далекое прошлое, основа. Эта карта означает корень проблемы, исходное событие приведшее к ситуации.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E6"
+        }
+      },
+      {
+        "name_ru": "Недавнее прошлое",
+        "name_en": "Recent past",
+        "x": 75,
+        "y": 245,
+        "horizontal": false,
+        "position": 4,
+        "meaning_en": "More recent past, including events. This will indicate events taking place, even if only indirectly connected.",
+        "meaning_ru": "4 - Более близкое прошлое, сопутствующие события. Эта карта обозначает связанные с основным вопросом произошедшие события, даже если связь неявная.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E7"
+        }
+      },
+      {
+        "name_ru": "Лучший возможный исход",
+        "name_en": "Best hoped-for outcome",
+        "x": 245,
+        "y": 245,
+        "horizontal": false,
+        "position": 5,
+        "meaning_en": "The best outcome that can be hoped for.",
+        "meaning_ru": "5 - лучший результат на который можно надеяться.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E8"
+        }
+      },
+      {
+        "name_ru": "Ближайшее будущее",
+        "name_en": "Immediate future",
+        "x": 160,
+        "y": 126,
+        "horizontal": false,
+        "position": 6,
+        "meaning_en": "The likely state of the immediate future.",
+        "meaning_ru": "6 - наиболее вероятное ближайшее будущее.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E9"
+        }
+      },
+      {
+        "name_ru": "Факторы / внутренние чувства",
+        "name_en": "Factors / inner feelings",
+        "x": 45,
+        "y": 35,
+        "horizontal": false,
+        "position": 7,
+        "meaning_en": "Factors or inner feelings: Compare this against Card 1 in order to understand underlying forces/trends.",
+        "meaning_ru": "7 - Фактор или внутреннее чувство: соотнесите эту карту с картой 1, чтобы понять скрытые силы или течения.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E10"
+        }
+      },
+      {
+        "name_ru": "Внешние влияния",
+        "name_en": "External influences",
+        "x": 122,
+        "y": 35,
+        "horizontal": false,
+        "position": 8,
+        "meaning_en": "External influences. People, energies or events beyond the querent’s control which will affect the outcome.",
+        "meaning_ru": "8 - Внешнее влияние. Люди, Силы, события - находящиеся вне вашего контроля, но оказывающие влияние на результат.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E11"
+        }
+      },
+      {
+        "name_ru": "Надежды / страхи",
+        "name_en": "Hopes / fears",
+        "x": 199,
+        "y": 35,
+        "horizontal": false,
+        "position": 9,
+        "meaning_en": "Hopes or fears around the situation; often indicates something the confuses the situation",
+        "meaning_ru": "9 - Надежды или Страхи относящиеся к исследуемой ситуации. Обычно указывает на то, что вносит смуту в рассматриваему ситуацию.",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E12"
+        }
+      },
+      {
+        "name_ru": "Итог",
+        "name_en": "Final outcome",
+        "x": 276,
+        "y": 35,
+        "horizontal": false,
+        "position": 10,
+        "meaning_en": "Final outcome. Fairly self-explanatory.",
+        "meaning_ru": "10 - Конечный Результат. Достаточно самоочевидный (Все проясняющий?)",
+        "source": {
+          "pdf_pages": [22],
+          "russian_sheet": "Расклад Ореол Росетты",
+          "russian_cell": "E13"
+        }
+      }
+    ]
+  },
+  {
+    "spread_id": "astro_horoscope",
+    "name_en": "The Astro-Horoscope",
+    "name_ru": "Астро-гороскоп",
+    "card_count": null,
+    "startable": false,
+    "purpose_ru": "Свободный сложный расклад.",
+    "source_status": "SOURCE_FLEXIBLE",
+    "source_pages": [21],
+    "map_width": null,
+    "map_height": null,
+    "layout_note_ru": "Источник не задаёт единого количества карт или фиксированной схемы. Допускаются ряды и столбцы, большой круг, концентрические круги, звезда и другие формы. Запуск пока недоступен.",
+    "positions": []
+  }
+]

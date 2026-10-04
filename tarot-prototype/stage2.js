@@ -1,7 +1,9 @@
-/* Sacred Divinatio Stage II. This controller is mounted for Concept D only. */
+/* Sacred Divinatio ritual controller. Mounted for Concept D only. */
 (() => {
   "use strict";
-  const data = window.ImperialTarotDemo;
+  // The demo fallback exists only for historical regression tests.
+  // The public page loads the frozen production content, not stage2-data.js.
+  const data = window.ImperialTarotProduction || window.ImperialTarotDemo;
   const engine = window.ImperialTarotSession;
   const fixture = window.ImperialTarotStressFixture;
   const developerMode =
@@ -35,6 +37,8 @@
     busy = false,
     timer,
     pendingReset = null;
+  let animationToken = 0;
+  const loadedArt = new Map();
   let storageAvailable = true,
     restoreNotice = "";
   const esc = (value) =>
@@ -96,15 +100,17 @@
         : null;
       if (saved.session && !session)
         restoreNotice =
-          "Сохранённая демосессия несовместима. Новый набор появится только после подтверждения нового ритуала.";
+          "Сохранённый расклад относится к прежней версии данных. Его карты не перенесены в новую колоду. Вопрос сохранён в черновике. Подтвердите начало нового ритуала.";
       selectedSpread = canSelect(saved.selectedSpread)
         ? saved.selectedSpread
         : "imperator";
       question = session
         ? session.question
-        : typeof saved.question === "string"
-          ? saved.question
-          : "";
+        : typeof saved.session?.question === "string"
+          ? saved.session.question
+          : typeof saved.question === "string"
+            ? saved.question
+            : "";
       view = views.includes(saved.view) ? saved.view : "home";
       if (
         (["ritual", "complete", "interpretation"].includes(view) && !session) ||
@@ -124,9 +130,10 @@
   } catch {
     storageAvailable = false;
   }
-  if (session) save();
+  save();
   function cancelAnimation() {
     clearTimeout(timer);
+    animationToken++;
     busy = false;
   }
   function announce(message) {
@@ -171,7 +178,7 @@
       interpretation,
       demo,
     }[view];
-    root.innerHTML = `${chrome.bar}<div class="concept-shell stage2-shell"><header class="product-header"><a class="kadat-link" href="../index.html">← REGISTRUM KADAT</a><span class="chapter-label">DIVINATIO IMPERIALIS</span><button class="entry-link" data-action="transition" aria-label="Показать переход из Kadat">Вход из Kadat ↗</button></header>${navigation()}<main id="main" tabindex="-1">${content()}</main><footer class="concept-footer"><span>D / Sacred Divinatio · Stage II</span><span>DEMONSTRATIO · 28 КАРТ / 3 SVG</span></footer></div>`;
+    root.innerHTML = `${chrome.bar}<div class="concept-shell stage2-shell"><header class="product-header"><a class="kadat-link" href="../index.html">← REGISTRUM KADAT</a><span class="chapter-label">DIVINATIO IMPERIALIS</span><button class="entry-link" data-action="transition" aria-label="Показать переход из Kadat">Вход из Kadat ↗</button></header>${navigation()}<main id="main" tabindex="-1">${content()}</main><footer class="concept-footer"><span>D / Sacred Divinatio · Stage III</span><span>${data.production ? "78 КАРТ / 99 ПРОИЗВЕДЕНИЙ" : "DEMONSTRATIO · 28 КАРТ / 3 SVG"}</span></footer></div>`;
     if (developerMode || currentSpread()?.internal_fixture) {
       root
         .querySelector("#main")
@@ -182,9 +189,17 @@
     }
     if (view === "question")
       root.querySelector("#ritual-question").value = question;
+    if (data.production && view === "ritual" && session) {
+      // Fetch only the focused and next images, never the whole library.
+      for (const draw of session.draws.slice(
+        session.progress.current_index,
+        session.progress.current_index + 2,
+      ))
+        loadArt(draw.image);
+    }
   }
   function home() {
-    return `<section class="forbidden-home sacred-home"><div class="silence-copy"><p class="overline"><span class="sacred-initial" aria-hidden="true">I</span>THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><p class="silence-subtitle">DIVINATIO IMPERIALIS</p><div class="home-actions"><button class="primary" data-s2="${session ? "resume" : "choose"}">${session ? "Вернуться к ритуалу" : "Провести гадание"} <span aria-hidden="true">→</span></button><div class="secondary-actions">${session ? '<button class="quiet" data-s2="reset">Новый ритуал</button>' : ""}<button class="quiet" data-s2="archive">Архив арканов ↗</button><button class="quiet" data-s2="about">О Таро</button></div></div></div><div class="void-deck sacred-deck"><div class="deck" aria-label="Закрытая колода Императорского Таро"><span class="deck-layer" aria-hidden="true"></span><span class="deck-layer" aria-hidden="true"></span><img src="assets/card-back-d.svg" alt="Рубашка карты: симметричная имперская геральдика на тёмном поле."></div><div class="sacred-divider" aria-hidden="true"><span>✦</span></div><span class="void-inscription">IN NOMINE IMPERATORIS</span></div><div class="silence-footnote"><p>Откройте карты по одной.<br>Толкование — после завершения ритуала.</p><button class="quiet stage2-demo-link" data-s2="demo">Посмотреть демонстрационные карты ↗</button>${restoreNotice ? `<p role="status">${esc(restoreNotice)}</p>` : ""}${!storageAvailable ? "<p>Хранилище вкладки недоступно. Сессия сохраняется в памяти до перезагрузки страницы.</p>" : ""}</div></section>`;
+    return `<section class="forbidden-home sacred-home"><div class="silence-copy"><p class="overline"><span class="sacred-initial" aria-hidden="true">I</span>THE EMPEROR'S TAROT</p><h1>Императорское<br><em>Таро</em></h1><p class="silence-subtitle">DIVINATIO IMPERIALIS</p><div class="home-actions"><button class="primary" data-s2="${session ? "resume" : "choose"}">${session ? "Вернуться к ритуалу" : "Провести гадание"} <span aria-hidden="true">→</span></button><div class="secondary-actions">${session ? '<button class="quiet" data-s2="reset">Новый ритуал</button>' : ""}<button class="quiet" data-s2="archive">Архив арканов ↗</button><button class="quiet" data-s2="about">О Таро</button></div></div></div><div class="void-deck sacred-deck"><div class="deck" aria-label="Закрытая колода Императорского Таро"><span class="deck-layer" aria-hidden="true"></span><span class="deck-layer" aria-hidden="true"></span><img src="assets/card-back-d.svg" alt="Рубашка карты: симметричная имперская геральдика на тёмном поле."></div><div class="sacred-divider" aria-hidden="true"><span>✦</span></div><span class="void-inscription">IN NOMINE IMPERATORIS</span></div><div class="silence-footnote"><p>Откройте карты по одной.<br>Толкование — после завершения ритуала.</p><button class="quiet stage2-demo-link" data-s2="demo">Посмотреть лица арканов ↗</button>${restoreNotice ? `<p role="status">${esc(restoreNotice)}</p>` : ""}${!storageAvailable ? "<p>Хранилище вкладки недоступно. Сессия сохраняется в памяти до перезагрузки страницы.</p>" : ""}</div></section>`;
   }
   function miniMap(spread) {
     return `<svg class="stage2-mini-map" viewBox="0 0 ${spread.map_width} ${spread.map_height}" aria-hidden="true" focusable="false">${spread.positions.map((p, i) => `<g transform="translate(${p.x} ${p.y})"><rect x="${p.horizontal ? -29 : -19}" y="${p.horizontal ? -14 : -25}" width="${p.horizontal ? 58 : 38}" height="${p.horizontal ? 28 : 50}"/><text dy="4">${i + 1}</text></g>`).join("")}</svg>`;
@@ -228,7 +243,7 @@
   }
   function face(draw) {
     const { card, art } = cardDetails(draw);
-    return `<span class="card-front"><img class="card-art${draw.orientation === "reversed" ? " is-reversed" : ""}" src="${art.image}" alt="${art.alt}" draggable="false"><span class="front-number">${esc(card.type === "major" ? card.number : card.rank)}</span></span>`;
+    return `<span class="card-front"><img class="card-art${draw.orientation === "reversed" ? " is-reversed" : ""}" src="${esc(art.image)}" alt="${esc(art.alt)}" decoding="async" draggable="false"><span class="front-number">${esc(card.type === "major" ? card.number : card.rank)}</span></span>`;
   }
   function label(draw) {
     const { card } = cardDetails(draw);
@@ -255,7 +270,7 @@
               ? ". Перевёрнутое положение"
               : ". Прямое положение"
             : "";
-        return `<button class="stage2-map-position${opened ? " is-open" : ""}${current ? " is-current" : ""}${p.horizontal ? " is-horizontal" : ""}" style="left:${(p.x / spread.map_width) * 100}%;top:${(p.y / spread.map_height) * 100}%" data-s2="map-focus" data-index="${i}" ${draw ? `data-card-id="${esc(draw.card_id)}"` : ""} ${!interactive || i > progress.opened_count ? "disabled" : ""} aria-label="${roman(i + 1)}. ${esc(name)}. ${opened ? `Открыта: ${esc(card.name_ru)}${state}` : "Закрыта"}${current ? ". Текущая" : ""}" aria-current="${current ? "step" : "false"}"><span class="stage2-map-image" aria-hidden="true"><img class="stage2-map-art${draw?.orientation === "reversed" ? " is-reversed" : ""}" src="${draw ? esc(draw.image) : "assets/card-back-d.svg"}" alt="" draggable="false"></span><span class="stage2-map-number" aria-hidden="true">${roman(i + 1)}</span></button>`;
+        return `<button class="stage2-map-position${opened ? " is-open" : ""}${current ? " is-current" : ""}${p.horizontal ? " is-horizontal" : ""}" style="left:${(p.x / spread.map_width) * 100}%;top:${(p.y / spread.map_height) * 100}%" data-s2="map-focus" data-index="${i}" ${draw ? `data-card-id="${esc(draw.card_id)}"` : ""} ${!interactive || i > progress.opened_count ? "disabled" : ""} aria-label="${roman(i + 1)}. ${esc(name)}. ${opened ? `Открыта: ${esc(card.name_ru)}${state}` : "Закрыта"}${current ? ". Текущая" : ""}" aria-current="${current ? "step" : "false"}"><span class="stage2-map-image" aria-hidden="true"><img class="stage2-map-art${draw?.orientation === "reversed" ? " is-reversed" : ""}" src="${draw ? esc(draw.image) : "assets/card-back-d.svg"}" alt="" loading="lazy" decoding="async" draggable="false"></span><span class="stage2-map-number" aria-hidden="true">${roman(i + 1)}</span></button>`;
       })
       .join("")}</div>`;
   }
@@ -272,7 +287,7 @@
     if (!session) return chooseSpread();
     const s = currentSpread(),
       p = session.progress;
-    return `<section class="stage2-ritual">${heading("RITUS DIVINATIONIS", `${s.name_ru}`, `<span class="stage2-position-label">${roman(p.current_index + 1)} / ${s.card_count}${s.positions[p.current_index].name_ru ? ` · ${s.positions[p.current_index].name_ru}` : ""}</span>`)}<div class="stage2-ritual-layout"><aside class="stage2-map-aside"><h2>Форма ритуала</h2>${map()}${mapLegend()}</aside><div class="stage2-focus">${activeCard()}${controls()}</div><aside class="stage2-ritual-aside">${questionPanel()}<p id="ritual-rule">Открывайте позиции последовательно.<br>Толкование скрыто до завершения всего расклада.</p><p class="stage2-demo-note">Демонстрационные SVG.<br>Финальные арты не подключены.</p></aside></div></section>`;
+    return `<section class="stage2-ritual">${heading("RITUS DIVINATIONIS", `${s.name_ru}`, `<span class="stage2-position-label">${roman(p.current_index + 1)} / ${s.card_count}${s.positions[p.current_index].name_ru ? ` · ${s.positions[p.current_index].name_ru}` : ""}</span>`)}<div class="stage2-ritual-layout"><aside class="stage2-map-aside"><h2>Форма ритуала</h2>${map()}${mapLegend()}</aside><div class="stage2-focus">${activeCard()}${controls()}</div><aside class="stage2-ritual-aside">${questionPanel()}<p id="ritual-rule">Открывайте позиции последовательно.<br>Толкование скрыто до завершения всего расклада.</p></aside></div></section>`;
   }
   function complete() {
     if (!session?.progress.finished) return ritual();
@@ -281,7 +296,7 @@
   }
   function interpretation() {
     if (!session?.progress.finished) return ritual();
-    return `<section class="stage2-completion">${heading("INTERPRETATIO", "Толкование", "Будет реализовано в Stage 3.")}<p class="stage2-placeholder">Этот этап проверяет только ритуал.<br>Значения карт и предсказания не подключены.</p><div class="stage2-form-actions"><button class="secondary" data-s2="completed">← К завершённому ритуалу</button><button class="quiet" data-s2="resume">Посмотреть карты</button></div></section>`;
+    return `<section class="stage2-completion">${heading("INTERPRETATIO", "Толкование", "Будет реализовано на отдельном этапе.")}<p class="stage2-placeholder">Ритуал сохранён.<br>Интерфейс толкования пока не реализован.</p><div class="stage2-form-actions"><button class="secondary" data-s2="completed">← К завершённому ритуалу</button><button class="quiet" data-s2="resume">Посмотреть карты</button></div></section>`;
   }
   function demo() {
     const major = data.cards.find((c) => c.card_id === "major_02");
@@ -291,14 +306,14 @@
       { card_id: major.card_id, type: "major", orientation: "reversed" },
       { card_id: minor.card_id, type: "minor" },
     ];
-    return `<section class="cards-showcase stage2-demo">${heading("IMAGINES ARCANORUM", "Лица арканов", "Major: два разных демоизображения.<br>Minor: одно состояние.")}<div class="showcase-space">${draws.map((d) => `<figure class="card-unit"><div class="static-card">${face(d)}</div>${label(d)}</figure>`).join("")}</div><p class="demo-note">SVG повторяются между картами только для проверки UX. Это не художественные назначения.</p><div class="center-actions"><button class="primary" data-s2="${session ? "resume" : "choose"}">${session ? "Вернуться к ритуалу" : "Выбрать расклад"} →</button></div></section>`;
+    return `<section class="cards-showcase stage2-demo">${heading("IMAGINES ARCANORUM", "Лица арканов", "Major: два авторских назначения.<br>Minor: одно состояние.")}<div class="showcase-space">${draws.map((d) => `<figure class="card-unit"><div class="static-card">${face(d)}</div>${label(d)}</figure>`).join("")}</div><div class="center-actions"><button class="primary" data-s2="${session ? "resume" : "choose"}">${session ? "Вернуться к ритуалу" : "Выбрать расклад"} →</button></div></section>`;
   }
   function showInfo(which) {
     const info = document.getElementById("info-dialog");
     document.getElementById("dialog-body").innerHTML =
       which === "archive"
         ? '<p class="overline">ARCHIVUM ARCANORUM</p><h2 id="dialog-title">Архив арканов</h2><p>Вход сохранён. Полный архив на этом этапе не реализован.</p>'
-        : '<p class="overline">DIVINATIO IMPERIALIS</p><h2 id="dialog-title">О Таро</h2><p>Sacred Divinatio — утверждённое направление V1. Stage II проверяет выбор расклада, вопрос и последовательный ритуал.</p><p>28 демонстрационных карт, три локальные SVG-гравюры. Финальные изображения и значения не подключены. Сессия хранится только в этой вкладке.</p>';
+        : '<p class="overline">DIVINATIO IMPERIALIS</p><h2 id="dialog-title">О Таро</h2><p>Sacred Divinatio — утверждённое направление V1. Последовательный ритуал с финальной авторской курацией.</p><p>78 карт, 100 художественных назначений, 99 произведений John Blanche. Толкование будет реализовано отдельно. Сессия хранится только в этой вкладке.</p>';
     info.showModal();
   }
   function openMap() {
@@ -327,15 +342,34 @@
       `Расклад «${currentSpread().name_ru}» и его вопрос будут удалены. Новый набор появится только после подтверждения начала нового ритуала.`;
     resetDialog.showModal();
   }
-  function reveal(index) {
+  function loadArt(image) {
+    if (!loadedArt.has(image)) {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = image;
+      loadedArt.set(
+        image,
+        img.decode().catch(() => {}),
+      );
+    }
+    return loadedArt.get(image);
+  }
+  async function reveal(index) {
     if (!session || busy) return;
     const updated = engine.update(session, "reveal", index);
     if (updated === session) return;
     session = updated;
     save();
     busy = true;
+    const token = animationToken;
     const button = root.querySelector(".stage2-flip");
     button.disabled = true;
+    if (data.production) {
+      await loadArt(session.draws[index].image);
+      // Leaving the view never rerolls the committed draw or revives a stale flip.
+      if (token !== animationToken || !mounted || !root.contains(button))
+        return;
+    }
     button
       .querySelector(".card-object")
       .insertAdjacentHTML("beforeend", face(session.draws[index]));
@@ -402,7 +436,7 @@
           go("ritual");
         } catch {
           announce(
-            "Не удалось сформировать демосессию. Начало ритуала не выполнено.",
+            "Не удалось сформировать сессию. Начало ритуала не выполнено.",
           );
         }
         break;
@@ -475,6 +509,7 @@
     resetDialog.close();
     cancelAnimation();
     session = null;
+    loadedArt.clear();
     question = "";
     restoreNotice = "";
     if (target) selectedSpread = target;

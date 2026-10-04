@@ -1,0 +1,4118 @@
+[
+  {
+    "card_id": "major_00",
+    "type": "major",
+    "name_en": "The Pilgrim",
+    "name_ru": "Пилигрим",
+    "index": 0,
+    "source_image_description_en": "A humble pilgrim about to set out on a journey.",
+    "upright_meaning_en": "Beginnings, possibilities",
+    "upright_meaning_ru": "Начало, Возможность",
+    "reversed_meaning_en": "Indecision, apathy, hesitation",
+    "reversed_meaning_ru": "Нерешительность, апатия, сомнение",
+    "variations": {
+      "en": "Passion, thoughtlessness, rashness",
+      "ru": "Спокойствие, Отсутствие мыслей (Безмыслие?), Спешка(стремительность)"
+    },
+    "id": "major_00",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 0,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-080",
+        "identity_id": "L080",
+        "image": "assets/artworks/major_00_upright.jpg",
+        "alt": "Пилигрим · John Blanche · JB-LX-080",
+        "width": 382,
+        "height": 354,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-125",
+        "identity_id": "V125",
+        "image": "assets/artworks/major_00_reversed.jpg",
+        "alt": "Пилигрим · John Blanche · JB-VK-125",
+        "width": 494,
+        "height": 661,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта изображает благочестивого пилигрима, готового отправиться в путешествие.",
+    "source_discussion_ru": " Новорожденный человек готовый начать свой путь на службе Бога Императора. Как в прямом так и в переносном смысле возрождения. Карта считается одной из самых важных среди всех Таро.",
+    "source_name_ru": "Пилигрим",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 2,
+        "cells": {
+          "name_ru": "B2",
+          "source_image_description_ru": "C2",
+          "source_discussion_ru": "D2",
+          "upright_meaning_ru": "E2",
+          "variations_ru": "F2",
+          "reversed_meaning_ru": "G2"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_01",
+    "type": "major",
+    "name_en": "The Astropath (the Sorcerer)",
+    "name_ru": "Астропат (колдун)",
+    "index": 1,
+    "source_image_description_en": "A blind robed Adept in inner communion with the God-Emperor.",
+    "upright_meaning_en": "Willpower, self-confidence, mastery",
+    "upright_meaning_ru": "Воля, Уверенность, Мастерство",
+    "reversed_meaning_en": "Weakness, insecurity, delay",
+    "reversed_meaning_ru": "Слабость, беззащитность, отсрочка (задержка, промедление)",
+    "variations": {
+      "en": "Transformation, ingenuity, improvisation",
+      "ru": "Перерождение (трансформация), искусность, импровизация"
+    },
+    "id": "major_01",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 1,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-005",
+        "identity_id": "V005",
+        "image": "assets/artworks/major_01_upright.jpg",
+        "alt": "Астропат (колдун) · John Blanche · JB-VK-005",
+        "width": 757,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-LX-046",
+        "identity_id": "L046",
+        "image": "assets/artworks/major_01_reversed.jpg",
+        "alt": "Астропат (колдун) · John Blanche · JB-LX-046",
+        "width": 597,
+        "height": 828,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта изображает облаченного в робы адепта, отрешенного в своей беседе с Богом Императором.",
+    "source_discussion_ru": "Это возможность человека изменить галактику, способность человека перодолеть любые трудности и овладеть вселенной. В некоторых ранних колодах, эта карта называлась \"колдун\" и имела обратные значение стандартного и перевернутого положения.",
+    "source_name_ru": "Астропат (колдун)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 3,
+        "cells": {
+          "name_ru": "B3",
+          "source_image_description_ru": "C3",
+          "source_discussion_ru": "D3",
+          "upright_meaning_ru": "E3",
+          "variations_ru": "F3",
+          "reversed_meaning_ru": "G3"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_02",
+    "type": "major",
+    "name_en": "The Prophet",
+    "name_ru": "Пророк",
+    "index": 2,
+    "source_image_description_en": "A holy man or woman preaching before a crowd.",
+    "upright_meaning_en": "Holy wisdom, sacred lore, absolute truth",
+    "upright_meaning_ru": "Божественная мудрость, Святость закона, Абсолют истины",
+    "reversed_meaning_en": "Education, selfishness, shallowness",
+    "reversed_meaning_ru": "Обучение, эгоизм, мелкость (ограниченность)",
+    "variations": {
+      "en": "Intuition, purity, virtue",
+      "ru": "Интуиция, чистота, добродетель"
+    },
+    "id": "major_02",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 2,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-025",
+        "identity_id": "L025",
+        "image": "assets/artworks/major_02_upright.jpg",
+        "alt": "Пророк · John Blanche · JB-LX-025",
+        "width": 706,
+        "height": 827,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-077",
+        "identity_id": "V077",
+        "image": "assets/artworks/major_02_reversed.jpg",
+        "alt": "Пророк · John Blanche · JB-VK-077",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта изображает святого (святую) проповедующего(ую) перед толпой",
+    "source_discussion_ru": "Мудрость Бога Императора и непогрешимость Адептус Терра. Обратное значение считается особо зловещим(мрачным).",
+    "source_name_ru": "Пророк",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 4,
+        "cells": {
+          "name_ru": "B4",
+          "source_image_description_ru": "C4",
+          "source_discussion_ru": "D4",
+          "upright_meaning_ru": "E4",
+          "variations_ru": "F4",
+          "reversed_meaning_ru": "G4"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_03",
+    "type": "major",
+    "name_en": "Holy Terra",
+    "name_ru": "Святая Терра",
+    "index": 3,
+    "source_image_description_en": "Holy Terra, a dark orb of a million lights.",
+    "upright_meaning_en": "Fertility, abundance, home",
+    "upright_meaning_ru": "Плодовитость, изобилие, дом",
+    "reversed_meaning_en": "Vacillation, infidelity",
+    "reversed_meaning_ru": "Колебание (непостоянство), неверность",
+    "variations": {
+      "en": "Mother/sister/wife themes",
+      "ru": "тема Матери/сестры/жены"
+    },
+    "id": "major_03",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 3,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-069",
+        "identity_id": "L069",
+        "image": "assets/artworks/major_03_upright.jpg",
+        "alt": "Святая Терра · John Blanche · JB-LX-069",
+        "width": 752,
+        "height": 1193,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-049",
+        "identity_id": "V049",
+        "image": "assets/artworks/major_03_reversed.jpg",
+        "alt": "Святая Терра · John Blanche · JB-VK-049",
+        "width": 590,
+        "height": 480,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта изображает Святую Терру, темный шар усеянный миллионом огней",
+    "source_discussion_ru": "Мать породившая человечество. Многие считают, что данная карта появляется в раскладах с неестественной частотой",
+    "source_name_ru": "Святая Терра",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 5,
+        "cells": {
+          "name_ru": "B5",
+          "source_image_description_ru": "C5",
+          "source_discussion_ru": "D5",
+          "upright_meaning_ru": "E5",
+          "variations_ru": "F5",
+          "reversed_meaning_ru": "G5"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_04",
+    "type": "major",
+    "name_en": "The God-Emperor",
+    "name_ru": "Бог Император",
+    "index": 4,
+    "source_image_description_en": "The Emperor in his mortal guise; his face is never shown.",
+    "upright_meaning_en": "Accomplishment, confidence, stability, leadership",
+    "upright_meaning_ru": "Завершение, Уверенность, Стабильность, Лидерство",
+    "reversed_meaning_en": "Immaturity, feebleness, petty emotions, lack of character",
+    "reversed_meaning_ru": "Незрелость, Беспомощность, Мелочные эмоции, отсутствие характера",
+    "variations": {
+      "en": "Father/brother/husband, great achievements, a capable person",
+      "ru": "Отец/брат/муж, Великое Свершение (Достижение), Способный человек"
+    },
+    "id": "major_04",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 4,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-008",
+        "identity_id": "V008",
+        "image": "assets/artworks/major_04_upright.jpg",
+        "alt": "Бог Император · John Blanche · JB-VK-008",
+        "width": 726,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-LX-035",
+        "identity_id": "L035",
+        "image": "assets/artworks/major_04_reversed.jpg",
+        "alt": "Бог Император · John Blanche · JB-LX-035",
+        "width": 558,
+        "height": 693,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта изображает Императора в его смертном теле (его лицо всегда скрыто)",
+    "source_discussion_ru": "Господин и Спаситель человечества. Частое появление карты Бога Императора в перевернутом виде, считается признаком скрытой моральной слабости.",
+    "source_name_ru": "Бог Император",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 6,
+        "cells": {
+          "name_ru": "B6",
+          "source_image_description_ru": "C6",
+          "source_discussion_ru": "D6",
+          "upright_meaning_ru": "E6",
+          "variations_ru": "F6",
+          "reversed_meaning_ru": "G6"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_05",
+    "type": "major",
+    "name_en": "The Ecclesiarch",
+    "name_ru": "Эклезиарх",
+    "index": 5,
+    "source_image_description_en": "A church elder with the symbols of office visible.",
+    "upright_meaning_en": "Orthodoxy, tradition, dogma",
+    "upright_meaning_ru": "Ортодоксальность, Традиция, Догма",
+    "reversed_meaning_en": "Unconventionality, unorthodoxy, invention",
+    "reversed_meaning_ru": "Необычность (несоответствие стандарту), Неортодоксальность, Изобретение (открытие)",
+    "variations": {
+      "en": "Faith, selflessness, obedience",
+      "ru": "Вера, Самоотверженность, Послушание"
+    },
+    "id": "major_05",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 5,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-107",
+        "identity_id": "V107",
+        "image": "assets/artworks/major_05_upright.jpg",
+        "alt": "Эклезиарх · John Blanche · JB-VK-107",
+        "width": 716,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-078",
+        "identity_id": "V078",
+        "image": "assets/artworks/major_05_reversed.jpg",
+        "alt": "Эклезиарх · John Blanche · JB-VK-078",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Абсолютная правда Имперского Кредо, а так же безграничная духовная власть Адептус Министорум.",
+    "source_name_ru": "Эклезиарх",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 7,
+        "cells": {
+          "name_ru": "B7",
+          "source_image_description_ru": "C7",
+          "source_discussion_ru": "D7",
+          "upright_meaning_ru": "E7",
+          "variations_ru": "F7",
+          "reversed_meaning_ru": "G7"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_06",
+    "type": "major",
+    "name_en": "Unity (Compliance)",
+    "name_ru": "Единство (Согласие)",
+    "index": 6,
+    "source_image_description_en": "A lordly figure abasing himself before another; older variants show a burning world ringed by armed metal leviathans.",
+    "upright_meaning_en": "Union, love, harmony, trust",
+    "upright_meaning_ru": "Единение, Любовь, Гармония, Доверие",
+    "reversed_meaning_en": "Unreliability, separation, fickleness, untrustworthy",
+    "reversed_meaning_ru": "Ненадежность (не уверенность в способностях), Отделение, Переменчивость (непостоянство), Ненадежность (невозможность довериться)",
+    "variations": {
+      "en": "Romance, optimism, a lasting relationship",
+      "ru": "Романтичность, Оптимизм, Длительные отношения"
+    },
+    "id": "major_06",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 6,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-128",
+        "identity_id": "V128",
+        "image": "assets/artworks/major_06_upright.jpg",
+        "alt": "Единство (Согласие) · John Blanche · JB-VK-128",
+        "width": 445,
+        "height": 616,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-131",
+        "identity_id": "V131",
+        "image": "assets/artworks/major_06_reversed.jpg",
+        "alt": "Единство (Согласие) · John Blanche · JB-VK-131",
+        "width": 458,
+        "height": 700,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": "Карта Изображает величественную фигуру склоняющуюся перед другой. ",
+    "source_discussion_ru": "Считается олицетворением последнего мира склоняющегося перед Императором в Великом Крестовом Походе.     В старых вариантах колод карта изображала сцену пылающего мира заключенного в кольцо металлических левиафанов ведущих огонь из всех орудий. Она называлась - \"Согласие\". И несло тот же смысл.",
+    "source_name_ru": "Единство (Согласие)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 8,
+        "cells": {
+          "name_ru": "B8",
+          "source_image_description_ru": "C8",
+          "source_discussion_ru": "D8",
+          "upright_meaning_ru": "E8",
+          "variations_ru": "F8",
+          "reversed_meaning_ru": "G8"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_07",
+    "type": "major",
+    "name_en": "The Crusader",
+    "name_ru": "Крестоносец",
+    "index": 7,
+    "source_image_description_en": "A holy warrior with armour and weapons displayed; enemy dead or prisoners may appear.",
+    "upright_meaning_en": "War, conquest, conviction, command, bravery",
+    "upright_meaning_ru": "Война, Завоевание, Убеждение (уверенность), Командование (приказ), Храбрость",
+    "reversed_meaning_en": "Unsuccessful, defeat, failure",
+    "reversed_meaning_ru": "Безуспешность, Поражение, Неудача",
+    "variations": {
+      "en": "Pride, adversity, turmoil, vengeance",
+      "ru": "Гордость, Неприятности (невзгоды), Смятение, Месть"
+    },
+    "id": "major_07",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 7,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-013",
+        "identity_id": "L013",
+        "image": "assets/artworks/major_07_upright.jpg",
+        "alt": "Крестоносец · John Blanche · JB-LX-013",
+        "width": 930,
+        "height": 452,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-095",
+        "identity_id": "V095",
+        "image": "assets/artworks/major_07_reversed.jpg",
+        "alt": "Крестоносец · John Blanche · JB-VK-095",
+        "width": 604,
+        "height": 405,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует мужчин и женщин сражающихся ради защиты Империума Человечества",
+    "source_name_ru": "Крестоносец ",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [8],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 9,
+        "cells": {
+          "name_ru": "B9",
+          "source_image_description_ru": "C9",
+          "source_discussion_ru": "D9",
+          "upright_meaning_ru": "E9",
+          "variations_ru": "F9",
+          "reversed_meaning_ru": "G9"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_08",
+    "type": "major",
+    "name_en": "The Saint",
+    "name_ru": "Святой",
+    "index": 8,
+    "source_image_description_en": "An angelic figure, sometimes haloed or winged.",
+    "upright_meaning_en": "Righteousness, intolerance, virtue, honour",
+    "upright_meaning_ru": "Праведность, Нетерпимость, Добродетель, Честь",
+    "reversed_meaning_en": "Impiety, falsehood, relativism",
+    "reversed_meaning_ru": "Порочность, Ложь, Относительность и непознаваемость мира (релятивизм - возможно тут есть какие то дополнительные толкования)",
+    "variations": {
+      "en": "Harmony, balance, advice",
+      "ru": "Гармония, баланс (уравновешенность), совет"
+    },
+    "id": "major_08",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 8,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-002",
+        "identity_id": "V002",
+        "image": "assets/artworks/major_08_upright.jpg",
+        "alt": "Святой · John Blanche · JB-VK-002",
+        "width": 1157,
+        "height": 1600,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-079",
+        "identity_id": "V079",
+        "image": "assets/artworks/major_08_reversed.jpg",
+        "alt": "Святой · John Blanche · JB-VK-079",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует благочестивое единство между человеком и Богом Императором",
+    "source_name_ru": "Святой",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 10,
+        "cells": {
+          "name_ru": "B10",
+          "source_image_description_ru": "C10",
+          "source_discussion_ru": "D10",
+          "upright_meaning_ru": "E10",
+          "variations_ru": "F10",
+          "reversed_meaning_ru": "G10"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_09",
+    "type": "major",
+    "name_en": "The Seer/Diviner",
+    "name_ru": "Провидец / Пророк",
+    "index": 9,
+    "source_image_description_en": "An Adept reading the Emperor’s Tarot.",
+    "upright_meaning_en": "Divine guidance, vigilance, patience",
+    "upright_meaning_ru": "Божественное руководство, Бдительность, Терпение",
+    "reversed_meaning_en": "Imprudence, hastiness, rashness, foolish acts, immaturity",
+    "reversed_meaning_ru": "Неосторожность, Поспешность, Опрометчивость, Глупые ошибки, Незрелость.",
+    "variations": {
+      "en": "Withdrawal, a loner, inner strength, prudence, caution",
+      "ru": "Выход, Одиночка, Внутренняя сила, Предусмотрительность, Осторожность"
+    },
+    "id": "major_09",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 9,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-040",
+        "identity_id": "V040",
+        "image": "assets/artworks/major_09_upright.jpg",
+        "alt": "Провидец / Пророк · John Blanche · JB-VK-040",
+        "width": 628,
+        "height": 900,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-057",
+        "identity_id": "V057",
+        "image": "assets/artworks/major_09_reversed.jpg",
+        "alt": "Провидец / Пророк · John Blanche · JB-VK-057",
+        "width": 244,
+        "height": 480,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует проявление воли Бога Императора, а так же его вечный взор видящий все и его безграничное терпение.",
+    "source_name_ru": "Провидец / Пророк",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 11,
+        "cells": {
+          "name_ru": "B11",
+          "source_image_description_ru": "C11",
+          "source_discussion_ru": "D11",
+          "upright_meaning_ru": "E11",
+          "variations_ru": "F11",
+          "reversed_meaning_ru": "G11"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_10",
+    "type": "major",
+    "name_en": "Man",
+    "name_ru": "Человек",
+    "index": 10,
+    "source_image_description_en": "A man or sometimes a woman; some decks show nudes, while most are more sombre.",
+    "upright_meaning_en": "Destiny, good fortune, a special gain",
+    "upright_meaning_ru": "Судьба, Улыбка Фортуны, Особый Дар",
+    "reversed_meaning_en": "Failure, an unusual loss, outside influences",
+    "reversed_meaning_ru": "Неудача (поражение), Необычная (неожиданная) потеря, Внешнее влияние",
+    "variations": {
+      "en": "End of a problem, unexpected events",
+      "ru": "Окончание проблемы, Неожиданное событие"
+    },
+    "id": "major_10",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 10,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-058",
+        "identity_id": "V058",
+        "image": "assets/artworks/major_10_upright.jpg",
+        "alt": "Человек · John Blanche · JB-VK-058",
+        "width": 318,
+        "height": 480,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-148",
+        "identity_id": "V148",
+        "image": "assets/artworks/major_10_reversed.jpg",
+        "alt": "Человек · John Blanche · JB-VK-148",
+        "width": 480,
+        "height": 716,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует человечество и его судьбу править галактикой. Интерпертацию это карты многие из гадающих считают особо сложной.",
+    "source_name_ru": "Человек",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 12,
+        "cells": {
+          "name_ru": "B12",
+          "source_image_description_ru": "C12",
+          "source_discussion_ru": "D12",
+          "upright_meaning_ru": "E12",
+          "variations_ru": "F12",
+          "reversed_meaning_ru": "G12"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_11",
+    "type": "major",
+    "name_en": "The Titan",
+    "name_ru": "Титан",
+    "index": 11,
+    "source_image_description_en": "An unusually large God-Machine, a battle Titan, striding across a battlefield.",
+    "upright_meaning_en": "Strength, courage, conviction",
+    "upright_meaning_ru": "Сила, Мужество, Убежденность",
+    "reversed_meaning_en": "Weakness, pettiness, sickness, self-gratification, abuse of office",
+    "reversed_meaning_ru": "Слабость, мелочность, болезнь (тоже слабость), Нарцисизм (самолюбование, самовосхваление), Злоупотребление властью",
+    "variations": {
+      "en": "Self-control, patience, determination, discipline, inner strength",
+      "ru": "Самоконтроль, Терпение, Решимость, Дисциплина, Внутренняя сила"
+    },
+    "id": "major_11",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 11,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-015",
+        "identity_id": "V015",
+        "image": "assets/artworks/major_11_upright.jpg",
+        "alt": "Титан · John Blanche · JB-VK-015",
+        "width": 837,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-071",
+        "identity_id": "V071",
+        "image": "assets/artworks/major_11_reversed.jpg",
+        "alt": "Титан · John Blanche · JB-VK-071",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Карта не означает войну или военную машину, скорее она символизирует внутреннюю и внешнюю силу. ",
+    "source_name_ru": "Титан",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 13,
+        "cells": {
+          "name_ru": "B13",
+          "source_image_description_ru": "C13",
+          "source_discussion_ru": "D13",
+          "upright_meaning_ru": "E13",
+          "variations_ru": "F13",
+          "reversed_meaning_ru": "G13"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_12",
+    "type": "major",
+    "name_en": "The Martyr",
+    "name_ru": "Мученик",
+    "index": 12,
+    "source_image_description_en": "A human whose body has been broken but whose mind remains at peace with the Emperor.",
+    "upright_meaning_en": "Perseverance, acceptance, sacrifice, duty",
+    "upright_meaning_ru": "Настойчивость (упорство), принятие (согласие), жертва (самопожертвование), Долг",
+    "reversed_meaning_en": "Unwillingness to make an effort, useless sacrifice, selfishness",
+    "reversed_meaning_ru": "Нежелание прилагать усилия, безсмысленная жертва, эгоизм",
+    "variations": {
+      "en": "Contemplation, inner harmony",
+      "ru": "Созерцание, Внутренняя гармония"
+    },
+    "id": "major_12",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 12,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-127",
+        "identity_id": "V127",
+        "image": "assets/artworks/major_12_upright.jpg",
+        "alt": "Мученик · John Blanche · JB-VK-127",
+        "width": 430,
+        "height": 615,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-102",
+        "identity_id": "V102",
+        "image": "assets/artworks/major_12_reversed.jpg",
+        "alt": "Мученик · John Blanche · JB-VK-102",
+        "width": 350,
+        "height": 575,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует Долг и Самопожертвование.",
+    "source_name_ru": "Мученик",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 14,
+        "cells": {
+          "name_ru": "B14",
+          "source_image_description_ru": "C14",
+          "source_discussion_ru": "D14",
+          "upright_meaning_ru": "E14",
+          "variations_ru": "F14",
+          "reversed_meaning_ru": "G14"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_13",
+    "type": "major",
+    "name_en": "The Reaper",
+    "name_ru": "Жнец",
+    "index": 13,
+    "source_image_description_en": "A classic reaper figure or the God-Emperor standing in judgement over the dead.",
+    "upright_meaning_en": "Transformation, making way for the new, change, death",
+    "upright_meaning_ru": "Перерождение (трансформация) дающая путь новому, изменения, смерть ",
+    "reversed_meaning_en": "Stagnation, immobility, a narrow escape, cheating death",
+    "reversed_meaning_ru": "Стагнация, Неподвижность, Мало возможностей для побега, Обман Смерти",
+    "variations": {
+      "en": "Bad luck, loss, failure, illness",
+      "ru": "Невезение, потеря, неудача, болезнь."
+    },
+    "id": "major_13",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 13,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-085",
+        "identity_id": "V085",
+        "image": "assets/artworks/major_13_upright.jpg",
+        "alt": "Жнец · John Blanche · JB-VK-085",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-114",
+        "identity_id": "V114",
+        "image": "assets/artworks/major_13_reversed.jpg",
+        "alt": "Жнец · John Blanche · JB-VK-114",
+        "width": 343,
+        "height": 512,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Жнец не всегда является плохим знамением. Смерть - это обычное явление в Империуме. Каждый человек когда-либо умрет и предстанет перед судом Бога Императора. Однако карта также может предрекать изменения, а они редко бывают хорошими.",
+    "source_name_ru": "Жнец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 15,
+        "cells": {
+          "name_ru": "B15",
+          "source_image_description_ru": "C15",
+          "source_discussion_ru": "D15",
+          "upright_meaning_ru": "E15",
+          "variations_ru": "F15",
+          "reversed_meaning_ru": "G15"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_14",
+    "type": "major",
+    "name_en": "The Imperium",
+    "name_ru": "Империум",
+    "index": 14,
+    "source_image_description_en": "A Regent of Terra, High Lord, Master of the Administratum, or Goge Vandire, with symbols of the Reign of Man prominent.",
+    "upright_meaning_en": "Moderation, temperance, patience, harmony",
+    "upright_meaning_ru": "Умеренность, Сдержанность, Терпение, Гармония",
+    "reversed_meaning_en": "Discord, conflict, disunion, hostility, frustration, impatience",
+    "reversed_meaning_ru": "Раздор, Конфликт, Разобщенность, Враждебность, Разочарование, Нетерпение",
+    "variations": {
+      "en": "Good influence, confidence",
+      "ru": "Благоприятное Влияние, Уверенность"
+    },
+    "id": "major_14",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 14,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-088",
+        "identity_id": "L088",
+        "image": "assets/artworks/major_14_upright.jpg",
+        "alt": "Империум · John Blanche · JB-LX-088",
+        "width": 478,
+        "height": 841,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-110",
+        "identity_id": "V110",
+        "image": "assets/artworks/major_14_reversed.jpg",
+        "alt": "Империум · John Blanche · JB-VK-110",
+        "width": 975,
+        "height": 648,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует единство Империума, его Силу, Защищенность и вечную природу",
+    "source_name_ru": "Империум",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 16,
+        "cells": {
+          "name_ru": "B16",
+          "source_image_description_ru": "C16",
+          "source_discussion_ru": "D16",
+          "upright_meaning_ru": "E16",
+          "variations_ru": "F16",
+          "reversed_meaning_ru": "G16"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_15",
+    "type": "major",
+    "name_en": "The Daemon",
+    "name_ru": "Демон",
+    "index": 15,
+    "source_image_description_en": "A monstrous shape whose details cannot quite be made out.",
+    "upright_meaning_en": "Ravage, weird, downfall, violence, disaster",
+    "upright_meaning_ru": "Опустошение, Сверхестественное (странное), Падение, Насилие, Бедствие",
+    "reversed_meaning_en": "Revelations, release, enlightenment",
+    "reversed_meaning_ru": "Откровения, Освобождение, Просвещение",
+    "variations": {
+      "en": "Controversy, conflicting duties",
+      "ru": "Споры, Противоречивые Обязанности"
+    },
+    "id": "major_15",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 15,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-130",
+        "identity_id": "V130",
+        "image": "assets/artworks/major_15_upright.jpg",
+        "alt": "Демон · John Blanche · JB-VK-130",
+        "width": 481,
+        "height": 700,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-LX-005",
+        "identity_id": "L005",
+        "image": "assets/artworks/major_15_reversed.jpg",
+        "alt": "Демон · John Blanche · JB-LX-005",
+        "width": 819,
+        "height": 1153,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует все зло и грязь. Даже в своем перевернутом значении карта не несет ничего хорошего",
+    "source_name_ru": "Демон",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [9],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 17,
+        "cells": {
+          "name_ru": "B17",
+          "source_image_description_ru": "C17",
+          "source_discussion_ru": "D17",
+          "upright_meaning_ru": "E17",
+          "variations_ru": "F17",
+          "reversed_meaning_ru": "G17"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_16",
+    "type": "major",
+    "name_en": "The Hulk",
+    "name_ru": "Остов (Халк)",
+    "index": 16,
+    "source_image_description_en": "A space hulk or, more rarely, another kind of wreck.",
+    "upright_meaning_en": "A sudden change, abandonment of past, unexpected events",
+    "upright_meaning_ru": "Неожиданное изменение, Отказ от прошлого, Неожиданное событие",
+    "reversed_meaning_en": "Following the old ways, learning by rote, following procedure, imprisonment, entrapment",
+    "reversed_meaning_ru": "Следование Старым Путям, Обучение по программе, Следование Процедуре, Заключение, Ловушка (в смысле попадания в ловушку)",
+    "variations": {
+      "en": "Disruption, bankruptcy, downfall, loss of money or security",
+      "ru": "Нарушение (Разрыв, отвлечение), Несостоятельность, Падение, Денежные Лишения или потеря Безопасности."
+    },
+    "id": "major_16",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 16,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-073",
+        "identity_id": "L073",
+        "image": "assets/artworks/major_16_upright.jpg",
+        "alt": "Остов (Халк) · John Blanche · JB-LX-073",
+        "width": 1944,
+        "height": 1135,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": "INTENTIONAL_REUSE"
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-143",
+        "identity_id": "V143",
+        "image": "assets/artworks/major_16_reversed.jpg",
+        "alt": "Остов (Халк) · John Blanche · JB-VK-143",
+        "width": 707,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Как и карта Жнец, эта карта символизирует изменение, однако в отличие Жнеца, это изменение было неожиданным или вызванно случайным событием, в то время как жнец отражает неизбежность события или изменения. В перевернутом состоянии \"Остов\" обычно имеет более позитивное значение. ",
+    "source_name_ru": "Остов (Халк)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 18,
+        "cells": {
+          "name_ru": "B18",
+          "source_image_description_ru": "C18",
+          "source_discussion_ru": "D18",
+          "upright_meaning_ru": "E18",
+          "variations_ru": "F18",
+          "reversed_meaning_ru": "G18"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_17",
+    "type": "major",
+    "name_en": "The Astronomican",
+    "name_ru": "Астрономикон",
+    "index": 17,
+    "source_image_description_en": "A bright light, a ray of light, a beacon, or more rarely a psyker in the Chamber of the Astronomican.",
+    "upright_meaning_en": "Hope, faith, inspiration",
+    "upright_meaning_ru": "Надежда, Вера, Вдохновение",
+    "reversed_meaning_en": "Unfulfilled hopes, disappointment, crushed dreams",
+    "reversed_meaning_ru": "Крах Надежды (невыполнимая надежда), Разочарование, Сокрушенные Мечты",
+    "variations": {
+      "en": "Optimism, insight, love",
+      "ru": "Оптимизм, Проницательность, Любовь"
+    },
+    "id": "major_17",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 17,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-036",
+        "identity_id": "L036",
+        "image": "assets/artworks/major_17_upright.jpg",
+        "alt": "Астрономикон · John Blanche · JB-LX-036",
+        "width": 617,
+        "height": 900,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-LX-064",
+        "identity_id": "L064",
+        "image": "assets/artworks/major_17_reversed.jpg",
+        "alt": "Астрономикон · John Blanche · JB-LX-064",
+        "width": 2630,
+        "height": 1768,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует надежду, веру и вдохновение. Эта карта считается одной из самых благоприятных среди Старших Аркан. ",
+    "source_name_ru": "Астрономикон",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 19,
+        "cells": {
+          "name_ru": "B19",
+          "source_image_description_ru": "C19",
+          "source_discussion_ru": "D19",
+          "upright_meaning_ru": "E19",
+          "variations_ru": "F19",
+          "reversed_meaning_ru": "G19"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_18",
+    "type": "major",
+    "name_en": "The Immaterium",
+    "name_ru": "Имматериум",
+    "index": 18,
+    "source_image_description_en": "A swirling mass of nothingness with half-seen things within.",
+    "upright_meaning_en": "Deception, trickery, error, danger",
+    "upright_meaning_ru": "Обман, Мошенничество, Ошибка, Опасность",
+    "reversed_meaning_en": "Saved in the nick of time, trifling mistakes",
+    "reversed_meaning_ru": "Спасение в последний момент, Пустяковые ошибки",
+    "variations": {
+      "en": "Travel, time",
+      "ru": "Путешествие, Время"
+    },
+    "id": "major_18",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 18,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-137",
+        "identity_id": "V137",
+        "image": "assets/artworks/major_18_upright.jpg",
+        "alt": "Имматериум · John Blanche · JB-VK-137",
+        "width": 400,
+        "height": 642,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-LX-066",
+        "identity_id": "L066",
+        "image": "assets/artworks/major_18_reversed.png",
+        "alt": "Имматериум · John Blanche · JB-LX-066",
+        "width": 662,
+        "height": 936,
+        "format": "PNG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует заботу что несет несчастье. Обычно несет негативное значение вне зависимости от расположения карты и её ориентации.",
+    "source_name_ru": "Имматериум",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 20,
+        "cells": {
+          "name_ru": "B20",
+          "source_image_description_ru": "C20",
+          "source_discussion_ru": "D20",
+          "upright_meaning_ru": "E20",
+          "variations_ru": "F20",
+          "reversed_meaning_ru": "G20"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_19",
+    "type": "major",
+    "name_en": "The Golden Throne",
+    "name_ru": "Золотой Трон",
+    "index": 19,
+    "source_image_description_en": "The Golden Throne of Terra.",
+    "upright_meaning_en": "Splendour, brilliance, majesty",
+    "upright_meaning_ru": "Великолепие, Блеск, Величие",
+    "reversed_meaning_en": "Unhappiness, loneliness, cancelled plans, broken allegiances, a lack of friends, a clouded future",
+    "reversed_meaning_ru": "Несчастье, Одиночество, Отказ от Плана, Разорванная Привязанность, Отсутствие Друзей, Туманное Будущее",
+    "variations": {
+      "en": "Joy, assurance, accomplishment, success",
+      "ru": "Радость, Уверенность, Достижение, Успех"
+    },
+    "id": "major_19",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 19,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-LX-030",
+        "identity_id": "L030",
+        "image": "assets/artworks/major_19_upright.jpg",
+        "alt": "Золотой Трон · John Blanche · JB-LX-030",
+        "width": 824,
+        "height": 1152,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-098",
+        "identity_id": "V098",
+        "image": "assets/artworks/major_19_reversed.jpg",
+        "alt": "Золотой Трон · John Blanche · JB-VK-098",
+        "width": 350,
+        "height": 575,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует идею Pax Imperialis (галактика для Империума) и верховенство Бога Императора человечества.",
+    "source_name_ru": "Золотой Трон",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 21,
+        "cells": {
+          "name_ru": "B21",
+          "source_image_description_ru": "C21",
+          "source_discussion_ru": "D21",
+          "upright_meaning_ru": "E21",
+          "variations_ru": "F21",
+          "reversed_meaning_ru": "G21"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_20",
+    "type": "major",
+    "name_en": "The Judge",
+    "name_ru": "Судья",
+    "index": 20,
+    "source_image_description_en": "An authority figure, often taken to be the God-Emperor, holding a book of law and a weapon.",
+    "upright_meaning_en": "Authority, submission, judgment",
+    "upright_meaning_ru": "Власть, Подчинение, Суждение (суд, приговор)",
+    "reversed_meaning_en": "Fear of death, a hidden failure, possible loss",
+    "reversed_meaning_ru": "Страх Смерти, Сокрытая неудача, Возможность краха",
+    "variations": {
+      "en": "Awakening, renewal, salvation",
+      "ru": "Пробуждение, Обновление, Спасение"
+    },
+    "id": "major_20",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 20,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-050",
+        "identity_id": "V050",
+        "image": "assets/artworks/major_20_upright.jpg",
+        "alt": "Судья · John Blanche · JB-VK-050",
+        "width": 244,
+        "height": 480,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-088",
+        "identity_id": "V088",
+        "image": "assets/artworks/major_20_reversed.jpg",
+        "alt": "Судья · John Blanche · JB-VK-088",
+        "width": 295,
+        "height": 480,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует власть закона, абсолютное господство Адептус Терра в жизни, и окончательный суд Бога Императора после смерти",
+    "source_name_ru": "Судья",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 22,
+        "cells": {
+          "name_ru": "B22",
+          "source_image_description_ru": "C22",
+          "source_discussion_ru": "D22",
+          "upright_meaning_ru": "E22",
+          "variations_ru": "F22",
+          "reversed_meaning_ru": "G22"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "major_21",
+    "type": "major",
+    "name_en": "The Galaxy",
+    "name_ru": "Галлактика",
+    "index": 21,
+    "source_image_description_en": "The swirling disk of the Galaxy of Man, seen from Terra or another world.",
+    "upright_meaning_en": "Completion, perfection",
+    "upright_meaning_ru": "Завершение, Совершенство",
+    "reversed_meaning_en": "Imperfection, lack of vision, disappointment, failure",
+    "reversed_meaning_ru": "Несовершенство, Узость взглядов, Разочарование, Неудача",
+    "variations": {
+      "en": "Recognition, success, fulfilment, triumph",
+      "ru": "Признание, Успех, Завершение, Триумф"
+    },
+    "id": "major_21",
+    "arcana": "major",
+    "suit": null,
+    "number_or_rank": 21,
+    "artwork": {
+      "upright": {
+        "artwork_id": "JB-VK-122",
+        "identity_id": "V122",
+        "image": "assets/artworks/major_21_upright.jpg",
+        "alt": "Галлактика · John Blanche · JB-VK-122",
+        "width": 734,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      },
+      "reversed": {
+        "artwork_id": "JB-VK-086",
+        "identity_id": "V086",
+        "image": "assets/artworks/major_21_reversed.jpg",
+        "alt": "Галлактика · John Blanche · JB-VK-086",
+        "width": 768,
+        "height": 1024,
+        "format": "JPEG",
+        "object_fit": "contain",
+        "object_position": "center",
+        "reuse_status": null
+      }
+    },
+    "source_image_description_ru": null,
+    "source_discussion_ru": "Символизирует абсолютный и неизбежый триумф человечества",
+    "source_name_ru": "Галлактика",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [10],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Старшие Арканы",
+        "row": 23,
+        "cells": {
+          "name_ru": "B23",
+          "source_image_description_ru": "C23",
+          "source_discussion_ru": "D23",
+          "upright_meaning_ru": "E23",
+          "variations_ru": "F23",
+          "reversed_meaning_ru": "G23"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_01",
+    "type": "minor",
+    "name_en": "The Inquisitor",
+    "name_ru": "Инквизитор",
+    "suit": "Adeptio",
+    "rank": "Ace",
+    "source_image_description_en": "of an Inquisitor of the Holy Ordos, his Rosette clearly displayed. His mien is fearsome and his authority absolute.",
+    "symbolizes_en": "Authority, fear, secrecy, false appearances, agents of the Throne, Exterminatus",
+    "symbolizes_ru": "Власть, Страх, Секретность, Обманчивый вид, Агенты Трона, Экстерминатус",
+    "id": "adeptio_01",
+    "arcana": "minor",
+    "number_or_rank": "Ace",
+    "artwork": {
+      "artwork_id": "JB-VK-053",
+      "identity_id": "V053",
+      "image": "assets/artworks/adeptio_01.jpg",
+      "alt": "Инквизитор · John Blanche · JB-VK-053",
+      "width": 388,
+      "height": 1000,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Изображение Инквизитора из святого Ордоса, с четко видимой инсигнией (хз как еще понять розочку). Его вид устрашающ, а власть (авторитет) абсолютна.",
+    "source_name_ru": "Инквизитор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 2,
+        "cells": {
+          "name_ru": "B2",
+          "symbolizes_ru": "D2",
+          "source_image_description_ru": "C2"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_02",
+    "type": "minor",
+    "name_en": "The Scribe",
+    "name_ru": "Писарь",
+    "suit": "Adeptio",
+    "rank": "2",
+    "source_image_description_en": "of a lowly Administratum scribe, bent over his work.",
+    "symbolizes_en": "Duty, diligence, repetition",
+    "symbolizes_ru": "Обязанность, Трудолюбие, Повторение",
+    "id": "adeptio_02",
+    "arcana": "minor",
+    "number_or_rank": "2",
+    "artwork": {
+      "artwork_id": "JB-LX-004",
+      "identity_id": "L004",
+      "image": "assets/artworks/adeptio_02.jpg",
+      "alt": "Писарь · John Blanche · JB-LX-004",
+      "width": 894,
+      "height": 1226,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Младший адепт Администратума склонившийся над своей работой",
+    "source_name_ru": "Писарь",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 3,
+        "cells": {
+          "name_ru": "B3",
+          "symbolizes_ru": "D3",
+          "source_image_description_ru": "C3"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_03",
+    "type": "minor",
+    "name_en": "The Administrator",
+    "name_ru": "Администратор",
+    "suit": "Adeptio",
+    "rank": "3",
+    "source_image_description_en": "of an Adept of Terra of intermediate rank, usually seen presiding over lesser adepts and/or managing some task.",
+    "symbolizes_en": "Management, control, advancement",
+    "symbolizes_ru": "Управление, Контроль, Продвижение",
+    "id": "adeptio_03",
+    "arcana": "minor",
+    "number_or_rank": "3",
+    "artwork": {
+      "artwork_id": "JB-VK-123",
+      "identity_id": "V123",
+      "image": "assets/artworks/adeptio_03.jpg",
+      "alt": "Администратор · John Blanche · JB-VK-123",
+      "width": 215,
+      "height": 523,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Адепт Администратума среднего звена, обычно присматривающий за младшими адептами или выполняющий какую-то работу.",
+    "source_name_ru": "Администратор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 4,
+        "cells": {
+          "name_ru": "B4",
+          "symbolizes_ru": "D4",
+          "source_image_description_ru": "C4"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_04",
+    "type": "minor",
+    "name_en": "The Arbitrator",
+    "name_ru": "Арбитр",
+    "suit": "Adeptio",
+    "rank": "4",
+    "source_image_description_en": "of an Arbitrator in full riot gear.",
+    "symbolizes_en": "Discipline, order, submission to authority, imprisonment, execution",
+    "symbolizes_ru": "Дисциплина, Порядок, Подчинение Власти, Заключение, Казнь",
+    "id": "adeptio_04",
+    "arcana": "minor",
+    "number_or_rank": "4",
+    "artwork": {
+      "artwork_id": "JB-VK-051",
+      "identity_id": "V051",
+      "image": "assets/artworks/adeptio_04.jpg",
+      "alt": "Арбитр · John Blanche · JB-VK-051",
+      "width": 554,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Фигура Арбитра в полном боевом облачении",
+    "source_name_ru": "Арбитр",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 5,
+        "cells": {
+          "name_ru": "B5",
+          "symbolizes_ru": "D5",
+          "source_image_description_ru": "C5"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_05",
+    "type": "minor",
+    "name_en": "The Sanctioned Psyker",
+    "name_ru": "Санкционированный Псайкер",
+    "suit": "Adeptio",
+    "rank": "5",
+    "source_image_description_en": "of a pentacle of robed psykers with clearly visible sanctioning marks.",
+    "symbolizes_en": "Psykers, psychic power, control, official approval",
+    "symbolizes_ru": "Псайкеры, Пси-силы, Контроль, Официальное Одобрение",
+    "id": "adeptio_05",
+    "arcana": "minor",
+    "number_or_rank": "5",
+    "artwork": {
+      "artwork_id": "JB-LX-012",
+      "identity_id": "L012",
+      "image": "assets/artworks/adeptio_05.jpg",
+      "alt": "Санкционированный Псайкер · John Blanche · JB-LX-012",
+      "width": 400,
+      "height": 1039,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Изображение пятерки псайкеров в робах с четко различимами метками санкционации",
+    "source_name_ru": "Санкционированный Псайкер",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 6,
+        "cells": {
+          "name_ru": "B6",
+          "symbolizes_ru": "D6",
+          "source_image_description_ru": "C6"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_06",
+    "type": "minor",
+    "name_en": "The Tech-priest",
+    "name_ru": "Техно-Жрец",
+    "suit": "Adeptio",
+    "rank": "6",
+    "source_image_description_en": "of one of the Tech-priests of Mars.",
+    "symbolizes_en": "Technology, machines, sins of the past, ritual, procedure",
+    "symbolizes_ru": "Технология, Машины, Грехи Прошлого, Ритуалы, Процедуры",
+    "id": "adeptio_06",
+    "arcana": "minor",
+    "number_or_rank": "6",
+    "artwork": {
+      "artwork_id": "JB-LX-074",
+      "identity_id": "L074",
+      "image": "assets/artworks/adeptio_06.jpg",
+      "alt": "Техно-Жрец · John Blanche · JB-LX-074",
+      "width": 351,
+      "height": 522,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Изображение Техно-жреца Марса.",
+    "source_name_ru": "Техно-Жрец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 7,
+        "cells": {
+          "name_ru": "B7",
+          "symbolizes_ru": "D7",
+          "source_image_description_ru": "C7"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_07",
+    "type": "minor",
+    "name_en": "The Sister of Battle (the Templar)",
+    "name_ru": "Сестра Битвы (Храмовник)",
+    "suit": "Adeptio",
+    "rank": "7",
+    "source_image_description_en": "of a Sister of Battle, usuall y in full battle gear. Vanquished foes or objects under their protection may be displayed. Prior to the Age of Apostasy this card was called the Templar, but this terminology fell out of favour.",
+    "symbolizes_en": "Faith, devotion, love, righteous wrath, singularity of purpose",
+    "symbolizes_ru": "Вера, Преданность, Любовь, Праведный Гнев, Оригинальная (особая) Цель",
+    "id": "adeptio_07",
+    "arcana": "minor",
+    "number_or_rank": "7",
+    "artwork": {
+      "artwork_id": "JB-LX-079",
+      "identity_id": "L079",
+      "image": "assets/artworks/adeptio_07.jpg",
+      "alt": "Сестра Битвы (Храмовник) · John Blanche · JB-LX-079",
+      "width": 1000,
+      "height": 1473,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Сестра битвы в полном боевом облачении, иногда могут быть изображены павшие враги и/или люди находящиеся под её защитой. Древнее название (до Эпохи Раздоров) карты - Храмовник. Но это название предпочитают не использовать теперь.",
+    "source_name_ru": "Сестра Битвы (Храмовник)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 8,
+        "cells": {
+          "name_ru": "B8",
+          "symbolizes_ru": "D8",
+          "source_image_description_ru": "C8"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_08",
+    "type": "minor",
+    "name_en": "The Assassin",
+    "name_ru": "Ассассин",
+    "suit": "Adeptio",
+    "rank": "8",
+    "source_image_description_en": "of a black-clad Imperial Assassin.",
+    "symbolizes_en": "Unseen danger, something hidden, sudden death, termination, a simple solution, cleanliness",
+    "symbolizes_ru": "Невидимая Опасность, Нечто Скрытое, Внезапная Смерть, Окончание, Простое Решение, Чистота",
+    "id": "adeptio_08",
+    "arcana": "minor",
+    "number_or_rank": "8",
+    "artwork": {
+      "artwork_id": "JB-VK-134",
+      "identity_id": "V134",
+      "image": "assets/artworks/adeptio_08.jpg",
+      "alt": "Ассассин · John Blanche · JB-VK-134",
+      "width": 420,
+      "height": 600,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": "Имперский Ассассин облаченный в черное.",
+    "source_name_ru": "Ассассин",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 9,
+        "cells": {
+          "name_ru": "B9",
+          "symbolizes_ru": "D9",
+          "source_image_description_ru": "C9"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_09",
+    "type": "minor",
+    "name_en": "The Preacher",
+    "name_ru": "Проповедник",
+    "suit": "Adeptio",
+    "rank": "9",
+    "source_image_description_en": "of a steadfast cleric of the Ministorum. Always preaching, s ometimes chastising or smiting.",
+    "symbolizes_en": "Faith, prayer, community, protection (especially from the Warp or psychic powers), destruction of the unfaithful",
+    "symbolizes_ru": "Вера, Молящийся, Сообщество, Защита (в особенности от Варпа и Пси-сил), Уничтожение Неверных",
+    "id": "adeptio_09",
+    "arcana": "minor",
+    "number_or_rank": "9",
+    "artwork": {
+      "artwork_id": "JB-VK-090",
+      "identity_id": "V090",
+      "image": "assets/artworks/adeptio_09.jpg",
+      "alt": "Проповедник · John Blanche · JB-VK-090",
+      "width": 526,
+      "height": 481,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Проповедник",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 10,
+        "cells": {
+          "name_ru": "B10",
+          "symbolizes_ru": "D10",
+          "source_image_description_ru": "C10"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_10",
+    "type": "minor",
+    "name_en": "The Angel of Death",
+    "name_ru": "Ангел Смерти",
+    "suit": "Adeptio",
+    "rank": "10",
+    "source_image_description_en": "of a Space Marine engaged in the work of an Angel of Death – destroying the enemies of man.",
+    "symbolizes_en": "War, crusade, heroes of old, death in battle, excellence, duty",
+    "symbolizes_ru": "Война, Крестовый Поход, Герои Прошлого, Смерть в Бою, Мастерство, Долг",
+    "id": "adeptio_10",
+    "arcana": "minor",
+    "number_or_rank": "10",
+    "artwork": {
+      "artwork_id": "JB-VK-020",
+      "identity_id": "V020",
+      "image": "assets/artworks/adeptio_10.jpg",
+      "alt": "Ангел Смерти · John Blanche · JB-VK-020",
+      "width": 1019,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Ангел Смерти",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 11,
+        "cells": {
+          "name_ru": "B11",
+          "symbolizes_ru": "D11",
+          "source_image_description_ru": "C11"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_11",
+    "type": "minor",
+    "name_en": "The Custodian",
+    "name_ru": "Кустодий",
+    "suit": "Adeptio",
+    "rank": "Servant",
+    "source_image_description_en": "of one of the hallowed members of the Adeptus Custodes – the Emperor’s personal guardians.",
+    "symbolizes_en": "Protection, duty, serving a greater purpose",
+    "symbolizes_ru": "Защита, Долг, Служение Высшей Цели",
+    "id": "adeptio_11",
+    "arcana": "minor",
+    "number_or_rank": "Servant",
+    "artwork": {
+      "artwork_id": "JB-LX-019",
+      "identity_id": "L019",
+      "image": "assets/artworks/adeptio_11.jpg",
+      "alt": "Кустодий · John Blanche · JB-LX-019",
+      "width": 277,
+      "height": 630,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Кустодий",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 12,
+        "cells": {
+          "name_ru": "B12",
+          "symbolizes_ru": "D12",
+          "source_image_description_ru": "C12"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_12",
+    "type": "minor",
+    "name_en": "The Primarch",
+    "name_ru": "Примарх",
+    "suit": "Adeptio",
+    "rank": "Champion",
+    "source_image_description_en": "of one of the Primarchs. Most decks contain the image of one Primarch, but some cycle through more than one (even all). Some Primarchs appear but rarely.",
+    "symbolizes_en": "The ultimate warrior, victory against all odds, action, vitality, perfection",
+    "symbolizes_ru": "Совершенный Воин, Победа вопреки всем шансам, Действие, Жизненная Сила, Совершенство",
+    "id": "adeptio_12",
+    "arcana": "minor",
+    "number_or_rank": "Champion",
+    "artwork": {
+      "artwork_id": "JB-VK-003",
+      "identity_id": "V003",
+      "image": "assets/artworks/adeptio_12.jpg",
+      "alt": "Примарх · John Blanche · JB-VK-003",
+      "width": 2169,
+      "height": 3168,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Примарх",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 13,
+        "cells": {
+          "name_ru": "B13",
+          "symbolizes_ru": "D13",
+          "source_image_description_ru": "C13"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_13",
+    "type": "minor",
+    "name_en": "The Regent (the Sigillite)",
+    "name_ru": "Регент (Сигилит)",
+    "suit": "Adeptio",
+    "rank": "Lord",
+    "source_image_description_en": "of Malcador the Sigillite, the first Regent of Terra. This card has many, varied and often hard-to-understand meanings. This card is sometimes called the Sigillite.",
+    "symbolizes_en": "Ceaseless service in the shadow of one greater, great sacrifice, ability over birth, the evolution of Man, rising in rank, rulership",
+    "symbolizes_ru": "Безсмысленное слжение в тени Великого, Великая Жертва, Способности превосходящие данное от рождения, Эволюция Человека (Человечества), Рост в Ранге (Продвижение), Правление",
+    "id": "adeptio_13",
+    "arcana": "minor",
+    "number_or_rank": "Lord",
+    "artwork": {
+      "artwork_id": "JB-LX-049",
+      "identity_id": "L049",
+      "image": "assets/artworks/adeptio_13.jpg",
+      "alt": "Регент (Сигилит) · John Blanche · JB-LX-049",
+      "width": 615,
+      "height": 800,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Регент (Сигилит)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 14,
+        "cells": {
+          "name_ru": "B14",
+          "symbolizes_ru": "D14",
+          "source_image_description_ru": "C14"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "adeptio_14",
+    "type": "minor",
+    "name_en": "The Warmaster",
+    "name_ru": "Мастер Войны",
+    "suit": "Adeptio",
+    "rank": "Master",
+    "source_image_description_en": "of the Emperor’s Warmaster (Horus) at the height of the Great Crusade.",
+    "symbolizes_en": "Unflinching loyalty, dominance of le sser men, a favoured son or servant, boundless pride",
+    "symbolizes_ru": "Растущая Лояльность, Владычество мелких (мелочных) людей, Любимый Сын или Слуга, Безграничная Гордость",
+    "id": "adeptio_14",
+    "arcana": "minor",
+    "number_or_rank": "Master",
+    "artwork": {
+      "artwork_id": "JB-VK-001",
+      "identity_id": "V001",
+      "image": "assets/artworks/adeptio_14.jpg",
+      "alt": "Мастер Войны · John Blanche · JB-VK-001",
+      "width": 691,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Мастер Войны",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [13],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Adeptio",
+        "row": 15,
+        "cells": {
+          "name_ru": "B15",
+          "symbolizes_ru": "D15",
+          "source_image_description_ru": "C15"
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_01",
+    "type": "minor",
+    "name_en": "The Harlequin",
+    "name_ru": "Арлекин",
+    "suit": "Discordia",
+    "rank": "Ace",
+    "source_image_description_en": "for a (presumably) xenos warrior in strange attire. The Harlequin card is said to be particularly difficult to interpret if it appears in a large spread, for it alters the meaning of many cards most subtly.",
+    "symbolizes_en": "A hidden enemy, the enemy of my enemy is my ally, unforeseen consequences",
+    "symbolizes_ru": "Скрытый враг, Враг моего врага мой союзник, Непредвиденные Последствия",
+    "id": "discordia_01",
+    "arcana": "minor",
+    "number_or_rank": "Ace",
+    "artwork": {
+      "artwork_id": "JB-LX-026",
+      "identity_id": "L026",
+      "image": "assets/artworks/discordia_01.png",
+      "alt": "Арлекин · John Blanche · JB-LX-026",
+      "width": 1346,
+      "height": 1680,
+      "format": "PNG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Арлекин",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 2,
+        "cells": {
+          "name_ru": "B2",
+          "symbolizes_ru": "C2",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_02",
+    "type": "minor",
+    "name_en": "The Xeno",
+    "name_ru": "Ксенос",
+    "suit": "Discordia",
+    "rank": "2",
+    "source_image_description_en": "of a heinous xenos creature. Usually a ‘sentient’ variety, but sometimes a fierce xenos beast.",
+    "symbolizes_en": "Danger from without, invasion, attack, something unknown",
+    "symbolizes_ru": "Угроза извне, Вторжение, Атака, Нечто неведомое",
+    "id": "discordia_02",
+    "arcana": "minor",
+    "number_or_rank": "2",
+    "artwork": {
+      "artwork_id": "JB-LX-038",
+      "identity_id": "L038",
+      "image": "assets/artworks/discordia_02.png",
+      "alt": "Ксенос · John Blanche · JB-LX-038",
+      "width": 802,
+      "height": 1078,
+      "format": "PNG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Ксенос",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 3,
+        "cells": {
+          "name_ru": "B3",
+          "symbolizes_ru": "C3",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_03",
+    "type": "minor",
+    "name_en": "The Heretic",
+    "name_ru": "Еретик",
+    "suit": "Discordia",
+    "rank": "3",
+    "source_image_description_en": "of a human heretic. He appears much like an ordinary man, but his mien and his symbols are those of an enemy.",
+    "symbolizes_en": "Danger from within, sedition, attack, traitors, treason",
+    "symbolizes_ru": "Угроза изнутри, Крамола, Атака, Предатели, Измена",
+    "id": "discordia_03",
+    "arcana": "minor",
+    "number_or_rank": "3",
+    "artwork": {
+      "artwork_id": "JB-VK-061",
+      "identity_id": "V061",
+      "image": "assets/artworks/discordia_03.jpg",
+      "alt": "Еретик · John Blanche · JB-VK-061",
+      "width": 398,
+      "height": 834,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Еретик",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 4,
+        "cells": {
+          "name_ru": "B4",
+          "symbolizes_ru": "C4",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_04",
+    "type": "minor",
+    "name_en": "The Mutant",
+    "name_ru": "Мутант",
+    "suit": "Discordia",
+    "rank": "4",
+    "source_image_description_en": "of an inhuman mutant. The mutant is easy to identify, for his inner moral weakness has manifested monstrously on the outside.",
+    "symbolizes_en": "Weakness of character, moral corruption, bodily corruption, outcast",
+    "symbolizes_ru": "Слабость характера, Моральная скверна, Телесная скверна, Изгнанник",
+    "id": "discordia_04",
+    "arcana": "minor",
+    "number_or_rank": "4",
+    "artwork": {
+      "artwork_id": "JB-VK-037",
+      "identity_id": "V037",
+      "image": "assets/artworks/discordia_04.jpg",
+      "alt": "Мутант · John Blanche · JB-VK-037",
+      "width": 774,
+      "height": 689,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Мутант",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 5,
+        "cells": {
+          "name_ru": "B5",
+          "symbolizes_ru": "C5",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_05",
+    "type": "minor",
+    "name_en": "The Witch/Warlock",
+    "name_ru": "Ведьма/Маг(Колдун)",
+    "suit": "Discordia",
+    "rank": "5",
+    "source_image_description_en": "of a rogue psyker. There are usually overt displays of psychic might.",
+    "symbolizes_en": "The dangers of freedom, unbridled ambition, forbidden knowledge",
+    "symbolizes_ru": "Опасности Свободы, Необузданные амбиции, Запретное знание",
+    "id": "discordia_05",
+    "arcana": "minor",
+    "number_or_rank": "5",
+    "artwork": {
+      "artwork_id": "JB-VK-038",
+      "identity_id": "V038",
+      "image": "assets/artworks/discordia_05.jpg",
+      "alt": "Ведьма/Маг(Колдун) · John Blanche · JB-VK-038",
+      "width": 338,
+      "height": 481,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Ведьма/Маг(Колдун)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 6,
+        "cells": {
+          "name_ru": "B6",
+          "symbolizes_ru": "C6",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_06",
+    "type": "minor",
+    "name_en": "The Vile Serpent",
+    "name_ru": "Гнусный Змей",
+    "suit": "Discordia",
+    "rank": "6",
+    "source_image_description_en": "of a figure that is either a woman or a man or both – it is hard to tell exactly which.",
+    "symbolizes_en": "Depravity, corruption, forbidden knowledge, secrets revealed",
+    "symbolizes_ru": "Разврат, Скверна, Запретное знание, раскрытые секреты",
+    "id": "discordia_06",
+    "arcana": "minor",
+    "number_or_rank": "6",
+    "artwork": {
+      "artwork_id": "JB-VK-065",
+      "identity_id": "V065",
+      "image": "assets/artworks/discordia_06.jpg",
+      "alt": "Гнусный Змей · John Blanche · JB-VK-065",
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Гнусный Змей",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 7,
+        "cells": {
+          "name_ru": "B7",
+          "symbolizes_ru": "C7",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_07",
+    "type": "minor",
+    "name_en": "The Unclean One",
+    "name_ru": "Великий Нечистый",
+    "suit": "Discordia",
+    "rank": "7",
+    "source_image_description_en": "of a man, riddles with diseases and covered in sores.",
+    "symbolizes_en": "Sickness, disease, corruption, immortality",
+    "symbolizes_ru": "Слабость, Болезнь, Скверна, Безсмертие",
+    "id": "discordia_07",
+    "arcana": "minor",
+    "number_or_rank": "7",
+    "artwork": {
+      "artwork_id": "JB-VK-073",
+      "identity_id": "V073",
+      "image": "assets/artworks/discordia_07.jpg",
+      "alt": "Великий Нечистый · John Blanche · JB-VK-073",
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Великий Нечистый",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 8,
+        "cells": {
+          "name_ru": "B8",
+          "symbolizes_ru": "C8",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_08",
+    "type": "minor",
+    "name_en": "The Lord of Blood",
+    "name_ru": "Лорд Крови",
+    "suit": "Discordia",
+    "rank": "8",
+    "source_image_description_en": "of a man, drenched in blood, standing upon a heap of bodies or skulls.",
+    "symbolizes_en": "Blood, death, carnage, suffering, pain, murder, torture",
+    "symbolizes_ru": "Кровь, Смерть, Резня, Страдание, Боль, Убийство, Пытки",
+    "id": "discordia_08",
+    "arcana": "minor",
+    "number_or_rank": "8",
+    "artwork": {
+      "artwork_id": "JB-VK-067",
+      "identity_id": "V067",
+      "image": "assets/artworks/discordia_08.jpg",
+      "alt": "Лорд Крови · John Blanche · JB-VK-067",
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Лорд Крови",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 9,
+        "cells": {
+          "name_ru": "B9",
+          "symbolizes_ru": "C9",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_09",
+    "type": "minor",
+    "name_en": "The Great Deceiver",
+    "name_ru": "Великий Лжец",
+    "suit": "Discordia",
+    "rank": "9",
+    "source_image_description_en": "of a man, usually nearly naked, except for a loincloth and/or headdress of coloured feathers.",
+    "symbolizes_en": "Ruin, misfortune, plots, wheels within wheels, confusion, madness",
+    "symbolizes_ru": "Разорение, Неудача, Заговоры, Сложная Взаимосвязь, Путаница (смятение, замещательство), Безумие",
+    "id": "discordia_09",
+    "arcana": "minor",
+    "number_or_rank": "9",
+    "artwork": {
+      "artwork_id": "JB-VK-101",
+      "identity_id": "V101",
+      "image": "assets/artworks/discordia_09.jpg",
+      "alt": "Великий Лжец · John Blanche · JB-VK-101",
+      "width": 350,
+      "height": 575,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Великий Лжец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 10,
+        "cells": {
+          "name_ru": "B10",
+          "symbolizes_ru": "C10",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_10",
+    "type": "minor",
+    "name_en": "The Eye of Terror",
+    "name_ru": "Око Ужаса",
+    "suit": "Discordia",
+    "rank": "10",
+    "source_image_description_en": "of the Eye of Terror. Usually as seen from Cadia, but different views are possible. Some decks depict other lesser-known warp anomalies instead.",
+    "symbolizes_en": "The darkness beyond the Imperium, downfall of man, criminal organizations, dark conspiracies, organized corruption",
+    "symbolizes_ru": "Тьма окружающая Империум, Падение Человечества, Организованная Преступность, Темные заговоры, Организованное Осквернение (распространение скверны)",
+    "id": "discordia_10",
+    "arcana": "minor",
+    "number_or_rank": "10",
+    "artwork": {
+      "artwork_id": "JB-VK-080",
+      "identity_id": "V080",
+      "image": "assets/artworks/discordia_10.jpg",
+      "alt": "Око Ужаса · John Blanche · JB-VK-080",
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Око Ужаса",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 11,
+        "cells": {
+          "name_ru": "B11",
+          "symbolizes_ru": "C11",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_11",
+    "type": "minor",
+    "name_en": "The Soulless",
+    "name_ru": "Бездушный",
+    "suit": "Discordia",
+    "rank": "Servant",
+    "source_image_description_en": "of a mechanical monstrosity. A reminder that only humans have souls and that machine intelligences may ape humans, but forever be denied true humanity.",
+    "symbolizes_en": "Superficial, unstable, unnatural, faithless, bad news to come",
+    "symbolizes_ru": "Поверхностность, Нестабильность, Неестественность, Неверие, Грядущие Плохие Новости",
+    "id": "discordia_11",
+    "arcana": "minor",
+    "number_or_rank": "Servant",
+    "artwork": {
+      "artwork_id": "JB-VK-120",
+      "identity_id": "V120",
+      "image": "assets/artworks/discordia_11.jpg",
+      "alt": "Бездушный · John Blanche · JB-VK-120",
+      "width": 358,
+      "height": 512,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Бездушный",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 12,
+        "cells": {
+          "name_ru": "B12",
+          "symbolizes_ru": "C12",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_12",
+    "type": "minor",
+    "name_en": "The Renegade",
+    "name_ru": "Ренегат",
+    "suit": "Discordia",
+    "rank": "Champion",
+    "source_image_description_en": "of Abaddon the Despoiler. Abaddon is an infamous Chaos reaver that has plagued the Imperium since time immemorial.",
+    "symbolizes_en": "Discord, sudden anger, jealousy, narrow-mindedness, suspicion, the journey is delayed, work interrupted",
+    "symbolizes_ru": "Раздор, Неожиданный Гнев, Зависть, Ограниченность, Подозрение, Откладывание Путешествия, Прерывание работы",
+    "id": "discordia_12",
+    "arcana": "minor",
+    "number_or_rank": "Champion",
+    "artwork": {
+      "artwork_id": "JB-VK-055",
+      "identity_id": "V055",
+      "image": "assets/artworks/discordia_12.jpg",
+      "alt": "Ренегат · John Blanche · JB-VK-055",
+      "width": 976,
+      "height": 1229,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Ренегат",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 13,
+        "cells": {
+          "name_ru": "B13",
+          "symbolizes_ru": "C13",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_13",
+    "type": "minor",
+    "name_en": "The Usurper",
+    "name_ru": "Узурпатор",
+    "suit": "Discordia",
+    "rank": "Lord",
+    "source_image_description_en": "of Goge Vandire. Goge was a Master of the Administratum who also became Ecclesiarch. He proved less than faithful and a usurper of power.",
+    "symbolizes_en": "Strict, domineering, a jealous and revengeful nature, deceit, infidelity",
+    "symbolizes_ru": "Строгость, Властность, Завистливый и Мстительный Характер, Обман, Неверность (неверие)",
+    "id": "discordia_13",
+    "arcana": "minor",
+    "number_or_rank": "Lord",
+    "artwork": {
+      "artwork_id": "JB-VK-096",
+      "identity_id": "V096",
+      "image": "assets/artworks/discordia_13.jpg",
+      "alt": "Узурпатор · John Blanche · JB-VK-096",
+      "width": 350,
+      "height": 575,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Узурпатор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 14,
+        "cells": {
+          "name_ru": "B14",
+          "symbolizes_ru": "C14",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "discordia_14",
+    "type": "minor",
+    "name_en": "The Traitor",
+    "name_ru": "Предатель",
+    "suit": "Discordia",
+    "rank": "Master",
+    "source_image_description_en": "of Horus, the First Traitor. Horus was an important commander during the Great Crusade who rebelled against the Emperor when the Master of Mankind called him to account for his selfish and corrupt ways.",
+    "symbolizes_en": "Severe, unyielding, strict, intolerance, prejudice, quarrels",
+    "symbolizes_ru": "Тяжесть, Неуступчивость (непоколебимость), Строгость, Нетерпимость, Предрассудки, Споры",
+    "id": "discordia_14",
+    "arcana": "minor",
+    "number_or_rank": "Master",
+    "artwork": {
+      "artwork_id": "JB-VK-006",
+      "identity_id": "V006",
+      "image": "assets/artworks/discordia_14.jpg",
+      "alt": "Предатель · John Blanche · JB-VK-006",
+      "width": 735,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Предатель",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [14],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Discordia",
+        "row": 15,
+        "cells": {
+          "name_ru": "B15",
+          "symbolizes_ru": "C15",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_01",
+    "type": "minor",
+    "name_en": "The Stranger",
+    "name_ru": "Незнакомец",
+    "suit": "Excuteria",
+    "rank": "Ace",
+    "source_image_description_en": "of a perfectly normal person. He’s either turned away so you can’t see who he is or you can see his face but you’re sure you’ve never met.",
+    "symbolizes_en": "Force, ambition, persistence, exploration",
+    "symbolizes_ru": "Сила, Амбиции, Настойчивость, Разведка (Исследование)",
+    "id": "excuteria_01",
+    "arcana": "minor",
+    "number_or_rank": "Ace",
+    "artwork": {
+      "artwork_id": "JB-VK-089",
+      "identity_id": "V089",
+      "image": "assets/artworks/excuteria_01.jpg",
+      "alt": "Незнакомец · John Blanche · JB-VK-089",
+      "width": 534,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Незнакомец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [12, 15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 2,
+        "cells": {
+          "name_ru": "B2",
+          "symbolizes_ru": "C2",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_02",
+    "type": "minor",
+    "name_en": "The Soldier",
+    "name_ru": "Солдат",
+    "suit": "Excuteria",
+    "rank": "2",
+    "source_image_description_en": "of one of the many soldiers of the Imperium of Man. Perhaps a Guardsman, perhaps a Commissar Cadet, or maybe one of the voidsmen of the Navy.",
+    "symbolizes_en": "Service, duty, sacrifice, the greater good",
+    "symbolizes_ru": "Служение, Долг, Жертва, Высшее Благо",
+    "id": "excuteria_02",
+    "arcana": "minor",
+    "number_or_rank": "2",
+    "artwork": {
+      "artwork_id": "JB-VK-042",
+      "identity_id": "V042",
+      "image": "assets/artworks/excuteria_02.jpg",
+      "alt": "Солдат · John Blanche · JB-VK-042",
+      "width": 302,
+      "height": 685,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Солдат",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 3,
+        "cells": {
+          "name_ru": "B3",
+          "symbolizes_ru": "C3",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_03",
+    "type": "minor",
+    "name_en": "The Sergeant",
+    "name_ru": "Сержант",
+    "suit": "Excuteria",
+    "rank": "3",
+    "source_image_description_en": "of a non-commissioned officer or equivalent. A veteran Guardsman sergeant for example.",
+    "symbolizes_en": "Lifelong service, resolute action, execution of orders",
+    "symbolizes_ru": "Служение длинною в жизнь, Решительные Действия, Исполнение Приказов",
+    "id": "excuteria_03",
+    "arcana": "minor",
+    "number_or_rank": "3",
+    "artwork": {
+      "artwork_id": "JB-VK-047",
+      "identity_id": "V047",
+      "image": "assets/artworks/excuteria_03.jpg",
+      "alt": "Сержант · John Blanche · JB-VK-047",
+      "width": 329,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Сержант",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 4,
+        "cells": {
+          "name_ru": "B4",
+          "symbolizes_ru": "C4",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_04",
+    "type": "minor",
+    "name_en": "The Officer",
+    "name_ru": "Офицер",
+    "suit": "Excuteria",
+    "rank": "4",
+    "source_image_description_en": "of a commissioned officer.",
+    "symbolizes_en": "Command, giving orders, an intermediary",
+    "symbolizes_ru": "Командование, Отдача приказа, Посредник",
+    "id": "excuteria_04",
+    "arcana": "minor",
+    "number_or_rank": "4",
+    "artwork": {
+      "artwork_id": "JB-VK-043",
+      "identity_id": "V043",
+      "image": "assets/artworks/excuteria_04.jpg",
+      "alt": "Офицер · John Blanche · JB-VK-043",
+      "width": 180,
+      "height": 300,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Офицер",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 5,
+        "cells": {
+          "name_ru": "B5",
+          "symbolizes_ru": "C5",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_05",
+    "type": "minor",
+    "name_en": "The Captain",
+    "name_ru": "Капитан",
+    "suit": "Excuteria",
+    "rank": "5",
+    "source_image_description_en": "of the Captain of an Imperial Naval vessel. Alternatively it could be another ranking officer, such as a regimental commander of Guards (the meaning of Captain is leader of men).",
+    "symbolizes_en": "Ultimate mastery over a limited area, a means to an end, loss is acceptable, failure is not",
+    "symbolizes_ru": "Абсолютная Власть в ограниченном пространстве, Средство Достижение Цели, Приемлемые Потери, Неприемлепость поражения",
+    "id": "excuteria_05",
+    "arcana": "minor",
+    "number_or_rank": "5",
+    "artwork": {
+      "artwork_id": "JB-LX-045",
+      "identity_id": "L045",
+      "image": "assets/artworks/excuteria_05.jpg",
+      "alt": "Капитан · John Blanche · JB-LX-045",
+      "width": 708,
+      "height": 997,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Капитан",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 6,
+        "cells": {
+          "name_ru": "B6",
+          "symbolizes_ru": "C6",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_06",
+    "type": "minor",
+    "name_en": "The General",
+    "name_ru": "Генерал",
+    "suit": "Excuteria",
+    "rank": "6",
+    "source_image_description_en": "of a ranking officer, such as a General of Guards or Admiral of the Navy.",
+    "symbolizes_en": "Planning, intelligence, the greater picture",
+    "symbolizes_ru": "Планирование, Разведка, Полная Картина (Цельная Картина)",
+    "id": "excuteria_06",
+    "arcana": "minor",
+    "number_or_rank": "6",
+    "artwork": {
+      "artwork_id": "JB-VK-048",
+      "identity_id": "V048",
+      "image": "assets/artworks/excuteria_06.jpg",
+      "alt": "Генерал · John Blanche · JB-VK-048",
+      "width": 443,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Генерал",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 7,
+        "cells": {
+          "name_ru": "B7",
+          "symbolizes_ru": "C7",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_07",
+    "type": "minor",
+    "name_en": "The Explorator",
+    "name_ru": "Эксплоратор",
+    "suit": "Excuteria",
+    "rank": "7",
+    "source_image_description_en": "of one of the Adeptus Mechanicus Explorators (or more rarely another kind of Imperial explorer, surveyor or scout).",
+    "symbolizes_en": "The unknown, expansion, mysteries",
+    "symbolizes_ru": "Неизвестное, Экспансия, Тайны",
+    "id": "excuteria_07",
+    "arcana": "minor",
+    "number_or_rank": "7",
+    "artwork": {
+      "artwork_id": "JB-VK-136",
+      "identity_id": "V136",
+      "image": "assets/artworks/excuteria_07.jpg",
+      "alt": "Эксплоратор · John Blanche · JB-VK-136",
+      "width": 738,
+      "height": 1001,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Эксплоратор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 8,
+        "cells": {
+          "name_ru": "B8",
+          "symbolizes_ru": "C8",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_08",
+    "type": "minor",
+    "name_en": "The Navigator",
+    "name_ru": "Навигатор",
+    "suit": "Excuteria",
+    "rank": "8",
+    "source_image_description_en": "of one of the Navis Nobilite. He appears human, save for the third eye in his forehead.",
+    "symbolizes_en": "Leadership, decisions, authority",
+    "symbolizes_ru": "Лидерство, Принятие Решений, Власть",
+    "id": "excuteria_08",
+    "arcana": "minor",
+    "number_or_rank": "8",
+    "artwork": {
+      "artwork_id": "JB-LX-065",
+      "identity_id": "L065",
+      "image": "assets/artworks/excuteria_08.jpg",
+      "alt": "Навигатор · John Blanche · JB-LX-065",
+      "width": 270,
+      "height": 449,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Навигатор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 9,
+        "cells": {
+          "name_ru": "B9",
+          "symbolizes_ru": "C9",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_09",
+    "type": "minor",
+    "name_en": "The Missionary",
+    "name_ru": "Миссионер",
+    "suit": "Excuteria",
+    "rank": "9",
+    "source_image_description_en": "of a member of the Missionaria Galaxia, spreading the faith to the heathen.",
+    "symbolizes_en": "The holy word, the supremacy of man, the Imperial truth",
+    "symbolizes_ru": "Святое Слово, Превосходство Человечества, Имперские Истины",
+    "id": "excuteria_09",
+    "arcana": "minor",
+    "number_or_rank": "9",
+    "artwork": {
+      "artwork_id": "JB-VK-135",
+      "identity_id": "V135",
+      "image": "assets/artworks/excuteria_09.jpg",
+      "alt": "Миссионер · John Blanche · JB-VK-135",
+      "width": 669,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Миссионер",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 10,
+        "cells": {
+          "name_ru": "B10",
+          "symbolizes_ru": "C10",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_10",
+    "type": "minor",
+    "name_en": "The Arch-Magos",
+    "name_ru": "Архи-Магос (Магос-Прайм?)",
+    "suit": "Excuteria",
+    "rank": "10",
+    "source_image_description_en": "of an Arch-Magos of Mars.",
+    "symbolizes_en": "Mastery of a craft, machines, old ways",
+    "symbolizes_ru": "Мастера Созидания, Машины, Древние Пути",
+    "id": "excuteria_10",
+    "arcana": "minor",
+    "number_or_rank": "10",
+    "artwork": {
+      "artwork_id": "JB-LX-081",
+      "identity_id": "L081",
+      "image": "assets/artworks/excuteria_10.jpg",
+      "alt": "Архи-Магос (Магос-Прайм?) · John Blanche · JB-LX-081",
+      "width": 575,
+      "height": 1192,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Архи-Магос (Магос-Прайм?)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 11,
+        "cells": {
+          "name_ru": "B11",
+          "symbolizes_ru": "C11",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_11",
+    "type": "minor",
+    "name_en": "The Paternova",
+    "name_ru": "Патернова",
+    "suit": "Excuteria",
+    "rank": "Servant",
+    "source_image_description_en": "of a Paternova of the Navis Nobilite.",
+    "symbolizes_en": "Diplomacy, negotiation, a breed apart",
+    "symbolizes_ru": "Дипломатия, Переговоры, Разделение (расходящиеся пути)",
+    "id": "excuteria_11",
+    "arcana": "minor",
+    "number_or_rank": "Servant",
+    "artwork": {
+      "artwork_id": "JB-VK-100",
+      "identity_id": "V100",
+      "image": "assets/artworks/excuteria_11.jpg",
+      "alt": "Патернова · John Blanche · JB-VK-100",
+      "width": 350,
+      "height": 575,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Патернова",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 12,
+        "cells": {
+          "name_ru": "B12",
+          "symbolizes_ru": "C12",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_12",
+    "type": "minor",
+    "name_en": "The Rogue Trader",
+    "name_ru": "Вольный Торговец",
+    "suit": "Excuteria",
+    "rank": "Champion",
+    "source_image_description_en": "of a Rogue Trader in all his splendour. This card has many meanings. It has no reverse image, but many variations.",
+    "symbolizes_en": "A headlong rush into life, a strong man, bravery, a skilful and clever person, an unexpected coming or going of a matter, a troublemaker, a crafty and secretive person",
+    "symbolizes_ru": "Стремительный порыв в жизни, Сильный человек, Храбрость, Умелый и Умный Человек, Неожиданный поворот или движение дела, Человек приносящий неприятности, Хитрый и Скрытный Человек",
+    "id": "excuteria_12",
+    "arcana": "minor",
+    "number_or_rank": "Champion",
+    "artwork": {
+      "artwork_id": "JB-VK-033",
+      "identity_id": "V033",
+      "image": "assets/artworks/excuteria_12.jpg",
+      "alt": "Вольный Торговец · John Blanche · JB-VK-033",
+      "width": 287,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Вольный Торговец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 13,
+        "cells": {
+          "name_ru": "B13",
+          "symbolizes_ru": "C13",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_13",
+    "type": "minor",
+    "name_en": "The Chapter Master",
+    "name_ru": "Мастер Ордена",
+    "suit": "Excuteria",
+    "rank": "Lord",
+    "source_image_description_en": "of a Chapter Master of Adeptus Astartes.",
+    "symbolizes_en": "A quick and confident decision, cruelty out of necessity, one who can bear their sorrow, narrow-mindedness, an obstinate person",
+    "symbolizes_ru": "Быстрое и Уверенное Решение, Жестокость без Необходимости, Тот Кто Может выдержать Горе, Ограниченность, Упрямство",
+    "id": "excuteria_13",
+    "arcana": "minor",
+    "number_or_rank": "Lord",
+    "artwork": {
+      "artwork_id": "JB-VK-027",
+      "identity_id": "V027",
+      "image": "assets/artworks/excuteria_13.jpg",
+      "alt": "Мастер Ордена · John Blanche · JB-VK-027",
+      "width": 816,
+      "height": 1123,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Мастер Ордена",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 14,
+        "cells": {
+          "name_ru": "B14",
+          "symbolizes_ru": "C14",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "excuteria_14",
+    "type": "minor",
+    "name_en": "The Lord Militant",
+    "name_ru": "Лорд Милитант",
+    "suit": "Excuteria",
+    "rank": "Master",
+    "source_image_description_en": "of a Lord Militant of the Imperium.",
+    "symbolizes_en": "A judge, a powerful commander, a firm friendship, some who is cautious but confident, a wise counsellor, willingness to sacrifice the lives of others, to do what must be done",
+    "symbolizes_ru": "Судья, Властный Командир (Могущественный), Крепкая Дружба, Кто-то Осторожный но Уверенный, Мудрый Советник, Готовность Жертвовать Чужими Жизнями для Достижения Цели (чтобы сделать что должно)",
+    "id": "excuteria_14",
+    "arcana": "minor",
+    "number_or_rank": "Master",
+    "artwork": {
+      "artwork_id": "JB-LX-050",
+      "identity_id": "L050",
+      "image": "assets/artworks/excuteria_14.jpg",
+      "alt": "Лорд Милитант · John Blanche · JB-LX-050",
+      "width": 283,
+      "height": 286,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Лорд Милитант",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [15],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Excuterem ",
+        "row": 15,
+        "cells": {
+          "name_ru": "B15",
+          "symbolizes_ru": "C15",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_01",
+    "type": "minor",
+    "name_en": "The Savage",
+    "name_ru": "Дикарь",
+    "suit": "Mandatio",
+    "rank": "Ace",
+    "source_image_description_en": "of a savage man: A savage is a human who is not part of the Imperium or have heard of the God-Emperor. Those who reject him or oppose him are heretics instead.",
+    "symbolizes_en": "Outsiders, something different, loneliness, loss, lack of respect, lack of civilization",
+    "symbolizes_ru": "Аутсайдеры, Что-то Отличающееся от обычного, Одиночество, Потеря, Недостаток Уважения, Нецивилизованность",
+    "id": "mandatio_01",
+    "arcana": "minor",
+    "number_or_rank": "Ace",
+    "artwork": {
+      "artwork_id": "JB-LX-071",
+      "identity_id": "L071",
+      "image": "assets/artworks/mandatio_01.jpg",
+      "alt": "Дикарь · John Blanche · JB-LX-071",
+      "width": 1224,
+      "height": 1754,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Дикарь",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 2,
+        "cells": {
+          "name_ru": "B2",
+          "symbolizes_ru": "C2",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_02",
+    "type": "minor",
+    "name_en": "The Citizen",
+    "name_ru": "Гражданин",
+    "suit": "Mandatio",
+    "rank": "2",
+    "source_image_description_en": "of a ‘typical’ Imperial citizens – can vary a lot, but the symbology is mostly the same.",
+    "symbolizes_en": "Balance, foundation, stability, infinity/something large",
+    "symbolizes_ru": "Уравновешенность (Баланс), Основа (основание), Стабильность, Бесконечность/Нечто Огромное",
+    "id": "mandatio_02",
+    "arcana": "minor",
+    "number_or_rank": "2",
+    "artwork": {
+      "artwork_id": "JB-VK-124",
+      "identity_id": "V124",
+      "image": "assets/artworks/mandatio_02.jpg",
+      "alt": "Гражданин · John Blanche · JB-VK-124",
+      "width": 706,
+      "height": 521,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Гражданин",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 3,
+        "cells": {
+          "name_ru": "B3",
+          "symbolizes_ru": "C3",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_03",
+    "type": "minor",
+    "name_en": "The Artisan",
+    "name_ru": "Ремесленник",
+    "suit": "Mandatio",
+    "rank": "3",
+    "source_image_description_en": "of a craftsman. The type of craft displayed has a bearing on the exact meaning of the card.",
+    "symbolizes_en": "Learning a trade or profession, employment is coming soon, skill, handiwork, small money gain",
+    "symbolizes_ru": "Изучение Ремесла или Профессии, Скорой прием на работу (появление работы или занятость), Умение, Ручной труд, Небольшая прибыль",
+    "id": "mandatio_03",
+    "arcana": "minor",
+    "number_or_rank": "3",
+    "artwork": {
+      "artwork_id": "JB-LX-054",
+      "identity_id": "L054",
+      "image": "assets/artworks/mandatio_03.jpg",
+      "alt": "Ремесленник · John Blanche · JB-LX-054",
+      "width": 369,
+      "height": 864,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Ремесленник",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 4,
+        "cells": {
+          "name_ru": "B4",
+          "symbolizes_ru": "C4",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_04",
+    "type": "minor",
+    "name_en": "The Guilder",
+    "name_ru": "Гильдиец",
+    "suit": "Mandatio",
+    "rank": "4",
+    "source_image_description_en": "of a member of one of the great commercial houses, the Guilds Commercia.",
+    "symbolizes_en": "Hoarding, gratification, wealth, trade, social mobility",
+    "symbolizes_ru": "Накопление, Удовлетворение, Богатство, Торговля, Социальная Мобильность",
+    "id": "mandatio_04",
+    "arcana": "minor",
+    "number_or_rank": "4",
+    "artwork": {
+      "artwork_id": "JB-VK-099",
+      "identity_id": "V099",
+      "image": "assets/artworks/mandatio_04.jpg",
+      "alt": "Гильдиец · John Blanche · JB-VK-099",
+      "width": 350,
+      "height": 575,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Гильдиец",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 5,
+        "cells": {
+          "name_ru": "B5",
+          "symbolizes_ru": "C5",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_05",
+    "type": "minor",
+    "name_en": "The Noble",
+    "name_ru": "Нобиль",
+    "suit": "Mandatio",
+    "rank": "5",
+    "source_image_description_en": "of a member of the ruling class; he/she need not be noble in the absolute sense, but is worlds apart from lesser citizens in terms of power and wealth.",
+    "symbolizes_en": "Good fortune, well-being, head of the family, head of the household, someone to be obeyed, the way of things",
+    "symbolizes_ru": "Удача, Благополучие, Глава Семьи (Клана), Кто-то Кому Подчиняются, То как должно быть (Путь Вещей?)",
+    "id": "mandatio_05",
+    "arcana": "minor",
+    "number_or_rank": "5",
+    "artwork": {
+      "artwork_id": "JB-VK-146",
+      "identity_id": "V146",
+      "image": "assets/artworks/mandatio_05.jpg",
+      "alt": "Нобиль · John Blanche · JB-VK-146",
+      "width": 683,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Нобиль",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 6,
+        "cells": {
+          "name_ru": "B6",
+          "symbolizes_ru": "C6",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_06",
+    "type": "minor",
+    "name_en": "The Fabricator",
+    "name_ru": "Фабрикатор",
+    "suit": "Mandatio",
+    "rank": "6",
+    "source_image_description_en": "of an Adeptus Mechanicus Fabricator (factory manager).",
+    "symbolizes_en": "Efficiency, transformation, vigilance, a stern master, no room for error",
+    "symbolizes_ru": "Эффкутивность, Трансформация, Бдительность, Строгий Мастер, Нет Права на Офибку (Или нет места Ошибке)",
+    "id": "mandatio_06",
+    "arcana": "minor",
+    "number_or_rank": "6",
+    "artwork": {
+      "artwork_id": "JB-LX-063",
+      "identity_id": "L063",
+      "image": "assets/artworks/mandatio_06.jpg",
+      "alt": "Фабрикатор · John Blanche · JB-LX-063",
+      "width": 772,
+      "height": 555,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Фабрикатор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 7,
+        "cells": {
+          "name_ru": "B7",
+          "symbolizes_ru": "C7",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_07",
+    "type": "minor",
+    "name_en": "The Speaker",
+    "name_ru": "Оратор",
+    "suit": "Mandatio",
+    "rank": "7",
+    "source_image_description_en": "a Speaker for the Chartist Captains. The speaker represents the commercial vessels that bind the Imperium together.",
+    "symbolizes_en": "Travel, strength through unity, interdependency",
+    "symbolizes_ru": "Путешествие, Сила в Единстве, Взаимозависимость",
+    "id": "mandatio_07",
+    "arcana": "minor",
+    "number_or_rank": "7",
+    "artwork": {
+      "artwork_id": "JB-LX-073",
+      "identity_id": "L073",
+      "image": "assets/artworks/major_16_upright.jpg",
+      "alt": "Оратор · John Blanche · JB-LX-073",
+      "width": 1944,
+      "height": 1135,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": "INTENTIONAL_REUSE"
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Оратор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 8,
+        "cells": {
+          "name_ru": "B8",
+          "symbolizes_ru": "C8",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_08",
+    "type": "minor",
+    "name_en": "The Collector",
+    "name_ru": "Сборщик (налогов)",
+    "suit": "Mandatio",
+    "rank": "8",
+    "source_image_description_en": "of an Imperial Auditor (tax collector responsible for setting the tithe).",
+    "symbolizes_en": "Effort and hard work will cause growth, a pause during development, re-evaluations",
+    "symbolizes_ru": "Усилия и Напряженная Работа ведут к Росту, Перерыв во время Исследования (разработки), Переоценка (Новая Оценка)",
+    "id": "mandatio_08",
+    "arcana": "minor",
+    "number_or_rank": "8",
+    "artwork": {
+      "artwork_id": "JB-VK-129",
+      "identity_id": "V129",
+      "image": "assets/artworks/mandatio_08.jpg",
+      "alt": "Сборщик (налогов) · John Blanche · JB-VK-129",
+      "width": 215,
+      "height": 294,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Сборщик (налогов)",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 9,
+        "cells": {
+          "name_ru": "B9",
+          "symbolizes_ru": "C9",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_09",
+    "type": "minor",
+    "name_en": "The Bishop",
+    "name_ru": "Епископ",
+    "suit": "Mandatio",
+    "rank": "9",
+    "source_image_description_en": "of a church elder, such as a bishop of the Imperial Creed.",
+    "symbolizes_en": "The wisdom of your elders, the Imperial truth, the sanctity of man",
+    "symbolizes_ru": "Мудрость Старейшин (Предков), Имперские Истины, Святость Человека",
+    "id": "mandatio_09",
+    "arcana": "minor",
+    "number_or_rank": "9",
+    "artwork": {
+      "artwork_id": "JB-VK-030",
+      "identity_id": "V030",
+      "image": "assets/artworks/mandatio_09.jpg",
+      "alt": "Епископ · John Blanche · JB-VK-030",
+      "width": 352,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Епископ",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 10,
+        "cells": {
+          "name_ru": "B10",
+          "symbolizes_ru": "C10",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_10",
+    "type": "minor",
+    "name_en": "The Consul",
+    "name_ru": "Консул",
+    "suit": "Mandatio",
+    "rank": "10",
+    "source_image_description_en": "of a Consul of the Administratum.",
+    "symbolizes_en": "Height of professionalism, difficult choices, numerous tasks to be completed",
+    "symbolizes_ru": "Высокий Профессионализм, Сложный Выбор, Можество Дел Требующих Завершения",
+    "id": "mandatio_10",
+    "arcana": "minor",
+    "number_or_rank": "10",
+    "artwork": {
+      "artwork_id": "JB-VK-023",
+      "identity_id": "V023",
+      "image": "assets/artworks/mandatio_10.jpg",
+      "alt": "Консул · John Blanche · JB-VK-023",
+      "width": 769,
+      "height": 1024,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Консул",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 11,
+        "cells": {
+          "name_ru": "B11",
+          "symbolizes_ru": "C11",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_11",
+    "type": "minor",
+    "name_en": "The Senator",
+    "name_ru": "Сенатор",
+    "suit": "Mandatio",
+    "rank": "Servant",
+    "source_image_description_en": "of a Senator of the Imperium.",
+    "symbolizes_en": "Legislation, consensus through debate",
+    "symbolizes_ru": "Законодательство (Закон), Достижение Договоренности с помощью Переговоров.",
+    "id": "mandatio_11",
+    "arcana": "minor",
+    "number_or_rank": "Servant",
+    "artwork": {
+      "artwork_id": "JB-VK-026",
+      "identity_id": "V026",
+      "image": "assets/artworks/mandatio_11.jpg",
+      "alt": "Сенатор · John Blanche · JB-VK-026",
+      "width": 333,
+      "height": 480,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Сенатор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 12,
+        "cells": {
+          "name_ru": "B12",
+          "symbolizes_ru": "C12",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_12",
+    "type": "minor",
+    "name_en": "The Cardinal",
+    "name_ru": "Кардинал",
+    "suit": "Mandatio",
+    "rank": "Champion",
+    "source_image_description_en": "of a Cardinal of the Adeptus Ministorum.",
+    "symbolizes_en": "The importance of faith, dogma and ritual",
+    "symbolizes_ru": "Важность Веры, Догма и Ритуал",
+    "id": "mandatio_12",
+    "arcana": "minor",
+    "number_or_rank": "Champion",
+    "artwork": {
+      "artwork_id": "JB-VK-052",
+      "identity_id": "V052",
+      "image": "assets/artworks/mandatio_12.jpg",
+      "alt": "Кардинал · John Blanche · JB-VK-052",
+      "width": 543,
+      "height": 800,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Кардинал",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 13,
+        "cells": {
+          "name_ru": "B13",
+          "symbolizes_ru": "C13",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_13",
+    "type": "minor",
+    "name_en": "The Governor",
+    "name_ru": "Губернатор",
+    "suit": "Mandatio",
+    "rank": "Lord",
+    "source_image_description_en": "of an Imperial Governor",
+    "symbolizes_en": "Mother/father figure, stern but fair, between the rock and hard place",
+    "symbolizes_ru": "Фигура Матери/Отца - Строгая но Справедливая, Между Молотом и Наковальней",
+    "id": "mandatio_13",
+    "arcana": "minor",
+    "number_or_rank": "Lord",
+    "artwork": {
+      "artwork_id": "JB-LX-034",
+      "identity_id": "L034",
+      "image": "assets/artworks/mandatio_13.jpg",
+      "alt": "Губернатор · John Blanche · JB-LX-034",
+      "width": 539,
+      "height": 507,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Губернатор",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 14,
+        "cells": {
+          "name_ru": "B14",
+          "symbolizes_ru": "C14",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  },
+  {
+    "card_id": "mandatio_14",
+    "type": "minor",
+    "name_en": "The High Lord",
+    "name_ru": "Верховный Лорд",
+    "suit": "Mandatio",
+    "rank": "Master",
+    "source_image_description_en": "of one of the High Lords of Terra.",
+    "symbolizes_en": "A wise ruler, guidance, planning for the future, council, closeness to the Emperor",
+    "symbolizes_ru": "Мудрый Правитель, Руководство, Планирование Будущего, Совет (Советник), Близость к Императору",
+    "id": "mandatio_14",
+    "arcana": "minor",
+    "number_or_rank": "Master",
+    "artwork": {
+      "artwork_id": "JB-LX-039",
+      "identity_id": "L039",
+      "image": "assets/artworks/mandatio_14.jpg",
+      "alt": "Верховный Лорд · John Blanche · JB-LX-039",
+      "width": 750,
+      "height": 1068,
+      "format": "JPEG",
+      "object_fit": "contain",
+      "object_position": "center",
+      "reuse_status": null
+    },
+    "source_image_description_ru": null,
+    "source_name_ru": "Верховный Лорд",
+    "source": {
+      "package": "blanche_tarot_final_data(2).zip",
+      "english": {
+        "file": "40k_Roleplay_-_The_Emperors_Tarot_supplement_v1_30.pdf",
+        "pages": [16],
+        "fields_from": "final package; checked against supplied PDF"
+      },
+      "russian": {
+        "file": "перевод  Имперское Таро(1).xlsx",
+        "sheet": "Младшие Арканы Mandatio ",
+        "row": 15,
+        "cells": {
+          "name_ru": "B15",
+          "symbolizes_ru": "C15",
+          "source_image_description_ru": null
+        }
+      }
+    }
+  }
+]

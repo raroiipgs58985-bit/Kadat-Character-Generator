@@ -1,0 +1,142 @@
+[
+  {
+    "artwork_id": "JB-VK-125",
+    "image": "major_00_reversed.jpg",
+    "package_metadata": {
+      "width": 487,
+      "height": 650,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 494,
+      "height": 661,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-002",
+    "image": "major_08_upright.jpg",
+    "package_metadata": {
+      "width": 732,
+      "height": 1024,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 1157,
+      "height": 1600,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-040",
+    "image": "major_09_upright.jpg",
+    "package_metadata": {
+      "width": 327,
+      "height": 480,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 628,
+      "height": 900,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-110",
+    "image": "major_14_reversed.jpg",
+    "package_metadata": {
+      "width": 873,
+      "height": 627,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 975,
+      "height": 648,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-003",
+    "image": "adeptio_12.jpg",
+    "package_metadata": {
+      "width": 690,
+      "height": 1024,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 2169,
+      "height": 3168,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-037",
+    "image": "discordia_04.jpg",
+    "package_metadata": {
+      "width": 498,
+      "height": 480,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 774,
+      "height": 689,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-055",
+    "image": "discordia_12.jpg",
+    "package_metadata": {
+      "width": 841,
+      "height": 1024,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 976,
+      "height": 1229,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-042",
+    "image": "excuteria_02.jpg",
+    "package_metadata": {
+      "width": 744,
+      "height": 1024,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 302,
+      "height": 685,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-027",
+    "image": "excuteria_13.jpg",
+    "package_metadata": {
+      "width": 740,
+      "height": 1024,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 816,
+      "height": 1123,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-052",
+    "image": "mandatio_12.jpg",
+    "package_metadata": {
+      "width": 348,
+      "height": 479,
+      "format": "JPEG"
+    },
+    "actual_file": {
+      "width": 543,
+      "height": 800,
+      "format": "JPEG"
+    }
+  }
+]

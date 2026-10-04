@@ -1,5 +1,7 @@
 # Imperial Tarot — Stage 2.1 validation
 
+> Historical demo-build report. The current production-content build is documented in [STAGE3_PRODUCTION_VALIDATION.md](STAGE3_PRODUCTION_VALIDATION.md). Assertions below describe Stage 2.1 at its release, not the Stage 3 dataset.
+
 Date: **2026-10-04**. Result: **PASS — 18/18**. Scope: **`tarot-prototype/` only**.
 
 Approved visual direction remains **D — Sacred Divinatio V1**. No new concept, production card/artwork integration, interpretation engine or Stage III.

@@ -1,0 +1,23 @@
+[
+  {
+    "status": "INTENTIONAL_REUSE",
+    "artwork_id": "JB-LX-073",
+    "identity_id": "L073",
+    "physical_file": "final_selected_artworks/major_16_upright.jpg",
+    "assignments": [
+      {
+        "card_id": "major_16",
+        "name_en": "The Hulk",
+        "orientation": "upright",
+        "artwork_id": "JB-LX-073"
+      },
+      {
+        "card_id": "mandatio_07",
+        "name_en": "The Speaker",
+        "orientation": null,
+        "artwork_id": "JB-LX-073"
+      }
+    ],
+    "authorization": "The user explicitly approved this reuse on 2026-10-04. Neither assignment may be replaced on account of this reuse."
+  }
+]

@@ -1,0 +1,3179 @@
+[
+  {
+    "artwork_id": "JB-LX-080",
+    "identity_id": "L080",
+    "source_file": "candidate_assets/jb-lx-080.jpg",
+    "preferred_file": "candidate_assets/jb-lx-080.jpg",
+    "original_filename": "jb-lx-080.jpg",
+    "width": 382,
+    "height": 354,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_00",
+    "orientation_if_major": "upright",
+    "site_filename": "major_00_upright.jpg",
+    "image": "assets/artworks/major_00_upright.jpg",
+    "package_file": "final_selected_artworks/major_00_upright.jpg",
+    "sha256": "4067951dd086fe0f7f9135baabec92de7c3c0cd3ab9b472dbd2a105f5c354bed",
+    "git_blob_sha": "a13b5264f384e69753efa2aa6ae0ee4990342e02",
+    "file_bytes": 47223,
+    "assignments": [
+      {
+        "card_id": "major_00",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 382,
+      "height": 354,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-125",
+    "identity_id": "V125",
+    "source_file": "unverified/jb-vk-126.jpg",
+    "preferred_file": "unverified/jb-vk-126.jpg",
+    "original_filename": "125.jpg",
+    "width": 494,
+    "height": 661,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-125.jpg"],
+    "used_by_card": "major_00",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_00_reversed.jpg",
+    "image": "assets/artworks/major_00_reversed.jpg",
+    "package_file": "final_selected_artworks/major_00_reversed.jpg",
+    "sha256": "99594ad2801295eb1c6c4357baa5b8691b6d91c6ab3bd8f0d1253226827bc14a",
+    "git_blob_sha": "a3c757ffef2206cd8413157a126952fe5267c2a3",
+    "file_bytes": 158775,
+    "assignments": [
+      {
+        "card_id": "major_00",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 487,
+      "height": 650,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-005",
+    "identity_id": "V005",
+    "source_file": "unverified/jb-vk-005.jpg",
+    "preferred_file": "unverified/jb-vk-005.jpg",
+    "original_filename": "005.jpg",
+    "width": 757,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_01",
+    "orientation_if_major": "upright",
+    "site_filename": "major_01_upright.jpg",
+    "image": "assets/artworks/major_01_upright.jpg",
+    "package_file": "final_selected_artworks/major_01_upright.jpg",
+    "sha256": "7dafca106538f4baaf6557a0843af1b81b65d11d31e7cd1e18374068e0925bc8",
+    "git_blob_sha": "ba6187c15282549f01debabcbce79e7b961c210a",
+    "file_bytes": 290033,
+    "assignments": [
+      {
+        "card_id": "major_01",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 757,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-046",
+    "identity_id": "L046",
+    "source_file": "candidate_assets/jb-lx-046.jpg",
+    "preferred_file": "candidate_assets/jb-lx-046.jpg",
+    "original_filename": "jb-lx-046.jpg",
+    "width": 597,
+    "height": 828,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_01",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_01_reversed.jpg",
+    "image": "assets/artworks/major_01_reversed.jpg",
+    "package_file": "final_selected_artworks/major_01_reversed.jpg",
+    "sha256": "66a435eeb827dc6a16a3aab5eaac31b7d1756b2d3e551b9942d6a0b5a534be43",
+    "git_blob_sha": "477c62850de795c73380344407cb5d07a6085b2f",
+    "file_bytes": 120449,
+    "assignments": [
+      {
+        "card_id": "major_01",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 597,
+      "height": 828,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-025",
+    "identity_id": "L025",
+    "source_file": "candidate_assets/jb-lx-025.jpg",
+    "preferred_file": "candidate_assets/jb-lx-025.jpg",
+    "original_filename": "jb-lx-025.jpg",
+    "width": 706,
+    "height": 827,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_02",
+    "orientation_if_major": "upright",
+    "site_filename": "major_02_upright.jpg",
+    "image": "assets/artworks/major_02_upright.jpg",
+    "package_file": "final_selected_artworks/major_02_upright.jpg",
+    "sha256": "78ab22f146efef5b91a860409763740ef182722f6e9ea4a921cfe739d6217816",
+    "git_blob_sha": "75652494ddf7b47229d8cff0913542088b66582b",
+    "file_bytes": 170812,
+    "assignments": [
+      {
+        "card_id": "major_02",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 706,
+      "height": 827,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-077",
+    "identity_id": "V077",
+    "source_file": "unverified/jb-vk-077.jpg",
+    "preferred_file": "unverified/jb-vk-077.jpg",
+    "original_filename": "077.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_02",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_02_reversed.jpg",
+    "image": "assets/artworks/major_02_reversed.jpg",
+    "package_file": "final_selected_artworks/major_02_reversed.jpg",
+    "sha256": "58e234db857e1b0d8dcdffec53055502d43f8dc5fcacc2e9cc247effbf7ad1c6",
+    "git_blob_sha": "d370b88ed48dd8f7a904624dae35348275f49428",
+    "file_bytes": 283662,
+    "assignments": [
+      {
+        "card_id": "major_02",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-069",
+    "identity_id": "L069",
+    "source_file": "candidate_assets/jb-lx-069.jpg",
+    "preferred_file": "candidate_assets/jb-lx-069.jpg",
+    "original_filename": "jb-lx-069.jpg",
+    "width": 752,
+    "height": 1193,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_03",
+    "orientation_if_major": "upright",
+    "site_filename": "major_03_upright.jpg",
+    "image": "assets/artworks/major_03_upright.jpg",
+    "package_file": "final_selected_artworks/major_03_upright.jpg",
+    "sha256": "16767b270c69d201b2b665e2c3598e0b2506d28c35041f5700f65e8acf85f0ab",
+    "git_blob_sha": "37efc11e88aed36f4839e6daaa8948db7418f0a7",
+    "file_bytes": 393449,
+    "assignments": [
+      {
+        "card_id": "major_03",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 752,
+      "height": 1193,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-049",
+    "identity_id": "V049",
+    "source_file": "unverified/jb-vk-049.jpg",
+    "preferred_file": "unverified/jb-vk-049.jpg",
+    "original_filename": "049.jpg",
+    "width": 590,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_03",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_03_reversed.jpg",
+    "image": "assets/artworks/major_03_reversed.jpg",
+    "package_file": "final_selected_artworks/major_03_reversed.jpg",
+    "sha256": "4eed77bb8ee5c9297a3e249e62f531c28840ad7296baef3a3130ce9d9040c517",
+    "git_blob_sha": "5f5f257956b2de71f6c823b9b7942ee3f1ee9692",
+    "file_bytes": 72667,
+    "assignments": [
+      {
+        "card_id": "major_03",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 590,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-008",
+    "identity_id": "V008",
+    "source_file": "unverified/jb-vk-008.jpg",
+    "preferred_file": "unverified/jb-vk-008.jpg",
+    "original_filename": "008.jpg",
+    "width": 726,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_04",
+    "orientation_if_major": "upright",
+    "site_filename": "major_04_upright.jpg",
+    "image": "assets/artworks/major_04_upright.jpg",
+    "package_file": "final_selected_artworks/major_04_upright.jpg",
+    "sha256": "0d15c3108b04a5734bbdc95d0a3cb78b23fad9334554b5e9d492d2d6ab13d2be",
+    "git_blob_sha": "3f6dd36b4da6a93dc0e0d75b0614121965925299",
+    "file_bytes": 313600,
+    "assignments": [
+      {
+        "card_id": "major_04",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 726,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-035",
+    "identity_id": "L035",
+    "source_file": "candidate_assets/jb-lx-035.jpg",
+    "preferred_file": "candidate_assets/jb-lx-035.jpg",
+    "original_filename": "jb-lx-035.jpg",
+    "width": 558,
+    "height": 693,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": ["candidate_assets/jb-lx-028.jpg"],
+    "used_by_card": "major_04",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_04_reversed.jpg",
+    "image": "assets/artworks/major_04_reversed.jpg",
+    "package_file": "final_selected_artworks/major_04_reversed.jpg",
+    "sha256": "06e1d732cbed3952b6458eb85bcea1c74900ba3a9b2dc15aacead2f74b9da955",
+    "git_blob_sha": "3e767d54f587f279fd6d5c6dd7bc3e9621cf6c33",
+    "file_bytes": 159872,
+    "assignments": [
+      {
+        "card_id": "major_04",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 558,
+      "height": 693,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-107",
+    "identity_id": "V107",
+    "source_file": "unverified/jb-vk-107.jpg",
+    "preferred_file": "unverified/jb-vk-107.jpg",
+    "original_filename": "107.jpg",
+    "width": 716,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_05",
+    "orientation_if_major": "upright",
+    "site_filename": "major_05_upright.jpg",
+    "image": "assets/artworks/major_05_upright.jpg",
+    "package_file": "final_selected_artworks/major_05_upright.jpg",
+    "sha256": "8087385c7415509d4d0ab573e35ca8cd15f77827860af59e43c3b7969f2a7a4e",
+    "git_blob_sha": "dc6431baf4dae8e9c5f5c954cafcc24aa7cfd3b5",
+    "file_bytes": 159843,
+    "assignments": [
+      {
+        "card_id": "major_05",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 716,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-078",
+    "identity_id": "V078",
+    "source_file": "unverified/jb-vk-078.jpg",
+    "preferred_file": "unverified/jb-vk-078.jpg",
+    "original_filename": "078.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_05",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_05_reversed.jpg",
+    "image": "assets/artworks/major_05_reversed.jpg",
+    "package_file": "final_selected_artworks/major_05_reversed.jpg",
+    "sha256": "26eb045587d9f5b85e707f3f6226a3e4bd6f2327cad8dc28b288dd257422028b",
+    "git_blob_sha": "06911acb8a331543920ca87ab1f3b3016d41987f",
+    "file_bytes": 305689,
+    "assignments": [
+      {
+        "card_id": "major_05",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-128",
+    "identity_id": "V128",
+    "source_file": "unverified/jb-vk-128.jpg",
+    "preferred_file": "unverified/jb-vk-128.jpg",
+    "original_filename": "128.jpg",
+    "width": 445,
+    "height": 616,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_06",
+    "orientation_if_major": "upright",
+    "site_filename": "major_06_upright.jpg",
+    "image": "assets/artworks/major_06_upright.jpg",
+    "package_file": "final_selected_artworks/major_06_upright.jpg",
+    "sha256": "56701f1148c6ae76a61d15c27e4bddfc6609af81dc6415ebf2b21ca5d90965fd",
+    "git_blob_sha": "6181f97871e0ae1e62672bdc6782939076a495b9",
+    "file_bytes": 133378,
+    "assignments": [
+      {
+        "card_id": "major_06",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 445,
+      "height": 616,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-131",
+    "identity_id": "V131",
+    "source_file": "unverified/jb-vk-131.jpg",
+    "preferred_file": "unverified/jb-vk-131.jpg",
+    "original_filename": "131.jpg",
+    "width": 458,
+    "height": 700,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_06",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_06_reversed.jpg",
+    "image": "assets/artworks/major_06_reversed.jpg",
+    "package_file": "final_selected_artworks/major_06_reversed.jpg",
+    "sha256": "98969599efcb8157a2351410052dea0e50b3c9ea41168207ad93f540a5e5d587",
+    "git_blob_sha": "de32649d3416fc1c250ec082cbc3ebfeb90dc72d",
+    "file_bytes": 57079,
+    "assignments": [
+      {
+        "card_id": "major_06",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 458,
+      "height": 700,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-013",
+    "identity_id": "L013",
+    "source_file": "candidate_assets/jb-lx-013.jpg",
+    "preferred_file": "candidate_assets/jb-lx-013.jpg",
+    "original_filename": "jb-lx-013.jpg",
+    "width": 930,
+    "height": 452,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [
+      "candidate_assets/jb-lx-002.jpg",
+      "candidate_assets/jb-lx-003.jpg"
+    ],
+    "used_by_card": "major_07",
+    "orientation_if_major": "upright",
+    "site_filename": "major_07_upright.jpg",
+    "image": "assets/artworks/major_07_upright.jpg",
+    "package_file": "final_selected_artworks/major_07_upright.jpg",
+    "sha256": "3ba27e1edcc598488d52a8ee9aea67d314cd05c4e620eec1abd37cb84f0a6d57",
+    "git_blob_sha": "347f450e36caa1664ffdbb1a20f89fba148ef8e8",
+    "file_bytes": 208951,
+    "assignments": [
+      {
+        "card_id": "major_07",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 930,
+      "height": 452,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-095",
+    "identity_id": "V095",
+    "source_file": "unverified/jb-vk-095.jpg",
+    "preferred_file": "unverified/jb-vk-095.jpg",
+    "original_filename": "095.jpg",
+    "width": 604,
+    "height": 405,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_07",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_07_reversed.jpg",
+    "image": "assets/artworks/major_07_reversed.jpg",
+    "package_file": "final_selected_artworks/major_07_reversed.jpg",
+    "sha256": "c6b29b8105bd62d309b83074678750ff3f15b9dfe83bfb40a4c868ad78949ca4",
+    "git_blob_sha": "9c682289508ff6c08628f930a92195e4bf1ea6cb",
+    "file_bytes": 75932,
+    "assignments": [
+      {
+        "card_id": "major_07",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 604,
+      "height": 405,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-002",
+    "identity_id": "V002",
+    "source_file": "candidate_assets/jb-lx-078.jpg",
+    "preferred_file": "candidate_assets/jb-lx-078.jpg",
+    "original_filename": "002.jpg",
+    "width": 1157,
+    "height": 1600,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-002.jpg"],
+    "used_by_card": "major_08",
+    "orientation_if_major": "upright",
+    "site_filename": "major_08_upright.jpg",
+    "image": "assets/artworks/major_08_upright.jpg",
+    "package_file": "final_selected_artworks/major_08_upright.jpg",
+    "sha256": "c8f58697f76b918985598e98996cab71e5b6d9283d97c11f33266f529aa65657",
+    "git_blob_sha": "10478447e11a7cc1fb2d7644bece3ebebb01075d",
+    "file_bytes": 641312,
+    "assignments": [
+      {
+        "card_id": "major_08",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 732,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-079",
+    "identity_id": "V079",
+    "source_file": "unverified/jb-vk-079.jpg",
+    "preferred_file": "unverified/jb-vk-079.jpg",
+    "original_filename": "079.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_08",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_08_reversed.jpg",
+    "image": "assets/artworks/major_08_reversed.jpg",
+    "package_file": "final_selected_artworks/major_08_reversed.jpg",
+    "sha256": "f6519fc165b9a3284edac0b0cf9b146610d0aebc8b5d1d85382f93de0698af78",
+    "git_blob_sha": "5c29d52be2342b2d25930a941e588ecc6d3d4d3b",
+    "file_bytes": 297069,
+    "assignments": [
+      {
+        "card_id": "major_08",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-040",
+    "identity_id": "V040",
+    "source_file": "candidate_assets/jb-lx-085.jpg",
+    "preferred_file": "candidate_assets/jb-lx-085.jpg",
+    "original_filename": "040.jpg",
+    "width": 628,
+    "height": 900,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-040.jpg"],
+    "used_by_card": "major_09",
+    "orientation_if_major": "upright",
+    "site_filename": "major_09_upright.jpg",
+    "image": "assets/artworks/major_09_upright.jpg",
+    "package_file": "final_selected_artworks/major_09_upright.jpg",
+    "sha256": "673dbc6fae77228e5aa0bd24900a41f46085070eba13f193a31dc3a5ba1c23f5",
+    "git_blob_sha": "c712b0a5ece8143b5a36c4f4f3d1b04c42c32216",
+    "file_bytes": 219487,
+    "assignments": [
+      {
+        "card_id": "major_09",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 327,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-057",
+    "identity_id": "V057",
+    "source_file": "unverified/jb-vk-057.jpg",
+    "preferred_file": "unverified/jb-vk-057.jpg",
+    "original_filename": "057.jpg",
+    "width": 244,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_09",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_09_reversed.jpg",
+    "image": "assets/artworks/major_09_reversed.jpg",
+    "package_file": "final_selected_artworks/major_09_reversed.jpg",
+    "sha256": "3b2743c1809f962b80f73cafd76c71cda0372c7336469e0812fe67658639083d",
+    "git_blob_sha": "c39ce2fe29c3fced17beca09b81b1989cb0f3021",
+    "file_bytes": 52954,
+    "assignments": [
+      {
+        "card_id": "major_09",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 244,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-058",
+    "identity_id": "V058",
+    "source_file": "unverified/jb-vk-058.jpg",
+    "preferred_file": "unverified/jb-vk-058.jpg",
+    "original_filename": "058.jpg",
+    "width": 318,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_10",
+    "orientation_if_major": "upright",
+    "site_filename": "major_10_upright.jpg",
+    "image": "assets/artworks/major_10_upright.jpg",
+    "package_file": "final_selected_artworks/major_10_upright.jpg",
+    "sha256": "bbfc36cadc4da6a76f2d4db58fcd4492c03b44edb3804ca9440564826e8188c3",
+    "git_blob_sha": "865cba1f8e236d8e9e3c39a84af961cc3c512295",
+    "file_bytes": 47995,
+    "assignments": [
+      {
+        "card_id": "major_10",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 318,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-148",
+    "identity_id": "V148",
+    "source_file": "unverified/jb-vk-148.jpg",
+    "preferred_file": "unverified/jb-vk-148.jpg",
+    "original_filename": "148.jpg",
+    "width": 480,
+    "height": 716,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_10",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_10_reversed.jpg",
+    "image": "assets/artworks/major_10_reversed.jpg",
+    "package_file": "final_selected_artworks/major_10_reversed.jpg",
+    "sha256": "6b0a4277b0062e0de72ee406307e1020805edf25066e9e6826818c25a59585c3",
+    "git_blob_sha": "b38dea9415c9eee99a93172b15238a623fe44686",
+    "file_bytes": 99785,
+    "assignments": [
+      {
+        "card_id": "major_10",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 480,
+      "height": 716,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-015",
+    "identity_id": "V015",
+    "source_file": "unverified/jb-vk-015.jpg",
+    "preferred_file": "unverified/jb-vk-015.jpg",
+    "original_filename": "015.jpg",
+    "width": 837,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_11",
+    "orientation_if_major": "upright",
+    "site_filename": "major_11_upright.jpg",
+    "image": "assets/artworks/major_11_upright.jpg",
+    "package_file": "final_selected_artworks/major_11_upright.jpg",
+    "sha256": "2113cda6b132c415d73f3f2c9b30706c77b43d7763554f84fa9f04a719130412",
+    "git_blob_sha": "9240fa80063dcbffec63e6cfafc8a9e5ee41f40b",
+    "file_bytes": 271865,
+    "assignments": [
+      {
+        "card_id": "major_11",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 837,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-071",
+    "identity_id": "V071",
+    "source_file": "unverified/jb-vk-071.jpg",
+    "preferred_file": "unverified/jb-vk-071.jpg",
+    "original_filename": "071.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_11",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_11_reversed.jpg",
+    "image": "assets/artworks/major_11_reversed.jpg",
+    "package_file": "final_selected_artworks/major_11_reversed.jpg",
+    "sha256": "e5b17018e95061fbf8432772483dd83ae4439f816326c65729e5f7f1089c7dea",
+    "git_blob_sha": "83c53ef820a5e04d6eb4044ff2379d6075d94919",
+    "file_bytes": 292697,
+    "assignments": [
+      {
+        "card_id": "major_11",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-127",
+    "identity_id": "V127",
+    "source_file": "unverified/jb-vk-127.jpg",
+    "preferred_file": "unverified/jb-vk-127.jpg",
+    "original_filename": "127.jpg",
+    "width": 430,
+    "height": 615,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_12",
+    "orientation_if_major": "upright",
+    "site_filename": "major_12_upright.jpg",
+    "image": "assets/artworks/major_12_upright.jpg",
+    "package_file": "final_selected_artworks/major_12_upright.jpg",
+    "sha256": "74d22f2ec9ed8b23aad61982e32019e726dd68cd120e4b96aaf6e5ad6b16a206",
+    "git_blob_sha": "5b851ff262a98bbeb336dfca5150792053c6140a",
+    "file_bytes": 115974,
+    "assignments": [
+      {
+        "card_id": "major_12",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 430,
+      "height": 615,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-102",
+    "identity_id": "V102",
+    "source_file": "unverified/jb-vk-102.jpg",
+    "preferred_file": "unverified/jb-vk-102.jpg",
+    "original_filename": "102.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_12",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_12_reversed.jpg",
+    "image": "assets/artworks/major_12_reversed.jpg",
+    "package_file": "final_selected_artworks/major_12_reversed.jpg",
+    "sha256": "71fc097b499080cc5128a04b790698e1030c5fed6e597f1fbd0a0b91f3f48063",
+    "git_blob_sha": "a17e673db2c779ac2606039cce8eff1412aa31d5",
+    "file_bytes": 73801,
+    "assignments": [
+      {
+        "card_id": "major_12",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-085",
+    "identity_id": "V085",
+    "source_file": "unverified/jb-vk-085.jpg",
+    "preferred_file": "unverified/jb-vk-085.jpg",
+    "original_filename": "085.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_13",
+    "orientation_if_major": "upright",
+    "site_filename": "major_13_upright.jpg",
+    "image": "assets/artworks/major_13_upright.jpg",
+    "package_file": "final_selected_artworks/major_13_upright.jpg",
+    "sha256": "ae9fc72e7672ad38354831d753fb4020c263ce668be5263b24bf14d11ed4c6bc",
+    "git_blob_sha": "c57180019779a8b42de1fd08e4f4452ad132773c",
+    "file_bytes": 273190,
+    "assignments": [
+      {
+        "card_id": "major_13",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-114",
+    "identity_id": "V114",
+    "source_file": "unverified/jb-vk-114.jpg",
+    "preferred_file": "unverified/jb-vk-114.jpg",
+    "original_filename": "114.jpg",
+    "width": 343,
+    "height": 512,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_13",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_13_reversed.jpg",
+    "image": "assets/artworks/major_13_reversed.jpg",
+    "package_file": "final_selected_artworks/major_13_reversed.jpg",
+    "sha256": "a0d4f5e38d5a46105b40e8940b7358d2ebda997774e50b0753a397bd853fa7ea",
+    "git_blob_sha": "f426b55015955c1e0f390bcd3e306ed7fdd2fa5d",
+    "file_bytes": 59794,
+    "assignments": [
+      {
+        "card_id": "major_13",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 343,
+      "height": 512,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-088",
+    "identity_id": "L088",
+    "source_file": "candidate_assets/jb-lx-088.jpg",
+    "preferred_file": "candidate_assets/jb-lx-088.jpg",
+    "original_filename": "jb-lx-088.jpg",
+    "width": 478,
+    "height": 841,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_14",
+    "orientation_if_major": "upright",
+    "site_filename": "major_14_upright.jpg",
+    "image": "assets/artworks/major_14_upright.jpg",
+    "package_file": "final_selected_artworks/major_14_upright.jpg",
+    "sha256": "86ffd28a560f21f97462be023a0782061b8e6849c58ba36b01e5affe2e7a1ad5",
+    "git_blob_sha": "fe15e995cf7e4f092caa36b37edafb36eae0615f",
+    "file_bytes": 206153,
+    "assignments": [
+      {
+        "card_id": "major_14",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 478,
+      "height": 841,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-110",
+    "identity_id": "V110",
+    "source_file": "candidate_assets/jb-lx-029.jpg",
+    "preferred_file": "candidate_assets/jb-lx-029.jpg",
+    "original_filename": "110.jpg",
+    "width": 975,
+    "height": 648,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-110.jpg"],
+    "used_by_card": "major_14",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_14_reversed.jpg",
+    "image": "assets/artworks/major_14_reversed.jpg",
+    "package_file": "final_selected_artworks/major_14_reversed.jpg",
+    "sha256": "9095c05e39a62a66564da15bfc4b16b6743ef3a0644a57452628eb653bc37646",
+    "git_blob_sha": "194ab062a40e293e5539ccaba27a3cfabd28c2cd",
+    "file_bytes": 366607,
+    "assignments": [
+      {
+        "card_id": "major_14",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 873,
+      "height": 627,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-130",
+    "identity_id": "V130",
+    "source_file": "unverified/jb-vk-130.jpg",
+    "preferred_file": "unverified/jb-vk-130.jpg",
+    "original_filename": "130.jpg",
+    "width": 481,
+    "height": 700,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_15",
+    "orientation_if_major": "upright",
+    "site_filename": "major_15_upright.jpg",
+    "image": "assets/artworks/major_15_upright.jpg",
+    "package_file": "final_selected_artworks/major_15_upright.jpg",
+    "sha256": "edb4e1d3a1a23ce773d063da23b4e0fcba94d360622290d46a4b95bbb9ec9141",
+    "git_blob_sha": "cfd01d5382fa43c0e8910c992eda366f2338566b",
+    "file_bytes": 127159,
+    "assignments": [
+      {
+        "card_id": "major_15",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 481,
+      "height": 700,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-005",
+    "identity_id": "L005",
+    "source_file": "candidate_assets/jb-lx-005.jpg",
+    "preferred_file": "candidate_assets/jb-lx-005.jpg",
+    "original_filename": "jb-lx-005.jpg",
+    "width": 819,
+    "height": 1153,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-009.jpg"],
+    "used_by_card": "major_15",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_15_reversed.jpg",
+    "image": "assets/artworks/major_15_reversed.jpg",
+    "package_file": "final_selected_artworks/major_15_reversed.jpg",
+    "sha256": "d45b5db98744e4827c82db8e9eb4d0b3928b175bd1a49f7cdc6b8ea83f987e64",
+    "git_blob_sha": "0852c8554ef4f298b600e48b30a8c1b508e315a7",
+    "file_bytes": 410355,
+    "assignments": [
+      {
+        "card_id": "major_15",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 819,
+      "height": 1153,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-073",
+    "identity_id": "L073",
+    "source_file": "candidate_assets/jb-lx-073.jpg",
+    "preferred_file": "candidate_assets/jb-lx-073.jpg",
+    "original_filename": "jb-lx-073.jpg",
+    "width": 1944,
+    "height": 1135,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_16",
+    "orientation_if_major": "upright",
+    "site_filename": "major_16_upright.jpg",
+    "reuse_status": "INTENTIONAL_REUSE",
+    "reuse_shared_with": "mandatio_07",
+    "image": "assets/artworks/major_16_upright.jpg",
+    "package_file": "final_selected_artworks/major_16_upright.jpg",
+    "sha256": "d854666a7e5d8bf762061af27c7bb60ad94d8d5c18a643b3d13111a1aa473741",
+    "git_blob_sha": "900824d4087139857bcf66929c46340dedea46e4",
+    "file_bytes": 844336,
+    "assignments": [
+      {
+        "card_id": "major_16",
+        "state": "upright"
+      },
+      {
+        "card_id": "mandatio_07",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 1944,
+      "height": 1135,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-143",
+    "identity_id": "V143",
+    "source_file": "unverified/jb-vk-143.jpg",
+    "preferred_file": "unverified/jb-vk-143.jpg",
+    "original_filename": "143.jpg",
+    "width": 707,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_16",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_16_reversed.jpg",
+    "image": "assets/artworks/major_16_reversed.jpg",
+    "package_file": "final_selected_artworks/major_16_reversed.jpg",
+    "sha256": "dda8e143a7278ab8c7b831fa803ad9c5cc7ebfe557cc19bc2ea078791f0df41b",
+    "git_blob_sha": "66c305af82b3861d1eac59ef064a7b842dd28653",
+    "file_bytes": 209794,
+    "assignments": [
+      {
+        "card_id": "major_16",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 707,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-036",
+    "identity_id": "L036",
+    "source_file": "candidate_assets/jb-lx-036.jpg",
+    "preferred_file": "candidate_assets/jb-lx-036.jpg",
+    "original_filename": "jb-lx-036.jpg",
+    "width": 617,
+    "height": 900,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_17",
+    "orientation_if_major": "upright",
+    "site_filename": "major_17_upright.jpg",
+    "image": "assets/artworks/major_17_upright.jpg",
+    "package_file": "final_selected_artworks/major_17_upright.jpg",
+    "sha256": "46485209b0c883ff444f5c56a33351139b90dd2399c607b57f437fdfc8680cff",
+    "git_blob_sha": "5a5d0d73b594e0d489bea341d98b4cc42a5d3c2e",
+    "file_bytes": 231534,
+    "assignments": [
+      {
+        "card_id": "major_17",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 617,
+      "height": 900,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-064",
+    "identity_id": "L064",
+    "source_file": "candidate_assets/jb-lx-064.jpg",
+    "preferred_file": "candidate_assets/jb-lx-064.jpg",
+    "original_filename": "jb-lx-064.jpg",
+    "width": 2630,
+    "height": 1768,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_17",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_17_reversed.jpg",
+    "image": "assets/artworks/major_17_reversed.jpg",
+    "package_file": "final_selected_artworks/major_17_reversed.jpg",
+    "sha256": "b40c3bb87d5b3773a0571fd0b0acf880316b8fedcd893aa66dc86b7780294c16",
+    "git_blob_sha": "de0183fa057250ae475277ede1bcc32ac5df711b",
+    "file_bytes": 1582442,
+    "assignments": [
+      {
+        "card_id": "major_17",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 2630,
+      "height": 1768,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-137",
+    "identity_id": "V137",
+    "source_file": "unverified/jb-vk-137.jpg",
+    "preferred_file": "unverified/jb-vk-137.jpg",
+    "original_filename": "137.jpg",
+    "width": 400,
+    "height": 642,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_18",
+    "orientation_if_major": "upright",
+    "site_filename": "major_18_upright.jpg",
+    "image": "assets/artworks/major_18_upright.jpg",
+    "package_file": "final_selected_artworks/major_18_upright.jpg",
+    "sha256": "30f80ad04e7f7e8d324c46b4fe243427b455aa551f342b14d5845176145a96b9",
+    "git_blob_sha": "0a7ef13a1cb39856466197cad87406d13cbf3b25",
+    "file_bytes": 96908,
+    "assignments": [
+      {
+        "card_id": "major_18",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 400,
+      "height": 642,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-066",
+    "identity_id": "L066",
+    "source_file": "candidate_assets/jb-lx-066.png",
+    "preferred_file": "candidate_assets/jb-lx-066.png",
+    "original_filename": "jb-lx-066.png",
+    "width": 662,
+    "height": 936,
+    "format": "PNG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": ["candidate_assets/jb-lx-067.png"],
+    "used_by_card": "major_18",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_18_reversed.png",
+    "image": "assets/artworks/major_18_reversed.png",
+    "package_file": "final_selected_artworks/major_18_reversed.png",
+    "sha256": "a8970b6eebb24db4852a9182580e3d0be624e5714bc047a8d16a6e3d5619db2f",
+    "git_blob_sha": "50c70934f7004b5f96b1e607d790f6eb227bc0a0",
+    "file_bytes": 870966,
+    "assignments": [
+      {
+        "card_id": "major_18",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 662,
+      "height": 936,
+      "format": "PNG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-030",
+    "identity_id": "L030",
+    "source_file": "candidate_assets/jb-lx-030.jpg",
+    "preferred_file": "candidate_assets/jb-lx-030.jpg",
+    "original_filename": "jb-lx-030.jpg",
+    "width": 824,
+    "height": 1152,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_19",
+    "orientation_if_major": "upright",
+    "site_filename": "major_19_upright.jpg",
+    "image": "assets/artworks/major_19_upright.jpg",
+    "package_file": "final_selected_artworks/major_19_upright.jpg",
+    "sha256": "ee07bcc16ca061320bf891f3a5988f0f3caaa4f463d3d8fc4c21e3122428c348",
+    "git_blob_sha": "d825c559e7960666ae423641c8ca456b746faebb",
+    "file_bytes": 401819,
+    "assignments": [
+      {
+        "card_id": "major_19",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 824,
+      "height": 1152,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-098",
+    "identity_id": "V098",
+    "source_file": "unverified/jb-vk-098.jpg",
+    "preferred_file": "unverified/jb-vk-098.jpg",
+    "original_filename": "098.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_19",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_19_reversed.jpg",
+    "image": "assets/artworks/major_19_reversed.jpg",
+    "package_file": "final_selected_artworks/major_19_reversed.jpg",
+    "sha256": "328e0f38bb1783f4cb0c8061ff1f692b390147a62f7e47f95080f7008bbd73ac",
+    "git_blob_sha": "ef42af6bc186d2141b01222a8104dc9d3651ce78",
+    "file_bytes": 74757,
+    "assignments": [
+      {
+        "card_id": "major_19",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-050",
+    "identity_id": "V050",
+    "source_file": "unverified/jb-vk-050.jpg",
+    "preferred_file": "unverified/jb-vk-050.jpg",
+    "original_filename": "050.jpg",
+    "width": 244,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_20",
+    "orientation_if_major": "upright",
+    "site_filename": "major_20_upright.jpg",
+    "image": "assets/artworks/major_20_upright.jpg",
+    "package_file": "final_selected_artworks/major_20_upright.jpg",
+    "sha256": "85318b236f507b8073d6095249f50c61e114be4152a552f8ab4c0893f1bd7e38",
+    "git_blob_sha": "ca0e98a7ad6fd16715df0b5fdebd64680bccc916",
+    "file_bytes": 27074,
+    "assignments": [
+      {
+        "card_id": "major_20",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 244,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-088",
+    "identity_id": "V088",
+    "source_file": "unverified/jb-vk-088.jpg",
+    "preferred_file": "unverified/jb-vk-088.jpg",
+    "original_filename": "088.jpg",
+    "width": 295,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_20",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_20_reversed.jpg",
+    "image": "assets/artworks/major_20_reversed.jpg",
+    "package_file": "final_selected_artworks/major_20_reversed.jpg",
+    "sha256": "783aa5482c35ee30b225c93b3e613fb1dbe3849cb56ea3038ee20d27404e32ec",
+    "git_blob_sha": "6bea203f5ae9fb0b6198cb2ad530d381173045c1",
+    "file_bytes": 39022,
+    "assignments": [
+      {
+        "card_id": "major_20",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 295,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-122",
+    "identity_id": "V122",
+    "source_file": "unverified/jb-vk-122.jpg",
+    "preferred_file": "unverified/jb-vk-122.jpg",
+    "original_filename": "122.jpg",
+    "width": 734,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": ["candidate_assets/jb-lx-017.jpg"],
+    "used_by_card": "major_21",
+    "orientation_if_major": "upright",
+    "site_filename": "major_21_upright.jpg",
+    "image": "assets/artworks/major_21_upright.jpg",
+    "package_file": "final_selected_artworks/major_21_upright.jpg",
+    "sha256": "23a3d4e668fc88eb6a7a91007569bb974efbecf39f07578c62410c8e2dd3ef31",
+    "git_blob_sha": "5d6ce68dcd6ab0ade713568a2c95c4d0cb0ae7d4",
+    "file_bytes": 355799,
+    "assignments": [
+      {
+        "card_id": "major_21",
+        "state": "upright"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 734,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-086",
+    "identity_id": "V086",
+    "source_file": "unverified/jb-vk-086.jpg",
+    "preferred_file": "unverified/jb-vk-086.jpg",
+    "original_filename": "086.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "major_21",
+    "orientation_if_major": "reversed",
+    "site_filename": "major_21_reversed.jpg",
+    "image": "assets/artworks/major_21_reversed.jpg",
+    "package_file": "final_selected_artworks/major_21_reversed.jpg",
+    "sha256": "1d9fcfc64d819cf04b230a63a2d739a97181192adf90da23b6ad3f795e037db1",
+    "git_blob_sha": "37ace17f3c267e03398409e2cda3a6cf7cfe209a",
+    "file_bytes": 241389,
+    "assignments": [
+      {
+        "card_id": "major_21",
+        "state": "reversed"
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-053",
+    "identity_id": "V053",
+    "source_file": "unverified/jb-vk-053.jpg",
+    "preferred_file": "unverified/jb-vk-053.jpg",
+    "original_filename": "053.jpg",
+    "width": 388,
+    "height": 1000,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_01",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_01.jpg",
+    "image": "assets/artworks/adeptio_01.jpg",
+    "package_file": "final_selected_artworks/adeptio_01.jpg",
+    "sha256": "99cd75ad433cc6fb2b44974455e51ee1afaaf27a68e5db1e7a5cab28e86b960b",
+    "git_blob_sha": "3504ada804868c3ed120cec2c6671df92d9ca238",
+    "file_bytes": 139573,
+    "assignments": [
+      {
+        "card_id": "adeptio_01",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 388,
+      "height": 1000,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-004",
+    "identity_id": "L004",
+    "source_file": "candidate_assets/jb-lx-004.jpg",
+    "preferred_file": "candidate_assets/jb-lx-004.jpg",
+    "original_filename": "jb-lx-004.jpg",
+    "width": 894,
+    "height": 1226,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_02",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_02.jpg",
+    "image": "assets/artworks/adeptio_02.jpg",
+    "package_file": "final_selected_artworks/adeptio_02.jpg",
+    "sha256": "e1d3a7e4e19e0551b60107b4e855ab229123756b31316d63bc6c681923f56bf3",
+    "git_blob_sha": "4567c08f50e7d8fb777bbb84adf8fc2b11ec8fef",
+    "file_bytes": 323447,
+    "assignments": [
+      {
+        "card_id": "adeptio_02",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 894,
+      "height": 1226,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-123",
+    "identity_id": "V123",
+    "source_file": "unverified/jb-vk-123.jpg",
+    "preferred_file": "unverified/jb-vk-123.jpg",
+    "original_filename": "123.jpg",
+    "width": 215,
+    "height": 523,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_03",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_03.jpg",
+    "image": "assets/artworks/adeptio_03.jpg",
+    "package_file": "final_selected_artworks/adeptio_03.jpg",
+    "sha256": "a8655158794a2c20887e40919c67c73b927d51e6e44635e7b944724e7490f997",
+    "git_blob_sha": "a36c9546d519b48e1ab5d1f7f9e1fa311bcb50dc",
+    "file_bytes": 56850,
+    "assignments": [
+      {
+        "card_id": "adeptio_03",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 215,
+      "height": 523,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-051",
+    "identity_id": "V051",
+    "source_file": "unverified/jb-vk-051.jpg",
+    "preferred_file": "unverified/jb-vk-051.jpg",
+    "original_filename": "051.jpg",
+    "width": 554,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_04",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_04.jpg",
+    "image": "assets/artworks/adeptio_04.jpg",
+    "package_file": "final_selected_artworks/adeptio_04.jpg",
+    "sha256": "5cbd484fce36b06fdcf84c03856d155543ce6cb53cb26824692253f7a7365d30",
+    "git_blob_sha": "acddd7cb0e4072f700ead4e65929f37435a4d640",
+    "file_bytes": 86397,
+    "assignments": [
+      {
+        "card_id": "adeptio_04",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 554,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-012",
+    "identity_id": "L012",
+    "source_file": "candidate_assets/jb-lx-012.jpg",
+    "preferred_file": "candidate_assets/jb-lx-012.jpg",
+    "original_filename": "jb-lx-012.jpg",
+    "width": 400,
+    "height": 1039,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_05",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_05.jpg",
+    "image": "assets/artworks/adeptio_05.jpg",
+    "package_file": "final_selected_artworks/adeptio_05.jpg",
+    "sha256": "2b3fa3b2ace80e1c81254db05a4dfcde5c1a9597abaed6a6aeaa03301e9f5b91",
+    "git_blob_sha": "62a5d55e4098c3349ba084c9795ef57fc8f161a2",
+    "file_bytes": 155497,
+    "assignments": [
+      {
+        "card_id": "adeptio_05",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 400,
+      "height": 1039,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-074",
+    "identity_id": "L074",
+    "source_file": "candidate_assets/jb-lx-074.jpg",
+    "preferred_file": "candidate_assets/jb-lx-074.jpg",
+    "original_filename": "jb-lx-074.jpg",
+    "width": 351,
+    "height": 522,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_06",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_06.jpg",
+    "image": "assets/artworks/adeptio_06.jpg",
+    "package_file": "final_selected_artworks/adeptio_06.jpg",
+    "sha256": "204932f78c7d2734c09c96f9598cd1b131f073c07262298ff5387f0f513965a2",
+    "git_blob_sha": "b6d3804dee97aa513d371bac1bf964c25ab08b63",
+    "file_bytes": 94503,
+    "assignments": [
+      {
+        "card_id": "adeptio_06",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 351,
+      "height": 522,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-079",
+    "identity_id": "L079",
+    "source_file": "candidate_assets/jb-lx-079.jpg",
+    "preferred_file": "candidate_assets/jb-lx-079.jpg",
+    "original_filename": "jb-lx-079.jpg",
+    "width": 1000,
+    "height": 1473,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": ["candidate_assets/jb-lx-015.jpg"],
+    "used_by_card": "adeptio_07",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_07.jpg",
+    "image": "assets/artworks/adeptio_07.jpg",
+    "package_file": "final_selected_artworks/adeptio_07.jpg",
+    "sha256": "1ada3027d03dbc54a9137968eebe5587b2f06705824ced5aaccf15eeae21b05a",
+    "git_blob_sha": "d00e5108c6001da9b0114e6846fa5f6eb0acf94e",
+    "file_bytes": 374903,
+    "assignments": [
+      {
+        "card_id": "adeptio_07",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 1000,
+      "height": 1473,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-134",
+    "identity_id": "V134",
+    "source_file": "unverified/jb-vk-134.jpg",
+    "preferred_file": "unverified/jb-vk-134.jpg",
+    "original_filename": "134.jpg",
+    "width": 420,
+    "height": 600,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_08",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_08.jpg",
+    "image": "assets/artworks/adeptio_08.jpg",
+    "package_file": "final_selected_artworks/adeptio_08.jpg",
+    "sha256": "0146bac612f9553c37abe0af0bbebcdf578a8be1d13c32164b1c72b9e6ac3b79",
+    "git_blob_sha": "6375a434891da503ec723225780118c656ee68ee",
+    "file_bytes": 72966,
+    "assignments": [
+      {
+        "card_id": "adeptio_08",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 420,
+      "height": 600,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-090",
+    "identity_id": "V090",
+    "source_file": "unverified/jb-vk-090.jpg",
+    "preferred_file": "unverified/jb-vk-090.jpg",
+    "original_filename": "090.jpg",
+    "width": 526,
+    "height": 481,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_09",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_09.jpg",
+    "image": "assets/artworks/adeptio_09.jpg",
+    "package_file": "final_selected_artworks/adeptio_09.jpg",
+    "sha256": "2a7fc465b6fb1009ef8c8bae097a6252c886a20ca661c025982f74d198ef99ea",
+    "git_blob_sha": "4f9e6e735b862388e2345c69f24f37a5fa8ba230",
+    "file_bytes": 62001,
+    "assignments": [
+      {
+        "card_id": "adeptio_09",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 526,
+      "height": 481,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-020",
+    "identity_id": "V020",
+    "source_file": "unverified/jb-vk-020.jpg",
+    "preferred_file": "unverified/jb-vk-020.jpg",
+    "original_filename": "020.jpg",
+    "width": 1019,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_10",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_10.jpg",
+    "image": "assets/artworks/adeptio_10.jpg",
+    "package_file": "final_selected_artworks/adeptio_10.jpg",
+    "sha256": "76b21b1df15495de1c265f1b97b1980f35b944074d1eb28fc9eb206eae98e330",
+    "git_blob_sha": "3b5ed07ae150031cdcc723db48910b1c66980798",
+    "file_bytes": 295188,
+    "assignments": [
+      {
+        "card_id": "adeptio_10",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 1019,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-019",
+    "identity_id": "L019",
+    "source_file": "candidate_assets/jb-lx-019.jpg",
+    "preferred_file": "candidate_assets/jb-lx-019.jpg",
+    "original_filename": "jb-lx-019.jpg",
+    "width": 277,
+    "height": 630,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_11",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_11.jpg",
+    "image": "assets/artworks/adeptio_11.jpg",
+    "package_file": "final_selected_artworks/adeptio_11.jpg",
+    "sha256": "da805270018bac8ede177d99b39582256958a4360d9b06152a7fa72526b7c7d7",
+    "git_blob_sha": "901b78961a43eecb7ec47885940b73e7a5eff709",
+    "file_bytes": 44759,
+    "assignments": [
+      {
+        "card_id": "adeptio_11",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 277,
+      "height": 630,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-003",
+    "identity_id": "V003",
+    "source_file": "candidate_assets/jb-lx-077.jpg",
+    "preferred_file": "candidate_assets/jb-lx-077.jpg",
+    "original_filename": "003.jpg",
+    "width": 2169,
+    "height": 3168,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-003.jpg"],
+    "used_by_card": "adeptio_12",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_12.jpg",
+    "image": "assets/artworks/adeptio_12.jpg",
+    "package_file": "final_selected_artworks/adeptio_12.jpg",
+    "sha256": "ae9858cc1dd8aff79342e60ee2a731586b5b6d2b34646cf5046b7ecd1dbd1513",
+    "git_blob_sha": "c5b3ee3a6c2e8e7d594fde27df78319e1754618e",
+    "file_bytes": 1894980,
+    "assignments": [
+      {
+        "card_id": "adeptio_12",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 690,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-049",
+    "identity_id": "L049",
+    "source_file": "candidate_assets/jb-lx-049.jpg",
+    "preferred_file": "candidate_assets/jb-lx-049.jpg",
+    "original_filename": "jb-lx-049.jpg",
+    "width": 615,
+    "height": 800,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_13",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_13.jpg",
+    "image": "assets/artworks/adeptio_13.jpg",
+    "package_file": "final_selected_artworks/adeptio_13.jpg",
+    "sha256": "01e86737f7e6b8ba425bfe00e38f7f70803b04b9ac46fd71e8b1ccdb822ec085",
+    "git_blob_sha": "b3133eebfe768bccaba16a69aa3c8040c24f984b",
+    "file_bytes": 269961,
+    "assignments": [
+      {
+        "card_id": "adeptio_13",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 615,
+      "height": 800,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-001",
+    "identity_id": "V001",
+    "source_file": "unverified/jb-vk-001.jpg",
+    "preferred_file": "unverified/jb-vk-001.jpg",
+    "original_filename": "001.jpg",
+    "width": 691,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "adeptio_14",
+    "orientation_if_major": null,
+    "site_filename": "adeptio_14.jpg",
+    "image": "assets/artworks/adeptio_14.jpg",
+    "package_file": "final_selected_artworks/adeptio_14.jpg",
+    "sha256": "0df08ba1687c763131c7c0e6e1e2e91432f7bf24e612901373581e4d15584c29",
+    "git_blob_sha": "a73846e97e35564e306fa947bc1bdea3bb15dca5",
+    "file_bytes": 324307,
+    "assignments": [
+      {
+        "card_id": "adeptio_14",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 691,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-026",
+    "identity_id": "L026",
+    "source_file": "candidate_assets/jb-lx-026.png",
+    "preferred_file": "candidate_assets/jb-lx-026.png",
+    "original_filename": "jb-lx-026.png",
+    "width": 1346,
+    "height": 1680,
+    "format": "PNG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_01",
+    "orientation_if_major": null,
+    "site_filename": "discordia_01.png",
+    "image": "assets/artworks/discordia_01.png",
+    "package_file": "final_selected_artworks/discordia_01.png",
+    "sha256": "b1efe8860881aefdd971fb4ad45925c16a0f1727610df11eee49496899a3c509",
+    "git_blob_sha": "42f617e60eb8bf25137bd347f0d0cab284afa03b",
+    "file_bytes": 1277855,
+    "assignments": [
+      {
+        "card_id": "discordia_01",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 1346,
+      "height": 1680,
+      "format": "PNG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-038",
+    "identity_id": "L038",
+    "source_file": "candidate_assets/jb-lx-038.png",
+    "preferred_file": "candidate_assets/jb-lx-038.png",
+    "original_filename": "jb-lx-038.png",
+    "width": 802,
+    "height": 1078,
+    "format": "PNG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_02",
+    "orientation_if_major": null,
+    "site_filename": "discordia_02.png",
+    "image": "assets/artworks/discordia_02.png",
+    "package_file": "final_selected_artworks/discordia_02.png",
+    "sha256": "65fa51583cbcf2520071512385606b2bad3729d8adc83eeee0dd2484c086c1ba",
+    "git_blob_sha": "0363f8060e1b97aeb8c9d2dcdbaec6c6eb659949",
+    "file_bytes": 1494289,
+    "assignments": [
+      {
+        "card_id": "discordia_02",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 802,
+      "height": 1078,
+      "format": "PNG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-061",
+    "identity_id": "V061",
+    "source_file": "unverified/jb-vk-061.jpg",
+    "preferred_file": "unverified/jb-vk-061.jpg",
+    "original_filename": "061.jpg",
+    "width": 398,
+    "height": 834,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_03",
+    "orientation_if_major": null,
+    "site_filename": "discordia_03.jpg",
+    "image": "assets/artworks/discordia_03.jpg",
+    "package_file": "final_selected_artworks/discordia_03.jpg",
+    "sha256": "34942ee8106984d2759b3b70db69cae02e16852f24c6ec12f054040726948ea8",
+    "git_blob_sha": "982ab211c5a242854b424d4f07e766fe2c1f57cd",
+    "file_bytes": 101949,
+    "assignments": [
+      {
+        "card_id": "discordia_03",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 398,
+      "height": 834,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-037",
+    "identity_id": "V037",
+    "source_file": "candidate_assets/jb-lx-014.jpg",
+    "preferred_file": "candidate_assets/jb-lx-014.jpg",
+    "original_filename": "037.jpg",
+    "width": 774,
+    "height": 689,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-037.jpg"],
+    "used_by_card": "discordia_04",
+    "orientation_if_major": null,
+    "site_filename": "discordia_04.jpg",
+    "image": "assets/artworks/discordia_04.jpg",
+    "package_file": "final_selected_artworks/discordia_04.jpg",
+    "sha256": "fe136df2b96fd4be59d977970afa5bae58ff14be256bb6d229707f4b6c21ad22",
+    "git_blob_sha": "9d827907975ebd6baf50cabd29032811ebcdb616",
+    "file_bytes": 241775,
+    "assignments": [
+      {
+        "card_id": "discordia_04",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 498,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-038",
+    "identity_id": "V038",
+    "source_file": "unverified/jb-vk-038.jpg",
+    "preferred_file": "unverified/jb-vk-038.jpg",
+    "original_filename": "038.jpg",
+    "width": 338,
+    "height": 481,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_05",
+    "orientation_if_major": null,
+    "site_filename": "discordia_05.jpg",
+    "image": "assets/artworks/discordia_05.jpg",
+    "package_file": "final_selected_artworks/discordia_05.jpg",
+    "sha256": "cdba2b31f32c056a292065d0ebb6c7c6733f687fc541b446db654c4aaf240e98",
+    "git_blob_sha": "268a27b8c9d3b40d6c6a77da7852ef9f0f891a42",
+    "file_bytes": 63670,
+    "assignments": [
+      {
+        "card_id": "discordia_05",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 338,
+      "height": 481,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-065",
+    "identity_id": "V065",
+    "source_file": "unverified/jb-vk-065.jpg",
+    "preferred_file": "unverified/jb-vk-065.jpg",
+    "original_filename": "065.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_06",
+    "orientation_if_major": null,
+    "site_filename": "discordia_06.jpg",
+    "image": "assets/artworks/discordia_06.jpg",
+    "package_file": "final_selected_artworks/discordia_06.jpg",
+    "sha256": "4be7f0307b94dcf6dc09aaef352886fb07ff4b45afe6e5ab9334220a7dfa763b",
+    "git_blob_sha": "b5e127b71d57a573acc2d90095e7382a8088e56f",
+    "file_bytes": 276008,
+    "assignments": [
+      {
+        "card_id": "discordia_06",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-073",
+    "identity_id": "V073",
+    "source_file": "unverified/jb-vk-073.jpg",
+    "preferred_file": "unverified/jb-vk-073.jpg",
+    "original_filename": "073.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_07",
+    "orientation_if_major": null,
+    "site_filename": "discordia_07.jpg",
+    "image": "assets/artworks/discordia_07.jpg",
+    "package_file": "final_selected_artworks/discordia_07.jpg",
+    "sha256": "4c4ee66af609ce91ea4b8fc9c307015e6e7913e00dbf4a5a0723cc79964bfd59",
+    "git_blob_sha": "1a7081524c57e3d22dfaf21824ed23697a2753a0",
+    "file_bytes": 332426,
+    "assignments": [
+      {
+        "card_id": "discordia_07",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-067",
+    "identity_id": "V067",
+    "source_file": "unverified/jb-vk-067.jpg",
+    "preferred_file": "unverified/jb-vk-067.jpg",
+    "original_filename": "067.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_08",
+    "orientation_if_major": null,
+    "site_filename": "discordia_08.jpg",
+    "image": "assets/artworks/discordia_08.jpg",
+    "package_file": "final_selected_artworks/discordia_08.jpg",
+    "sha256": "df5cdc1bc3bcc500cc51795ff45f0eca5bade91ce56704cf2b96bf9f9ea337d7",
+    "git_blob_sha": "44701ce1693832db4fd46b54a7ee2dca3c6ce356",
+    "file_bytes": 267950,
+    "assignments": [
+      {
+        "card_id": "discordia_08",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-101",
+    "identity_id": "V101",
+    "source_file": "unverified/jb-vk-101.jpg",
+    "preferred_file": "unverified/jb-vk-101.jpg",
+    "original_filename": "101.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_09",
+    "orientation_if_major": null,
+    "site_filename": "discordia_09.jpg",
+    "image": "assets/artworks/discordia_09.jpg",
+    "package_file": "final_selected_artworks/discordia_09.jpg",
+    "sha256": "0db973ad2341a1314abc47d23f370eaf4412755d74fffe43faf3aa7daae11d0b",
+    "git_blob_sha": "e49b9fe0f8ac4cb9f4066eae232477658dbd9b61",
+    "file_bytes": 83180,
+    "assignments": [
+      {
+        "card_id": "discordia_09",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-080",
+    "identity_id": "V080",
+    "source_file": "unverified/jb-vk-080.jpg",
+    "preferred_file": "unverified/jb-vk-080.jpg",
+    "original_filename": "080.jpg",
+    "width": 768,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_10",
+    "orientation_if_major": null,
+    "site_filename": "discordia_10.jpg",
+    "image": "assets/artworks/discordia_10.jpg",
+    "package_file": "final_selected_artworks/discordia_10.jpg",
+    "sha256": "df79b7fa85dbd46b4375df9c71bd907129c78320a794d53bbc06672135a7c3e9",
+    "git_blob_sha": "9037990de729047bc3005346338f5ec5c8099905",
+    "file_bytes": 260526,
+    "assignments": [
+      {
+        "card_id": "discordia_10",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 768,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-120",
+    "identity_id": "V120",
+    "source_file": "unverified/jb-vk-120.jpg",
+    "preferred_file": "unverified/jb-vk-120.jpg",
+    "original_filename": "120.jpg",
+    "width": 358,
+    "height": 512,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_11",
+    "orientation_if_major": null,
+    "site_filename": "discordia_11.jpg",
+    "image": "assets/artworks/discordia_11.jpg",
+    "package_file": "final_selected_artworks/discordia_11.jpg",
+    "sha256": "54fba7706a9f952382c8f7de25a5bdeff2ab84e27f777fa937f832c02d0ad752",
+    "git_blob_sha": "5673e74ad31b5c2543ea8d04f9ba5a0aa6fdc6e4",
+    "file_bytes": 68045,
+    "assignments": [
+      {
+        "card_id": "discordia_11",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 358,
+      "height": 512,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-055",
+    "identity_id": "V055",
+    "source_file": "candidate_assets/jb-lx-022.jpg",
+    "preferred_file": "candidate_assets/jb-lx-022.jpg",
+    "original_filename": "055.jpg",
+    "width": 976,
+    "height": 1229,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-055.jpg"],
+    "used_by_card": "discordia_12",
+    "orientation_if_major": null,
+    "site_filename": "discordia_12.jpg",
+    "image": "assets/artworks/discordia_12.jpg",
+    "package_file": "final_selected_artworks/discordia_12.jpg",
+    "sha256": "0e77f338046a19c693cd510cc25feea6a48bb2871a5157b4157828ae79b27e00",
+    "git_blob_sha": "fc1b3ac58ed29361fcf207556bdb6b470f75fe3d",
+    "file_bytes": 444426,
+    "assignments": [
+      {
+        "card_id": "discordia_12",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 841,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-096",
+    "identity_id": "V096",
+    "source_file": "unverified/jb-vk-096.jpg",
+    "preferred_file": "unverified/jb-vk-096.jpg",
+    "original_filename": "096.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_13",
+    "orientation_if_major": null,
+    "site_filename": "discordia_13.jpg",
+    "image": "assets/artworks/discordia_13.jpg",
+    "package_file": "final_selected_artworks/discordia_13.jpg",
+    "sha256": "acef8b53d7a569e2a59f72f2bf0c707bec46642f3e37b2d45b4a3bd1346008fb",
+    "git_blob_sha": "175220f824073f5874b45ad263663e4f3fccf043",
+    "file_bytes": 76189,
+    "assignments": [
+      {
+        "card_id": "discordia_13",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-006",
+    "identity_id": "V006",
+    "source_file": "unverified/jb-vk-006.jpg",
+    "preferred_file": "unverified/jb-vk-006.jpg",
+    "original_filename": "006.jpg",
+    "width": 735,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "discordia_14",
+    "orientation_if_major": null,
+    "site_filename": "discordia_14.jpg",
+    "image": "assets/artworks/discordia_14.jpg",
+    "package_file": "final_selected_artworks/discordia_14.jpg",
+    "sha256": "b49e8c9e1fad0ec4663ee2e35d540a33948d792a0fcdf2d8f95304595071f0ea",
+    "git_blob_sha": "21b48a1a79cf96c3e5727ca46591bbdea9aaf116",
+    "file_bytes": 297351,
+    "assignments": [
+      {
+        "card_id": "discordia_14",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 735,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-089",
+    "identity_id": "V089",
+    "source_file": "unverified/jb-vk-089.jpg",
+    "preferred_file": "unverified/jb-vk-089.jpg",
+    "original_filename": "089.jpg",
+    "width": 534,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_01",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_01.jpg",
+    "image": "assets/artworks/excuteria_01.jpg",
+    "package_file": "final_selected_artworks/excuteria_01.jpg",
+    "sha256": "46195abbdc24a64ef14023af202cf35c8dcfb53940805044721b7bd3368840bd",
+    "git_blob_sha": "8625cc977913d7ed67e0384e50d27ff1ae8480a3",
+    "file_bytes": 76816,
+    "assignments": [
+      {
+        "card_id": "excuteria_01",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 534,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-042",
+    "identity_id": "V042",
+    "source_file": "candidate_assets/jb-lx-041.jpg",
+    "preferred_file": "candidate_assets/jb-lx-041.jpg",
+    "original_filename": "042.jpg",
+    "width": 302,
+    "height": 685,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-042.jpg"],
+    "used_by_card": "excuteria_02",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_02.jpg",
+    "image": "assets/artworks/excuteria_02.jpg",
+    "package_file": "final_selected_artworks/excuteria_02.jpg",
+    "sha256": "ef9eed197f70c7f9a5e1d9f0504d1535e77d03ac55e420e755a04328f7c27fbd",
+    "git_blob_sha": "85b9c4ae3ce79f760b8488f9768bdb7127ba828e",
+    "file_bytes": 98521,
+    "assignments": [
+      {
+        "card_id": "excuteria_02",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 744,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-047",
+    "identity_id": "V047",
+    "source_file": "unverified/jb-vk-047.jpg",
+    "preferred_file": "unverified/jb-vk-047.jpg",
+    "original_filename": "047.jpg",
+    "width": 329,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_03",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_03.jpg",
+    "image": "assets/artworks/excuteria_03.jpg",
+    "package_file": "final_selected_artworks/excuteria_03.jpg",
+    "sha256": "38ca44db0d1bd722acdfefe77bf75ad64ef256a1122dc9808621452177e80864",
+    "git_blob_sha": "3ce5d1f5c7b913da8b0eb499d50353bbbadac3cd",
+    "file_bytes": 54868,
+    "assignments": [
+      {
+        "card_id": "excuteria_03",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 329,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-043",
+    "identity_id": "V043",
+    "source_file": "unverified/jb-vk-043.jpg",
+    "preferred_file": "unverified/jb-vk-043.jpg",
+    "original_filename": "043.jpg",
+    "width": 180,
+    "height": 300,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_04",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_04.jpg",
+    "image": "assets/artworks/excuteria_04.jpg",
+    "package_file": "final_selected_artworks/excuteria_04.jpg",
+    "sha256": "43d122d38f87a1b3c5486299140dec61ccabc145607d343b166980089b654aed",
+    "git_blob_sha": "b3876e7a8e8f82bd5262aaf085cac845ab44dd45",
+    "file_bytes": 26365,
+    "assignments": [
+      {
+        "card_id": "excuteria_04",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 180,
+      "height": 300,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-045",
+    "identity_id": "L045",
+    "source_file": "candidate_assets/jb-lx-045.jpg",
+    "preferred_file": "candidate_assets/jb-lx-045.jpg",
+    "original_filename": "jb-lx-045.jpg",
+    "width": 708,
+    "height": 997,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_05",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_05.jpg",
+    "image": "assets/artworks/excuteria_05.jpg",
+    "package_file": "final_selected_artworks/excuteria_05.jpg",
+    "sha256": "74545b1a26e97155f84dc6b00b881a8e241de9c0588192109843b26f0e22cd89",
+    "git_blob_sha": "292b0f8b58aa6de67b062924f1abf742c127f87c",
+    "file_bytes": 180848,
+    "assignments": [
+      {
+        "card_id": "excuteria_05",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 708,
+      "height": 997,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-048",
+    "identity_id": "V048",
+    "source_file": "unverified/jb-vk-048.jpg",
+    "preferred_file": "unverified/jb-vk-048.jpg",
+    "original_filename": "048.jpg",
+    "width": 443,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_06",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_06.jpg",
+    "image": "assets/artworks/excuteria_06.jpg",
+    "package_file": "final_selected_artworks/excuteria_06.jpg",
+    "sha256": "e71f76e9b2e9e5544d4ed85352804e25f4bb880d2de58e05fd3b221f1e032ab4",
+    "git_blob_sha": "c9d5988da2b1e231274d92dc4008353c8fd0be9b",
+    "file_bytes": 57412,
+    "assignments": [
+      {
+        "card_id": "excuteria_06",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 443,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-136",
+    "identity_id": "V136",
+    "source_file": "unverified/jb-vk-136.jpg",
+    "preferred_file": "unverified/jb-vk-136.jpg",
+    "original_filename": "136.jpg",
+    "width": 738,
+    "height": 1001,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": "VKD-002",
+    "alternate_versions": ["duplicates/jb-vk-039.jpg"],
+    "used_by_card": "excuteria_07",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_07.jpg",
+    "image": "assets/artworks/excuteria_07.jpg",
+    "package_file": "final_selected_artworks/excuteria_07.jpg",
+    "sha256": "14c8013d9201f4b79890f82cd81afc697d576872cb1cd325080d95626c15e03f",
+    "git_blob_sha": "dcdc0e9080670b88b26717051d0a532a3dc5c6b6",
+    "file_bytes": 272900,
+    "assignments": [
+      {
+        "card_id": "excuteria_07",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 738,
+      "height": 1001,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-065",
+    "identity_id": "L065",
+    "source_file": "candidate_assets/jb-lx-065.jpg",
+    "preferred_file": "candidate_assets/jb-lx-065.jpg",
+    "original_filename": "jb-lx-065.jpg",
+    "width": 270,
+    "height": 449,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_08",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_08.jpg",
+    "image": "assets/artworks/excuteria_08.jpg",
+    "package_file": "final_selected_artworks/excuteria_08.jpg",
+    "sha256": "313d7f0eb78e70a846e1da5a88fbeb6ce77dfdb146fc1dcc8b0ab1570e5d7818",
+    "git_blob_sha": "a25a99b7d997d0518a197a662bef7046a67ccfc0",
+    "file_bytes": 35432,
+    "assignments": [
+      {
+        "card_id": "excuteria_08",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 270,
+      "height": 449,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-135",
+    "identity_id": "V135",
+    "source_file": "unverified/jb-vk-135.jpg",
+    "preferred_file": "unverified/jb-vk-135.jpg",
+    "original_filename": "135.jpg",
+    "width": 669,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_09",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_09.jpg",
+    "image": "assets/artworks/excuteria_09.jpg",
+    "package_file": "final_selected_artworks/excuteria_09.jpg",
+    "sha256": "3c4fdb8f6f6d8e5552ce62ed3d461c42c0b145fb2e8c38051ddb32d2e8531633",
+    "git_blob_sha": "4311dbbbde0bb28d52c6753a1ad21d5de180c125",
+    "file_bytes": 209686,
+    "assignments": [
+      {
+        "card_id": "excuteria_09",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 669,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-081",
+    "identity_id": "L081",
+    "source_file": "candidate_assets/jb-lx-081.jpg",
+    "preferred_file": "candidate_assets/jb-lx-081.jpg",
+    "original_filename": "jb-lx-081.jpg",
+    "width": 575,
+    "height": 1192,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_10",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_10.jpg",
+    "image": "assets/artworks/excuteria_10.jpg",
+    "package_file": "final_selected_artworks/excuteria_10.jpg",
+    "sha256": "2ea51219bfaf16afcbcd4f6766c30aa046d888c7519f3783e8e2edb25d2ec602",
+    "git_blob_sha": "ecd4886964ae1f197d4905be096850220058f5b5",
+    "file_bytes": 271791,
+    "assignments": [
+      {
+        "card_id": "excuteria_10",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 575,
+      "height": 1192,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-100",
+    "identity_id": "V100",
+    "source_file": "unverified/jb-vk-100.jpg",
+    "preferred_file": "unverified/jb-vk-100.jpg",
+    "original_filename": "100.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_11",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_11.jpg",
+    "image": "assets/artworks/excuteria_11.jpg",
+    "package_file": "final_selected_artworks/excuteria_11.jpg",
+    "sha256": "15e9b85814f78111212ccedda1b0bfd76bd56da8e0bbee3d188ad4ef839071de",
+    "git_blob_sha": "24a53af664fc4aa7eaa4b3bb8ad94a7712e250f1",
+    "file_bytes": 79697,
+    "assignments": [
+      {
+        "card_id": "excuteria_11",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-033",
+    "identity_id": "V033",
+    "source_file": "unverified/jb-vk-033.jpg",
+    "preferred_file": "unverified/jb-vk-033.jpg",
+    "original_filename": "033.jpg",
+    "width": 287,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_12",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_12.jpg",
+    "image": "assets/artworks/excuteria_12.jpg",
+    "package_file": "final_selected_artworks/excuteria_12.jpg",
+    "sha256": "a04762a9a2d250dfc7ad515226484b31deb6ab9d0d6df6d761f7dd13da71cec1",
+    "git_blob_sha": "accd80d3b9ed079b0f355ea39b69dcf8a463c03b",
+    "file_bytes": 46632,
+    "assignments": [
+      {
+        "card_id": "excuteria_12",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 287,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-027",
+    "identity_id": "V027",
+    "source_file": "candidate_assets/jb-lx-068.jpg",
+    "preferred_file": "candidate_assets/jb-lx-068.jpg",
+    "original_filename": "027.jpg",
+    "width": 816,
+    "height": 1123,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-027.jpg"],
+    "used_by_card": "excuteria_13",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_13.jpg",
+    "image": "assets/artworks/excuteria_13.jpg",
+    "package_file": "final_selected_artworks/excuteria_13.jpg",
+    "sha256": "84075df1846f3a74d9998b1b5afe417953f2b8819e78ebf64328cf8055087e8c",
+    "git_blob_sha": "a77d53108f2fb9a2900dfed745690dd1632f0491",
+    "file_bytes": 394707,
+    "assignments": [
+      {
+        "card_id": "excuteria_13",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 740,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-050",
+    "identity_id": "L050",
+    "source_file": "candidate_assets/jb-lx-050.jpg",
+    "preferred_file": "candidate_assets/jb-lx-050.jpg",
+    "original_filename": "jb-lx-050.jpg",
+    "width": 283,
+    "height": 286,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "excuteria_14",
+    "orientation_if_major": null,
+    "site_filename": "excuteria_14.jpg",
+    "image": "assets/artworks/excuteria_14.jpg",
+    "package_file": "final_selected_artworks/excuteria_14.jpg",
+    "sha256": "fae99da8c3b44118c3f8f660787cc4874eac0e432b32feec203876d5e5f1caa5",
+    "git_blob_sha": "f2d40d10229d77557fdbea176b2b16393f8768ee",
+    "file_bytes": 21249,
+    "assignments": [
+      {
+        "card_id": "excuteria_14",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 283,
+      "height": 286,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-071",
+    "identity_id": "L071",
+    "source_file": "candidate_assets/jb-lx-071.jpg",
+    "preferred_file": "candidate_assets/jb-lx-071.jpg",
+    "original_filename": "jb-lx-071.jpg",
+    "width": 1224,
+    "height": 1754,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_01",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_01.jpg",
+    "image": "assets/artworks/mandatio_01.jpg",
+    "package_file": "final_selected_artworks/mandatio_01.jpg",
+    "sha256": "64821e1848bc7f1e25f28563e51e8b371484805a6d3fdfb40590ca1f6cb9b21c",
+    "git_blob_sha": "9fedee6a30afe9da0c433886a1a8c90e18b6a861",
+    "file_bytes": 952962,
+    "assignments": [
+      {
+        "card_id": "mandatio_01",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 1224,
+      "height": 1754,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-124",
+    "identity_id": "V124",
+    "source_file": "unverified/jb-vk-124.jpg",
+    "preferred_file": "unverified/jb-vk-124.jpg",
+    "original_filename": "124.jpg",
+    "width": 706,
+    "height": 521,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_02",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_02.jpg",
+    "image": "assets/artworks/mandatio_02.jpg",
+    "package_file": "final_selected_artworks/mandatio_02.jpg",
+    "sha256": "0889177a6bd6783e5cb162b16d0bd3de03c363d1743bf17c7d3ae76806a0e8f3",
+    "git_blob_sha": "db089d8ddfbc7d69e97e0f7403209a9009af0c8a",
+    "file_bytes": 180899,
+    "assignments": [
+      {
+        "card_id": "mandatio_02",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 706,
+      "height": 521,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-054",
+    "identity_id": "L054",
+    "source_file": "candidate_assets/jb-lx-054.jpg",
+    "preferred_file": "candidate_assets/jb-lx-054.jpg",
+    "original_filename": "jb-lx-054.jpg",
+    "width": 369,
+    "height": 864,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_03",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_03.jpg",
+    "image": "assets/artworks/mandatio_03.jpg",
+    "package_file": "final_selected_artworks/mandatio_03.jpg",
+    "sha256": "c05dee95eb609786f879c733283f2b6d2b98a7f535c259aa34785f9eb0f89d9f",
+    "git_blob_sha": "cede8baf498339d312a600bb9d6cb9998e141fa8",
+    "file_bytes": 152686,
+    "assignments": [
+      {
+        "card_id": "mandatio_03",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 369,
+      "height": 864,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-099",
+    "identity_id": "V099",
+    "source_file": "unverified/jb-vk-099.jpg",
+    "preferred_file": "unverified/jb-vk-099.jpg",
+    "original_filename": "099.jpg",
+    "width": 350,
+    "height": 575,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_04",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_04.jpg",
+    "image": "assets/artworks/mandatio_04.jpg",
+    "package_file": "final_selected_artworks/mandatio_04.jpg",
+    "sha256": "802e9c0374d868d1976b0855be70b52f8e00b87027242a3ec9644f7273c6385a",
+    "git_blob_sha": "a0a04056d9b72e3baebf7f99157832838acada7f",
+    "file_bytes": 77955,
+    "assignments": [
+      {
+        "card_id": "mandatio_04",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 350,
+      "height": 575,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-146",
+    "identity_id": "V146",
+    "source_file": "unverified/jb-vk-146.jpg",
+    "preferred_file": "unverified/jb-vk-146.jpg",
+    "original_filename": "146.jpg",
+    "width": 683,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": "VKD-001",
+    "alternate_versions": ["duplicates/jb-vk-032.jpg"],
+    "used_by_card": "mandatio_05",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_05.jpg",
+    "image": "assets/artworks/mandatio_05.jpg",
+    "package_file": "final_selected_artworks/mandatio_05.jpg",
+    "sha256": "92866fd1a385c2777a5a3f39eeefdb0a7d0813635b7ae3b1ff758065aa03f8dc",
+    "git_blob_sha": "41bc66cc9257be8865248bcdc6b65fc426ebd336",
+    "file_bytes": 214418,
+    "assignments": [
+      {
+        "card_id": "mandatio_05",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 683,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-063",
+    "identity_id": "L063",
+    "source_file": "candidate_assets/jb-lx-063.jpg",
+    "preferred_file": "candidate_assets/jb-lx-063.jpg",
+    "original_filename": "jb-lx-063.jpg",
+    "width": 772,
+    "height": 555,
+    "format": "JPEG",
+    "technical_quality": "ACCEPTABLE",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_06",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_06.jpg",
+    "image": "assets/artworks/mandatio_06.jpg",
+    "package_file": "final_selected_artworks/mandatio_06.jpg",
+    "sha256": "a21389c38c92c0a8d8acf5afc4fd221decae0c0761841559a0fa0781711fd4bf",
+    "git_blob_sha": "e63b90b2bc371c93549522e22e892e65f77c6bed",
+    "file_bytes": 272534,
+    "assignments": [
+      {
+        "card_id": "mandatio_06",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 772,
+      "height": 555,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-129",
+    "identity_id": "V129",
+    "source_file": "unverified/jb-vk-129.jpg",
+    "preferred_file": "unverified/jb-vk-129.jpg",
+    "original_filename": "129.jpg",
+    "width": 215,
+    "height": 294,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_08",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_08.jpg",
+    "image": "assets/artworks/mandatio_08.jpg",
+    "package_file": "final_selected_artworks/mandatio_08.jpg",
+    "sha256": "dcdbbb327c29bd6aab1da5fb6415ed8a73f805234e1b4a258788f432db215bdb",
+    "git_blob_sha": "85d6a94d48c352a26ed7b4851a7e485bece9bc3d",
+    "file_bytes": 20050,
+    "assignments": [
+      {
+        "card_id": "mandatio_08",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 215,
+      "height": 294,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-030",
+    "identity_id": "V030",
+    "source_file": "unverified/jb-vk-030.jpg",
+    "preferred_file": "unverified/jb-vk-030.jpg",
+    "original_filename": "030.jpg",
+    "width": 352,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_09",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_09.jpg",
+    "image": "assets/artworks/mandatio_09.jpg",
+    "package_file": "final_selected_artworks/mandatio_09.jpg",
+    "sha256": "fa6c2dd0950fb7b47afe3bbc060c47d955447b07892fc87cd0b42844bb2105c6",
+    "git_blob_sha": "c5ae4d09ae89a5b918dec0a5c9971d5d0eb638af",
+    "file_bytes": 51809,
+    "assignments": [
+      {
+        "card_id": "mandatio_09",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 352,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-023",
+    "identity_id": "V023",
+    "source_file": "unverified/jb-vk-023.jpg",
+    "preferred_file": "unverified/jb-vk-023.jpg",
+    "original_filename": "023.jpg",
+    "width": 769,
+    "height": 1024,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_10",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_10.jpg",
+    "image": "assets/artworks/mandatio_10.jpg",
+    "package_file": "final_selected_artworks/mandatio_10.jpg",
+    "sha256": "e4b5aefa8b85edb03e9643ced4e65368b31c4cda03671d5d977aa0918572cda1",
+    "git_blob_sha": "43fc4aae948f36a636739ff3470da31aba8810c4",
+    "file_bytes": 275410,
+    "assignments": [
+      {
+        "card_id": "mandatio_10",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 769,
+      "height": 1024,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-026",
+    "identity_id": "V026",
+    "source_file": "unverified/jb-vk-026.jpg",
+    "preferred_file": "unverified/jb-vk-026.jpg",
+    "original_filename": "026.jpg",
+    "width": 333,
+    "height": 480,
+    "format": "JPEG",
+    "technical_quality": "PAGE_SCAN",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_11",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_11.jpg",
+    "image": "assets/artworks/mandatio_11.jpg",
+    "package_file": "final_selected_artworks/mandatio_11.jpg",
+    "sha256": "d354b76890f2588dec054e5248f6e4f359c4aa95b5c04f32daf366c202edf041",
+    "git_blob_sha": "d4b1757bf7bd69e000c69b55931b78b03f30c891",
+    "file_bytes": 53046,
+    "assignments": [
+      {
+        "card_id": "mandatio_11",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 333,
+      "height": 480,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-VK-052",
+    "identity_id": "V052",
+    "source_file": "candidate_assets/jb-lx-084.jpg",
+    "preferred_file": "candidate_assets/jb-lx-084.jpg",
+    "original_filename": "052.jpg",
+    "width": 543,
+    "height": 800,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": ["unverified/jb-vk-052.jpg"],
+    "used_by_card": "mandatio_12",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_12.jpg",
+    "image": "assets/artworks/mandatio_12.jpg",
+    "package_file": "final_selected_artworks/mandatio_12.jpg",
+    "sha256": "18bc58710a9bf8b16c5f6e6db9a9936a5770006d523c3f67c71fbfd140121c70",
+    "git_blob_sha": "d91099dd5efbb2c3f4e2a790a48945936b5c6d07",
+    "file_bytes": 195444,
+    "assignments": [
+      {
+        "card_id": "mandatio_12",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 348,
+      "height": 479,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-034",
+    "identity_id": "L034",
+    "source_file": "candidate_assets/jb-lx-034.jpg",
+    "preferred_file": "candidate_assets/jb-lx-034.jpg",
+    "original_filename": "jb-lx-034.jpg",
+    "width": 539,
+    "height": 507,
+    "format": "JPEG",
+    "technical_quality": "LOW_RESOLUTION",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_13",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_13.jpg",
+    "image": "assets/artworks/mandatio_13.jpg",
+    "package_file": "final_selected_artworks/mandatio_13.jpg",
+    "sha256": "f5f7048c8d0d0e428de8d6751391e4526d902a162efbfde54c711217d05e2338",
+    "git_blob_sha": "81f666ed1d8cc92eae2144fa196602be1420e1f1",
+    "file_bytes": 96694,
+    "assignments": [
+      {
+        "card_id": "mandatio_13",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 539,
+      "height": 507,
+      "format": "JPEG"
+    }
+  },
+  {
+    "artwork_id": "JB-LX-039",
+    "identity_id": "L039",
+    "source_file": "candidate_assets/jb-lx-039.jpg",
+    "preferred_file": "candidate_assets/jb-lx-039.jpg",
+    "original_filename": "jb-lx-039.jpg",
+    "width": 750,
+    "height": 1068,
+    "format": "JPEG",
+    "technical_quality": "GOOD",
+    "duplicate_group": null,
+    "alternate_versions": [],
+    "used_by_card": "mandatio_14",
+    "orientation_if_major": null,
+    "site_filename": "mandatio_14.jpg",
+    "image": "assets/artworks/mandatio_14.jpg",
+    "package_file": "final_selected_artworks/mandatio_14.jpg",
+    "sha256": "ac57c4f79528a079559a2d7b8460294f5017137ea6ec5283ef59b4be0c7d6087",
+    "git_blob_sha": "81c7e8061f7c53905e72c0f7c14bbe591e587395",
+    "file_bytes": 231601,
+    "assignments": [
+      {
+        "card_id": "mandatio_14",
+        "state": null
+      }
+    ],
+    "package_recorded_dimensions": {
+      "width": 750,
+      "height": 1068,
+      "format": "JPEG"
+    }
+  }
+]

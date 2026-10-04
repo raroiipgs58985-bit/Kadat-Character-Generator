@@ -1,0 +1,902 @@
+[
+  {
+    "card_id": "major_00",
+    "state": "upright",
+    "artwork_id": "JB-LX-080",
+    "identity_id": "L080",
+    "image": "assets/artworks/major_00_upright.jpg",
+    "package_file": "final_selected_artworks/major_00_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_00",
+    "state": "reversed",
+    "artwork_id": "JB-VK-125",
+    "identity_id": "V125",
+    "image": "assets/artworks/major_00_reversed.jpg",
+    "package_file": "final_selected_artworks/major_00_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_01",
+    "state": "upright",
+    "artwork_id": "JB-VK-005",
+    "identity_id": "V005",
+    "image": "assets/artworks/major_01_upright.jpg",
+    "package_file": "final_selected_artworks/major_01_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_01",
+    "state": "reversed",
+    "artwork_id": "JB-LX-046",
+    "identity_id": "L046",
+    "image": "assets/artworks/major_01_reversed.jpg",
+    "package_file": "final_selected_artworks/major_01_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_02",
+    "state": "upright",
+    "artwork_id": "JB-LX-025",
+    "identity_id": "L025",
+    "image": "assets/artworks/major_02_upright.jpg",
+    "package_file": "final_selected_artworks/major_02_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_02",
+    "state": "reversed",
+    "artwork_id": "JB-VK-077",
+    "identity_id": "V077",
+    "image": "assets/artworks/major_02_reversed.jpg",
+    "package_file": "final_selected_artworks/major_02_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_03",
+    "state": "upright",
+    "artwork_id": "JB-LX-069",
+    "identity_id": "L069",
+    "image": "assets/artworks/major_03_upright.jpg",
+    "package_file": "final_selected_artworks/major_03_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_03",
+    "state": "reversed",
+    "artwork_id": "JB-VK-049",
+    "identity_id": "V049",
+    "image": "assets/artworks/major_03_reversed.jpg",
+    "package_file": "final_selected_artworks/major_03_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_04",
+    "state": "upright",
+    "artwork_id": "JB-VK-008",
+    "identity_id": "V008",
+    "image": "assets/artworks/major_04_upright.jpg",
+    "package_file": "final_selected_artworks/major_04_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_04",
+    "state": "reversed",
+    "artwork_id": "JB-LX-035",
+    "identity_id": "L035",
+    "image": "assets/artworks/major_04_reversed.jpg",
+    "package_file": "final_selected_artworks/major_04_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_05",
+    "state": "upright",
+    "artwork_id": "JB-VK-107",
+    "identity_id": "V107",
+    "image": "assets/artworks/major_05_upright.jpg",
+    "package_file": "final_selected_artworks/major_05_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_05",
+    "state": "reversed",
+    "artwork_id": "JB-VK-078",
+    "identity_id": "V078",
+    "image": "assets/artworks/major_05_reversed.jpg",
+    "package_file": "final_selected_artworks/major_05_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_06",
+    "state": "upright",
+    "artwork_id": "JB-VK-128",
+    "identity_id": "V128",
+    "image": "assets/artworks/major_06_upright.jpg",
+    "package_file": "final_selected_artworks/major_06_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_06",
+    "state": "reversed",
+    "artwork_id": "JB-VK-131",
+    "identity_id": "V131",
+    "image": "assets/artworks/major_06_reversed.jpg",
+    "package_file": "final_selected_artworks/major_06_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_07",
+    "state": "upright",
+    "artwork_id": "JB-LX-013",
+    "identity_id": "L013",
+    "image": "assets/artworks/major_07_upright.jpg",
+    "package_file": "final_selected_artworks/major_07_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_07",
+    "state": "reversed",
+    "artwork_id": "JB-VK-095",
+    "identity_id": "V095",
+    "image": "assets/artworks/major_07_reversed.jpg",
+    "package_file": "final_selected_artworks/major_07_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_08",
+    "state": "upright",
+    "artwork_id": "JB-VK-002",
+    "identity_id": "V002",
+    "image": "assets/artworks/major_08_upright.jpg",
+    "package_file": "final_selected_artworks/major_08_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_08",
+    "state": "reversed",
+    "artwork_id": "JB-VK-079",
+    "identity_id": "V079",
+    "image": "assets/artworks/major_08_reversed.jpg",
+    "package_file": "final_selected_artworks/major_08_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_09",
+    "state": "upright",
+    "artwork_id": "JB-VK-040",
+    "identity_id": "V040",
+    "image": "assets/artworks/major_09_upright.jpg",
+    "package_file": "final_selected_artworks/major_09_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_09",
+    "state": "reversed",
+    "artwork_id": "JB-VK-057",
+    "identity_id": "V057",
+    "image": "assets/artworks/major_09_reversed.jpg",
+    "package_file": "final_selected_artworks/major_09_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_10",
+    "state": "upright",
+    "artwork_id": "JB-VK-058",
+    "identity_id": "V058",
+    "image": "assets/artworks/major_10_upright.jpg",
+    "package_file": "final_selected_artworks/major_10_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_10",
+    "state": "reversed",
+    "artwork_id": "JB-VK-148",
+    "identity_id": "V148",
+    "image": "assets/artworks/major_10_reversed.jpg",
+    "package_file": "final_selected_artworks/major_10_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_11",
+    "state": "upright",
+    "artwork_id": "JB-VK-015",
+    "identity_id": "V015",
+    "image": "assets/artworks/major_11_upright.jpg",
+    "package_file": "final_selected_artworks/major_11_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_11",
+    "state": "reversed",
+    "artwork_id": "JB-VK-071",
+    "identity_id": "V071",
+    "image": "assets/artworks/major_11_reversed.jpg",
+    "package_file": "final_selected_artworks/major_11_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_12",
+    "state": "upright",
+    "artwork_id": "JB-VK-127",
+    "identity_id": "V127",
+    "image": "assets/artworks/major_12_upright.jpg",
+    "package_file": "final_selected_artworks/major_12_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_12",
+    "state": "reversed",
+    "artwork_id": "JB-VK-102",
+    "identity_id": "V102",
+    "image": "assets/artworks/major_12_reversed.jpg",
+    "package_file": "final_selected_artworks/major_12_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_13",
+    "state": "upright",
+    "artwork_id": "JB-VK-085",
+    "identity_id": "V085",
+    "image": "assets/artworks/major_13_upright.jpg",
+    "package_file": "final_selected_artworks/major_13_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_13",
+    "state": "reversed",
+    "artwork_id": "JB-VK-114",
+    "identity_id": "V114",
+    "image": "assets/artworks/major_13_reversed.jpg",
+    "package_file": "final_selected_artworks/major_13_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_14",
+    "state": "upright",
+    "artwork_id": "JB-LX-088",
+    "identity_id": "L088",
+    "image": "assets/artworks/major_14_upright.jpg",
+    "package_file": "final_selected_artworks/major_14_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_14",
+    "state": "reversed",
+    "artwork_id": "JB-VK-110",
+    "identity_id": "V110",
+    "image": "assets/artworks/major_14_reversed.jpg",
+    "package_file": "final_selected_artworks/major_14_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_15",
+    "state": "upright",
+    "artwork_id": "JB-VK-130",
+    "identity_id": "V130",
+    "image": "assets/artworks/major_15_upright.jpg",
+    "package_file": "final_selected_artworks/major_15_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_15",
+    "state": "reversed",
+    "artwork_id": "JB-LX-005",
+    "identity_id": "L005",
+    "image": "assets/artworks/major_15_reversed.jpg",
+    "package_file": "final_selected_artworks/major_15_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_16",
+    "state": "upright",
+    "artwork_id": "JB-LX-073",
+    "identity_id": "L073",
+    "image": "assets/artworks/major_16_upright.jpg",
+    "package_file": "final_selected_artworks/major_16_upright.jpg",
+    "reuse_status": "INTENTIONAL_REUSE"
+  },
+  {
+    "card_id": "major_16",
+    "state": "reversed",
+    "artwork_id": "JB-VK-143",
+    "identity_id": "V143",
+    "image": "assets/artworks/major_16_reversed.jpg",
+    "package_file": "final_selected_artworks/major_16_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_17",
+    "state": "upright",
+    "artwork_id": "JB-LX-036",
+    "identity_id": "L036",
+    "image": "assets/artworks/major_17_upright.jpg",
+    "package_file": "final_selected_artworks/major_17_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_17",
+    "state": "reversed",
+    "artwork_id": "JB-LX-064",
+    "identity_id": "L064",
+    "image": "assets/artworks/major_17_reversed.jpg",
+    "package_file": "final_selected_artworks/major_17_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_18",
+    "state": "upright",
+    "artwork_id": "JB-VK-137",
+    "identity_id": "V137",
+    "image": "assets/artworks/major_18_upright.jpg",
+    "package_file": "final_selected_artworks/major_18_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_18",
+    "state": "reversed",
+    "artwork_id": "JB-LX-066",
+    "identity_id": "L066",
+    "image": "assets/artworks/major_18_reversed.png",
+    "package_file": "final_selected_artworks/major_18_reversed.png",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_19",
+    "state": "upright",
+    "artwork_id": "JB-LX-030",
+    "identity_id": "L030",
+    "image": "assets/artworks/major_19_upright.jpg",
+    "package_file": "final_selected_artworks/major_19_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_19",
+    "state": "reversed",
+    "artwork_id": "JB-VK-098",
+    "identity_id": "V098",
+    "image": "assets/artworks/major_19_reversed.jpg",
+    "package_file": "final_selected_artworks/major_19_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_20",
+    "state": "upright",
+    "artwork_id": "JB-VK-050",
+    "identity_id": "V050",
+    "image": "assets/artworks/major_20_upright.jpg",
+    "package_file": "final_selected_artworks/major_20_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_20",
+    "state": "reversed",
+    "artwork_id": "JB-VK-088",
+    "identity_id": "V088",
+    "image": "assets/artworks/major_20_reversed.jpg",
+    "package_file": "final_selected_artworks/major_20_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_21",
+    "state": "upright",
+    "artwork_id": "JB-VK-122",
+    "identity_id": "V122",
+    "image": "assets/artworks/major_21_upright.jpg",
+    "package_file": "final_selected_artworks/major_21_upright.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "major_21",
+    "state": "reversed",
+    "artwork_id": "JB-VK-086",
+    "identity_id": "V086",
+    "image": "assets/artworks/major_21_reversed.jpg",
+    "package_file": "final_selected_artworks/major_21_reversed.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_01",
+    "state": null,
+    "artwork_id": "JB-VK-053",
+    "identity_id": "V053",
+    "image": "assets/artworks/adeptio_01.jpg",
+    "package_file": "final_selected_artworks/adeptio_01.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_02",
+    "state": null,
+    "artwork_id": "JB-LX-004",
+    "identity_id": "L004",
+    "image": "assets/artworks/adeptio_02.jpg",
+    "package_file": "final_selected_artworks/adeptio_02.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_03",
+    "state": null,
+    "artwork_id": "JB-VK-123",
+    "identity_id": "V123",
+    "image": "assets/artworks/adeptio_03.jpg",
+    "package_file": "final_selected_artworks/adeptio_03.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_04",
+    "state": null,
+    "artwork_id": "JB-VK-051",
+    "identity_id": "V051",
+    "image": "assets/artworks/adeptio_04.jpg",
+    "package_file": "final_selected_artworks/adeptio_04.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_05",
+    "state": null,
+    "artwork_id": "JB-LX-012",
+    "identity_id": "L012",
+    "image": "assets/artworks/adeptio_05.jpg",
+    "package_file": "final_selected_artworks/adeptio_05.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_06",
+    "state": null,
+    "artwork_id": "JB-LX-074",
+    "identity_id": "L074",
+    "image": "assets/artworks/adeptio_06.jpg",
+    "package_file": "final_selected_artworks/adeptio_06.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_07",
+    "state": null,
+    "artwork_id": "JB-LX-079",
+    "identity_id": "L079",
+    "image": "assets/artworks/adeptio_07.jpg",
+    "package_file": "final_selected_artworks/adeptio_07.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_08",
+    "state": null,
+    "artwork_id": "JB-VK-134",
+    "identity_id": "V134",
+    "image": "assets/artworks/adeptio_08.jpg",
+    "package_file": "final_selected_artworks/adeptio_08.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_09",
+    "state": null,
+    "artwork_id": "JB-VK-090",
+    "identity_id": "V090",
+    "image": "assets/artworks/adeptio_09.jpg",
+    "package_file": "final_selected_artworks/adeptio_09.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_10",
+    "state": null,
+    "artwork_id": "JB-VK-020",
+    "identity_id": "V020",
+    "image": "assets/artworks/adeptio_10.jpg",
+    "package_file": "final_selected_artworks/adeptio_10.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_11",
+    "state": null,
+    "artwork_id": "JB-LX-019",
+    "identity_id": "L019",
+    "image": "assets/artworks/adeptio_11.jpg",
+    "package_file": "final_selected_artworks/adeptio_11.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_12",
+    "state": null,
+    "artwork_id": "JB-VK-003",
+    "identity_id": "V003",
+    "image": "assets/artworks/adeptio_12.jpg",
+    "package_file": "final_selected_artworks/adeptio_12.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_13",
+    "state": null,
+    "artwork_id": "JB-LX-049",
+    "identity_id": "L049",
+    "image": "assets/artworks/adeptio_13.jpg",
+    "package_file": "final_selected_artworks/adeptio_13.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "adeptio_14",
+    "state": null,
+    "artwork_id": "JB-VK-001",
+    "identity_id": "V001",
+    "image": "assets/artworks/adeptio_14.jpg",
+    "package_file": "final_selected_artworks/adeptio_14.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_01",
+    "state": null,
+    "artwork_id": "JB-LX-026",
+    "identity_id": "L026",
+    "image": "assets/artworks/discordia_01.png",
+    "package_file": "final_selected_artworks/discordia_01.png",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_02",
+    "state": null,
+    "artwork_id": "JB-LX-038",
+    "identity_id": "L038",
+    "image": "assets/artworks/discordia_02.png",
+    "package_file": "final_selected_artworks/discordia_02.png",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_03",
+    "state": null,
+    "artwork_id": "JB-VK-061",
+    "identity_id": "V061",
+    "image": "assets/artworks/discordia_03.jpg",
+    "package_file": "final_selected_artworks/discordia_03.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_04",
+    "state": null,
+    "artwork_id": "JB-VK-037",
+    "identity_id": "V037",
+    "image": "assets/artworks/discordia_04.jpg",
+    "package_file": "final_selected_artworks/discordia_04.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_05",
+    "state": null,
+    "artwork_id": "JB-VK-038",
+    "identity_id": "V038",
+    "image": "assets/artworks/discordia_05.jpg",
+    "package_file": "final_selected_artworks/discordia_05.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_06",
+    "state": null,
+    "artwork_id": "JB-VK-065",
+    "identity_id": "V065",
+    "image": "assets/artworks/discordia_06.jpg",
+    "package_file": "final_selected_artworks/discordia_06.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_07",
+    "state": null,
+    "artwork_id": "JB-VK-073",
+    "identity_id": "V073",
+    "image": "assets/artworks/discordia_07.jpg",
+    "package_file": "final_selected_artworks/discordia_07.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_08",
+    "state": null,
+    "artwork_id": "JB-VK-067",
+    "identity_id": "V067",
+    "image": "assets/artworks/discordia_08.jpg",
+    "package_file": "final_selected_artworks/discordia_08.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_09",
+    "state": null,
+    "artwork_id": "JB-VK-101",
+    "identity_id": "V101",
+    "image": "assets/artworks/discordia_09.jpg",
+    "package_file": "final_selected_artworks/discordia_09.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_10",
+    "state": null,
+    "artwork_id": "JB-VK-080",
+    "identity_id": "V080",
+    "image": "assets/artworks/discordia_10.jpg",
+    "package_file": "final_selected_artworks/discordia_10.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_11",
+    "state": null,
+    "artwork_id": "JB-VK-120",
+    "identity_id": "V120",
+    "image": "assets/artworks/discordia_11.jpg",
+    "package_file": "final_selected_artworks/discordia_11.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_12",
+    "state": null,
+    "artwork_id": "JB-VK-055",
+    "identity_id": "V055",
+    "image": "assets/artworks/discordia_12.jpg",
+    "package_file": "final_selected_artworks/discordia_12.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_13",
+    "state": null,
+    "artwork_id": "JB-VK-096",
+    "identity_id": "V096",
+    "image": "assets/artworks/discordia_13.jpg",
+    "package_file": "final_selected_artworks/discordia_13.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "discordia_14",
+    "state": null,
+    "artwork_id": "JB-VK-006",
+    "identity_id": "V006",
+    "image": "assets/artworks/discordia_14.jpg",
+    "package_file": "final_selected_artworks/discordia_14.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_01",
+    "state": null,
+    "artwork_id": "JB-VK-089",
+    "identity_id": "V089",
+    "image": "assets/artworks/excuteria_01.jpg",
+    "package_file": "final_selected_artworks/excuteria_01.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_02",
+    "state": null,
+    "artwork_id": "JB-VK-042",
+    "identity_id": "V042",
+    "image": "assets/artworks/excuteria_02.jpg",
+    "package_file": "final_selected_artworks/excuteria_02.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_03",
+    "state": null,
+    "artwork_id": "JB-VK-047",
+    "identity_id": "V047",
+    "image": "assets/artworks/excuteria_03.jpg",
+    "package_file": "final_selected_artworks/excuteria_03.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_04",
+    "state": null,
+    "artwork_id": "JB-VK-043",
+    "identity_id": "V043",
+    "image": "assets/artworks/excuteria_04.jpg",
+    "package_file": "final_selected_artworks/excuteria_04.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_05",
+    "state": null,
+    "artwork_id": "JB-LX-045",
+    "identity_id": "L045",
+    "image": "assets/artworks/excuteria_05.jpg",
+    "package_file": "final_selected_artworks/excuteria_05.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_06",
+    "state": null,
+    "artwork_id": "JB-VK-048",
+    "identity_id": "V048",
+    "image": "assets/artworks/excuteria_06.jpg",
+    "package_file": "final_selected_artworks/excuteria_06.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_07",
+    "state": null,
+    "artwork_id": "JB-VK-136",
+    "identity_id": "V136",
+    "image": "assets/artworks/excuteria_07.jpg",
+    "package_file": "final_selected_artworks/excuteria_07.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_08",
+    "state": null,
+    "artwork_id": "JB-LX-065",
+    "identity_id": "L065",
+    "image": "assets/artworks/excuteria_08.jpg",
+    "package_file": "final_selected_artworks/excuteria_08.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_09",
+    "state": null,
+    "artwork_id": "JB-VK-135",
+    "identity_id": "V135",
+    "image": "assets/artworks/excuteria_09.jpg",
+    "package_file": "final_selected_artworks/excuteria_09.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_10",
+    "state": null,
+    "artwork_id": "JB-LX-081",
+    "identity_id": "L081",
+    "image": "assets/artworks/excuteria_10.jpg",
+    "package_file": "final_selected_artworks/excuteria_10.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_11",
+    "state": null,
+    "artwork_id": "JB-VK-100",
+    "identity_id": "V100",
+    "image": "assets/artworks/excuteria_11.jpg",
+    "package_file": "final_selected_artworks/excuteria_11.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_12",
+    "state": null,
+    "artwork_id": "JB-VK-033",
+    "identity_id": "V033",
+    "image": "assets/artworks/excuteria_12.jpg",
+    "package_file": "final_selected_artworks/excuteria_12.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_13",
+    "state": null,
+    "artwork_id": "JB-VK-027",
+    "identity_id": "V027",
+    "image": "assets/artworks/excuteria_13.jpg",
+    "package_file": "final_selected_artworks/excuteria_13.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "excuteria_14",
+    "state": null,
+    "artwork_id": "JB-LX-050",
+    "identity_id": "L050",
+    "image": "assets/artworks/excuteria_14.jpg",
+    "package_file": "final_selected_artworks/excuteria_14.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_01",
+    "state": null,
+    "artwork_id": "JB-LX-071",
+    "identity_id": "L071",
+    "image": "assets/artworks/mandatio_01.jpg",
+    "package_file": "final_selected_artworks/mandatio_01.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_02",
+    "state": null,
+    "artwork_id": "JB-VK-124",
+    "identity_id": "V124",
+    "image": "assets/artworks/mandatio_02.jpg",
+    "package_file": "final_selected_artworks/mandatio_02.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_03",
+    "state": null,
+    "artwork_id": "JB-LX-054",
+    "identity_id": "L054",
+    "image": "assets/artworks/mandatio_03.jpg",
+    "package_file": "final_selected_artworks/mandatio_03.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_04",
+    "state": null,
+    "artwork_id": "JB-VK-099",
+    "identity_id": "V099",
+    "image": "assets/artworks/mandatio_04.jpg",
+    "package_file": "final_selected_artworks/mandatio_04.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_05",
+    "state": null,
+    "artwork_id": "JB-VK-146",
+    "identity_id": "V146",
+    "image": "assets/artworks/mandatio_05.jpg",
+    "package_file": "final_selected_artworks/mandatio_05.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_06",
+    "state": null,
+    "artwork_id": "JB-LX-063",
+    "identity_id": "L063",
+    "image": "assets/artworks/mandatio_06.jpg",
+    "package_file": "final_selected_artworks/mandatio_06.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_07",
+    "state": null,
+    "artwork_id": "JB-LX-073",
+    "identity_id": "L073",
+    "image": "assets/artworks/major_16_upright.jpg",
+    "package_file": "final_selected_artworks/major_16_upright.jpg",
+    "reuse_status": "INTENTIONAL_REUSE"
+  },
+  {
+    "card_id": "mandatio_08",
+    "state": null,
+    "artwork_id": "JB-VK-129",
+    "identity_id": "V129",
+    "image": "assets/artworks/mandatio_08.jpg",
+    "package_file": "final_selected_artworks/mandatio_08.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_09",
+    "state": null,
+    "artwork_id": "JB-VK-030",
+    "identity_id": "V030",
+    "image": "assets/artworks/mandatio_09.jpg",
+    "package_file": "final_selected_artworks/mandatio_09.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_10",
+    "state": null,
+    "artwork_id": "JB-VK-023",
+    "identity_id": "V023",
+    "image": "assets/artworks/mandatio_10.jpg",
+    "package_file": "final_selected_artworks/mandatio_10.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_11",
+    "state": null,
+    "artwork_id": "JB-VK-026",
+    "identity_id": "V026",
+    "image": "assets/artworks/mandatio_11.jpg",
+    "package_file": "final_selected_artworks/mandatio_11.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_12",
+    "state": null,
+    "artwork_id": "JB-VK-052",
+    "identity_id": "V052",
+    "image": "assets/artworks/mandatio_12.jpg",
+    "package_file": "final_selected_artworks/mandatio_12.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_13",
+    "state": null,
+    "artwork_id": "JB-LX-034",
+    "identity_id": "L034",
+    "image": "assets/artworks/mandatio_13.jpg",
+    "package_file": "final_selected_artworks/mandatio_13.jpg",
+    "reuse_status": null
+  },
+  {
+    "card_id": "mandatio_14",
+    "state": null,
+    "artwork_id": "JB-LX-039",
+    "identity_id": "L039",
+    "image": "assets/artworks/mandatio_14.jpg",
+    "package_file": "final_selected_artworks/mandatio_14.jpg",
+    "reuse_status": null
+  }
+]
