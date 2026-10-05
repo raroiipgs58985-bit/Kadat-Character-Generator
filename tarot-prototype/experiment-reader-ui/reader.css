@@ -1,0 +1,89 @@
+/* Isolated Sacred Divinatio Reader; reveal layout and artwork are untouched. */
+body.cv-reader-is-open { overflow: hidden; }
+dialog.cv-external-reader {
+  position: fixed;
+  inset: 16px 16px 16px auto;
+  margin: 0;
+  width: min(490px, calc(100vw - 32px));
+  height: calc(100dvh - 32px);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  overflow-y: auto;
+  background: #100b09;
+  color: var(--bone);
+  border: 1px solid #806443;
+  box-shadow: -18px 0 50px #0008;
+  scrollbar-color: #806443 #100b09;
+  animation: cv-reader-arrival 160ms ease-out;
+}
+dialog.cv-external-reader::backdrop { background: #0006; backdrop-filter: none; }
+.cv-reader-heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  gap: 14px;
+  padding: 24px 26px 20px;
+  border-bottom: 1px solid #59392c;
+  background: #140c09;
+}
+.cv-reader-heading .overline { font-size: 11px; line-height: 1.6; letter-spacing: .08em; margin: 0 0 10px; }
+.cv-reader-heading h2 { font-size: 29px; line-height: 1.2; margin: 0; overflow-wrap: anywhere; }
+.cv-reader-close { width: 44px; height: 44px; font-size: 28px; color: var(--gold); border: 1px solid #604832; }
+.cv-reader-close:hover { background: #291510; }
+.cv-reader-content { padding: 24px 26px 28px; min-width: 0; }
+.cv-external-reader p { max-width: none; }
+.cv-external-reader .cv-reader-ritual { font-size: 13px; line-height: 1.7; letter-spacing: .04em; color: var(--gold); margin: 0 0 18px; }
+#cv-external-reader-description { font-size: 18px; line-height: 1.65; margin: 0 0 22px; }
+.cv-reader-question { border-left: 2px solid #653529; padding-left: 16px; margin-bottom: 24px; }
+.cv-reader-question .overline { font-size: 12px; margin-bottom: 8px; }
+.cv-reader-question blockquote { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 18px; line-height: 1.6; margin: 0; }
+.cv-reader-actions .primary, .cv-reader-launches .secondary, .cv-reader-return { width: 100%; min-height: 48px; padding: 13px 16px; font-size: 13px; line-height: 1.6; text-align: center; }
+.cv-reader-actions .primary { background: #321412; border-color: #8a6145; }
+.cv-external-reader .cv-copy-status { min-height: 36px; margin: 12px 0; font-size: 14px; line-height: 1.6; color: #d3bf91; overflow-wrap: anywhere; }
+.cv-reader-launches { display: grid; gap: 10px; }
+.cv-external-reader .cv-reader-note { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 20px 0; }
+.cv-dossier-details { border-top: 1px solid #58412d; border-bottom: 1px solid #58412d; padding: 4px 0; }
+.cv-dossier-details summary { font-size: 14px; padding: 13px 0; min-height: 48px; }
+.cv-external-reader .cv-dossier-note { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 10px 0 14px; }
+.cv-dossier-text {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-height: 50dvh;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  user-select: text;
+  font: 16px/1.65 var(--serif);
+  color: #e0d3b8;
+  background: #080706;
+  border: 1px solid #5a4630;
+  padding: 16px;
+  margin: 0 0 14px;
+  scrollbar-color: #806443 #080706;
+}
+.cv-reader-return { margin-top: 24px; }
+.cv-external-reader :focus-visible { outline: 2px solid #c5ab77; outline-offset: 3px; }
+@keyframes cv-reader-arrival { from { opacity: .5; transform: translateX(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  dialog.cv-external-reader { inset: 0; width: 100%; height: 100dvh; border: 0; border-top: 2px solid #806443; box-shadow: none; }
+  .cv-reader-heading { padding: 20px 18px 18px; gap: 10px; }
+  .cv-reader-heading h2 { font-size: 27px; }
+  .cv-reader-heading .overline { font-size: 10px; letter-spacing: .04em; }
+  .cv-reader-content { padding: 20px 18px 26px; }
+  #cv-external-reader-description { font-size: 18px; }
+  .cv-reader-question blockquote { font-size: 18px; }
+  .cv-dossier-text { padding: 12px; font-size: 16px; max-height: 55dvh; }
+  .cv-reader-actions .primary { letter-spacing: .05em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog.cv-external-reader { animation: none; }
+  .cv-external-reader *, .cv-external-reader *::before, .cv-external-reader *::after { animation: none; transition: none; scroll-behavior: auto; }
+}
+@media (max-width: 360px) {
+  .cv-reader-heading h2 { font-size: 24px; }
+}

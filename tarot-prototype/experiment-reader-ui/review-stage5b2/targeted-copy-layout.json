@@ -1,0 +1,32 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "number": 14,
+      "passed": true,
+      "actualClipboardBytesExact": true,
+      "rangeExact": true,
+      "questionVerbatim": true,
+      "renderedTerminalLF": false
+    },
+    {
+      "number": 36,
+      "passed": true,
+      "evidence": {
+        "width": 320,
+        "left": 0,
+        "titleFont": "24px",
+        "titleWordLines": 1,
+        "overflow": false,
+        "targetFits": true
+      }
+    },
+    {
+      "number": 38,
+      "passed": true,
+      "evidence": "Changed 320px heading only; 414/1366 previous evidence retained"
+    }
+  ],
+  "errors": [],
+  "fullSuiteRerun": false
+}

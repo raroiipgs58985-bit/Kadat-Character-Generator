@@ -1,0 +1,431 @@
+{
+  "branch": "experiment/imperial-tarot-reader-ui",
+  "baseline": "528eadc23eabde856376957b351d9c980519c5af",
+  "approvedMain": "31d7755b68768a7bc1461afa63592fb945e6c743",
+  "result": "FAIL",
+  "passed": 39,
+  "total": 40,
+  "boundedPasses": 1,
+  "fixture": "accepted Stage 5B-1 / 06-ambiguous (one session at three viewports)",
+  "questionPreservedVerbatim": true,
+  "prompt": {
+    "bytes": 25079,
+    "sha256": "d036c9d2e3038f31fd2f3715a9e938264a6d49b4d8221ff7f9fa2d5995513c09"
+  },
+  "externalAIRequests": 0,
+  "interpretationAPIRequests": 0,
+  "thirdPartyPagesContacted": 0,
+  "blockedNavigationChecks": [
+    {
+      "url": "https://chat.deepseek.com/",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "url": "https://chatgpt.com/",
+      "method": "GET",
+      "body": null
+    }
+  ],
+  "screenshots": [
+    "screenshots/01-completed-convergence.png",
+    "screenshots/02-desktop-reader.png",
+    "screenshots/06-copy-success.png",
+    "screenshots/03-desktop-prompt-preview.png",
+    "screenshots/04-mobile-320-reader.png",
+    "screenshots/05-mobile-414-reader.png"
+  ],
+  "checks": [
+    {
+      "number": 1,
+      "name": "Reader unavailable before completion, including forced premature UI action",
+      "passed": true
+    },
+    {
+      "number": 2,
+      "name": "Reader unavailable after card 15 and before XVI",
+      "passed": true
+    },
+    {
+      "number": 3,
+      "name": "Explicit XVI reveal remains required",
+      "passed": true
+    },
+    {
+      "number": 4,
+      "name": "Reader available only after completed XVI",
+      "passed": true
+    },
+    {
+      "number": 5,
+      "name": "Reader panel opens with keyboard-accessible native dialog",
+      "passed": true
+    },
+    {
+      "number": 6,
+      "name": "Reader closes with Escape and returns focus to opener",
+      "passed": true
+    },
+    {
+      "number": 7,
+      "name": "Completed spread unchanged by open, copy, preview and close",
+      "passed": true
+    },
+    {
+      "number": 8,
+      "name": "Question preserved verbatim including whitespace/newline",
+      "passed": true
+    },
+    {
+      "number": 9,
+      "name": "All 16 ordered card identities preserved",
+      "passed": true
+    },
+    {
+      "number": 10,
+      "name": "Actual states preserved, no Minor reversal",
+      "passed": true
+    },
+    {
+      "number": 11,
+      "name": "Prompt generated locally after completion",
+      "passed": true
+    },
+    {
+      "number": 12,
+      "name": "UI output byte-equivalent to direct accepted Stage 5B-1 output",
+      "passed": true,
+      "evidence": {
+        "bytes": 25079,
+        "sha256": "d036c9d2e3038f31fd2f3715a9e938264a6d49b4d8221ff7f9fa2d5995513c09"
+      }
+    },
+    {
+      "number": 13,
+      "name": "Repeated Reader opening generates identical prompt",
+      "passed": true
+    },
+    {
+      "number": 14,
+      "name": "Complete dossier copied repeatedly; refusal enables full manual copy",
+      "passed": false
+    },
+    {
+      "number": 15,
+      "name": "Copy-success status visible and announced without alert",
+      "passed": true
+    },
+    {
+      "number": 16,
+      "name": "Optional preview collapsed initially; keyboard disclosure works",
+      "passed": true
+    },
+    {
+      "number": 17,
+      "name": "Preview preserves selectable complete plain text and line breaks",
+      "passed": true
+    },
+    {
+      "number": 18,
+      "name": "DeepSeek action is ordinary separate navigation only",
+      "passed": true
+    },
+    {
+      "number": 19,
+      "name": "ChatGPT action is ordinary separate navigation only",
+      "passed": true
+    },
+    {
+      "number": 20,
+      "name": "No automatic submission or prompt attached to external navigation",
+      "passed": true
+    },
+    {
+      "number": 21,
+      "name": "AI calls zero; only authoritative deterministic prompt assembly",
+      "passed": true
+    },
+    {
+      "number": 22,
+      "name": "API calls zero",
+      "passed": true
+    },
+    {
+      "number": 23,
+      "name": "API keys zero",
+      "passed": true
+    },
+    {
+      "number": 24,
+      "name": "Application backend none",
+      "passed": true
+    },
+    {
+      "number": 25,
+      "name": "No iframe or embedded third-party website",
+      "passed": true
+    },
+    {
+      "number": 26,
+      "name": "No authentication handling",
+      "passed": true
+    },
+    {
+      "number": 27,
+      "name": "No automatic prompt injection or third-party DOM access",
+      "passed": true
+    },
+    {
+      "number": 28,
+      "name": "Stage 4A and Stage 5B-1 generator unchanged",
+      "passed": true
+    },
+    {
+      "number": 29,
+      "name": "Interpretation Engine unchanged and not loaded",
+      "passed": true
+    },
+    {
+      "number": 30,
+      "name": "Stage 5A reveal mechanics and upright artwork presentation unchanged",
+      "passed": true
+    },
+    {
+      "number": 31,
+      "name": "Artwork assignments and files unchanged",
+      "passed": true
+    },
+    {
+      "number": 32,
+      "name": "Canonical Tarot UI/spreads unchanged",
+      "passed": true
+    },
+    {
+      "number": 33,
+      "name": "Archive unchanged",
+      "passed": true
+    },
+    {
+      "number": 34,
+      "name": "Four Kadat generators unchanged; main untouched",
+      "passed": true
+    },
+    {
+      "number": 35,
+      "name": "Desktop 1366 right-side Reader flow",
+      "passed": true
+    },
+    {
+      "number": 36,
+      "name": "Mobile 320 full-screen Reader flow",
+      "passed": true,
+      "evidence": {
+        "width": 320,
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 850
+        },
+        "overflow": false,
+        "previewFont": 16,
+        "previewWrap": "pre-wrap",
+        "animation": "none",
+        "targets": [
+          {
+            "width": 44,
+            "height": 44,
+            "fits": true
+          },
+          {
+            "width": 284,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 284,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 284,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 284,
+            "height": 48.796875,
+            "fits": true
+          }
+        ],
+        "artworkTransforms": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "number": 37,
+      "name": "Mobile 414 full-screen Reader flow",
+      "passed": true,
+      "evidence": {
+        "width": 414,
+        "panel": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        "overflow": false,
+        "previewFont": 16,
+        "previewWrap": "pre-wrap",
+        "animation": "none",
+        "targets": [
+          {
+            "width": 44,
+            "height": 44,
+            "fits": true
+          },
+          {
+            "width": 378,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 378,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 378,
+            "height": 48.796875,
+            "fits": true
+          },
+          {
+            "width": 378,
+            "height": 48.796875,
+            "fits": true
+          }
+        ],
+        "artworkTransforms": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "number": 38,
+      "name": "No horizontal overflow at desktop/320/414",
+      "passed": true
+    },
+    {
+      "number": 39,
+      "name": "Complete preview readable at all three widths",
+      "passed": true,
+      "evidence": {
+        "consoleOrResourceErrors": []
+      }
+    },
+    {
+      "number": 40,
+      "name": "Return to completed spread works at all widths; reset clears Reader",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "localServer": "existing scripts/serve.cjs, temporary static review only"
+}
