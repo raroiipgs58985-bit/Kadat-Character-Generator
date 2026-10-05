@@ -1,0 +1,162 @@
+{
+  "baseline": "6eecf01cb7961565f37ac5d80e729ef419e0469c",
+  "branch": "experiment/imperial-tarot-deepseek-live-test",
+  "checks": [
+    {
+      "name": "01 isolated live-test page exists",
+      "pass": true
+    },
+    {
+      "name": "02 iframe target is official chat.deepseek.com",
+      "pass": true
+    },
+    {
+      "name": "03 external control link uses official chat.deepseek.com",
+      "pass": true
+    },
+    {
+      "name": "04 no API integration",
+      "pass": true
+    },
+    {
+      "name": "05 no API keys",
+      "pass": true
+    },
+    {
+      "name": "06 no backend",
+      "pass": true,
+      "detail": "Only a self-contained static HTML page is proposed for publication; existing local static server is used for QA."
+    },
+    {
+      "name": "07 no credential handling",
+      "pass": true
+    },
+    {
+      "name": "08 no cross-origin manipulation",
+      "pass": true
+    },
+    {
+      "name": "09 Stage 5A unchanged",
+      "pass": true
+    },
+    {
+      "name": "10 Stage 5B-0 fallback unchanged",
+      "pass": true
+    },
+    {
+      "name": "11 production Tarot unchanged",
+      "pass": true
+    },
+    {
+      "name": "12 Stage 4A unchanged",
+      "pass": true
+    },
+    {
+      "name": "13 Interpretation Engine unchanged",
+      "pass": true
+    },
+    {
+      "name": "14 canonical spreads unchanged",
+      "pass": true
+    },
+    {
+      "name": "15 Archive unchanged",
+      "pass": true
+    },
+    {
+      "name": "16 four Kadat generators unchanged",
+      "pass": true
+    },
+    {
+      "name": "17 desktop page usable",
+      "pass": true,
+      "detail": "Assertion corrected for the existing 1100 px desktop content cap; targeted recheck used recorded browser measurements."
+    },
+    {
+      "name": "18 mobile 320 page usable",
+      "pass": true
+    },
+    {
+      "name": "19 mobile 414 page usable",
+      "pass": true
+    },
+    {
+      "name": "20 no horizontal overflow",
+      "pass": true
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "result": "PASS",
+  "observations": {
+    "documentResponses": [],
+    "failedRequests": [
+      {
+        "url": "https://chat.deepseek.com/",
+        "reason": "net::ERR_EMPTY_RESPONSE"
+      }
+    ],
+    "console": [],
+    "pageErrors": [],
+    "viewports": [
+      {
+        "viewport": 1366,
+        "noOverflow": true,
+        "frameWidth": 1100,
+        "frameFits": true,
+        "controlFits": true,
+        "origin": "http://127.0.0.1:4187",
+        "https": "NO \u2014 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u0438\u043b\u0438 \u043d\u0435\u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0439 origin",
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+      },
+      {
+        "viewport": 320,
+        "noOverflow": true,
+        "frameWidth": 288,
+        "frameFits": true,
+        "controlFits": true,
+        "origin": "http://127.0.0.1:4187",
+        "https": "NO \u2014 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u0438\u043b\u0438 \u043d\u0435\u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0439 origin",
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+      },
+      {
+        "viewport": 414,
+        "noOverflow": true,
+        "frameWidth": 382,
+        "frameFits": true,
+        "controlFits": true,
+        "origin": "http://127.0.0.1:4187",
+        "https": "NO \u2014 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u0438\u043b\u0438 \u043d\u0435\u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0439 origin",
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36"
+      }
+    ],
+    "externalControl": {
+      "newTopLevelTab": true,
+      "target": "https://chat.deepseek.com/",
+      "observedURL": "chrome-error://chromewebdata/"
+    },
+    "iframeNavigation": "requestfailed",
+    "deepseekResult": "INCONCLUSIVE",
+    "classificationReason": "Local HTTP QA validates our page, not the required public HTTPS manual test. Work previously could not reach DeepSeek separately; no remote login or chat functionality is asserted.",
+    "manualRealBrowserVerificationRequired": true
+  },
+  "validationHistory": {
+    "initialBoundedPass": {
+      "passed": 19,
+      "total": 20,
+      "failedCheck": {
+        "name": "17 desktop page usable",
+        "pass": false
+      },
+      "cause": "Test assertion incorrectly required full viewport width on desktop, ignoring the intentional 1100 px content cap."
+    },
+    "targetedAssertionRecheck": {
+      "checks": 1,
+      "passed": 1,
+      "source": "Existing recorded 1366 px browser measurements only",
+      "newBrowserNavigations": 0,
+      "newDeepSeekRequests": 0,
+      "applicationFilesChanged": false
+    }
+  }
+}

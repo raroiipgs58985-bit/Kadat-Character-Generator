@@ -1,0 +1,47 @@
+{
+  "lastPagesDeployment": {
+    "id": 37225532230,
+    "name": "pages build and deployment",
+    "path": "dynamic/pages/pages-build-deployment",
+    "head_branch": "main",
+    "head_sha": "0dc66e6db4522276de7536ac8292af587b26e4a8",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-04T18:43:31Z",
+    "html_url": "https://github.com/raroiipgs58985-bit/Kadat-Character-Generator/actions/runs/37225532230",
+    "workflow_id": 317008971
+  },
+  "recentExperimentalRuns": [
+    {
+      "id": 37258976221,
+      "name": "Validate Kadat",
+      "path": ".github/workflows/check.yml",
+      "head_branch": "experiment/imperial-tarot-deepseek-embed",
+      "head_sha": "6eecf01cb7961565f37ac5d80e729ef419e0469c",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-05T03:19:21Z",
+      "html_url": "https://github.com/raroiipgs58985-bit/Kadat-Character-Generator/actions/runs/37258976221",
+      "workflow_id": 317108697
+    },
+    {
+      "id": 37233942941,
+      "name": "Validate Kadat",
+      "path": ".github/workflows/check.yml",
+      "head_branch": "experiment/imperial-tarot-convergence",
+      "head_sha": "496f2b6838842df0a2a37cc92d6ad497e38cc697",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-04T20:55:04Z",
+      "html_url": "https://github.com/raroiipgs58985-bit/Kadat-Character-Generator/actions/runs/37233942941",
+      "workflow_id": 317108697
+    }
+  ],
+  "trackedWorkflow": ".github/workflows/check.yml",
+  "pagesSettingsRead": {
+    "method": "Unauthenticated GET /repos/raroiipgs58985-bit/Kadat-Character-Generator/pages",
+    "httpStatus": 404,
+    "settingsReturned": false
+  },
+  "decision": "NOT PUBLISHED — approval required before adding one isolated HTML file to main using the existing Pages mechanism"
+}
