@@ -120,6 +120,13 @@
   } catch {
     storageAvailable = false;
   }
+  // A navigation entry only: keep any saved ritual and its question intact.
+  const entryUrl = new URL(location.href);
+  if (entryUrl.searchParams.get("screen") === "spreads") {
+    view = "spreads";
+    entryUrl.searchParams.delete("screen");
+    history.replaceState(history.state, "", entryUrl);
+  }
   save();
   function cancelAnimation() {
     clearTimeout(timer);
@@ -197,7 +204,7 @@
     return `<svg class="stage2-mini-map" viewBox="0 0 ${spread.map_width} ${spread.map_height}" aria-hidden="true" focusable="false">${spread.positions.map((p, i) => `<g transform="translate(${p.x} ${p.y})"><rect x="${p.horizontal ? -29 : -19}" y="${p.horizontal ? -14 : -25}" width="${p.horizontal ? 58 : 38}" height="${p.horizontal ? 28 : 50}"/><text dy="4">${i + 1}</text></g>`).join("")}</svg>`;
   }
   function chooseSpread() {
-    return `<section class="stage2-selection">${heading("FORMA RITUALIS", "Выберите расклад", "У каждого ритуала своя форма.<br>Карты появятся только после подтверждения начала.")}<div class="stage2-spread-options">${ritualData.spreads.map((s) => `<button class="stage2-spread-option" data-s2="select" data-spread="${s.spread_id}" ${s.startable === false ? "disabled" : ""}><span class="stage2-spread-copy"><span class="stage2-spread-count">${s.card_count == null ? "СВОБОДНЫЙ РАСКЛАД" : `${s.card_count} КАРТ`}</span><strong>${s.name_ru}</strong><span class="stage2-spread-en">${s.name_en}</span><span class="stage2-spread-purpose">${s.purpose_ru}</span>${s.deferred_review ? '<span class="stage2-spread-purpose">24 карты без отдельных значений позиций. Связное толкование пока недоступно.</span>' : ""}</span>${s.startable === false ? '<span class="stage2-flexible-form" aria-hidden="true">Свободная<br>форма</span>' : miniMap(s)}${s.startable === false ? "" : '<span class="stage2-spread-arrow" aria-hidden="true">↗</span>'}</button>`).join("")}</div><p class="stage2-source-note">Четыре фиксированные схемы: The Emperor's Tarot v1.30, стр. 20–22. Астро-гороскоп: 24 карты как единое сложное знамение, без назначенной схемы.</p>${session ? '<p class="stage2-source-note">Текущий расклад сохранён. Выбор другого потребует подтверждения сброса.</p>' : ""}${restoreNotice && !session ? `<p class="stage2-source-note" role="status">${esc(restoreNotice)}</p>` : ""}</section>`;
+    return `<section class="stage2-selection">${heading("FORMA RITUALIS", "Выберите расклад", "У каждого ритуала своя форма.<br>Карты появятся только после подтверждения начала.")}<div class="stage2-spread-options">${ritualData.spreads.map((s) => `<button class="stage2-spread-option" data-s2="${s.spread_id === "astro_horoscope" ? "astro-forms" : "select"}" data-spread="${s.spread_id}" ${s.startable === false && s.spread_id !== "astro_horoscope" ? "disabled" : ""}><span class="stage2-spread-copy"><span class="stage2-spread-count">${s.spread_id === "astro_horoscope" ? "ФОРМЫ ЗНАМЕНИЯ" : s.card_count == null ? "СВОБОДНЫЙ РАСКЛАД" : `${s.card_count} КАРТ`}</span><strong>${s.name_ru}</strong><span class="stage2-spread-en">${s.name_en}</span><span class="stage2-spread-purpose">${s.spread_id === "astro_horoscope" ? "Выберите форму сложного знамения." : s.purpose_ru}</span>${s.deferred_review && s.spread_id !== "astro_horoscope" ? '<span class="stage2-spread-purpose">24 карты без отдельных значений позиций. Связное толкование пока недоступно.</span>' : ""}</span>${s.startable === false ? '<span class="stage2-flexible-form" aria-hidden="true">Свободная<br>форма</span>' : miniMap(s)}${s.startable === false ? "" : '<span class="stage2-spread-arrow" aria-hidden="true">↗</span>'}</button>`).join("")}</div><p class="stage2-source-note">Четыре фиксированные схемы: The Emperor's Tarot v1.30, стр. 20–22. Астро-гороскоп: выбор формы сложного знамения. Схождение — экспериментальная, неканоническая форма.</p>${session ? '<p class="stage2-source-note">Текущий расклад сохранён. Выбор другого потребует подтверждения сброса.</p>' : ""}${restoreNotice && !session ? `<p class="stage2-source-note" role="status">${esc(restoreNotice)}</p>` : ""}</section>`;
   }
   function askQuestion() {
     const s = currentSpread();
@@ -467,6 +474,9 @@
       }
       case "choose":
         go("spreads");
+        break;
+      case "astro-forms":
+        location.assign("astro-horoscope/");
         break;
       case "select":
         if (!canSelect(el.dataset.spread)) return;

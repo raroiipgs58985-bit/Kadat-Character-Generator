@@ -1,0 +1,263 @@
+{
+  "stage": "5B-3",
+  "branch": "experiment/imperial-tarot-astro-entry",
+  "baseline": "e7c9835bc585fe10bb027090aeba4ddb68ad138c",
+  "bounded_passes": 1,
+  "targeted_rechecks": [],
+  "checks": [
+    {
+      "id": 1,
+      "name": "Imperial Tarot loads",
+      "result": "PASS"
+    },
+    {
+      "id": 2,
+      "name": "Main spread selection loads",
+      "result": "PASS"
+    },
+    {
+      "id": 3,
+      "name": "Five existing top-level choices remain",
+      "result": "PASS",
+      "evidence": [
+        "imperator",
+        "branch",
+        "throne_of_terra",
+        "haloed_rosette",
+        "astro_horoscope"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "No sixth Convergence entry in main list",
+      "result": "PASS"
+    },
+    {
+      "id": 5,
+      "name": "Imperator still opens",
+      "result": "PASS",
+      "evidence": "Император · 3 карт"
+    },
+    {
+      "id": 6,
+      "name": "Branch still opens",
+      "result": "PASS",
+      "evidence": "Ветвь · 6 карт"
+    },
+    {
+      "id": 7,
+      "name": "Throne of Terra still opens",
+      "result": "PASS",
+      "evidence": "Трон Терры · 7 карт"
+    },
+    {
+      "id": 8,
+      "name": "Haloed Rosette still opens",
+      "result": "PASS",
+      "evidence": "Ореол Росетты · 10 карт"
+    },
+    {
+      "id": 9,
+      "name": "Astro opens new form-selection screen",
+      "result": "PASS"
+    },
+    {
+      "id": 10,
+      "name": "Form selection displays Convergence",
+      "result": "PASS"
+    },
+    {
+      "id": 11,
+      "name": "Convergence says 16 cards",
+      "result": "PASS"
+    },
+    {
+      "id": 12,
+      "name": "Five paths of three represented",
+      "result": "PASS"
+    },
+    {
+      "id": 13,
+      "name": "XVI is a separate final sign",
+      "result": "PASS"
+    },
+    {
+      "id": 14,
+      "name": "No fixed path themes invented",
+      "result": "PASS"
+    },
+    {
+      "id": 15,
+      "name": "No fixed intra-path roles invented",
+      "result": "PASS"
+    },
+    {
+      "id": 16,
+      "name": "No future forms invented",
+      "result": "PASS"
+    },
+    {
+      "id": 17,
+      "name": "Selection opens existing Convergence",
+      "result": "PASS"
+    },
+    {
+      "id": 18,
+      "name": "Question handling works",
+      "result": "PASS"
+    },
+    {
+      "id": 19,
+      "name": "Cards 01–15 reveal in order",
+      "result": "PASS"
+    },
+    {
+      "id": 20,
+      "name": "XVI requires separate explicit reveal",
+      "result": "PASS"
+    },
+    {
+      "id": 21,
+      "name": "Reader locked before XVI",
+      "result": "PASS"
+    },
+    {
+      "id": 22,
+      "name": "Reader available after XVI",
+      "result": "PASS"
+    },
+    {
+      "id": 23,
+      "name": "Copy Prompt works",
+      "result": "PASS",
+      "evidence": {
+        "characters": 14915
+      }
+    },
+    {
+      "id": 24,
+      "name": "Prompt Preview works",
+      "result": "PASS"
+    },
+    {
+      "id": 25,
+      "name": "DeepSeek navigation present",
+      "result": "PASS"
+    },
+    {
+      "id": 26,
+      "name": "ChatGPT navigation present",
+      "result": "PASS"
+    },
+    {
+      "id": 27,
+      "name": "Back Convergence → Astro selection",
+      "result": "PASS"
+    },
+    {
+      "id": 28,
+      "name": "Back Astro selection → main spreads",
+      "result": "PASS"
+    },
+    {
+      "id": 29,
+      "name": "Desktop 1366 selection usable",
+      "result": "PASS"
+    },
+    {
+      "id": 30,
+      "name": "Mobile 320 selection and entry usable",
+      "result": "PASS",
+      "evidence": {
+        "width": 320,
+        "formBodyFont": "17px"
+      }
+    },
+    {
+      "id": 31,
+      "name": "Mobile 414 selection and entry usable",
+      "result": "PASS",
+      "evidence": {
+        "width": 414,
+        "formBodyFont": "17px"
+      }
+    },
+    {
+      "id": 32,
+      "name": "No horizontal overflow",
+      "result": "PASS"
+    },
+    {
+      "id": 33,
+      "name": "Stage 4A unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 34,
+      "name": "Interpretation Engine unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 35,
+      "name": "Reader Prompt Generator unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 36,
+      "name": "Artwork mappings unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 37,
+      "name": "Canonical fixed spreads mechanics unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 38,
+      "name": "Archive unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 39,
+      "name": "Four Kadat generators unchanged",
+      "result": "PASS"
+    },
+    {
+      "id": 40,
+      "name": "Unrelated files absent",
+      "result": "PASS",
+      "evidence": {
+        "changed": [
+          "tarot-prototype/experiment-convergence/index.html",
+          "tarot-prototype/index.html",
+          "tarot-prototype/stage2.js"
+        ],
+        "untracked": [
+          "tarot-prototype/astro-horoscope/forms.css",
+          "tarot-prototype/astro-horoscope/index.html",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/01-main-spread-selection.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/02-astro-form-desktop-1366.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/03-astro-form-mobile-320.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/04-astro-form-mobile-414.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/05-convergence-from-navigation.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/screenshots/06-completed-convergence-reader-available.png",
+          "tarot-prototype/astro-horoscope/review-stage5b3/validation.json",
+          "tarot-prototype/astro-horoscope/validate-stage5b3.cjs"
+        ]
+      }
+    }
+  ],
+  "screenshots": [
+    "screenshots/01-main-spread-selection.png",
+    "screenshots/02-astro-form-desktop-1366.png",
+    "screenshots/03-astro-form-mobile-320.png",
+    "screenshots/04-astro-form-mobile-414.png",
+    "screenshots/05-convergence-from-navigation.png",
+    "screenshots/06-completed-convergence-reader-available.png"
+  ],
+  "browser_errors": [],
+  "external_requests": [],
+  "interpretation_calls": 0,
+  "passed": 40,
+  "status": "PASS"
+}
