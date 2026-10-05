@@ -1,0 +1,252 @@
+{
+  "baseline": "865423f7f4c3bbc6710c28408d91f71582a01539",
+  "approvedMain": "31d7755b68768a7bc1461afa63592fb945e6c743",
+  "branch": "experiment/imperial-tarot-reader-prompt",
+  "sourceVersion": "1.0.0",
+  "passed": 39,
+  "totalBeforeCheckpoint": 39,
+  "targetTotal": 40,
+  "checks": [
+    {
+      "number": 1,
+      "name": "exactly 16 cards accepted; other counts and unfinished sessions rejected",
+      "passed": true
+    },
+    {
+      "number": 2,
+      "name": "exactly five triples and a separate XVI",
+      "passed": true
+    },
+    {
+      "number": 3,
+      "name": "ordered card references and positions preserved",
+      "passed": true
+    },
+    {
+      "number": 4,
+      "name": "question preserved verbatim, including spaces and newline",
+      "passed": true
+    },
+    {
+      "number": 5,
+      "name": "only drawn identities/states and used suit context included",
+      "passed": true
+    },
+    {
+      "number": 6,
+      "name": "production IDs valid and unknown/repeated identity rejected",
+      "passed": true
+    },
+    {
+      "number": 7,
+      "name": "semantics and selected core framing resolve from frozen 1.0.0",
+      "passed": true
+    },
+    {
+      "number": 8,
+      "name": "Major Upright source semantics used",
+      "passed": true
+    },
+    {
+      "number": 9,
+      "name": "Major Reversed uses its own authored state",
+      "passed": true
+    },
+    {
+      "number": 10,
+      "name": "no mechanical inversion or leaked upright core in Reversed blocks",
+      "passed": true
+    },
+    {
+      "number": 11,
+      "name": "Minor reverse rejected; Rogue Trader variations remain unenumerated",
+      "passed": true
+    },
+    {
+      "number": 12,
+      "name": "no fixed themes assigned to Path I–V",
+      "passed": true
+    },
+    {
+      "number": 13,
+      "name": "no fixed intra-path roles assigned",
+      "passed": true
+    },
+    {
+      "number": 14,
+      "name": "XVI explicitly marked shared Convergence",
+      "passed": true
+    },
+    {
+      "number": 15,
+      "name": "XVI not defined as guaranteed outcome",
+      "passed": true
+    },
+    {
+      "number": 16,
+      "name": "Reader protocol reads five paths and comparison before XVI",
+      "passed": true
+    },
+    {
+      "number": 17,
+      "name": "cross-path comparison requested without forced categories",
+      "passed": true
+    },
+    {
+      "number": 18,
+      "name": "best path not forced",
+      "passed": true
+    },
+    {
+      "number": 19,
+      "name": "uncertainty and unsupported date permitted",
+      "passed": true
+    },
+    {
+      "number": 20,
+      "name": "invented factual events and guaranteed future prohibited",
+      "passed": true
+    },
+    {
+      "number": 21,
+      "name": "unified Russian literary Imperial prophecy requested",
+      "passed": true
+    },
+    {
+      "number": 22,
+      "name": "secondary paths, convergence and meaningful relations requested without private reasoning",
+      "passed": true
+    },
+    {
+      "number": 23,
+      "name": "generated path titles explicitly non-canonical Reader output",
+      "passed": true
+    },
+    {
+      "number": 24,
+      "name": "prompt byte determinism; CLI equals copied artifact; session metadata ignored",
+      "passed": true
+    },
+    {
+      "number": 25,
+      "name": "no timestamps, random selection or session noise in prompt",
+      "passed": true
+    },
+    {
+      "number": 26,
+      "name": "no AI or interpretation calls",
+      "passed": true
+    },
+    {
+      "number": 27,
+      "name": "no DeepSeek calls",
+      "passed": true
+    },
+    {
+      "number": 28,
+      "name": "no API or cross-origin dependency",
+      "passed": true
+    },
+    {
+      "number": 29,
+      "name": "no API keys",
+      "passed": true
+    },
+    {
+      "number": 30,
+      "name": "no backend",
+      "passed": true
+    },
+    {
+      "number": 31,
+      "name": "Stage 4A unchanged; original frozen JSON/bundle authority retained",
+      "passed": true
+    },
+    {
+      "number": 32,
+      "name": "Interpretation Engine unchanged",
+      "passed": true
+    },
+    {
+      "number": 33,
+      "name": "Stage 5A behavior and files unchanged; adapter result preserved",
+      "passed": true
+    },
+    {
+      "number": 34,
+      "name": "production Tarot unchanged",
+      "passed": true
+    },
+    {
+      "number": 35,
+      "name": "four canonical spreads unchanged",
+      "passed": true
+    },
+    {
+      "number": 36,
+      "name": "Archive unchanged",
+      "passed": true
+    },
+    {
+      "number": 37,
+      "name": "four Kadat generators unchanged",
+      "passed": true
+    },
+    {
+      "number": 38,
+      "name": "artwork mappings unchanged; artwork metadata excluded from prompts",
+      "passed": true
+    },
+    {
+      "number": 39,
+      "name": "no publication/main change; approved live-test retained exactly",
+      "passed": true
+    }
+  ],
+  "check40": {
+    "status": "DEFERRED_UNTIL_CHECKPOINT",
+    "command": "node validate-stage5b1.cjs --finish-checkpoint",
+    "writesFiles": false,
+    "rerunsFixtures": false
+  },
+  "fixtureCount": 6,
+  "externalCalls": 0,
+  "prompts": [
+    {
+      "fixture": "01-major-heavy",
+      "bytes": 24429,
+      "sha256": "5579defa6514e08c3539aeb5d563b6f1a58935ab93187e514d69c1d8149a4206",
+      "file": "prompts/01-major-heavy.txt"
+    },
+    {
+      "fixture": "02-minor-heavy",
+      "bytes": 21991,
+      "sha256": "b438ff899d2b144d8d28e8563aba79ef9b66d9bfd59453716689f83441736ca3",
+      "file": "prompts/02-minor-heavy.txt"
+    },
+    {
+      "fixture": "03-reversed-major",
+      "bytes": 26204,
+      "sha256": "3d7c857d168b649766362cba415fbf181b3aefc1b28b0f3728c2c38e612ed8f0",
+      "file": "prompts/03-reversed-major.txt"
+    },
+    {
+      "fixture": "04-tensions",
+      "bytes": 24177,
+      "sha256": "e62edaa68f57e061d0de47f20abef710f2f19625c866c465df658045802512f5",
+      "file": "prompts/04-tensions.txt"
+    },
+    {
+      "fixture": "05-shared-motifs",
+      "bytes": 21454,
+      "sha256": "bda183e3bc0d79ab02ef9b0e9bc346fca3536220dada58c20f7a840bb8f736fc",
+      "file": "prompts/05-shared-motifs.txt"
+    },
+    {
+      "fixture": "06-ambiguous",
+      "bytes": 25079,
+      "sha256": "d036c9d2e3038f31fd2f3715a9e938264a6d49b4d8221ff7f9fa2d5995513c09",
+      "file": "prompts/06-ambiguous.txt"
+    }
+  ]
+}

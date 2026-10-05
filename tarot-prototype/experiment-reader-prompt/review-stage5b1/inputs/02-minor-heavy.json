@@ -1,0 +1,100 @@
+{
+  "contract_version": "convergence-stage5a-v1",
+  "spread": "convergence",
+  "experimental": true,
+  "data_version": "blanche-final-v1-5d3bd931d33c",
+  "session_id": "stage5b1-fixture-02-minor-heavy",
+  "question": "Как снабдить отряд перед дальнейшим продвижением?",
+  "paths": {
+    "path_1": [
+      {
+        "position": 1,
+        "card_id": "adeptio_02",
+        "type": "minor"
+      },
+      {
+        "position": 2,
+        "card_id": "adeptio_03",
+        "type": "minor"
+      },
+      {
+        "position": 3,
+        "card_id": "adeptio_06",
+        "type": "minor"
+      }
+    ],
+    "path_2": [
+      {
+        "position": 4,
+        "card_id": "discordia_01",
+        "type": "minor"
+      },
+      {
+        "position": 5,
+        "card_id": "discordia_02",
+        "type": "minor"
+      },
+      {
+        "position": 6,
+        "card_id": "discordia_04",
+        "type": "minor"
+      }
+    ],
+    "path_3": [
+      {
+        "position": 7,
+        "card_id": "excuteria_02",
+        "type": "minor"
+      },
+      {
+        "position": 8,
+        "card_id": "excuteria_03",
+        "type": "minor"
+      },
+      {
+        "position": 9,
+        "card_id": "excuteria_04",
+        "type": "minor"
+      }
+    ],
+    "path_4": [
+      {
+        "position": 10,
+        "card_id": "mandatio_02",
+        "type": "minor"
+      },
+      {
+        "position": 11,
+        "card_id": "mandatio_03",
+        "type": "minor"
+      },
+      {
+        "position": 12,
+        "card_id": "mandatio_04",
+        "type": "minor"
+      }
+    ],
+    "path_5": [
+      {
+        "position": 13,
+        "card_id": "excuteria_07",
+        "type": "minor"
+      },
+      {
+        "position": 14,
+        "card_id": "excuteria_08",
+        "type": "minor"
+      },
+      {
+        "position": 15,
+        "card_id": "excuteria_12",
+        "type": "minor"
+      }
+    ]
+  },
+  "convergence": {
+    "position": 16,
+    "card_id": "mandatio_06",
+    "type": "minor"
+  }
+}

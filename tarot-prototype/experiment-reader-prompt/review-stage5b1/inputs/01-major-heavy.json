@@ -1,0 +1,115 @@
+{
+  "contract_version": "convergence-stage5a-v1",
+  "spread": "convergence",
+  "experimental": true,
+  "data_version": "blanche-final-v1-5d3bd931d33c",
+  "session_id": "stage5b1-fixture-01-major-heavy",
+  "question": "Как Келусу получить археотех Штрассе?",
+  "paths": {
+    "path_1": [
+      {
+        "position": 1,
+        "card_id": "major_00",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 2,
+        "card_id": "major_01",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 3,
+        "card_id": "major_02",
+        "type": "major",
+        "orientation": "upright"
+      }
+    ],
+    "path_2": [
+      {
+        "position": 4,
+        "card_id": "major_03",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 5,
+        "card_id": "major_04",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 6,
+        "card_id": "major_05",
+        "type": "major",
+        "orientation": "upright"
+      }
+    ],
+    "path_3": [
+      {
+        "position": 7,
+        "card_id": "major_06",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 8,
+        "card_id": "major_07",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 9,
+        "card_id": "major_08",
+        "type": "major",
+        "orientation": "upright"
+      }
+    ],
+    "path_4": [
+      {
+        "position": 10,
+        "card_id": "major_09",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 11,
+        "card_id": "major_10",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 12,
+        "card_id": "major_11",
+        "type": "major",
+        "orientation": "upright"
+      }
+    ],
+    "path_5": [
+      {
+        "position": 13,
+        "card_id": "major_12",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 14,
+        "card_id": "major_14",
+        "type": "major",
+        "orientation": "upright"
+      },
+      {
+        "position": 15,
+        "card_id": "excuteria_12",
+        "type": "minor"
+      }
+    ]
+  },
+  "convergence": {
+    "position": 16,
+    "card_id": "major_21",
+    "type": "major",
+    "orientation": "upright"
+  }
+}
