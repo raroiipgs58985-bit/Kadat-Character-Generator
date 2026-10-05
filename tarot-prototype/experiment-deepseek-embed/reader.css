@@ -1,0 +1,70 @@
+.embed-shell { max-width: 1366px; }
+.spread-area { padding: 32px 0 20px; transition: padding-right 160ms ease; }
+.spread-area h1 { font-size: clamp(40px, 5vw, 64px); margin: 18px 0; }
+.ritual-status { font-size: 12px; letter-spacing: .1em; color: var(--gold); line-height: 1.8; }
+.spread-area > .ritual-status { margin-top: 18px; }
+.mock-note, .reader-note { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.mock-spread { display: grid; grid-template-columns: minmax(0, 1fr) 70px 100px; align-items: center; max-width: 730px; margin: 36px 0; }
+.mock-paths { display: grid; gap: 14px; }
+.mock-path { display: grid; grid-template-columns: 82px repeat(3, minmax(0, 1fr)); align-items: center; gap: 14px; }
+.path-label { color: var(--gold); font-size: 14px; }
+.mock-sign { display: grid; place-items: center; min-width: 0; height: 48px; border: 1px solid var(--rule); color: var(--muted); background: #120e0b; font-size: 14px; }
+.convergence-lines { width: 100%; height: 100%; max-height: 310px; stroke: var(--rule); stroke-width: 1; fill: none; }
+.mock-convergence { display: grid; gap: 9px; text-align: center; color: var(--gold); font-size: 12px; }
+.convergence-sign { height: 100px; border-color: var(--gold); color: var(--bone); font: 24px var(--display); }
+.reader-question { font-size: 19px; margin-bottom: 24px; }
+#open-reader { width: 260px; }
+#reader-panel { position: fixed; inset: 0 0 0 auto; margin: 0; width: min(460px, 100%); max-width: 100%; height: 100dvh; max-height: 100dvh; padding: 0; border: 0; border-left: 1px solid var(--gold); color: var(--text); background: #100c0a; box-shadow: -18px 0 60px #0008; overflow: hidden; }
+#reader-panel::backdrop { background: #0003; backdrop-filter: none; }
+#reader-panel[open] { display: flex; flex-direction: column; }
+.reader-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 24px; border-bottom: 1px solid var(--rule); flex-shrink: 0; }
+.reader-header .overline { margin: 0; }
+.reader-header h2 { font-size: 26px; margin: 6px 0 0; }
+.close-reader { min-height: 44px; padding: 8px 0 8px 10px; font-size: 14px; color: var(--muted); white-space: nowrap; }
+.close-reader span { font-size: 22px; margin-left: 8px; }
+.reader-content { flex: 1; min-height: 0; min-width: 0; overflow-y: auto; overscroll-behavior: contain; padding: 24px; }
+.reader-intro { font-size: 21px; line-height: 1.5; margin: 18px 0 10px; color: var(--bone); }
+.reader-actions { display: grid; gap: 12px; margin-top: 24px; }
+.reader-actions a { display: flex; gap: 12px; }
+.copy-status { min-height: 24px; margin: 10px 0; font-size: 15px; color: var(--bone); }
+.mock-prompt-details summary { cursor: pointer; min-height: 44px; padding: 10px 0; font-size: 15px; color: var(--gold); }
+.mock-prompt-details textarea { display: block; width: 100%; max-width: 100%; resize: vertical; border: 1px solid var(--rule); background: #080706; color: var(--text); font: 16px/1.5 var(--serif); padding: 12px; }
+.account-note { margin-top: 18px; }
+.embed-test-control { border-top: 1px solid var(--rule); margin-top: 30px; padding-top: 20px; }
+.embed-test-control button { width: 100%; margin: 12px 0; }
+.embed-test-control button:disabled { opacity: .6; }
+.embed-slot { height: max(320px, calc(100dvh - 300px)); margin: 18px 0; border: 1px solid var(--rule); background: #fff; }
+.embed-slot iframe { width: 100%; height: 100%; border: 0; display: block; }
+#use-fallback { width: 100%; }
+@media (min-width: 901px) {
+  body.reader-is-open .spread-area { padding-right: 480px; }
+  body.reader-is-open .mock-spread { grid-template-columns: minmax(0, 1fr) 46px 80px; }
+  body.reader-is-open .mock-path { gap: 8px; grid-template-columns: 70px repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  #reader-panel { width: 100%; border-left: 0; }
+  #reader-panel::backdrop { background: #0009; }
+}
+@media (max-width: 600px) {
+  .spread-area { padding-top: 20px; }
+  .spread-area h1 { font-size: 38px; }
+  .product-header { gap: 8px; }
+  .product-header .chapter-label { font-size: 8px; letter-spacing: .06em; }
+  .ritual-status { font-size: 11px; letter-spacing: .06em; }
+  .mock-spread { grid-template-columns: minmax(0, 1fr) 25px 52px; margin: 28px 0; }
+  .mock-paths { gap: 12px; }
+  .mock-path { grid-template-columns: 48px repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .path-label { font-size: 12px; }
+  .mock-sign { height: 38px; font-size: 12px; }
+  .convergence-sign { height: 70px; font-size: 21px; }
+  .mock-convergence { font-size: 10px; overflow-wrap: anywhere; }
+  .reader-question { font-size: 18px; }
+  #open-reader { width: 100%; }
+  .reader-header { padding: 14px 16px; }
+  .reader-header h2 { font-size: 23px; }
+  .reader-content { padding: 20px 16px; }
+  .reader-intro { font-size: 20px; }
+  .reader-note, .copy-status { font-size: 16px; }
+  .reader-actions .primary, .reader-actions .secondary, #attempt-embed, #use-fallback { font-size: 14px; line-height: 1.5; padding: 13px 12px; min-height: 52px; }
+}
+@media (prefers-reduced-motion: reduce) { .spread-area { transition: none; } }

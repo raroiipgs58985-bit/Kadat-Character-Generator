@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#080706" />
+    <title>Внешний Чтец — Sacred Divinatio / Embed Spike</title>
+    <link rel="icon" href="../assets/imperial-seal.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../prototype.css" />
+    <link rel="stylesheet" href="../concept-d.css" />
+    <link rel="stylesheet" href="reader.css" />
+  </head>
+  <body data-concept="d" data-experiment="deepseek-embed">
+    <a class="skip-link" href="#main">К содержимому</a>
+    <div class="concept-shell embed-shell">
+      <header class="product-header">
+        <a class="kadat-link" href="../experiment-convergence/">← СХОЖДЕНИЕ</a>
+        <span class="chapter-label">SACRED DIVINATIO</span>
+        <a class="kadat-link" href="../../index.html">KADAT ↗</a>
+      </header>
+      <main id="main" class="spread-area" tabindex="-1">
+        <p class="overline">EXPERIMENTUM · WEB READER</p>
+        <p class="ritual-status">+++ СХОЖДЕНИЕ ЗАВЕРШЕНО +++</p>
+        <h1>Пять путей.<br />Единый знак.</h1>
+        <p class="mock-note">Макет завершённого расклада для проверки панели Чтеца.</p>
+        <figure class="mock-spread" aria-label="Пять путей по три знака сходятся к шестнадцатому знаку. Демонстрационный макет, не настоящие карты.">
+          <div class="mock-paths">
+            <div class="mock-path"><span class="path-label">Путь I</span><span class="mock-sign">01</span><span class="mock-sign">02</span><span class="mock-sign">03</span></div>
+            <div class="mock-path"><span class="path-label">Путь II</span><span class="mock-sign">04</span><span class="mock-sign">05</span><span class="mock-sign">06</span></div>
+            <div class="mock-path"><span class="path-label">Путь III</span><span class="mock-sign">07</span><span class="mock-sign">08</span><span class="mock-sign">09</span></div>
+            <div class="mock-path"><span class="path-label">Путь IV</span><span class="mock-sign">10</span><span class="mock-sign">11</span><span class="mock-sign">12</span></div>
+            <div class="mock-path"><span class="path-label">Путь V</span><span class="mock-sign">13</span><span class="mock-sign">14</span><span class="mock-sign">15</span></div>
+          </div>
+          <svg class="convergence-lines" viewBox="0 0 100 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 25 L100 150 M0 87 L100 150 M0 150 L100 150 M0 213 L100 150 M0 275 L100 150" /></svg>
+          <div class="mock-convergence"><span class="mock-sign convergence-sign">XVI</span><span>Схождение</span></div>
+        </figure>
+        <p class="reader-question"><span class="overline">ВОПРОС ЧТЕЦА</span><br />«Как достичь намеченной цели?»</p>
+        <button id="open-reader" class="primary" aria-haspopup="dialog" aria-controls="reader-panel">Открыть Чтеца <span aria-hidden="true">↗</span></button>
+      </main>
+      <footer class="concept-footer"><span>Изолированный технический эксперимент</span><span>STAGE 5B-0</span></footer>
+    </div>
+    <dialog id="reader-panel" aria-labelledby="reader-title">
+      <header class="reader-header">
+        <div><p class="overline">+++ ЧТЕЦ +++</p><h2 id="reader-title">Внешний Чтец</h2></div>
+        <button id="close-reader" class="close-reader" aria-label="Закрыть панель Чтеца">Закрыть <span aria-hidden="true">×</span></button>
+      </header>
+      <div class="reader-content">
+        <section id="fallback-reader" aria-labelledby="fallback-title">
+          <p class="ritual-status" id="fallback-title">+++ ВНЕШНИЙ ЧТЕЦ +++</p>
+          <p class="reader-intro">Расклад подготовлен для толкования.</p>
+          <p class="reader-note">Для этой проверки используется только тестовая строка.</p>
+          <div class="reader-actions">
+            <button id="copy-prompt" class="primary">Копировать промт</button>
+            <a id="open-deepseek" class="secondary" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">Открыть DeepSeek <span aria-hidden="true">↗</span></a>
+          </div>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          <details class="mock-prompt-details"><summary>Тестовая строка</summary><label class="sr-only" for="mock-prompt">Текст для ручного копирования</label><textarea id="mock-prompt" readonly rows="4">Тестовая строка Kadat: проверка ручного переноса текста. Ответ не требуется.</textarea></details>
+          <p class="reader-note account-note">DeepSeek откроется в отдельной вкладке. Вход и отправка текста остаются вашими действиями.</p>
+          <div class="embed-test-control">
+            <p class="overline">ПРОВЕРКА ВСТРАИВАНИЯ</p>
+            <button id="attempt-embed" class="secondary">Проверить DeepSeek в панели</button>
+            <p class="reader-note">Возможность встраивания определяет сам сервис.</p>
+          </div>
+        </section>
+        <section id="direct-reader" aria-labelledby="direct-title" hidden>
+          <p class="ritual-status" id="direct-title">+++ DEEPSEEK WEB +++</p>
+          <p class="reader-note">Обычная веб-страница сервиса. Если она недоступна здесь, откройте внешнего Чтеца.</p>
+          <div id="embed-slot" class="embed-slot"></div>
+          <button id="use-fallback" class="secondary">Использовать внешнего Чтеца</button>
+        </section>
+      </div>
+    </dialog>
+    <script src="reader.js"></script>
+  </body>
+</html>

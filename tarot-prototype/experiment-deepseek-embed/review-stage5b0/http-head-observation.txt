@@ -1,0 +1,20 @@
+Supplementary transport observation, not the iframe browser result.
+Command: curl --head --location --max-time 20 https://chat.deepseek.com/
+TLS verification was enabled. No headers or browser policies were bypassed.
+Observed response on 2026-10-05:
+
+HTTP/1.1 200 OK
+date: Mon, 05 Oct 2026 03:09:33 GMT
+
+HTTP/2 403
+server: CloudFront
+date: Mon, 05 Oct 2026 03:09:33 GMT
+content-type: text/html
+content-length: 919
+x-cache: Error from cloudfront
+via: 1.1 bdf85d6d4811ab08c57841855a848f8a.cloudfront.net (CloudFront)
+x-amz-cf-pop: LAX54-P11
+x-amz-cf-id: eHo-jlFU1VhgCGuaeR1i803s6OHWumcpEFCDs58ecGMF3GZ6SGYMpA==
+
+No Content-Security-Policy or X-Frame-Options header was observed in this response.
+No response body was read. This is not evidence of a service framing policy.

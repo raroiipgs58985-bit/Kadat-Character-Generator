@@ -1,0 +1,143 @@
+{
+  "baseline": "496f2b6838842df0a2a37cc92d6ad497e38cc697",
+  "branch": "experiment/imperial-tarot-deepseek-embed",
+  "checks": [
+    {
+      "name": "01 isolated experiment exists",
+      "passed": true
+    },
+    {
+      "name": "02 Stage 5A unchanged",
+      "passed": true
+    },
+    {
+      "name": "03 production files unchanged",
+      "passed": true
+    },
+    {
+      "name": "04 direct embed attempted once",
+      "passed": true
+    },
+    {
+      "name": "05 actual browser result recorded",
+      "passed": true
+    },
+    {
+      "name": "06 observable reason recorded without assumption",
+      "passed": true
+    },
+    {
+      "name": "07 no restriction bypass attempted",
+      "passed": true,
+      "detail": "Ordinary iframe, default TLS/CSP/CORS/browser checks, no remote DOM access. No retry after observed failure."
+    },
+    {
+      "name": "08 fallback Reader panel works",
+      "passed": true
+    },
+    {
+      "name": "09 Copy Prompt copies mock text",
+      "passed": true
+    },
+    {
+      "name": "10 Open DeepSeek opens official Web chat outside iframe",
+      "passed": true
+    },
+    {
+      "name": "11 no API calls implemented",
+      "passed": true,
+      "detail": "The external web page may perform its own ordinary navigation requests; Kadat implements no API call and submits no prompt."
+    },
+    {
+      "name": "12 no API keys",
+      "passed": true
+    },
+    {
+      "name": "13 no backend",
+      "passed": true,
+      "detail": "Three static source files; validation uses the repository's existing local static preview server."
+    },
+    {
+      "name": "14 desktop right-side Reader usable",
+      "passed": true
+    },
+    {
+      "name": "15 mobile 320 and 414 Reader usable",
+      "passed": true
+    },
+    {
+      "name": "16 no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "17 canonical Tarot unchanged",
+      "passed": true
+    },
+    {
+      "name": "18 Stage 4A unchanged",
+      "passed": true
+    },
+    {
+      "name": "19 Interpretation Engine unchanged",
+      "passed": true
+    },
+    {
+      "name": "20 no production deployment",
+      "passed": true,
+      "detail": "No workflow/config/main modifications; all additions confined to the new experiment directory."
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "result": "PASS",
+  "evidence": {
+    "iframeRequests": [
+      {
+        "url": "https://chat.deepseek.com/",
+        "resourceType": "document"
+      }
+    ],
+    "documentResponses": [],
+    "failedRequests": [
+      {
+        "url": "https://chat.deepseek.com/",
+        "reason": "net::ERR_EMPTY_RESPONSE"
+      }
+    ],
+    "browserLog": [],
+    "popup": {
+      "newTopLevelTab": true,
+      "target": "https://chat.deepseek.com/",
+      "openerSeparated": true,
+      "observedURL": "chrome-error://chromewebdata/"
+    },
+    "viewports": [
+      {
+        "width": 1366,
+        "noOverflow": true,
+        "panelWidth": 460
+      },
+      {
+        "width": 320,
+        "noOverflow": true,
+        "fullWidthPanel": true,
+        "controlsVisible": true
+      },
+      {
+        "width": 414,
+        "noOverflow": true,
+        "fullWidthPanel": true,
+        "controlsVisible": true
+      }
+    ],
+    "firstBrowserResult": "requestfailed",
+    "embed": {
+      "result": "PARTIAL",
+      "viability": "NOT ESTABLISHED",
+      "reason": "net::ERR_EMPTY_RESPONSE",
+      "loginUI": "NOT TESTABLE",
+      "note": "Access failed before a normal DeepSeek page was observable. This does not establish a service frame-ancestors/X-Frame-Options policy."
+    },
+    "keyboardClose": true
+  }
+}
